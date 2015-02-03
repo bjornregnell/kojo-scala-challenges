@@ -1,27 +1,14 @@
 object scaboo {
 
-  trait TheBook { 
-    def title: String 
-  }
-
   trait ChapterTemplate
   case class TextWithImage(imageFileName: String) extends ChapterTemplate
   case object DefaultChapterTemplate extends ChapterTemplate
 
-  trait DocItem { def toLatex: String }
-  case class Para(ps: String*) extends DocItem {
-    def toLatex = ps.mkString(s"\\\\\n")
-  }
-  case class Section(heading: String, color: String = "MidnightBlue") extends DocItem {
-    def toLatex = s"\\section*{\\color{$color}$heading}"
-  }
-  case class Code(code: String, size: Int=14) extends DocItem {
-    def toLatex = s"""
-\\begin{lstlisting}[basicstyle={\\ttfamily\\fontsize{$size}{$size}\\selectfont}]
-$code
-\\end{lstlisting}
-    """
-  }
+  sealed trait DocItem 
+  case class Para(ps: String*) extends DocItem 
+  case class Section(heading: String, color: String = "MidnightBlue") extends DocItem
+  //more latex xcolor names here: http://en.wikibooks.org/wiki/LaTeX/Colors  
+  case class Code(code: String, size: Int = -1) extends DocItem 
 
   trait ChapterLike {
     def id: String 
