@@ -1,7 +1,20 @@
-import scaboo._
-import ioxtra._
+object latexgen { //Module for generating latex from ChapterLike structures
+  import scaboo._
+  import ioxtra._
 
-object latexgen {
+  implicit class DocItemLatexGen(d: DocItem) {
+    def toLatex: String = d match {
+      case p: Para => p.ps.mkString(s"\\\\\n")
+      case Section(heading, color) => s"\\section*{\\color{$color}$heading}"
+      case Code(code, size) => 
+        val param = if (size>0) s"[basicstyle={\\ttfamily\\fontsize{$size}{$size}\\selectfont}]" else ""
+        s"""
+        |\\begin{lstlisting}$param
+        |$code
+        |\\end{lstlisting}
+        """.stripMargin
+    }
+  }
   
   def head(ch: ChapterLike) = s"\\chapter{${ch.head}}"
   
@@ -11,7 +24,7 @@ object latexgen {
     "\n\\end{multicols}\n"
   
   def body(ch: ChapterLike): String = ch.contents.map(_.toLatex).mkString("\n") 
-  def img(file: String): String = "\\includegraphics[width=14cm]{../img/fram.png}"  
+  def img(file: String): String = s"\\includegraphics[width=14cm]{../img/$file}"  
   
   def toLatex(ch: ChapterLike): String = ch.template match {
     case DefaultChapterTemplate => head(ch) + body(ch)
