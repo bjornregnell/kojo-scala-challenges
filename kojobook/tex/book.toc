@@ -1,0 +1,3 @@
+\select@language {swedish}
+\contentsline {chapter}{\numberline {}Installera Kojo}{1}{chapter.1}
+\contentsline {chapter}{\numberline {}Ditt första program}{2}{chapter.2}
