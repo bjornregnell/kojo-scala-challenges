@@ -1,5 +1,9 @@
-object ioxtra {
+package scaboo
+
+object ioutils {
+
   def fileSep = java.lang.System.getProperty("file.separator")
+
   implicit class StringIOExtra(s: String) {
     def save(fileName:String): Unit = {
       val outStream = new java.io.PrintStream(fileName,"UTF-8")
@@ -18,8 +22,6 @@ object ioxtra {
     }
     def newFileType(suf: String): String = s.stripFileType.suffix(suf)
   }
-    
-  
   
   def load(fileName:String): Vector[String] = 
     scala.io.Source.fromFile(fileName).getLines.toVector

@@ -1,0 +1,103 @@
+\documentclass[12pt]{book}
+
+\usepackage[german]{babel}	% Make german hyphenation and contents headning etc
+\usepackage{fontspec}
+
+%\usepackage[scaled]{beramono}
+%\setmonofont{Bera Mono}
+\usepackage[T1]{fontenc}		% utf letters
+\DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
+
+
+\usepackage{titling}
+\usepackage[left=2cm, right=2cm,bottom=2cm,top=1cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
+
+\usepackage{bookman}
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{tgtermes} %times
+\usepackage[scaled]{uarial} %Arial
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+\usepackage{inconsolata}
+\addto\captionsswedish{%
+\def\contentsname{Index}}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{array} %to center table cells
+\usepackage{parskip} %to have noindent and space between paras
+
+\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
+\titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
+\titleformat{\section}[hang]{\bf\fontsize{20}{20}\selectfont}{}{0pt}{\bf\fontsize{20}{20}\selectfont}
+
+\usepackage{multicol}
+
+\usepackage{listings}
+% "define" Scala
+\lstdefinelanguage{scala}{
+  morekeywords={abstract,case,catch,class,def,%
+    do,else,extends,false,final,finally,%
+    for,forSome,if,implicit,import,lazy,match,%
+    new,null,object,override,package,%
+    private,protected,return,sealed,%
+    super,this,throw,trait,true,try,%
+    type,val,var,while,with,yield},
+  otherkeywords={=>,<-,<\%,<:,>:,@},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[n]{/*}{*/},
+  morestring=[b]",
+  morestring=[b]',
+  morestring=[b]"""
+}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{dkgray}{rgb}{0.3,0.3,0.3}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+% Default settings for code listings
+\lstset{frame=none, 
+  language=scala,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily\fontsize{22}{30}\selectfont},
+  keywordstyle=\bf\ttfamily\selectfont\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=false,
+  breakatwhitespace=false,
+  tabsize=2,
+  numbers=none,stepnumber=1, numbersep=8pt, numberstyle=\small\color{gray}
+}
+
+
+\title{\fontsize{40}{40}\bf\sffamily\selectfont Beginnen Programmieren\\mit Scala und Kojo\vskip2cm  }
+\author{\fontsize{18}{18}\selectfont www.lth.se/programmera}
+\date{\fontsize{12}{12}\vskip3cm\it\selectfont Zuletzt geändert: \today{ }}
+\renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
+
+\begin{document}
+\maketitle
+\newpage
+\thispagestyle{empty}
+
+\input{license.tex}
+
+\newpage
+\begin{multicols}{4}
+\tableofcontents
+\mainmatter
+\end{multicols}
+
+\fontsize{16}{18}\selectfont\raggedright
+
+\input{body-de.tex}
+
+\end{document}

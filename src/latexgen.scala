@@ -1,6 +1,8 @@
-object latexgen { //Module for generating latex from ChapterLike structures
-  import scaboo._
-  import ioxtra._
+package scaboo
+
+object latexgen { //generate latex from ChapterLike structures
+  import model._
+  import ioutils._
 
   implicit class DocItemLatexGen(d: DocItem) {
     def toLatex: String = d match {
@@ -13,6 +15,8 @@ object latexgen { //Module for generating latex from ChapterLike structures
         |$code
         |\\end{lstlisting}
         """.stripMargin
+      case HRef(url, text) => s"\\href{$url}{$text}"
+      case NoItem => ""
     }
   }
   
