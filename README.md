@@ -4,8 +4,7 @@ A Scala book generator.
 
 ### What is this repository for? ###
 
-* Write books using Scala case classes and generate latex and html
-* Version 0.1 
+* Write books using Scala case classes and generate latex and TODO: html
 
 ### How do I get set up? ###
 
@@ -17,7 +16,7 @@ A Scala book generator.
 0. Build scaboo into `bin` using the scala compiler with these scripts
     * Windows open powershell and run `./build.cmd`
     * Unix-like: TODO `build.sh`
-0. Generate the kojobook for Swedish by running `make-sv.cmd` 
+0. Generate the kojobook for Swedish by running `make-sv.cmd` or TODO `make-sv.sh`
 
 ### Contributions  ###
 
