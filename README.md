@@ -13,11 +13,11 @@ A Scala book generator.
     * [Scala v2.11.x](http://scala-lang.org/download/) with the `scala` and `scalac` commands on your path.
     * [texlive](https://www.tug.org/texlive/acquire-netinstall.html) with the `xelatex` command on your path.
 
-0. Clone this repo e.g. using Sourcetree
-0. Build 
+0. Clone this repo e.g. using Sourcetree (press the download icon next to the "Overview heading")
+0. Build scaboo into `bin` using the scala compiler with these scripts
     * Windows open powershell and run `./build.cmd`
-    * Unix-like: TODO build.sh
-0. Build using the build.cmd on windows (TODO build.sh)
+    * Unix-like: TODO `build.sh`
+0. Generate the kojobook for Swedish by running `make-sv.cmd` 
 
 ### Contributions  ###
 
