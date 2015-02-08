@@ -1,11 +1,11 @@
 \documentclass[12pt]{book}
 
-\usepackage[swedish]{babel}	% För svensk avstavning och svenska rubriker (t ex "innehållsförteckning)
+\usepackage[swedish]{babel}	% Swedish hyphenation and content headings
 \usepackage{fontspec}
 
 %\usepackage[scaled]{beramono}
 %\setmonofont{Bera Mono}
-\usepackage[T1]{fontenc}		% För svenska bokstäver
+\usepackage[T1]{fontenc}		% Allow Swedish, German etc. letters
 \DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
 
 
@@ -24,7 +24,7 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{wrapfig}
-\usepackage{graphicx}
+\usepackage{titlepic, graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{array} %to center table cells
 \usepackage{parskip} %to have noindent and space between paras
@@ -32,7 +32,7 @@
 \usepackage{titlesec}
 %\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
 \titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
-\titleformat{\section}[hang]{\bf\fontsize{20}{20}\selectfont}{}{0pt}{\bf\fontsize{20}{20}\selectfont}
+\titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
 
 \usepackage{multicol}
 
@@ -67,7 +67,7 @@
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\ttfamily\fontsize{22}{30}\selectfont},
+  basicstyle={\ttfamily\selectfont},
   keywordstyle=\bf\ttfamily\selectfont\color{blue},
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
@@ -78,9 +78,15 @@
 }
 
 
-\title{\fontsize{40}{40}\bf\sffamily\selectfont Börja programmera\\med Scala och Kojo\vskip2cm  }
-\author{\fontsize{18}{18}\selectfont www.lth.se/programmera}
-\date{\fontsize{12}{12}\vskip3cm\it\selectfont Version 0.1, Senast ändrad: \today{ }}
+\title{\fontsize{40}{40}\bf\sffamily\selectfont Börja programmera med Scala och Kojo \\~\\
+\fontsize{26}{26}\it\sffamily\selectfont Övningar för grundskolan  }
+
+\author{Redaktör: Björn Regnell \\ \bf www.lth.se/programmera}
+\titlepic{
+\includegraphics[height=8cm]{../img/cover}
+}
+\date{Senast ändrad: \today{ }}
+
 \renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
 
 \begin{document}
@@ -96,7 +102,7 @@
 \mainmatter
 \end{multicols}
 
-\fontsize{16}{18}\selectfont\raggedright
+\fontsize{20}{22}\selectfont\raggedright
 
 \input{body-sv.tex}
 

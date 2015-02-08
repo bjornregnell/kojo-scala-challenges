@@ -1,5 +1,20 @@
-call scala -cp bin kojobook/source.scala
+call scala -cp bin kojobook/book-sv.scala
+if %ERRORLEVEL% NEQ 0 goto error
+
+REM call scala -cp bin kojobook/book-de.scala
+REM if %ERRORLEVEL% NEQ 0 goto error
+
 cd kojobook/tex
-if NOT exist book-sv.aux call xelatex book-sv.tex
-if exist book-sv.aux call xelatex book-sv.tex
+
+call xelatex book-sv.tex
+if %ERRORLEVEL% NEQ 0 goto error
+
+REM call xelatex book-de.tex
+REM if %ERRORLEVEL% NEQ 0 goto error
+
 start book-sv.pdf
+REM start book-de.pdf
+
+:error
+echo *** Error level: %ERRORLEVEL%
+:end
