@@ -4,25 +4,21 @@ A Scala book generator.
 
 ### What is this repository for? ###
 
-* Write chapters using Scala case classes and generate latex and html
+* Write books using Scala case classes and generate latex and html
 * Version 0.1 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
 
-* Clone this repo e.g. using Sourcetree
-* Dependencies: You need to have [Scala v2.11.x]()  installed
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Dependencies: You need to have these things installed on your box
+    * [Scala v2.11.x](http://scala-lang.org/download/) with the `scala` and `scalac` commands on your path.
+    * [texlive](https://www.tug.org/texlive/acquire-netinstall.html) with the `xelatex` command on your path.
 
-### Contribution guidelines ###
+0. Clone this repo e.g. using Sourcetree
+0. Build 
+    * Windows open powershell and run `./build.cmd`
+    * Unix-like: TODO build.sh
+0. Build using the build.cmd on windows (TODO build.sh)
 
-* Writing tests
-* Code review
-* Other guidelines
+### Contributions  ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Pull requests are welcome. Contact bjorn.regnell@cs.lth.se
