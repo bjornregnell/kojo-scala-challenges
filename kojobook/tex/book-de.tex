@@ -19,12 +19,12 @@
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
 \usepackage{inconsolata}
-\addto\captionsswedish{%
+\addto\captionsgerman{%
 \def\contentsname{Index}}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{wrapfig}
-\usepackage{graphicx}
+\usepackage{titlepic, graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{array} %to center table cells
 \usepackage{parskip} %to have noindent and space between paras
@@ -32,7 +32,7 @@
 \usepackage{titlesec}
 %\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
 \titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
-\titleformat{\section}[hang]{\bf\fontsize{20}{20}\selectfont}{}{0pt}{\bf\fontsize{20}{20}\selectfont}
+\titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
 
 \usepackage{multicol}
 
@@ -77,10 +77,14 @@
   numbers=none,stepnumber=1, numbersep=8pt, numberstyle=\small\color{gray}
 }
 
+\title{\fontsize{36}{36}\bf\sffamily\selectfont Beginnen Programmieren mit Scala und Kojo \\~\\
+\fontsize{26}{26}\it\sffamily\selectfont Übungen für Grundschule  }
 
-\title{\fontsize{40}{40}\bf\sffamily\selectfont Beginnen Programmieren\\mit Scala und Kojo\vskip2cm  }
-\author{\fontsize{18}{18}\selectfont www.lth.se/programmera}
-\date{\fontsize{12}{12}\vskip3cm\it\selectfont Zuletzt geändert: \today{ }}
+\author{Editor: Björn Regnell \\ \bf www.lth.se/programmera}
+\titlepic{
+\includegraphics[height=8cm]{../img/cover}
+}
+\date{Zuletzt geändert: \today{ }}
 \renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
 
 \begin{document}
@@ -88,15 +92,15 @@
 \newpage
 \thispagestyle{empty}
 
-\input{license.tex}
-
+\input{license.tex} \\
+Translation to German: Christoph Knabe
 \newpage
 \begin{multicols}{4}
 \tableofcontents
 \mainmatter
 \end{multicols}
 
-\fontsize{14}{16}\selectfont\raggedright
+\fontsize{20}{22}\selectfont\raggedright
 
 \input{body-de.tex}
 
