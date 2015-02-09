@@ -168,7 +168,7 @@ kvadrat
 
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}
+\begin{lstlisting}[]
 fyll(grön); färg(lila)
 \end{lstlisting}
         
@@ -177,10 +177,9 @@ fyll(grön); färg(lila)
 \section*{\color{BrickRed}Uppdrag:}
 Gör en stapel med 10 kvadrater.
 \section*{\color{OliveGreen}Tips:}
-Använd \lstinline{kvadrat} och \lstinline{hoppa} inuti en loop:
 \vskip 1.0em
 
-\begin{lstlisting}
+\begin{lstlisting}[]
 def kvadrat =  upprepa(4){fram; höger}  
 
 sudda; sakta(100)
@@ -202,7 +201,7 @@ upprepa(10){ ??? }
 Gör en funktion som heter \lstinline{stapel}, som ritar en stapel med 10 kvadrater.
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}
+\begin{lstlisting}[]
 def kvadrat = upprepa(4){fram; höger}  
 def stapel = ???
 
@@ -222,7 +221,7 @@ stapel
 \chapter{Gör ett rutnät}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Uppdrag:}
-Gör rutnät med 10*10 kvadrater.
+Gör ett rutnät med 10*10 kvadrater.
 \section*{\color{OliveGreen}Tips:}
 
 
@@ -244,11 +243,15 @@ Gör rutnät med 10*10 kvadrater.
 
 \end{multicols}
 
-\chapter{Funktion med parameter}
+\chapter{Kvadrat-funktion med parameter}
 \begin{multicols}{2}
-Med en {\it parameter} kan funktioner göra olika saker:
+\section*{\color{BrickRed}Uppdrag:}
+Rita olika stora kvadrater.
+\section*{\color{OliveGreen}Tips:}
+Ge din kvadrat-funktion en {\it parameter},\\
+med namnet \lstinline{sidlängd} och typen \lstinline{Heltal}:
 
-\begin{lstlisting}
+\begin{lstlisting}[backgroundcolor=\color{gray!15}, numbers=left,basicstyle={\ttfamily\fontsize{16.0}{16.0}\selectfont}]
 def kvadrat(sidlängd : Heltal) = 
   upprepa(4){fram(sidlängd); höger}
 
@@ -258,22 +261,49 @@ kvadrat(70)
 kvadrat(40)
 \end{lstlisting}
         
-\section*{\color{BrickRed}Uppdrag:}
-Rita olika stora kvadrater med olika färg.
-\section*{\color{OliveGreen}Tips:}
-
-\begin{lstlisting}
-fyll(blå); färg(rosa)
-\end{lstlisting}
-        
+Du kan byta färg med:\\
+\lstinline{fyll(blå); färg(rosa)}
 
 
 \columnbreak
 
 
 \begin{center}
-\includegraphics[width=10.0cm]{../img/square-param.png}
+\includegraphics[width=5.0cm]{../img/square-param.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=5.0cm]{../img/square-param-color.png}
 \end{center}
 
 \end{multicols}
 
+\chapter{Rita en kvadratgubbe}
+
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+Rita en gubbe med hjälp av olika stora kvadrater.
+
+\columnbreak
+
+\includegraphics[width=4.0cm]{../img/square-man.png}
+
+\end{multicols}
+
+\section*{\color{OliveGreen}Tips:}
+
+\begin{lstlisting}[backgroundcolor=\color{gray!15}, numbers=left,basicstyle={\ttfamily\fontsize{16.0}{16.0}\selectfont}]
+def kvadrat(sidlängd : Heltal) = upprepa(4){fram(sidlängd); höger}
+def huvud = {fyll(rosa); kvadrat(200)}
+def öga = {fyll(vit); färg(svart); kvadrat(40)}
+def pupill = {fyll(svart); färg(svart); kvadrat(10) }
+def näsa = {färg(genomskinlig); fyll(blå); kvadrat(30)}
+def mun = {bredd(10); fyll(svart); färg(röd); kvadrat(40)}
+
+sudda; sakta(20); osynlig
+huvud
+hoppaTill(40,100);  öga
+hoppaTill(60,100);  pupill
+???
+\end{lstlisting}
+        

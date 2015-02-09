@@ -11,7 +11,7 @@ object model {
   case class Para(ps: String*) extends DocItem 
   case class Itemize(ps: String*) extends DocItem 
   case class Section(heading: String, color: String = "black") extends DocItem
-  case class Code(code: String, size: Double = -1) extends DocItem 
+  case class Code(code: String, size: Double = -1, frame: Boolean = false) extends DocItem 
   case class HRef(url:String, text: String) extends DocItem
   case class Image(file: String, width: Double = -1) extends DocItem
   case class CenterImage(file: String, width: Double = -1) extends DocItem 

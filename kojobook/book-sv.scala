@@ -103,7 +103,7 @@ fyll(grön); färg(lila)
     template=TextWithImage("square-column.png"),
     contents=Seq(
     taskHead, Para("Gör en stapel med 10 kvadrater."),
-    hintHead, Para("Använd {:kvadrat:} och {:hoppa:} inuti en loop:"), VSkip(1),
+    hintHead, VSkip(1),
     Code("""
 def kvadrat =  upprepa(4){fram; höger}  
 
@@ -127,16 +127,18 @@ stapel""".trim)
   Chapter(id="square-grid", head="Gör ett rutnät", 
     template=TextWithImage("square-grid.png"),
     contents=Seq(
-      taskHead, Para("Gör rutnät med 10*10 kvadrater."),
+      taskHead, Para("Gör ett rutnät med 10*10 kvadrater."),
       hintHead, Itemize("Använd din stapelfunktion från tidigare.",
       "Du kan hoppa baklänges en hel stapelhöjd med {:hoppa(-10*25):}",
       "Du kan sedan hoppa till rätt plats med {:höger; hoppa; vänster:}") 
     )
   ), //------------------------------------------------------
-  Chapter(id="def-square", head="Funktion med parameter", 
+  Chapter(id="def-square-param", head="Kvadrat-funktion med parameter", 
     template=MultiColumn(2),
     contents=Seq(
-      Para("Med en {/parameter/} kan funktioner göra olika saker:"), 
+      taskHead, Para("Rita olika stora kvadrater."),
+      hintHead, 
+      Para("Ge din kvadrat-funktion en {/parameter/},","med namnet {:sidlängd:} och typen {:Heltal:}:"), 
       Code("""
 def kvadrat(sidlängd : Heltal) = 
   upprepa(4){fram(sidlängd); höger}
@@ -145,11 +147,33 @@ sudda; sakta(100); osynlig
 kvadrat(100) 
 kvadrat(70)
 kvadrat(40)
-       """.trim),
-    taskHead, Para("Rita olika stora kvadrater med olika färg."),
-    hintHead, Code("""fyll(blå); färg(rosa)"""),
-    ColumnBreak,
-    CenterImage("square-param.png",10)
+       """.trim,frame=true,size=16), 
+      Para("Du kan byta färg med:","{:fyll(blå); färg(rosa):}"),
+      ColumnBreak,
+      CenterImage("square-param.png",5),
+      CenterImage("square-param-color.png",5)
+    )
+  ), //------------------------------------------------------
+  Chapter(id="def-square-man", head="Rita en kvadratgubbe", 
+    contents=Seq(
+      taskHead, Para("Rita en gubbe med hjälp av olika stora kvadrater."),
+      LineBreak,
+      Image("square-man.png",3),
+      hintHead,
+      Code("""
+def kvadrat(sidlängd : Heltal) = upprepa(4){fram(sidlängd); höger}
+def huvud = {fyll(rosa); kvadrat(200)}
+def öga = {fyll(vit); färg(svart); kvadrat(40)}
+def pupill = {fyll(svart); färg(svart); kvadrat(10) }
+def näsa = {färg(genomskinlig); fyll(blå); kvadrat(30)}
+def mun = {bredd(10); fyll(svart); färg(röd); kvadrat(40)}
+
+sudda; sakta(20); osynlig
+huvud
+hoppaTill(40,100);  öga
+hoppaTill(60,100);  pupill
+???
+       """.trim,frame=true,size=16)
     )
   )    
 )

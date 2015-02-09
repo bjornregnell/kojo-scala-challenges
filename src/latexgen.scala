@@ -26,8 +26,10 @@ object latexgen { //generate latex from Chapter structures
       case p: Para => p.ps.map(replace(_)).mkString(lineBreak)
       case i: Itemize => items(i.ps.map(replace(_)))
       case Section(heading, color) => s"\\section*{\\color{$color}${replace(heading)}}"
-      case Code(code, size) => 
-        val param = if (size>0) s"[basicstyle={\\ttfamily\\fontsize{$size}{$size}\\selectfont}]" else ""
+      case Code(code, size, frame) => 
+        val frameParam = if (frame) "backgroundcolor=\\color{gray!15}, numbers=left" else ""
+        val sizeParam = if (size>0) s"basicstyle={\\ttfamily\\fontsize{$size}{$size}\\selectfont}" else ""
+        val param = Seq(frameParam,sizeParam).filterNot(_.isEmpty).mkString("[",",","]")
         s"""
         |\\begin{lstlisting}$param
         |$code
