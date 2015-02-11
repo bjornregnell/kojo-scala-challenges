@@ -313,22 +313,148 @@ upprepa(100){
       Itemize(
         "Gör en funktion som heter {:blomma:}, som ritar en krona och en grön stjälk från kronans mitt med ett grönt blad.",
         "Rita 5 blommor bredvid varandra."),
-      hintHead,
+      OverlayImage("flowers.png",x=15, y= -7, width=16),    
+      hintHead, 
       Para(
-        "Du kan rita blad med {:båge(radie, vinkel):}.",
+        "Du kan rita blad med {:båge(radie, vinkel):}. ",
         "Låt funktionen {:blomma:} ha två parametrar x och y och använd {:hoppaTill(x,y):}",
         "Du kan loopa 5 gånger och räkna ut platsen så här:"
-      ),
-      OverlayImage("flowers.png",x=15, y= -2, width=16),
+      ), 
       Code("""
 var i = 0          
 upprepa(5){
   blomma(600*i,0)
   i = i + 1        
 }
-""".trim,size=20)    
+""".trim,size=18) 
     )
-  )    
+  ), //------------------------------------------------------
+  Chapter(id="check-speed", head="Hur snabb är din dator?", 
+    //template=MultiColumn(2),
+    contents=Seq(
+      Para( "I Kojo finns en funktion {:räknaTill:} som mäter hur snabbt datorn kan räkna.",
+      "När jag kör {:räknaTill(5000):} på min snabba dator skrivs detta i utdata-fönstret:"),
+      Code("""
+*** Räknar från 1 till ... 5000 *** KLAR!
+Det tog 0.32 millisekunder.
+      """),
+      taskHead, 
+      Itemize("Kör {:räknaTill(5000):} och kolla om din dator är snabbare än min.",
+              "Hur lång tid tar det för din dator att räkna till en miljon?",
+              "Hur långt hinner din dator räkna till på en sekund?")      
+    )
+  ), //------------------------------------------------------
+  Chapter(id="costume", head="Byt kostym på paddan", 
+    contents=Seq(
+      taskHead,       
+      Para("Ladda ner mediafiler från Kojos hemsida:"),
+      HRef("http://www.kogics.net/kojo-download#media", "www.kogics.net/kojo-download\\#media"), LineBreak,
+      Para("Skapa en mapp {:Kojo:} i din hemkatalog om det inte redan finns en sådan.",
+      "Packa upp filen {:scratch-media.zip:} och lägg mappen Media i mappen Kojo.",
+      "Prova att byta kostym på paddan till en häst så här:"),
+      OverlayImage("horse1-a.png",x=22, y= -2.5),
+      Code("""
+sudda
+kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png")
+sakta(2000)
+fram(1000) 
+      """.trim,size=20),
+      hintHead,
+      Para("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}")      
+    )
+  ), //------------------------------------------------------
+  Chapter(id="timer", head="Gör en timer", 
+    contents=Seq(
+      taskHead,
+      Para("Prova programmet nedan och mät din reaktionstid. Hur snabb är du?"),
+      Code("""
+object timer {
+  def nu = System.currentTimeMillis  //ger nutid i millisekunder
+  var tid = nu
+  def nollställ = { tid = nu }
+  def mät = nu - tid
+  def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
+    Thread.sleep((slumptal(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+}
+
+utdata("Klicka i utdatafönstret och vänta...")
+timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
+timer.nollställ
+indata("Tryck Enter så snabbt du kan.")
+utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+      """.trim,size=18)   
+    )
+  ), //------------------------------------------------------
+  Chapter(id="multiply", head="Träna multiplikation", 
+    contents=Seq(
+      taskHead,
+      Para("Prova programmet nedan. Ändra så att man bara tränar 8:ans och 9:ans tabell."),
+      Code("""
+var antalRätt = 0
+val startTid = System.currentTimeMillis / 1000
+upprepa(12) {
+  val tal1 = slumptal(12)+1
+  val tal2 = slumptal(12)+1
+  val svar = indata("Vad är " + tal1 + "*" + tal2 + "?")
+  if (svar == (tal1 * tal2).toString) {
+    utdata("Rätt!")
+    antalRätt = antalRätt + 1
+  }
+  else utdata("Fel. Rätt svar är " + (tal1 * tal2))
+}
+val stoppTid = System.currentTimeMillis / 1000
+val sek = stoppTid - startTid
+utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
+      """.trim,size=16)   
+    )
+  ), //------------------------------------------------------
+  Chapter(id="vector", head="Spara saker i en vektor", 
+    contents=Seq(
+      taskHead,
+      Para("Prova programmet nedan. Vad skrivs ut? Lägg till fler djur i vektorn."),
+      Code("""
+var djur = Vector("älg", "ko", "kanin", "kvalster")
+utdata("Första djuret i vektorn är: " + djur(0))  //platserna i vektorn räknas från 0
+utdata("Andra djuret i vektorn är:  " + djur(1))
+utdata("Det finns så här många djur: " + djur.size)
+utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
+
+val s = slumptal(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
+utdata("Ett slumpmässigt djur: " + djur(s))
+
+djur = djur :+ "Kamel" //lägg till ett djur sist i vektorn
+djur = djur.updated(0, "Dromedar")  //Ändra djuret på plats 0
+utdata("Alla djur i vektorn baklänges:")
+djur.foreach{x => utdata(x.reverse)} //för alla x i vektorn: skriv ut x baklänges
+      """.trim,size=16)   
+    )
+  ), //------------------------------------------------------
+  Chapter(id="traffic-lights", head="Simulera ett trafikljus", 
+    contents=Seq(
+      taskHead,
+      Para("Prova programmet nedan. Ändra så att trafikljuset är rött dubbelt så länge."),
+      OverlayImage("traffic-lights.png",x=22, y= -6, width=3),
+      Code("""
+def släckAlla = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
+def ljus(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
+def rött = draw(ljus(red, 100))
+def gult = draw(ljus(yellow, 65))
+def grönt = draw(ljus(green, 30))
+def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
+
+clear; invisible  
+while (true) { //en oändlig loop
+  släckAlla
+  rött;  vänta(3)
+  gult;  vänta(1) 
+  släckAlla
+  grönt; vänta(3)
+  gult;  vänta(1)
+}
+      """.trim,size=14)   
+    )
+  )
+  
 )
 
 //********************
