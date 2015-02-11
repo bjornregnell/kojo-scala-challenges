@@ -1,17 +1,17 @@
-def init = {sudda; sakta(20); osynlig}
-def kvadrat(sidlängd : Heltal) = upprepa(4){fram(sidlängd); höger}
-def huvud = {fyll(rosa); kvadrat(200)}
-def öga = {fyll(vit); färg(svart); kvadrat(40)}
-def pupill = {fyll(svart); färg(svart); kvadrat(10) }
-def näsa = {färg(genomskinlig); fyll(blå); kvadrat(30)}
-def mun = {bredd(10); fyll(svart); färg(röd); kvadrat(40)}
+def kvadrat(x: Heltal, y: Heltal, sidlängd: Heltal) = {
+  hoppaTill(x, y)
+  upprepa(4) { fram(sidlängd); höger }
+}
+def huvud(x: Heltal, y: Heltal) = { fyll(rosa); färg(röd); kvadrat(x, y, 200) }
+def öga(x: Heltal, y: Heltal) = { fyll(vit); färg(svart); kvadrat(x, y, 40) }
+def pupill(x: Heltal, y: Heltal) = { fyll(svart); färg(svart); kvadrat(x, y, 10) }
+def näsa(x: Heltal, y: Heltal) = { fyll(blå); färg(genomskinlig); kvadrat(x, y, 30) }
+def mun(x: Heltal, y: Heltal) = { bredd(10); fyll(svart); färg(röd); kvadrat(x, y, 40) }
 
-init
-huvud
-hoppaTill(40,100);  öga
-hoppaTill(60,100);  pupill
-hoppaTill(120,100); öga 
-hoppaTill(130,100); pupill
-hoppaTill(85,70);   näsa
-hoppaTill(80,20);   mun
+sudda; sakta(20); osynlig
+huvud(0, 0)
+öga(40, 100); pupill(60, 100)
+öga(120, 100); pupill(130, 100)
+näsa(85, 70)
+mun(80, 20)
 

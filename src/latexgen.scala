@@ -18,18 +18,16 @@ object latexgen { //generate latex from Chapter structures
     }
   }
 
-  val lineBreak = "\\\\\n"
-  val colBreak = "\n\n\\columnbreak\n\n"
-  
   implicit class DocItemLatexGen(d: DocItem) {
     def toLatex: String = d match {
       case p: Para => p.ps.map(replace(_)).mkString(lineBreak)
       case i: Itemize => items(i.ps.map(replace(_)))
       case Section(heading, color) => s"\\section*{\\color{$color}${replace(heading)}}"
-      case Code(code, size, frame) => 
-        val frameParam = if (frame) "backgroundcolor=\\color{gray!15}, numbers=left" else ""
-        val sizeParam = if (size>0) s"basicstyle={\\ttfamily\\fontsize{$size}{$size}\\selectfont}" else ""
-        val param = Seq(frameParam,sizeParam).filterNot(_.isEmpty).mkString("[",",","]")
+      case Code(code, size, isFramed, isNumbered) => 
+        val numbersParam = if (isNumbered) "numbers=left" else "numbers=none"
+        val frameParam = if (isFramed) "backgroundcolor=\\color{gray!15}" else ""
+        val sizeParam = if (size>0) s"basicstyle={\\ttfamily${fontSize(size)}\\selectfont}" else ""
+        val param = Seq(frameParam,sizeParam, numbersParam).filterNot(_.isEmpty).mkString("[",",","]")
         s"""
         |\\begin{lstlisting}$param
         |$code
@@ -38,6 +36,7 @@ object latexgen { //generate latex from Chapter structures
       case HRef(url, text) => s"\\href{$url}{${replace(text)}}"
       case Image(file, width) => img(file, width)
       case CenterImage(file, width) => center(img(file, width))
+      case OverlayImage(file, x, y, width) => overlay(img(file, width), x, y)
       case VSkip(size) => s"\\vskip ${size}em"
       case LineBreak => lineBreak
       case ColumnBreak => colBreak
@@ -45,7 +44,13 @@ object latexgen { //generate latex from Chapter structures
     }
   }
   
-  def head(ch: Chapter) = s"\\chapter{${ch.head}}"
+  def lineBreak = "\\\\\n"
+
+  def colBreak = "\n\n\\columnbreak\n\n"
+
+  def fontSize(size: Double) = s"\\fontsize{${size.toInt}}{${((size+0.5)*1.2).toInt}}"
+
+  def head(ch: Chapter) = s"\\chapter{${replace(ch.head)}}"
   
   def twocols(col1:String,col2:String) = 
     "\n\\begin{multicols}{2}\n" +
@@ -71,11 +76,16 @@ object latexgen { //generate latex from Chapter structures
     s"\\includegraphics$sizeParam{../img/$file}"  
   }  
   
+  def overlay(text: String, x: Double, y: Double) = s"""
+  |\\begin{tikzpicture}[overlay]
+  |\\node at (${x}cm,${y}cm) {$text};
+  |\\end{tikzpicture}
+  """.stripMargin
+  
   def toLatex(ch: Chapter): String = ch.template match {
     case DefaultChapterTemplate => head(ch) + body(ch)
     case TextWithImage(file, width) => head(ch) + twocols(body(ch),center(img(file, width)))
     case MultiColumn(n) => head(ch) + multicols(n, body(ch))
-    case ct => s"WARNING: Not yet implemented ChapterTemplate $ct"    
   }
   
   def make(chapters: Seq[Chapter], outFile: String): Unit = 

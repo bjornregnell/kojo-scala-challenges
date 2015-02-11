@@ -4,8 +4,14 @@
 Kojo är en app som hjälper dig att lära dig att programmera. Med Kojo kan du koda i det moderna och kraftfulla programspråket {\bf\color{blue}Scala}. Kojo är gratis och finns på Svenska. Kojo fungerar med Linux, Windows och Mac OSX.
 \section*{\color{black}Var hittar jag Kojo?}
 Ladda ner Kojo här: 
+\\
+
 \href{http://www.kogics.net/kojo-download}{www.kogics.net/kojo-download}
+\\
+
 Läs mer här: 
+\\
+
 \href{http://lth.se/programmera}{lth.se/programmera}
 
 \columnbreak
@@ -21,7 +27,7 @@ Läs mer här:
 \section*{\color{BrickRed}Uppdrag:}
 Skriv så här i Kojos skripteditor-fönster:
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{48.0}{48.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{48}{58}\selectfont},numbers=none]
 sudda
 fram
 \end{lstlisting}
@@ -43,7 +49,7 @@ för att köra igång ditt program.
 \chapter{Rita en kvadrat}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36.0}{36.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
 sudda
 fram
 höger
@@ -64,7 +70,7 @@ Utöka programmet så att det blir en kvadrat.
 \chapter{Rita en trappa}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36.0}{36.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
 sudda
 fram; vänster
 fram; höger
@@ -86,9 +92,9 @@ Utöka programmet så att det blir en trappa.
 \chapter{Gör en loop}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36.0}{36.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
 sudda
-upprepa(4){fram; höger}
+upprepa(4){ fram; höger }
 \end{lstlisting}
         
 \section*{\color{BrickRed}Uppdrag:}
@@ -117,7 +123,7 @@ upprepa(4){fram; höger}
 Rita en gubbe som du själv vill.
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{24.0}{24.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{24}{29}\selectfont},numbers=none]
 hoppa
 vänster(180)
 fram(300)
@@ -146,8 +152,8 @@ Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstr
 
 \chapter{Gör din egen funktion}Med \lstinline{def} kan du göra egna {\it funktioner} som du själv väljer namn på.
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{24.0}{24.0}\selectfont}]
-def kvadrat =  upprepa(4){fram; höger}  
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+def kvadrat =  upprepa(4){ fram; höger }  
 
 sudda
 kvadrat    //använd din kvadrat-funktion
@@ -168,7 +174,7 @@ kvadrat
 
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}[]
+\begin{lstlisting}[numbers=none]
 fyll(grön); färg(lila)
 \end{lstlisting}
         
@@ -179,8 +185,8 @@ Gör en stapel med 10 kvadrater.
 \section*{\color{OliveGreen}Tips:}
 \vskip 1.0em
 
-\begin{lstlisting}[]
-def kvadrat =  upprepa(4){fram; höger}  
+\begin{lstlisting}[numbers=none]
+def kvadrat =  upprepa(4){ fram; höger }  
 
 sudda; sakta(100)
 upprepa(10){ ??? }
@@ -201,8 +207,8 @@ upprepa(10){ ??? }
 Gör en funktion som heter \lstinline{stapel}, som ritar en stapel med 10 kvadrater.
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}[]
-def kvadrat = upprepa(4){fram; höger}  
+\begin{lstlisting}[numbers=none]
+def kvadrat = upprepa(4){ fram; höger }  
 def stapel = ???
 
 sudda; sakta(100)
@@ -243,7 +249,7 @@ Gör ett rutnät med 10*10 kvadrater.
 
 \end{multicols}
 
-\chapter{Kvadrat-funktion med parameter}
+\chapter{Kvadrat med parameter}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Uppdrag:}
 Rita olika stora kvadrater.
@@ -251,9 +257,9 @@ Rita olika stora kvadrater.
 Ge din kvadrat-funktion en {\it parameter},\\
 med namnet \lstinline{sidlängd} och typen \lstinline{Heltal}:
 
-\begin{lstlisting}[backgroundcolor=\color{gray!15}, numbers=left,basicstyle={\ttfamily\fontsize{16.0}{16.0}\selectfont}]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 def kvadrat(sidlängd : Heltal) = 
-  upprepa(4){fram(sidlängd); höger}
+  upprepa(4){ fram(sidlängd); höger }
 
 sudda; sakta(100); osynlig
 kvadrat(100) 
@@ -278,32 +284,252 @@ Du kan byta färg med:\\
 
 \end{multicols}
 
-\chapter{Rita en kvadratgubbe}
-
-\begin{multicols}{2}
-\section*{\color{BrickRed}Uppdrag:}
+\chapter{Rita en kvadratgubbe}\section*{\color{BrickRed}Uppdrag:}
 Rita en gubbe med hjälp av olika stora kvadrater.
+\\
 
-\columnbreak
 
-\includegraphics[width=4.0cm]{../img/square-man.png}
+\begin{tikzpicture}[overlay]
+\node at (20.0cm,0.5cm) {\includegraphics[width=5.5cm]{../img/square-man.png}};
+\end{tikzpicture}
+  
+\section*{\color{OliveGreen}Tips:}
 
-\end{multicols}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
+def kvadrat(x: Heltal, y: Heltal, sidlängd: Heltal) = {
+  hoppaTill(x, y)
+  upprepa(4) { fram(sidlängd); höger }
+}
+def huvud(x: Heltal, y: Heltal) = { fyll(rosa); färg(röd); kvadrat(x, y, 200) }
+def öga(x: Heltal, y: Heltal) = { fyll(vit); färg(svart); kvadrat(x, y, 40) }
+def pupill(x: Heltal, y: Heltal) = { fyll(svart); färg(svart); kvadrat(x, y, 10) }
+def näsa(x: Heltal, y: Heltal) = { fyll(blå); färg(genomskinlig); kvadrat(x, y, 30) }
+def mun(x: Heltal, y: Heltal) = { bredd(10); fyll(svart); färg(röd); kvadrat(x, y, 40) }
+
+sudda; sakta(20); osynlig
+huvud(0, 0)
+öga(40, 100); pupill(60, 100)
+???
+\end{lstlisting}
+        
+\chapter{Rita en polygon}\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Prova koden nedan. Rita olika slags polygoner.}
+\item {Lägg till en parameter \lstinline{sidlängd} och rita olika stora polygoner.}
+\item {Hur stort behöver n vara för att det ska se ut som en cirkel?}
+
+\end{itemize}
+
 
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}[backgroundcolor=\color{gray!15}, numbers=left,basicstyle={\ttfamily\fontsize{16.0}{16.0}\selectfont}]
-def kvadrat(sidlängd : Heltal) = upprepa(4){fram(sidlängd); höger}
-def huvud = {fyll(rosa); kvadrat(200)}
-def öga = {fyll(vit); färg(svart); kvadrat(40)}
-def pupill = {fyll(svart); färg(svart); kvadrat(10) }
-def näsa = {färg(genomskinlig); fyll(blå); kvadrat(30)}
-def mun = {bredd(10); fyll(svart); färg(röd); kvadrat(40)}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
+def polygon(n:Heltal) = upprepa(n){
+  fram(100)
+  vänster(360.0/n)
+}
 
-sudda; sakta(20); osynlig
-huvud
-hoppaTill(40,100);  öga
-hoppaTill(60,100);  pupill
-???
+sudda; sakta(100)
+polygon(7)
+\end{lstlisting}
+        
+
+\begin{tikzpicture}[overlay]
+\node at (20.0cm,3.5cm) {\includegraphics[width=8.0cm]{../img/polygon.png}};
+\end{tikzpicture}
+  
+\chapter{Rita många polygoner}\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Prova programmet nedan.}
+\item {Prova ändra antalet sidor och vinkel.}
+\item {Fyll polygonerna med färg.}
+
+\end{itemize}
+
+
+
+\begin{tikzpicture}[overlay]
+\node at (21.0cm,1.0cm) {\includegraphics[width=12.0cm]{../img/polygons-circle.png}};
+\end{tikzpicture}
+  
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+def polygon(n: Heltal, sidlängd: Heltal) = upprepa(n){
+  fram(sidlängd)
+  vänster(360.0/n)
+}
+def snurra(n: Heltal, vinkel: Heltal, sidlängd: Heltal) = 
+  upprepa(360/vinkel){ polygon(n, sidlängd); vänster(vinkel) }
+
+sudda; sakta(5)
+snurra(7, 10, 100)
+\end{lstlisting}
+        
+\chapter{Slumptal}\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Kör programmet nedan många gånger. Vad händer?}
+\item {Vilket är det minsta och största möjliga värdet på radien \lstinline{r}?}
+\item {Ändra så att \lstinline{r} blir ett slumptal mellan 3 och 200.}
+\item {Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar.}
+
+\end{itemize}
+
+
+
+\begin{tikzpicture}[overlay]
+\node at (21.0cm,-5.0cm) {\includegraphics[width=8.0cm]{../img/random-circles.png}};
+\end{tikzpicture}
+  
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+//värdet r blir ett slumptal mellan 10 och 89:
+val r = slumptal(90) + 10   
+
+sudda; sakta(10); osynlig
+skriv("Radie = " + r)
+cirkel(r)
+\end{lstlisting}
+        
+\chapter{Blanda dina egna färger}
+
+\begin{itemize}
+
+\item {Med \lstinline{Color} kan du blanda egna färger, till exempel \lstinline{Color(0, 70, 0)}}
+\item {De tre parametrarna anger mängden {\it rött}, {\it grönt} och {\it blått}}
+\item {Du kan också lägga till en fjärde parameter som anger {\it genomskinligheten}}
+\item {Alla parametrar ska vara mellan 0 och 255}
+
+\end{itemize}
+
+
+\section*{\color{BrickRed}Uppdrag:}
+Prova programmet nedan. Ändra genomskinligheten.
+
+\begin{tikzpicture}[overlay]
+\node at (23.0cm,-2.0cm) {\includegraphics[width=7.0cm]{../img/color-circles.png}};
+\end{tikzpicture}
+  
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+sudda; sakta(100)      
+
+val olivgrön = Color(0,70,0)
+val pistageglass = Color(0,255,0,100)
+
+fyll(olivgrön); cirkel(100)
+fyll(pistageglass); fram(100); cirkel(100)
+\end{lstlisting}
+        
+\chapter{Prova färgväljaren}
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Högerklicka i editor-fönstret och klicka på "Välj färg".}
+\item {Om du väljer fliken {\bf RGB} i färgväljaren kan du blanda nya RGB-färger.}
+\item {Tryck OK och titta i Utdatafönstret. Där syns de tre RGB-värdena för rött, grönt och blått.}
+\item {Du kan använda dessa värden i ditt program för att rita med din nya färg med \lstinline{färg(Color(218, 153, 67))}.}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics[width=14.0cm]{../img/color-chooser-rgb-sv.png}
+\end{center}
+
+\end{multicols}
+
+\chapter{Rita slumpcirklar}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+def slump = slumptal(256)
+def slumpfärg = Color(slump,10,slump,100) 
+
+sudda; sakta(5)
+bakgrund2(svart,vit)
+bredd(6)
+
+upprepa(100) {
+    färg(slumpfärg)
+    cirkel(100)
+    hoppa(20)
+    höger(35)
+}
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+Prova olika slumpfärger och bakgrunder.
+
+
+\columnbreak
+
+
+\begin{center}
+\includegraphics[width=12.0cm]{../img/circle-of-circles.png}
+\end{center}
+
+\end{multicols}
+
+\chapter{Rita en blomma}\section*{\color{BrickRed}Uppdrag:}
+Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slumpmässig radie. Prova att ändra de olika slumptalens gränser och försök förklara vad som händer.
+
+\begin{tikzpicture}[overlay]
+\node at (21.5cm,-4.0cm) {\includegraphics[width=9.0cm]{../img/random-color-circles.png}};
+\end{tikzpicture}
+  
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+sudda(); sakta(5)
+bredd(2)
+upprepa(100){
+  färg(Color(slumptal(256),0,slumptal(256)))
+  fyll(Color(slumptal(256),0,slumptal(256),slumptal(100)+50))
+  vänster(slumptal(360))
+  cirkel(slumptal(30)*4+10)
+}
+\end{lstlisting}
+        
+\chapter{Rita många blommor}\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Gör en funktion som heter \lstinline{blomma}, som ritar en krona och en grön stjälk från kronans mitt med ett grönt blad.}
+\item {Rita 5 blommor bredvid varandra.}
+
+\end{itemize}
+
+
+\section*{\color{OliveGreen}Tips:}
+Du kan rita blad med \lstinline{båge(radie, vinkel)}.\\
+Låt funktionen \lstinline{blomma} ha två parametrar x och y och använd \lstinline{hoppaTill(x,y)}\\
+Du kan loopa 5 gånger och räkna ut platsen så här:
+
+\begin{tikzpicture}[overlay]
+\node at (15.0cm,-2.0cm) {\includegraphics[width=16.0cm]{../img/flowers.png}};
+\end{tikzpicture}
+  
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+var i = 0          
+upprepa(5){
+  blomma(600*i,0)
+  i = i + 1        
+}
 \end{lstlisting}
         

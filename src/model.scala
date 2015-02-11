@@ -11,10 +11,11 @@ object model {
   case class Para(ps: String*) extends DocItem 
   case class Itemize(ps: String*) extends DocItem 
   case class Section(heading: String, color: String = "black") extends DocItem
-  case class Code(code: String, size: Double = -1, frame: Boolean = false) extends DocItem 
+  case class Code(code: String, size: Double = -1, isFramed: Boolean = false, isNumbered: Boolean = false) extends DocItem 
   case class HRef(url:String, text: String) extends DocItem
   case class Image(file: String, width: Double = -1) extends DocItem
   case class CenterImage(file: String, width: Double = -1) extends DocItem 
+  case class OverlayImage(file: String, x: Double = 0, y: Double = 0, width: Double = -1) extends DocItem
   case class VSkip(size: Double = -1) extends DocItem
   case object LineBreak extends DocItem
   case object ColumnBreak extends DocItem
