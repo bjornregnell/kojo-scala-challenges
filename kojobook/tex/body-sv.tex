@@ -578,29 +578,27 @@ fram(1000)
         
 \section*{\color{OliveGreen}Tips:}
 Du kan också använda dina egna bilder av typen \lstinline{.png} eller \lstinline{.jpg}
-\chapter{Gör en timer}\section*{\color{BrickRed}Uppdrag:}
-Prova programmet nedan och mät din reaktionstid. Hur snabb är du?
+\chapter{Gissa talet}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+val hemlis = slumptal(100)+1
+var svar = indata("Gissa ett tal mellan 1 och 100! ")
+var fortsätt = true
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-object timer {
-  def nu = System.currentTimeMillis  //ger nutid i millisekunder
-  var tid = nu
-  def nollställ = { tid = nu }
-  def mät = nu - tid
-  def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
-    Thread.sleep((slumptal(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+while (fortsätt) {
+    if (svar.toInt < hemlis)
+      svar = indata(svar + " är för LITET, gissa igen!")
+    else if (svar.toInt > hemlis)
+      svar = indata(svar + " är för STORT, gissa igen!")
+    else if (svar.toInt == hemlis)
+      fortsätt = false
 }
-
-utdata("Klicka i utdatafönstret och vänta...")
-timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
-timer.nollställ
-indata("Tryck Enter så snabbt du kan.")
-utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+utdata(hemlis + " är RÄTT svar!")
 \end{lstlisting}
         
-\chapter{Träna multiplikation}\section*{\color{BrickRed}Uppdrag:}
-Prova programmet nedan. Ändra så att man bara tränar 8:ans och 9:ans tabell.
-
+\section*{\color{BrickRed}Uppdrag:}
+Inför en variabel \lstinline{var antalFörsök = 0} och se till att utskriften på slutet blir:\\
+\lstinline{Rätt svar! Du klarade det på 5 gissningar}
+\chapter{Träna multiplikation}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var antalRätt = 0
 val startTid = System.currentTimeMillis / 1000
@@ -619,28 +617,128 @@ val sek = stoppTid - startTid
 utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
 \end{lstlisting}
         
-\chapter{Spara saker i en vektor}\section*{\color{BrickRed}Uppdrag:}
-Prova programmet nedan. Vad skrivs ut? Lägg till fler djur i vektorn.
-
+\section*{\color{BrickRed}Uppdrag:}
+Ändra så att man bara tränar 8:ans och 9:ans tabell.
+\chapter{Spara djur i en vektor}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-var djur = Vector("älg", "ko", "kanin", "kvalster")
-utdata("Första djuret i listan är: " + djur(0))  //platserna i vektorn räknas från 0
-utdata("Andra djuret i listan är:  " + djur(1))
+var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
+utdata("Första djuret i vektorn är: " + djur(0))     //platserna vektorer räknas från 0
+utdata("Andra djuret i vektorn är:  " + djur(1))
 utdata("Det finns så här många djur: " + djur.size)
-utdata("Sista djuret i listan är:  " + djur(djur.size-1))
+utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
 
 val s = slumptal(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
 utdata("Ett slumpmässigt djur: " + djur(s))
 
-djur = djur :+ "Kamel" //lägg till ett djur sist i vektorn
-djur = djur.updated(0, "Dromedar")  //Ändra djuret på plats 0
+djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
+djur = "dromedar" +: djur //lägg till ett djur först i vektorn
+djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
 utdata("Alla djur i vektorn baklänges:")
 djur.foreach{x => utdata(x.reverse)} //för alla x i vektorn: skriv ut x baklänges
 \end{lstlisting}
         
-\chapter{Simulera ett trafikljus}\section*{\color{BrickRed}Uppdrag:}
-Prova programmet nedan. Ändra så att trafikljuset är rött dubbelt så länge.
+\section*{\color{BrickRed}Uppdrag:}
 
+
+\begin{itemize}
+
+\item {Vad skriver programmet i utdatafönstret? Förklara vad som händer.}
+\item {Lägg till fler djur i vektorn.}
+
+\end{itemize}
+
+
+\chapter{Träna glosor}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+val svenska = Vector("dator", "sköldpadda", "cirkel")
+val engelska = Vector("computer", "turtle", "circle")
+var antalRätt = 0
+upprepa(5) {
+  val s = slumptal(3)
+  val glosa = svenska(s)
+  val svar = indata("Vad heter " + glosa + " på engelska?")
+  if (svar == engelska(s)) {
+    utdata("Rätt svar!")
+    antalRätt = antalRätt + 1
+  } else {
+    utdata("Fel svar. Rätt svar är: " + engelska(s))
+  }
+}
+utdata("Du fick" + antalRätt + " rätt.")
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Lägg till fler glosor.}
+\item {Träna på glosor från engelska till svenska.}
+\item {Låt användaren välja hur många frågor innan avslut. Tips: \lstinline{val antal = indata("Ange antal: ").toInt}}
+
+\end{itemize}
+
+
+\chapter{Huvudstadsspelet}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
+def huvudstadsspelet = {
+  println("Välkommen till Huvudstadsspelet!")
+  val stad = Map("Sverige" ->"Stockholm", "Danmark" -> "Köpenhamn", "Skåne" -> "Malmö")
+  var länderKvar = stad.keySet //keySet ger en mängd av alla nycklar i en Map 
+  def slumpLand = scala.util.Random.shuffle(länderKvar.toVector).head
+  while(!länderKvar.isEmpty) {
+    val land = slumpLand
+    val svar = indata("Vad heter huvudstaden i " + land + "?")
+    utdata(s"Du skrev: $svar")
+    if (svar == stad(land)) {
+      utdata("Rätt svar! Du har " + länderKvar.size + " länder kvar!")
+      länderKvar = länderKvar - land  //ta bort land ur mängden länderKvar
+    } else {
+      utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
+    }
+  }
+  utdata(s"TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
+}
+
+toggleFullScreenOutput;  
+setOutputBackground(black);setOutputTextColor(green); setOutputTextFontSize(30)
+upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
+
+huvudstadsspelet
+
+//UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng.
+\end{lstlisting}
+        
+\chapter{Gör en timer}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
+object timer {
+  def nu = System.currentTimeMillis  //ger nutid i millisekunder
+  var tid = nu
+  def nollställ = { tid = nu }
+  def mät = nu - tid
+  def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
+    Thread.sleep((slumptal(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+}
+
+utdata("Klicka i utdatafönstret och vänta...")
+timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
+timer.nollställ
+indata("Tryck Enter så snabbt du kan.")
+utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Prova programmet och mät din reaktionstid. Hur snabb är du?}
+\item {Använd \lstinline{timer} i uppdraget {\it Gissa talet} och lägg till utskriften: \lstinline{Rätt svar! Du klarade det på 5 gissningar och 32 sekunder}}
+
+\end{itemize}
+
+
+\chapter{Simulera ett trafikljus}
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-6.0cm) {\includegraphics[width=3.0cm]{../img/traffic-lights.png}};
 \end{tikzpicture}
@@ -649,19 +747,55 @@ Prova programmet nedan. Ändra så att trafikljuset är rött dubbelt så länge
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 def släckAlla = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
 def ljus(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
-def rött = draw(ljus(red, 100))
-def gult = draw(ljus(yellow, 65))
-def grönt = draw(ljus(green, 30))
+def tändRött = draw(ljus(red, 100))
+def tändGult = draw(ljus(yellow, 65))
+def tändGrönt = draw(ljus(green, 30))
 def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
 
-clear; invisible  
+sudda; osynlig  
 while (true) { //en oändlig loop
   släckAlla
-  rött;  vänta(3)
-  gult;  vänta(1) 
+  tändRött;  vänta(3)
+  tändGult;  vänta(1) 
   släckAlla
-  grönt; vänta(3)
-  gult;  vänta(1)
+  tändGrönt; vänta(3)
+  tändGult;  vänta(1)
 }
 \end{lstlisting}
         
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Hur växlar trafikljuset? Försök förklara vad som händer.}
+\item {Ändra så att trafikljuset är grönt dubbelt så länge.}
+
+\end{itemize}
+
+
+\chapter{Modda pong-spelet}
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Välj menyn Exempel > Animeringar och spel > Pong och prova spelet.}
+\item {Man styr med pil upp och pil ner, samt A och Z.}
+\item {Tryck ESC för att avbryta spelet och undersök koden.}
+\item {Ändra i koden så att bollen blir större.}
+\item {Gör spelplanen till en tennisplan, med grönt underlag, vita linjer och en gul boll.}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics{../img/pong.png}
+\end{center}
+
+\end{multicols}
+
