@@ -435,7 +435,7 @@ utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
     contents=Seq(
       Code("""
 var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-utdata("Första djuret i vektorn är: " + djur(0))     //platserna vektorer räknas från 0
+utdata("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
 utdata("Andra djuret i vektorn är:  " + djur(1))
 utdata("Det finns så här många djur: " + djur.size)
 utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
@@ -563,6 +563,182 @@ while (true) { //en oändlig loop
     )
   ),
 //------------------------------------------------------
+  Chapter(id="key-control", head="Styr paddan med tangentbordet", 
+    template=MultiColumn(2),
+    contents=Seq(
+      Code("""
+sudda; sakta(0)
+activateCanvas()
+
+animate { fram(1) }
+
+onKeyPress { k =>
+  k match {
+    case Kc.VK_LEFT =>   vänster(5)
+    case Kc.VK_RIGHT =>  höger(5)
+    case Kc.VK_SPACE =>  fram(5)
+    case _ => 
+      utdata("Annan tangent: " + k)
+  }
+}
+      """.trim, size = 18),
+      ColumnBreak,
+      taskHead,
+      Itemize(
+        "Skriv {:Kc.:} och tryck {:Ctrl+Alt+Mellanslag:} och kolla vad de olika tangenterna heter.", 
+        "Gör {:pennaUpp:} om man trycker pil upp",
+        "Gör {:pennaNer:} om man trycker pil ner",
+        "Gör {:färg(blå):} om man trycker B",
+        "Gör {:färg(röd):} om man trycker R",
+        "Öka eller minska hastigheten om man trycker + eller -"
+      )   
+    )
+  ),
+//------------------------------------------------------
+  Chapter(id="mouse-control", head="Styr paddan med musen", 
+    template=MultiColumn(2),
+    contents=Seq(
+      Code("""
+sudda; sakta(100)
+activateCanvas()
+
+var rita = true
+
+onKeyPress { k =>
+  k match {
+    case Kc.VK_DOWN => 
+      penDown()
+      rita = true
+    case Kc.VK_UP => 
+      penUp()
+      rita = false
+    case _ => 
+      utdata("Annan tangent: " + k)
+  }
+}
+
+onMouseClick { (x, y) =>
+  if (rita) moveTo(x, y) else jumpTo(x, y)
+}
+      """.trim, size = 16),
+      ColumnBreak,
+      taskHead,
+      Itemize(
+        "Gör {:fyll(svart):} om man trycker på F",
+        "Inför en variabel {:var fyllNästa = true:} och i fallet att man trycker på {:Kc.VK_F:} gör:"
+      ), Code("""
+      if (fyllNästa) {
+        fyll(svart)
+        fyllNästa=false
+      } else {
+        fyll(genomskinlig)
+        fyllNästa=true
+      }
+      """)   
+    )
+  ),
+//------------------------------------------------------
+  Chapter(id="object-bankaccount", head="Gör ett ditt eget bankkonto", 
+    template=MultiColumn(2),
+    contents=Seq(
+      Code("""
+object mittKonto {
+  val nummer = 123456
+  var saldo = 0.0
+  def in(belopp: Decimaltal) = {
+    saldo = saldo + belopp 
+  }
+  def ut(belopp: Decimaltal) = { 
+    saldo = saldo - belopp 
+  }
+  def visaSaldo() = {
+    utdata("Konto nummer: " + nummer) 
+    utdata("       saldo: " + saldo)
+  }
+}
+
+mittKonto.visaSaldo()
+mittKonto.in(100)
+mittKonto.visaSaldo()
+mittKonto.ut(10)
+mittKonto.visaSaldo()
+      """.trim, size = 16),
+      ColumnBreak,
+      taskHead,
+      Itemize(
+        "Vad är saldot efter att programmet kört klart? Förklara vad som händer.",
+        "Gör så att det inte går att ta ut mer pengar än som finns på kontot.",
+        "Lägg till {:val maxBelopp = 5000:} och kolla så att man inte kan ta ut mer än {:maxBelopp:} åt gången."
+      )
+    )
+  ),
+//------------------------------------------------------
+  Chapter(id="class-bankaccount", head="Gör många konto med en klass", 
+    template=MultiColumn(2),
+    contents=Seq(Para("Om man vill skapa många konto behövs en klass. Med {:new:} skapas nya objekt. Varje objekt får eget nummer och saldo."),
+      Code("""
+class Konto(nummer: Heltal) {
+  var saldo = 0.0 
+  def in(belopp: Decimaltal) = {
+    saldo = saldo + belopp
+  }
+  def ut(belopp: Decimaltal) = {
+    saldo = saldo - belopp
+  }
+  def visaSaldo() = 
+    utdata(s"Konto $nummer: $saldo")
+}
+
+val konto1 = new Konto(12345) //new skapar objekt 
+val konto2 = new Konto(67890) //ännu ett objekt
+
+konto1.in(99)
+konto2.in(88)
+konto1.ut(57)
+konto1.visaSaldo()
+konto2.visaSaldo()
+      """.trim, size = 14),
+      ColumnBreak,
+      taskHead,
+      Itemize(
+        "Vad är saldot på de olika kontona när programmet kört klart? Förklara vad som händer.",
+        "Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.",
+        "Lägg till en klassparameter {:namn: String:} som ska innehålla namnet på kontoägaren när objekt skapas.",
+        "Gör så att även {:namn:} skrivs ut när {:visaSaldo:} anropas"
+      )
+    )
+  ),
+//------------------------------------------------------
+  Chapter(id="eliza", head="Prata med datorn", 
+    contents=Seq(
+      Code("""
+setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
+utdata("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
+def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
+val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
+var svar = "?"
+val öppning = "Vad vill du prata om?"
+var ord = Vector("navelludd", "ketchupglass", "jultomten", "örngott") 
+while (svar != "hej då") {
+  val t = if (svar == "?") öppning 
+    else if (svar == "nej") "Nähä." 
+    else if(svar == "ja") "Jaha." 
+    else if (svar.length < 4) "Jasså..." 
+    else slumpa(ledtexter) + " " + slumpa(ord) + "?"
+  svar = indata(t).toLowerCase
+  ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
+} 
+utdata("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+
+//Uppdrag:
+// (1) Prova programmet och försök att förklara vad som händer.
+// (2) När avslutas while-loopen?
+// (3) Lägg till fler strängar i vektorerna ledtexter och ord
+// (4) Lägg till fler bra svar på några korta ord utöver "nej" och "ja"
+      """.trim, size = 13)
+    )
+  ),
+//------------------------------------------------------
   Chapter(id="modify-pong", head="Modda pong-spelet", 
     template=TextWithImage("pong.png"),
     contents=Seq(
@@ -574,7 +750,7 @@ while (true) { //en oändlig loop
       "Ändra i koden så att bollen blir större.",
       "Gör spelplanen till en tennisplan, med grönt underlag, vita linjer och en gul boll.")   
     )
-  )
+  )  
     
 )
 

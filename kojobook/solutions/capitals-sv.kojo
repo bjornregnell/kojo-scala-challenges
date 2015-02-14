@@ -22,4 +22,5 @@ upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
 
 huvudstadsspelet
 
+
 // *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng. 

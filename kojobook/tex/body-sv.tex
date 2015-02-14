@@ -622,7 +622,7 @@ utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
 \chapter{Spara djur i en vektor}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-utdata("Första djuret i vektorn är: " + djur(0))     //platserna vektorer räknas från 0
+utdata("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
 utdata("Andra djuret i vektorn är:  " + djur(1))
 utdata("Det finns så här många djur: " + djur.size)
 utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
@@ -706,7 +706,7 @@ upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
 
 huvudstadsspelet
 
-//UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng.
+// *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng.
 \end{lstlisting}
         
 \chapter{Gör en timer}
@@ -774,6 +774,226 @@ while (true) { //en oändlig loop
 \end{itemize}
 
 
+\chapter{Styr paddan med tangentbordet}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
+sudda; sakta(0)
+activateCanvas()
+
+animate { fram(1) }
+
+onKeyPress { k =>
+  k match {
+    case Kc.VK_LEFT =>   vänster(5)
+    case Kc.VK_RIGHT =>  höger(5)
+    case Kc.VK_SPACE =>  fram(5)
+    case _ => 
+      utdata("Annan tangent: " + k)
+  }
+}
+\end{lstlisting}
+        
+
+
+\columnbreak
+
+
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Skriv \lstinline{Kc.} och tryck \lstinline{Ctrl+Alt+Mellanslag} och kolla vad de olika tangenterna heter.}
+\item {Gör \lstinline{pennaUpp} om man trycker pil upp}
+\item {Gör \lstinline{pennaNer} om man trycker pil ner}
+\item {Gör \lstinline{färg(blå)} om man trycker B}
+\item {Gör \lstinline{färg(röd)} om man trycker R}
+\item {Öka eller minska hastigheten om man trycker + eller -}
+
+\end{itemize}
+
+
+\end{multicols}
+
+\chapter{Styr paddan med musen}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+sudda; sakta(100)
+activateCanvas()
+
+var rita = true
+
+onKeyPress { k =>
+  k match {
+    case Kc.VK_DOWN => 
+      penDown()
+      rita = true
+    case Kc.VK_UP => 
+      penUp()
+      rita = false
+    case _ => 
+      utdata("Annan tangent: " + k)
+  }
+}
+
+onMouseClick { (x, y) =>
+  if (rita) moveTo(x, y) else jumpTo(x, y)
+}
+\end{lstlisting}
+        
+
+
+\columnbreak
+
+
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Gör \lstinline{fyll(svart)} om man trycker på F}
+\item {Inför en variabel \lstinline{var fyllNästa = true} och i fallet att man trycker på \lstinline{Kc.VK_F} gör:}
+
+\end{itemize}
+
+
+
+\begin{lstlisting}[numbers=none]
+
+      if (fyllNästa) {
+        fyll(svart)
+        fyllNästa=false
+      } else {
+        fyll(genomskinlig)
+        fyllNästa=true
+      }
+      
+\end{lstlisting}
+        
+\end{multicols}
+
+\chapter{Gör ett ditt eget bankkonto}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+object mittKonto {
+  val nummer = 123456
+  var saldo = 0.0
+  def in(belopp: Decimaltal) = {
+    saldo = saldo + belopp 
+  }
+  def ut(belopp: Decimaltal) = { 
+    saldo = saldo - belopp 
+  }
+  def visaSaldo() = {
+    utdata("Konto nummer: " + nummer) 
+    utdata("       saldo: " + saldo)
+  }
+}
+
+mittKonto.visaSaldo()
+mittKonto.in(100)
+mittKonto.visaSaldo()
+mittKonto.ut(10)
+mittKonto.visaSaldo()
+\end{lstlisting}
+        
+
+
+\columnbreak
+
+
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Vad är saldot efter att programmet kört klart? Förklara vad som händer.}
+\item {Gör så att det inte går att ta ut mer pengar än som finns på kontot.}
+\item {Lägg till \lstinline{val maxBelopp = 5000} och kolla så att man inte kan ta ut mer än \lstinline{maxBelopp} åt gången.}
+
+\end{itemize}
+
+
+\end{multicols}
+
+\chapter{Gör många konto med en klass}
+\begin{multicols}{2}
+Om man vill skapa många konto behövs en klass. Med \lstinline{new} skapas nya objekt. Varje objekt får eget nummer och saldo.
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
+class Konto(nummer: Heltal) {
+  var saldo = 0.0 
+  def in(belopp: Decimaltal) = {
+    saldo = saldo + belopp
+  }
+  def ut(belopp: Decimaltal) = {
+    saldo = saldo - belopp
+  }
+  def visaSaldo() = 
+    utdata(s"Konto $nummer: $saldo")
+}
+
+val konto1 = new Konto(12345) //new skapar objekt 
+val konto2 = new Konto(67890) //ännu ett objekt
+
+konto1.in(99)
+konto2.in(88)
+konto1.ut(57)
+konto1.visaSaldo()
+konto2.visaSaldo()
+\end{lstlisting}
+        
+
+
+\columnbreak
+
+
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Vad är saldot på de olika kontona när programmet kört klart? Förklara vad som händer.}
+\item {Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.}
+\item {Lägg till en klassparameter \lstinline{namn: String} som ska innehålla namnet på kontoägaren när objekt skapas.}
+\item {Gör så att även \lstinline{namn} skrivs ut när \lstinline{visaSaldo} anropas}
+
+\end{itemize}
+
+
+\end{multicols}
+
+\chapter{Prata med datorn}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
+clearOutput;  
+setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
+utdata("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
+def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
+val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
+var svar = "?"
+val öppning = "Vad vill du prata om?"
+var ord = Vector("navelludd", "ketchupglass", "jultomten", "örngott") 
+while (svar != "hej då") {
+  val t = if (svar == "?") öppning 
+    else if (svar == "nej") "Nähä." 
+    else if(svar == "ja") "Jaha." 
+    else if (svar.length < 4) "Jasså..." 
+    else slumpa(ledtexter) + " " + slumpa(ord) + "?"
+  svar = indata(t).toLowerCase
+  ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
+} 
+utdata("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+
+//Uppdrag:
+// (1) Prova programmet och försök att förklara vad som händer.
+// (2) När avslutas while-loopen?
+// (3) Lägg till fler strängar i vektorerna ledtexter och ord
+// (4) Lägg till fler bra svar på några korta ord utöver "nej" och "ja"
+\end{lstlisting}
+        
 \chapter{Modda pong-spelet}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Uppdrag:}
