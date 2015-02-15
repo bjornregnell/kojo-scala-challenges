@@ -13,8 +13,13 @@ onKeyPress { k =>
       penUp()
       rita = false
     case Kc.VK_F => 
-      if (fyllNästa) {fyll(svart); fyllNästa=false}
-      else {fyll(genomskinlig); fyllNästa=true}
+      if (fyllNästa) {
+        fyll(svart)
+        fyllNästa=false
+      } else {
+        fyll(genomskinlig)
+        fyllNästa=true
+      }
     case _ => 
       utdata("Annan tangent: " + k)
   }

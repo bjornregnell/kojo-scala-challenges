@@ -80,14 +80,45 @@ fram(300)
 hoppa(100)
 hoppaTill(25,-28)
 skriv("FELIX är bäst")
-       """.trim, size=24),
+färg(lila)
+fyll(grön)
+       """.trim, size=20),
       Para("Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:"), Image("mousepos.png", 6),
       ColumnBreak,
       CenterImage("man.png",4.5), VSkip(2), CenterImage("alien.png",9)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square", head="Gör din egen funktion", 
+  Chapter(id="check-speed", head="Hur snabb är din dator?", 
+    //template=MultiColumn(2),
+    contents=Seq(
+      Para( "Den första elektroniska datorn hette {*ENIAC*} och kunde räkna till 5000 på en sekund.",
+        "I Kojo finns en funktion {:räknaTill:} som mäter hur snabbt datorn kan räkna.",
+        "När jag kör {:räknaTill(5000):} på min snabba dator skrivs detta i utdata-fönstret:"),
+      Code("""
+*** Räknar från 1 till ... 5000 *** KLAR!
+Det tog 0.32 millisekunder.
+      """),
+      taskHead, 
+      Itemize("Kör {:räknaTill(5000):} och kolla om din dator är snabbare än min.",
+              "Hur lång tid tar det för din dator att räkna till en miljon?",
+              "Hur långt hinner din dator räkna till på en sekund?")      
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="trace", head="Spåra programmet", template=TextWithImage("trace.png"), 
+    contents=Seq(
+      taskHead, Itemize(
+        "Skriv ett program som ritar ett trappsteg.",
+        "Tryck på den brandgula play-knappen.",
+        "Klicka på ett av anropen: {:CALL fram:}. Vad händer i Ritfönstret?",
+        "När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. ",
+        "Lägg till fler satser i ditt program och se vad som händer när du spårar.",
+        "Stäng fönstret {/Programspårning/} när du är klar.")
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="def-square", head="Gör din egen funktion med {:def:}", 
     contents=Seq(
       Para("Med {:def:} kan du göra egna {/funktioner/} som du själv väljer namn på."), 
       Code("""
@@ -215,7 +246,7 @@ polygon(7)
         "Prova programmet nedan.",
         "Prova ändra antalet sidor och vinkel.",
         "Fyll polygonerna med färg."),
-      OverlayImage("polygons-circle.png",x=21,y=1,width=12),
+      OverlayImage("polygons-circle.png",x=21,y=0,width=12),
       Code("""
 def polygon(n: Heltal, sidlängd: Heltal) = upprepa(n){
   fram(sidlängd)
@@ -227,6 +258,46 @@ def snurra(n: Heltal, vinkel: Heltal, sidlängd: Heltal) =
 sudda; sakta(5)
 snurra(7, 10, 100)
        """.trim,size=16)
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="show-value", head="Värden och uttryck", 
+    template = MultiColumn(2),
+    contents=Seq(
+      taskHead, 
+      Itemize("Skriv {:1 + 1:} och tryck på den blå play-knappen. Då skapar kojo en grön kommentar.", 
+        "Kommentaren visar att värdet av uttrycket {:1 + 1:} är {:2:} och att typen är {:Int:}, som betyder {:Heltal:}.",
+        "Gör fler uträkningar. Vad det blir för värde och typ?"),
+      Code("""
+5 * 5
+10 + 2 * 5
+"hej" + "på" + "dej"
+5 / 2
+5 / 2.0
+5 % 2
+      """.trim),
+      ColumnBreak, Image("show-value.png", width=12),
+      hintHead, Itemize("Med {:/:} mellan heltal blir det heltalsdivision och decimalerna kastas bort. För att det ska bli division med decimaler måste minst ett av talen vara ett decimaltal.","Med {:%:} får du resten vid en heltalsdivision.")
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="val", head="Sätt namn på värden med {:val:}", 
+    template=TextWithImage("val.png",width=12),
+    contents=Seq(
+      taskHead,
+      Para("Med {:val:} kan du koppla ett namn till ett värde. Namnet kan sedan användas istället för värdet. Prova programmet nedan. Vad skriver paddan?"),
+      Code("""
+val x = 10
+val y = 5
+val gurka = x + y
+val banan = x * y
+
+sudda
+fram; skriv(banan)
+fram; skriv(gurka)
+fram; skriv(y)
+fram; skriv(x)
+      """.trim)
     )
   ), 
 //------------------------------------------------------
@@ -325,6 +396,29 @@ upprepa(100){
     )
   ), 
 //------------------------------------------------------
+  Chapter(id="var", head="Skapa en variabel med {:var:}", 
+    contents=Seq(
+      Para("Med {:var:} kan koppla ett namn till ett värde.", 
+        "Du får då en variabel, som kan tilldelas ett nytt värde så här:"),
+      Code("""
+var gurka = 1
+gurka = 1 + 1   //först räknas 1 + 1 ut, sedan blir gurka 2        
+        """),
+     taskHead, 
+       Para("Prova programmet nedan. Vad skriver paddan?"),
+      Code("""
+var i = 0
+
+sudda
+upprepa(10){
+  i = i + 1
+  fram; skriv(i)
+}
+       """.trim,size=16),
+      hintHead, Itemize("I satsen {:i = i + 1:} tilldelas {:i:} ett nytt värde som blir det {/gamla/} värdet av {:i:} plus {:1:}")
+    )
+  ), 
+//------------------------------------------------------
   Chapter(id="flowers", head="Rita många blommor", 
     contents=Seq(
       taskHead,       
@@ -348,41 +442,30 @@ upprepa(5){
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="check-speed", head="Hur snabb är din dator?", 
-    //template=MultiColumn(2),
-    contents=Seq(
-      Para( "I Kojo finns en funktion {:räknaTill:} som mäter hur snabbt datorn kan räkna.",
-      "När jag kör {:räknaTill(5000):} på min snabba dator skrivs detta i utdata-fönstret:"),
-      Code("""
-*** Räknar från 1 till ... 5000 *** KLAR!
-Det tog 0.32 millisekunder.
-      """),
-      taskHead, 
-      Itemize("Kör {:räknaTill(5000):} och kolla om din dator är snabbare än min.",
-              "Hur lång tid tar det för din dator att räkna till en miljon?",
-              "Hur långt hinner din dator räkna till på en sekund?")      
-    )
-  ), 
-//------------------------------------------------------
   Chapter(id="costume", head="Byt kostym på paddan", 
     contents=Seq(
       taskHead,       
       Para("Ladda ner mediafiler från Kojos hemsida:"),
-      HRef("http://www.kogics.net/kojo-download#media", "www.kogics.net/kojo-download\\#media"), LineBreak,
-      Para("Skapa en mapp {:Kojo:} i din hemkatalog om det inte redan finns en sådan.",
-      "Packa upp filen {:scratch-media.zip:} och lägg mappen Media i mappen Kojo.",
+      HRef("http://www.kogics.net/kojo-download#media", "www.kogics.net/kojo-download\\#media"), 
+      Itemize("Packa upp filen {:scratch-media.zip:} och leta rätt på hästbilden {:horse1-a.png:} i mappen {:Media/Costumes/Animals:}", 
+      "Lägg filen {:horse1-a.png:} i samma mapp som du har ditt program.",
       "Prova att byta kostym på paddan till en häst så här:"),
       OverlayImage("horse1-a.png",x=22, y= -2.5),
       Code("""
 sudda
-kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png")
+kostym("horse1-a.png")  
 sakta(2000)
 fram(1000) 
       """.trim,size=20),
       hintHead,
-      Para("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}")      
+      Itemize("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}",
+      """Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel {:kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png"):} där {:~:} betyder din hemkatalog.""")      
     )
   ), 
+//------------------------------------------------------
+  Chapter(id="new", head="Gör många paddor", 
+    contents=Seq()
+  ),
 //------------------------------------------------------
   Chapter(id="guess-the-number", head="Gissa talet", 
     contents=Seq(

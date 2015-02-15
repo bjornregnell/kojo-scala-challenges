@@ -123,13 +123,15 @@ upprepa(4){ fram; höger }
 Rita en gubbe som du själv vill.
 \section*{\color{OliveGreen}Tips:}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{24}{29}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 hoppa
 vänster(180)
 fram(300)
 hoppa(100)
 hoppaTill(25,-28)
 skriv("FELIX är bäst")
+färg(lila)
+fyll(grön)
 \end{lstlisting}
         
 Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:
@@ -150,7 +152,56 @@ Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstr
 
 \end{multicols}
 
-\chapter{Gör din egen funktion}Med \lstinline{def} kan du göra egna {\it funktioner} som du själv väljer namn på.
+\chapter{Hur snabb är din dator?}Den första elektroniska datorn hette {\bf ENIAC} och kunde räkna till 5000 på en sekund.\\
+I Kojo finns en funktion \lstinline{räknaTill} som mäter hur snabbt datorn kan räkna.\\
+När jag kör \lstinline{räknaTill(5000)} på min snabba dator skrivs detta i utdata-fönstret:
+
+\begin{lstlisting}[numbers=none]
+
+*** Räknar från 1 till ... 5000 *** KLAR!
+Det tog 0.32 millisekunder.
+      
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Kör \lstinline{räknaTill(5000)} och kolla om din dator är snabbare än min.}
+\item {Hur lång tid tar det för din dator att räkna till en miljon?}
+\item {Hur långt hinner din dator räkna till på en sekund?}
+
+\end{itemize}
+
+
+\chapter{Spåra programmet}
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Skriv ett program som ritar ett trappsteg.}
+\item {Tryck på den brandgula play-knappen.}
+\item {Klicka på ett av anropen: \lstinline{CALL fram}. Vad händer i Ritfönstret?}
+\item {När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. }
+\item {Lägg till fler satser i ditt program och se vad som händer när du spårar.}
+\item {Stäng fönstret {\it Programspårning} när du är klar.}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics{../img/trace.png}
+\end{center}
+
+\end{multicols}
+
+\chapter{Gör din egen funktion med \lstinline{def}}Med \lstinline{def} kan du göra egna {\it funktioner} som du själv väljer namn på.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 def kvadrat =  upprepa(4){ fram; höger }  
@@ -355,7 +406,7 @@ polygon(7)
 
 
 \begin{tikzpicture}[overlay]
-\node at (21.0cm,1.0cm) {\includegraphics[width=12.0cm]{../img/polygons-circle.png}};
+\node at (21.0cm,0.0cm) {\includegraphics[width=12.0cm]{../img/polygons-circle.png}};
 \end{tikzpicture}
   
 
@@ -371,6 +422,76 @@ sudda; sakta(5)
 snurra(7, 10, 100)
 \end{lstlisting}
         
+\chapter{Värden och uttryck}
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Skriv \lstinline{1 + 1} och tryck på den blå play-knappen. Då skapar kojo en grön kommentar.}
+\item {Kommentaren visar att värdet av uttrycket \lstinline{1 + 1} är \lstinline{2} och att typen är \lstinline{Int}, som betyder \lstinline{Heltal}.}
+\item {Gör fler uträkningar. Vad det blir för värde och typ?}
+
+\end{itemize}
+
+
+
+\begin{lstlisting}[numbers=none]
+5 * 5
+10 + 2 * 5
+"hej" + "på" + "dej"
+5 / 2
+5 / 2.0
+5 % 2
+\end{lstlisting}
+        
+
+
+\columnbreak
+
+
+\includegraphics[width=12.0cm]{../img/show-value.png}
+\section*{\color{OliveGreen}Tips:}
+
+
+\begin{itemize}
+
+\item {Med \lstinline{/} mellan heltal blir det heltalsdivision och decimalerna kastas bort. För att det ska bli division med decimaler måste minst ett av talen vara ett decimaltal.}
+\item {Med \lstinline{%} får du resten vid en heltalsdivision.}
+
+\end{itemize}
+
+
+\end{multicols}
+
+\chapter{Sätt namn på värden med \lstinline{val}}
+\begin{multicols}{2}
+\section*{\color{BrickRed}Uppdrag:}
+Med \lstinline{val} kan du koppla ett namn till ett värde. Namnet kan sedan användas istället för värdet. Prova programmet nedan. Vad skriver paddan?
+
+\begin{lstlisting}[numbers=none]
+val x = 10
+val y = 5
+val gurka = x + y
+val banan = x * y
+
+sudda
+fram; skriv(banan)
+fram; skriv(gurka)
+fram; skriv(y)
+fram; skriv(x)
+\end{lstlisting}
+        
+
+\columnbreak
+
+\begin{center}
+\includegraphics[width=12.0cm]{../img/val.png}
+\end{center}
+
+\end{multicols}
+
 \chapter{Slumptal}\section*{\color{BrickRed}Uppdrag:}
 
 
@@ -504,6 +625,39 @@ upprepa(100){
 }
 \end{lstlisting}
         
+\chapter{Skapa en variabel med \lstinline{var}}Med \lstinline{var} kan koppla ett namn till ett värde.\\
+Du får då en variabel, som kan tilldelas ett nytt värde så här:
+
+\begin{lstlisting}[numbers=none]
+
+var gurka = 1
+gurka = 1 + 1   //först räknas 1 + 1 ut, sedan blir gurka 2        
+        
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+Prova programmet nedan. Vad skriver paddan?
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+var i = 0
+
+sudda
+upprepa(10){
+  i = i + 1
+  fram; skriv(i)
+}
+\end{lstlisting}
+        
+\section*{\color{OliveGreen}Tips:}
+
+
+\begin{itemize}
+
+\item {I satsen \lstinline{i = i + 1} tilldelas \lstinline{i} ett nytt värde som blir det {\it gamla} värdet av \lstinline{i} plus \lstinline{1}}
+
+\end{itemize}
+
+
 \chapter{Rita många blommor}\section*{\color{BrickRed}Uppdrag:}
 
 
@@ -533,36 +687,20 @@ upprepa(5){
 }
 \end{lstlisting}
         
-\chapter{Hur snabb är din dator?}I Kojo finns en funktion \lstinline{räknaTill} som mäter hur snabbt datorn kan räkna.\\
-När jag kör \lstinline{räknaTill(5000)} på min snabba dator skrivs detta i utdata-fönstret:
-
-\begin{lstlisting}[numbers=none]
-
-*** Räknar från 1 till ... 5000 *** KLAR!
-Det tog 0.32 millisekunder.
-      
-\end{lstlisting}
-        
-\section*{\color{BrickRed}Uppdrag:}
+\chapter{Byt kostym på paddan}\section*{\color{BrickRed}Uppdrag:}
+Ladda ner mediafiler från Kojos hemsida:
+\href{http://www.kogics.net/kojo-download#media}{www.kogics.net/kojo-download\#media}
 
 
 \begin{itemize}
 
-\item {Kör \lstinline{räknaTill(5000)} och kolla om din dator är snabbare än min.}
-\item {Hur lång tid tar det för din dator att räkna till en miljon?}
-\item {Hur långt hinner din dator räkna till på en sekund?}
+\item {Packa upp filen \lstinline{scratch-media.zip} och leta rätt på hästbilden \lstinline{horse1-a.png} i mappen \lstinline{Media/Costumes/Animals}}
+\item {Lägg filen \lstinline{horse1-a.png} i samma mapp som du har ditt program.}
+\item {Prova att byta kostym på paddan till en häst så här:}
 
 \end{itemize}
 
 
-\chapter{Byt kostym på paddan}\section*{\color{BrickRed}Uppdrag:}
-Ladda ner mediafiler från Kojos hemsida:
-\href{http://www.kogics.net/kojo-download#media}{www.kogics.net/kojo-download\#media}
-\\
-
-Skapa en mapp \lstinline{Kojo} i din hemkatalog om det inte redan finns en sådan.\\
-Packa upp filen \lstinline{scratch-media.zip} och lägg mappen Media i mappen Kojo.\\
-Prova att byta kostym på paddan till en häst så här:
 
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-2.5cm) {\includegraphics{../img/horse1-a.png}};
@@ -571,13 +709,23 @@ Prova att byta kostym på paddan till en häst så här:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 sudda
-kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png")
+kostym("horse1-a.png")  
 sakta(2000)
 fram(1000)
 \end{lstlisting}
         
 \section*{\color{OliveGreen}Tips:}
-Du kan också använda dina egna bilder av typen \lstinline{.png} eller \lstinline{.jpg}
+
+
+\begin{itemize}
+
+\item {Du kan också använda dina egna bilder av typen \lstinline{.png} eller \lstinline{.jpg}}
+\item {Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel \lstinline{kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png")} där \lstinline{~} betyder din hemkatalog.}
+
+\end{itemize}
+
+
+\chapter{Gör många paddor}
 \chapter{Gissa talet}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 val hemlis = slumptal(100)+1
@@ -968,7 +1116,6 @@ konto2.visaSaldo()
 
 \chapter{Prata med datorn}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
-clearOutput;  
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
 utdata("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
 def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
