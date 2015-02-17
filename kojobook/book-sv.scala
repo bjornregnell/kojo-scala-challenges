@@ -465,6 +465,67 @@ fram(1000)
 //------------------------------------------------------
   Chapter(id="new", head="Gör många paddor", 
     contents=Seq()
+  ), 
+//------------------------------------------------------
+  Chapter(id="if", head="Alternativ med {:if:}", 
+    contents=Seq(
+      Para("Med en {:if:}-sats kan datorn välja mellan två olika alternativ."),
+      Code("""
+sudda; osynlig
+if (true) skriv("sant") else skriv("falskt")
+     """.trim, size = 20),
+      taskHead, Itemize(
+        "Ändra {:true:} till {:false:} och kolla vad paddan skriver.",
+        "Ändra villkoret till {:2 > 1:} och kolla vad paddan skriver.",
+        "Ändra villkoret till {:2 < 1:} och kolla vad paddan skriver.",
+        "Förklara hur en {:if:}-sats fungerar."
+      ),
+      hintHead, Itemize(
+        "Om villkoret efter {:if:} är {:true:} väljs det som står efter villkoret.",
+        "Om villkoret efter {:if:} är {:false:} väljs det som står efter {:else:}."
+      )
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="if-input", head="Reagera på vad användaren gör", 
+    contents=Seq(
+      Code("""
+suddaUtdata; setOutputTextFontSize(35)
+val lösenord = "gurka"
+val fråga     = "Vad är lösenordet?"
+val rätt      = "Kassaskåpet är öppet!"
+val fel       = "Du får inte komma in!"
+val svar = indata(fråga)  //vänta på svar från användaren
+val meddelande = if (svar == lösenord) rätt else fel
+utdata(meddelande)
+     """.trim, size = 20),
+      taskHead, Itemize(
+        "Prova programmet och förklara vad som händer.",
+        "Ändra lösenord, fråga och vad som skrivs ut när det blev rätt ocv fel.",
+        "Fråga även efter användarnamn och lägg till användarnamnet i utskriften."
+      )
+    )
+  ), 
+//------------------------------------------------------
+  Chapter(id="while", head="Gör en {:while:}-loop", 
+    contents=Seq(
+      Para("Med en {:while:}-loop kan datorn upprepa satser så länge ett villkor är sant."),
+      Code("""
+sudda; osynlig; sakta(250); suddaUtdata
+var x = 200
+while (x > 0) {  //kolla villkoret före varje runda 
+  fram(x); höger
+  skriv(x) 
+  x = x - 12
+}
+utdata("x är nu: " + x)
+     """.trim, size = 22),
+      taskHead, Itemize(
+        "Vad skrivs ut i utdatafönstret? Varför?",
+        "Spåra programmet med den brandgula playknappen och undersök varje steg.",
+        "Ändra minskningen av {:x:} från {:12:} till {:20:}. Förklara vad som händer."
+      )
+    )
   ),
 //------------------------------------------------------
   Chapter(id="guess-the-number", head="Gissa talet", 

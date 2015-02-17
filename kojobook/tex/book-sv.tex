@@ -3,8 +3,7 @@
 \usepackage[swedish]{babel}	% Swedish hyphenation and content headings
 \usepackage{fontspec}
 
-%\usepackage[scaled]{beramono}
-%\setmonofont{Bera Mono}
+%\setmonofont{Bitstream Vera Mono}
 \usepackage[T1]{fontenc}		% Allow Swedish, German etc. letters
 \DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
 
@@ -18,7 +17,8 @@
 \usepackage[scaled]{uarial} %Arial
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
-\usepackage{inconsolata}
+\usepackage[scaled=1.02]{inconsolata}
+%\usepackage[scaled]{beramono}
 \addto\captionsswedish{%
 \def\contentsname{Innehåll}}
 \usepackage{url}
@@ -70,7 +70,7 @@
   belowskip=3mm,
   %framesep=2cm,xleftmargin=-10pt,xrightmargin=10pt,
   showstringspaces=false,
-  columns=flexible,
+  columns=flexible,%flexible ,%fixed
   basicstyle={\ttfamily\selectfont},
   keywordstyle=\bf\ttfamily\selectfont\color{blue},
   commentstyle=\color{dkgreen},

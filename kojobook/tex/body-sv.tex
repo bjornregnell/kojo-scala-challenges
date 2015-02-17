@@ -726,6 +726,86 @@ fram(1000)
 
 
 \chapter{Gör många paddor}
+\chapter{Alternativ med \lstinline{if}}Med en \lstinline{if}-sats kan datorn välja mellan två olika alternativ.
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+sudda; osynlig
+if (true) skriv("sant") else skriv("falskt")
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Ändra \lstinline{true} till \lstinline{false} och kolla vad paddan skriver.}
+\item {Ändra villkoret till \lstinline{2 > 1} och kolla vad paddan skriver.}
+\item {Ändra villkoret till \lstinline{2 < 1} och kolla vad paddan skriver.}
+\item {Förklara hur en \lstinline{if}-sats fungerar.}
+
+\end{itemize}
+
+
+\section*{\color{OliveGreen}Tips:}
+
+
+\begin{itemize}
+
+\item {Om villkoret efter \lstinline{if} är \lstinline{true} väljs det som står efter villkoret.}
+\item {Om villkoret efter \lstinline{if} är \lstinline{false} väljs det som står efter \lstinline{else}.}
+
+\end{itemize}
+
+
+\chapter{Reagera på vad användaren gör}
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+suddaUtdata; setOutputTextFontSize(35)
+val lösenord = "gurka"
+val fråga     = "Vad är lösenordet?"
+val rätt      = "Kassaskåpet är öppet!"
+val fel       = "Du får inte komma in!"
+val svar = indata(fråga)  //vänta på svar från användaren
+val meddelande = if (svar == lösenord) rätt else fel
+utdata(meddelande)
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Prova programmet och förklara vad som händer.}
+\item {Ändra lösenord, fråga och vad som skrivs ut när det blev rätt ocv fel.}
+\item {Fråga även efter användarnamn och lägg till användarnamnet i utskriften.}
+
+\end{itemize}
+
+
+\chapter{Gör en \lstinline{while}-loop}Med en \lstinline{while}-loop kan datorn upprepa satser så länge ett villkor är sant.
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
+sudda; osynlig; sakta(250); suddaUtdata
+var x = 200
+while (x > 0) {  //kolla villkoret före varje runda 
+  fram(x); höger
+  skriv(x) 
+  x = x - 12
+}
+utdata("x är nu: " + x)
+\end{lstlisting}
+        
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Vad skrivs ut i utdatafönstret? Varför?}
+\item {Spåra programmet med den brandgula playknappen och undersök varje steg.}
+\item {Ändra minskningen av \lstinline{x} från \lstinline{12} till \lstinline{20}. Förklara vad som händer.}
+
+\end{itemize}
+
+
 \chapter{Gissa talet}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 val hemlis = slumptal(100)+1
