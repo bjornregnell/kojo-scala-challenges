@@ -463,9 +463,9 @@ fram(1000)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="new", head="Gör många paddor", 
-    contents=Seq()
-  ), 
+//  Chapter(id="new", head="Gör många paddor", 
+//    contents=Seq()
+//  ), 
 //------------------------------------------------------
   Chapter(id="if", head="Alternativ med {:if:}", 
     contents=Seq(
