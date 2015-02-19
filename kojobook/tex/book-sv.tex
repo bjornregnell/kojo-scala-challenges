@@ -9,7 +9,7 @@
 
 
 \usepackage{titling}
-\usepackage[left=2cm, right=2cm,bottom=2cm,top=1cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
+\usepackage[left=2cm, right=2cm,bottom=3cm,top=2cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
 
 \usepackage{bookman}
 \renewcommand{\familydefault}{\sfdefault}
@@ -22,7 +22,7 @@
 \addto\captionsswedish{%
 \def\contentsname{Innehåll}}
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{wrapfig}
 \usepackage{titlepic, graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -34,7 +34,7 @@
 %\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
 \titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
 \titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
-\titlespacing\chapter{0pt}{30pt plus 10pt minus 10pt}{30pt plus 10pt minus 10pt}
+\titlespacing\chapter{0pt}{20pt plus 10pt minus 10pt}{20pt plus 10pt minus 10pt}
 \titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 4pt minus 2pt}
 
 \usepackage{multicol}
@@ -89,9 +89,9 @@
 
 \author{Redaktör: Björn Regnell \\ \bf www.lth.se/programmera}
 \titlepic{
-\includegraphics[height=7cm]{../img/cover}
+\includegraphics[height=8.5cm]{../img/cover}
 }
-\date{Senast ändrad: \today{ }}
+\date{}
 
 \renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
 
@@ -104,11 +104,12 @@
 
 \newpage
 \begin{multicols}{3}
-\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents 
 \mainmatter
 \end{multicols}
 
-\fontsize{20}{23}\selectfont\raggedright
+\fontsize{16}{18}\selectfont\raggedright
 
 \input{body-sv.tex}
 

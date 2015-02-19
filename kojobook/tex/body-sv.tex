@@ -27,7 +27,7 @@ Läs mer här:
 \section*{\color{BrickRed}Uppdrag:}
 Skriv så här i Kojos skripteditor-fönster:
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{48}{58}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 sudda
 fram
 \end{lstlisting}
@@ -37,6 +37,9 @@ Tryck på den gröna play-knappen
 \\
 
 för att köra igång ditt program.
+\\
+
+\vskip 5.0em
 
 \columnbreak
 
@@ -49,7 +52,7 @@ för att köra igång ditt program.
 \chapter{Rita en kvadrat}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 sudda
 fram
 höger
@@ -70,14 +73,14 @@ Utöka programmet så att det blir en kvadrat.
 \chapter{Rita en trappa}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 sudda
 fram; vänster
 fram; höger
 \end{lstlisting}
         
 \vskip 1.0em
-Med semikolon \lstinline{;} kan du ha flera satser på samma rad.
+Med semikolon \lstinline{;} mellan satserna kan du ha flera satser på samma rad.
 \section*{\color{BrickRed}Uppdrag:}
 Utöka programmet så att det blir en trappa.
 
@@ -92,7 +95,7 @@ Utöka programmet så att det blir en trappa.
 \chapter{Gör en loop}
 \begin{multicols}{2}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{36}{43}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 sudda
 upprepa(4){ fram; höger }
 \end{lstlisting}
@@ -183,7 +186,7 @@ Det tog 0.32 millisekunder.
 \begin{itemize}
 
 \item {Skriv ett program som ritar ett trappsteg.}
-\item {Tryck på den brandgula play-knappen.}
+\item {Tryck på den orange-färgade play-knappen.}
 \item {Klicka på ett av anropen: \lstinline{CALL fram}. Vad händer i Ritfönstret?}
 \item {När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. }
 \item {Lägg till fler satser i ditt program och se vad som händer när du spårar.}
@@ -285,7 +288,7 @@ Gör ett rutnät med 10*10 kvadrater.
 \begin{itemize}
 
 \item {Använd din stapelfunktion från tidigare.}
-\item {Du kan hoppa baklänges en hel stapelhöjd med \lstinline{hoppa(-10*25)}}
+\item {Du kan hoppa baklänges en hel stapelhöjd med \lstinline{hoppa(-10 * 25)}}
 \item {Du kan sedan hoppa till rätt plats med \lstinline{höger; hoppa; vänster}}
 
 \end{itemize}
@@ -341,7 +344,7 @@ Rita en gubbe med hjälp av olika stora kvadrater.
 
 
 \begin{tikzpicture}[overlay]
-\node at (20.0cm,0.5cm) {\includegraphics[width=5.5cm]{../img/square-man.png}};
+\node at (20.0cm,-1.0cm) {\includegraphics[width=5.5cm]{../img/square-man.png}};
 \end{tikzpicture}
   
 \section*{\color{OliveGreen}Tips:}
@@ -406,7 +409,7 @@ polygon(7)
 
 
 \begin{tikzpicture}[overlay]
-\node at (21.0cm,0.0cm) {\includegraphics[width=12.0cm]{../img/polygons-circle.png}};
+\node at (22.0cm,-0.5cm) {\includegraphics[width=11.0cm]{../img/polygons-circle.png}};
 \end{tikzpicture}
   
 
@@ -557,7 +560,7 @@ fyll(pistageglass); fram(100); cirkel(100)
 
 \begin{itemize}
 
-\item {Högerklicka i editor-fönstret och klicka på "Välj färg".}
+\item {Högerklicka i editor-fönstret och klicka på \lstinline{Välj färg...}}
 \item {Om du väljer fliken {\bf RGB} i färgväljaren kan du blanda nya RGB-färger.}
 \item {Tryck OK och titta i Utdatafönstret. Där syns de tre RGB-värdena för rött, grönt och blått.}
 \item {Du kan använda dessa värden i ditt program för att rita med din nya färg med \lstinline{färg(Color(218, 153, 67))}.}
@@ -610,7 +613,7 @@ Prova olika slumpfärger och bakgrunder.
 Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slumpmässig radie. Prova att ändra de olika slumptalens gränser och försök förklara vad som händer.
 
 \begin{tikzpicture}[overlay]
-\node at (21.5cm,-4.0cm) {\includegraphics[width=9.0cm]{../img/random-color-circles.png}};
+\node at (22.0cm,-4.0cm) {\includegraphics[width=8.5cm]{../img/random-color-circles.png}};
 \end{tikzpicture}
   
 
@@ -663,7 +666,7 @@ upprepa(10){
 
 \begin{itemize}
 
-\item {Gör en funktion som heter \lstinline{blomma}, som ritar en krona och en grön stjälk från kronans mitt med ett grönt blad.}
+\item {Gör en funktion som heter \lstinline{blomma}, som ritar en krona och en stjälk från kronans mitt med ett grönt blad.}
 \item {Rita 5 blommor bredvid varandra.}
 
 \end{itemize}
@@ -694,22 +697,22 @@ Ladda ner mediafiler från Kojos hemsida:
 
 \begin{itemize}
 
-\item {Packa upp filen \lstinline{scratch-media.zip} och leta rätt på hästbilden \lstinline{horse1-a.png} i mappen \lstinline{Media/Costumes/Animals}}
-\item {Lägg filen \lstinline{horse1-a.png} i samma mapp som du har ditt program.}
-\item {Prova att byta kostym på paddan till en häst så här:}
+\item {Packa upp filen \lstinline{scratch-media.zip} och leta rätt på krabbbilden \lstinline{crab1-b.png} i mappen \lstinline{Media/Costumes/Animals}}
+\item {Lägg filen \lstinline{crab1-b.png} i samma mapp som du har ditt program.}
+\item {Prova att byta kostym på paddan till en krabba så här:}
 
 \end{itemize}
 
 
 
 \begin{tikzpicture}[overlay]
-\node at (22.0cm,-2.5cm) {\includegraphics{../img/horse1-a.png}};
+\node at (12.0cm,-2.5cm) {\includegraphics[width=4.0cm]{../img/crab1-b.png}};
 \end{tikzpicture}
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 sudda
-kostym("horse1-a.png")  
+kostym("crab1-b.png")  
 sakta(2000)
 fram(1000)
 \end{lstlisting}
@@ -720,10 +723,81 @@ fram(1000)
 \begin{itemize}
 
 \item {Du kan också använda dina egna bilder av typen \lstinline{.png} eller \lstinline{.jpg}}
-\item {Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel \lstinline{kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png")} där \lstinline{~} betyder din hemkatalog.}
+\item {Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel \lstinline{kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png")} där \lstinline{~} betyder din hemkatalog.}
 
 \end{itemize}
 
+
+\chapter{Gör många paddor med \lstinline{new}}Du kan skapa många nya paddor med \lstinline{new} så här:
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
+sudda
+val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
+val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
+p1.fram(100)
+p2.fram(-100)  //paddan p2 backar
+\end{lstlisting}
+        
+
+\begin{tikzpicture}[overlay]
+\node at (22.0cm,-2.0cm) {\includegraphics[width=5.0cm]{../img/new.png}};
+\end{tikzpicture}
+  
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Skapa tre paddor som står ovanför varandra.}
+\item {Gör så att alla huvud är vända åt vänster.}
+
+\end{itemize}
+
+
+\section*{\color{OliveGreen}Tips:}
+
+
+\begin{itemize}
+
+\item {\lstinline{p1} och \lstinline{p2} är paddornas {\it namn}. Du kan välja vilka namn du vill.}
+\item {Med namnet \lstinline{p1} och en punkt kan du ge instruktioner till paddan p1 så här: \lstinline{p1.vänster}}
+\item {Med \lstinline{osynlig} blir den vanliga paddan osynlig.}
+
+\end{itemize}
+
+
+\chapter{Gör en kapplöpning}
+\begin{multicols}{2}
+Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra.
+\section*{\color{BrickRed}Uppdrag:}
+
+
+\begin{itemize}
+
+\item {Låt tre paddor springa ikapp.}
+\item {Om alla får springa fram 10 gånger, vilken padda kommer då först?}
+
+\end{itemize}
+
+
+\section*{\color{OliveGreen}Tips:}
+
+
+\begin{itemize}
+
+\item {Med \lstinline{p1.fram(slumptal(100) + 1)} går paddan p1 fram 1 till 100 steg.}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics[width=12.0cm]{../img/race.png}
+\end{center}
+
+\end{multicols}
 
 \chapter{Alternativ med \lstinline{if}}Med en \lstinline{if}-sats kan datorn välja mellan två olika alternativ.
 
@@ -799,7 +873,7 @@ utdata("x är nu: " + x)
 \begin{itemize}
 
 \item {Vad skrivs ut i utdatafönstret? Varför?}
-\item {Spåra programmet med den brandgula playknappen och undersök varje steg.}
+\item {Spåra programmet med den orange-färgade play-knappen och undersök varje steg.}
 \item {Ändra minskningen av \lstinline{x} från \lstinline{12} till \lstinline{20}. Förklara vad som händer.}
 
 \end{itemize}
@@ -847,7 +921,7 @@ utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
 \section*{\color{BrickRed}Uppdrag:}
 Ändra så att man bara tränar 8:ans och 9:ans tabell.
 \chapter{Spara djur i en vektor}
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
 utdata("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
 utdata("Andra djuret i vektorn är:  " + djur(1))
@@ -861,7 +935,7 @@ djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
 djur = "dromedar" +: djur //lägg till ett djur först i vektorn
 djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
 utdata("Alla djur i vektorn baklänges:")
-djur.foreach{x => utdata(x.reverse)} //för alla x i vektorn: skriv ut x baklänges
+djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x baklänges
 \end{lstlisting}
         
 \section*{\color{BrickRed}Uppdrag:}
@@ -876,7 +950,7 @@ djur.foreach{x => utdata(x.reverse)} //för alla x i vektorn: skriv ut x baklän
 
 
 \chapter{Träna glosor}
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 val svenska = Vector("dator", "sköldpadda", "cirkel")
 val engelska = Vector("computer", "turtle", "circle")
 var antalRätt = 0
@@ -920,23 +994,20 @@ def huvudstadsspelet = {
     if (svar == stad(land)) {
       utdata("Rätt svar! Du har " + länderKvar.size + " länder kvar!")
       länderKvar = länderKvar - land  //ta bort land ur mängden länderKvar
-    } else {
-      utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
-    }
+    } else utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
   }
-  utdata(s"TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
+  utdata("TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
 }
 
 toggleFullScreenOutput;  
-setOutputBackground(black);setOutputTextColor(green); setOutputTextFontSize(30)
+setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
 upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
-
 huvudstadsspelet
 
 // *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng.
 \end{lstlisting}
         
-\chapter{Gör en timer}
+\chapter{Gör en timer med \lstinline{object}}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 object timer {
   def nu = System.currentTimeMillis  //ger nutid i millisekunder
@@ -954,6 +1025,8 @@ indata("Tryck Enter så snabbt du kan.")
 utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
 \end{lstlisting}
         
+Med \lstinline{object} kan du samla saker som hör ihop i ett objekt.\\
+Du kommer åt en sak inne i ett objekt med en punkt: \lstinline{timer.nollställ}
 \section*{\color{BrickRed}Uppdrag:}
 
 
@@ -1146,13 +1219,13 @@ mittKonto.visaSaldo()
 
 \end{multicols}
 
-\chapter{Gör många konto med en klass}
+\chapter{Gör många objekt från en \lstinline{class}}
 \begin{multicols}{2}
 Om man vill skapa många konto behövs en klass. Med \lstinline{new} skapas nya objekt. Varje objekt får eget nummer och saldo.
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 class Konto(nummer: Heltal) {
-  var saldo = 0.0 
+  private var saldo = 0.0 //private betyder "hemlig"  
   def in(belopp: Decimaltal) = {
     saldo = saldo + belopp
   }
@@ -1169,8 +1242,8 @@ val konto2 = new Konto(67890) //ännu ett objekt
 konto1.in(99)
 konto2.in(88)
 konto1.ut(57)
-konto1.visaSaldo()
-konto2.visaSaldo()
+konto1.visaSaldo
+konto2.visaSaldo
 \end{lstlisting}
         
 
@@ -1187,6 +1260,7 @@ konto2.visaSaldo()
 \item {Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.}
 \item {Lägg till en klassparameter \lstinline{namn: String} som ska innehålla namnet på kontoägaren när objekt skapas.}
 \item {Gör så att även \lstinline{namn} skrivs ut när \lstinline{visaSaldo} anropas}
+\item {Vad händer om du gör: \lstinline{konto1.saldo = 10000000 }}
 
 \end{itemize}
 

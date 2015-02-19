@@ -29,9 +29,9 @@ val chapters = Seq(
       Code("""
 sudda
 fram
-       """.trim, size=48),
+       """.trim, size=30),
       Para("Tryck på den gröna play-knappen "), Image("play.png",1), LineBreak,
-      Para("för att köra igång ditt program.")
+      Para("för att köra igång ditt program."), LineBreak, VSkip(5)
     )
   ), 
 //------------------------------------------------------   
@@ -41,7 +41,7 @@ fram
 sudda
 fram
 höger
-       """.trim, size=36),
+       """.trim, size=30),
     Para("Om du skriver {:vänster:} eller {:höger:} så vrider sig paddan."),
     taskHead, Para("Utöka programmet så att det blir en kvadrat.")
     )
@@ -53,8 +53,8 @@ sudda
 fram; vänster
 fram; höger
 
-       """.trim, size=36), VSkip(1), 
-    Para("Med semikolon {:;:} kan du ha flera satser på samma rad."),
+       """.trim, size=30), VSkip(1), 
+    Para("Med semikolon {:;:} mellan satserna kan du ha flera satser på samma rad."),
     taskHead, Para("Utöka programmet så att det blir en trappa.")
     )
   ), 
@@ -64,7 +64,7 @@ fram; höger
       Code("""
 sudda
 upprepa(4){ fram; höger }
-       """.trim, size=36),
+       """.trim, size=30),
       taskHead, Itemize("Vad händer om du ändrar 4 till 100?","Rita en trappa med 100 trappsteg.") 
     )
   ), 
@@ -110,7 +110,7 @@ Det tog 0.32 millisekunder.
     contents=Seq(
       taskHead, Itemize(
         "Skriv ett program som ritar ett trappsteg.",
-        "Tryck på den brandgula play-knappen.",
+        "Tryck på den orange-färgade play-knappen.",
         "Klicka på ett av anropen: {:CALL fram:}. Vad händer i Ritfönstret?",
         "När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. ",
         "Lägg till fler satser i ditt program och se vad som händer när du spårar.",
@@ -168,7 +168,7 @@ stapel""".trim)
     contents=Seq(
       taskHead, Para("Gör ett rutnät med 10*10 kvadrater."),
       hintHead, Itemize("Använd din stapelfunktion från tidigare.",
-      "Du kan hoppa baklänges en hel stapelhöjd med {:hoppa(-10*25):}",
+      "Du kan hoppa baklänges en hel stapelhöjd med {:hoppa(-10 * 25):}",
       "Du kan sedan hoppa till rätt plats med {:höger; hoppa; vänster:}") 
     )
   ), 
@@ -199,7 +199,7 @@ kvadrat(40)
     contents=Seq(
       taskHead, Para("Rita en gubbe med hjälp av olika stora kvadrater."),
       LineBreak,
-      OverlayImage("square-man.png",x=20,y=0.5,width=5.5),
+      OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
 def kvadrat(x: Heltal, y: Heltal, sidlängd: Heltal) = {
@@ -246,7 +246,7 @@ polygon(7)
         "Prova programmet nedan.",
         "Prova ändra antalet sidor och vinkel.",
         "Fyll polygonerna med färg."),
-      OverlayImage("polygons-circle.png",x=21,y=0,width=12),
+      OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
 def polygon(n: Heltal, sidlängd: Heltal) = upprepa(n){
   fram(sidlängd)
@@ -347,7 +347,7 @@ fyll(pistageglass); fram(100); cirkel(100)
   Chapter(id="color-picker", head="Prova färgväljaren", template=TextWithImage("color-chooser-rgb-sv.png",width=14),
     contents=Seq(
       taskHead, Itemize(
-        """Högerklicka i editor-fönstret och klicka på "Välj färg".""", 
+        """Högerklicka i editor-fönstret och klicka på {:Välj färg...:}""", 
         "Om du väljer fliken {*RGB*} i färgväljaren kan du blanda nya RGB-färger.", 
         "Tryck OK och titta i Utdatafönstret. Där syns de tre RGB-värdena för rött, grönt och blått.",
         "Du kan använda dessa värden i ditt program för att rita med din nya färg med {:färg(Color(218, 153, 67)):}."
@@ -382,7 +382,7 @@ upprepa(100) {
       taskHead, 
       Para("Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slumpmässig radie. " +
            "Prova att ändra de olika slumptalens gränser och försök förklara vad som händer."),
-      OverlayImage("random-color-circles.png",x=21.5,y= -4,width=9),
+      OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
 sudda(); sakta(5)
 bredd(2)
@@ -423,7 +423,7 @@ upprepa(10){
     contents=Seq(
       taskHead,       
       Itemize(
-        "Gör en funktion som heter {:blomma:}, som ritar en krona och en grön stjälk från kronans mitt med ett grönt blad.",
+        "Gör en funktion som heter {:blomma:}, som ritar en krona och en stjälk från kronans mitt med ett grönt blad.",
         "Rita 5 blommor bredvid varandra."),
       OverlayImage("flowers.png",x=15, y= -7, width=16),    
       hintHead, 
@@ -447,25 +447,57 @@ upprepa(5){
       taskHead,       
       Para("Ladda ner mediafiler från Kojos hemsida:"),
       HRef("http://www.kogics.net/kojo-download#media", "www.kogics.net/kojo-download\\#media"), 
-      Itemize("Packa upp filen {:scratch-media.zip:} och leta rätt på hästbilden {:horse1-a.png:} i mappen {:Media/Costumes/Animals:}", 
-      "Lägg filen {:horse1-a.png:} i samma mapp som du har ditt program.",
-      "Prova att byta kostym på paddan till en häst så här:"),
-      OverlayImage("horse1-a.png",x=22, y= -2.5),
+      Itemize("Packa upp filen {:scratch-media.zip:} och leta rätt på krabbbilden {:crab1-b.png:} i mappen {:Media/Costumes/Animals:}", 
+      "Lägg filen {:crab1-b.png:} i samma mapp som du har ditt program.",
+      "Prova att byta kostym på paddan till en krabba så här:"),
+      OverlayImage("crab1-b.png",x=12, y= -2.5, width = 4),
       Code("""
 sudda
-kostym("horse1-a.png")  
+kostym("crab1-b.png")  
 sakta(2000)
 fram(1000) 
       """.trim,size=20),
       hintHead,
       Itemize("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}",
-      """Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel {:kostym("~/Kojo/Media/Costumes/Animals/horse1-a.png"):} där {:~:} betyder din hemkatalog.""")      
+      """Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel {:kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} där {:~:} betyder din hemkatalog.""")      
     )
   ), 
 //------------------------------------------------------
-//  Chapter(id="new", head="Gör många paddor", 
-//    contents=Seq()
-//  ), 
+ Chapter(id="new", head="Gör många paddor med {:new:}", 
+   contents=Seq(
+     Para("Du kan skapa många nya paddor med {:new:} så här:"),
+     Code("""
+sudda
+val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
+val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
+p1.fram(100)
+p2.fram(-100)  //paddan p2 backar
+""".trim, size=18),
+      OverlayImage("new.png", x = 22, y = -2, width = 5),
+      taskHead, Itemize(
+        "Skapa tre paddor som står ovanför varandra.","Gör så att alla huvud är vända åt vänster."
+      ),
+      hintHead, Itemize(
+        "{:p1:} och {:p2:} är paddornas {/namn/}. Du kan välja vilka namn du vill.", 
+        "Med namnet {:p1:} och en punkt kan du ge instruktioner till paddan p1 så här: {:p1.vänster:}",
+        "Med {:osynlig:} blir den vanliga paddan osynlig."
+      )
+   )
+ ), 
+//------------------------------------------------------
+ Chapter(id="race", head="Gör en kapplöpning", 
+   template = TextWithImage("race.png", width = 12),
+   contents=Seq(
+     Para("Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra."),
+      taskHead, Itemize(
+        "Låt tre paddor springa ikapp.",
+        "Om alla får springa fram 10 gånger, vilken padda kommer då först?"
+      ),
+      hintHead, Itemize(
+        "Med {:p1.fram(slumptal(100) + 1):} går paddan p1 fram 1 till 100 steg."
+      )
+   )
+ ), 
 //------------------------------------------------------
   Chapter(id="if", head="Alternativ med {:if:}", 
     contents=Seq(
@@ -522,7 +554,7 @@ utdata("x är nu: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
         "Vad skrivs ut i utdatafönstret? Varför?",
-        "Spåra programmet med den brandgula playknappen och undersök varje steg.",
+        "Spåra programmet med den orange-färgade play-knappen och undersök varje steg.",
         "Ändra minskningen av {:x:} från {:12:} till {:20:}. Förklara vad som händer."
       )
     )
@@ -591,8 +623,8 @@ djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
 djur = "dromedar" +: djur //lägg till ett djur först i vektorn
 djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
 utdata("Alla djur i vektorn baklänges:")
-djur.foreach{x => utdata(x.reverse)} //för alla x i vektorn: skriv ut x baklänges
-      """.trim,size=16),   
+djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x baklänges
+      """.trim,size=14),   
       taskHead,
       Itemize("Vad skriver programmet i utdatafönstret? Förklara vad som händer.","Lägg till fler djur i vektorn.")
     )
@@ -616,7 +648,7 @@ upprepa(5) {
   }
 }
 utdata("Du fick" + antalRätt + " rätt.")
-      """.trim,size=16),   
+      """.trim,size=14),   
       taskHead,
       Itemize("Lägg till fler glosor.",
       "Träna på glosor från engelska till svenska.", 
@@ -639,17 +671,14 @@ def huvudstadsspelet = {
     if (svar == stad(land)) {
       utdata("Rätt svar! Du har " + länderKvar.size + " länder kvar!")
       länderKvar = länderKvar - land  //ta bort land ur mängden länderKvar
-    } else {
-      utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
-    }
+    } else utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
   }
-  utdata(s"TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
+  utdata("TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
 }
 
 toggleFullScreenOutput;  
-setOutputBackground(black);setOutputTextColor(green); setOutputTextFontSize(30)
+setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
 upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
-
 huvudstadsspelet
 
 // *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng. 
@@ -657,7 +686,7 @@ huvudstadsspelet
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="timer", head="Gör en timer", 
+  Chapter(id="timer", head="Gör en timer med {:object:}", 
     contents=Seq(
       Code("""
 object timer {
@@ -675,8 +704,10 @@ timer.nollställ
 indata("Tryck Enter så snabbt du kan.")
 utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
       """.trim,size=14),   
-    taskHead,
-    Itemize("Prova programmet och mät din reaktionstid. Hur snabb är du?",
+      Para("Med {:object:} kan du samla saker som hör ihop i ett objekt.",
+        "Du kommer åt en sak inne i ett objekt med en punkt: {:timer.nollställ:}"),
+      taskHead,
+      Itemize("Prova programmet och mät din reaktionstid. Hur snabb är du?",
              "Använd {:timer:} i uppdraget {/Gissa talet/} och lägg till utskriften: {:Rätt svar! Du klarade det på 5 gissningar och 32 sekunder!:}")
     )
   ), 
@@ -817,12 +848,12 @@ mittKonto.visaSaldo()
     )
   ),
 //------------------------------------------------------
-  Chapter(id="class-bankaccount", head="Gör många konto med en klass", 
+  Chapter(id="class-bankaccount", head="Gör många objekt från en {:class:}", 
     template=MultiColumn(2),
     contents=Seq(Para("Om man vill skapa många konto behövs en klass. Med {:new:} skapas nya objekt. Varje objekt får eget nummer och saldo."),
       Code("""
 class Konto(nummer: Heltal) {
-  var saldo = 0.0 
+  private var saldo = 0.0 //private betyder "hemlig"  
   def in(belopp: Decimaltal) = {
     saldo = saldo + belopp
   }
@@ -839,17 +870,17 @@ val konto2 = new Konto(67890) //ännu ett objekt
 konto1.in(99)
 konto2.in(88)
 konto1.ut(57)
-konto1.visaSaldo()
-konto2.visaSaldo()
-      """.trim, size = 14),
+konto1.visaSaldo
+konto2.visaSaldo
+      """.trim, size = 13),
       ColumnBreak,
       taskHead,
       Itemize(
         "Vad är saldot på de olika kontona när programmet kört klart? Förklara vad som händer.",
         "Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.",
         "Lägg till en klassparameter {:namn: String:} som ska innehålla namnet på kontoägaren när objekt skapas.",
-        "Gör så att även {:namn:} skrivs ut när {:visaSaldo:} anropas"
-      )
+        "Gör så att även {:namn:} skrivs ut när {:visaSaldo:} anropas",
+        "Vad händer om du gör: {:konto1.saldo = 10000000 }")
     )
   ),
 //------------------------------------------------------
