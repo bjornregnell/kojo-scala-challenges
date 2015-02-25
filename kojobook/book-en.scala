@@ -28,8 +28,8 @@ val chapters = Seq(
     contents=Seq(
       taskHead, Para("Skriv så här i Kojos skripteditor-fönster:"),
       Code("""
-sudda
-fram
+clear
+forward
        """.trim, size=30),
       Para("Tryck på den gröna play-knappen "), Image("play.png",1), LineBreak,
       Para("för att köra igång ditt program."), LineBreak, VSkip(5)
@@ -39,9 +39,9 @@ fram
   Chapter(id="square", head="Rita en kvadrat", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
-sudda
-fram
-höger
+clear
+forward
+right
        """.trim, size=30),
     Para("Om du skriver {:vänster:} eller {:höger:} så vrider sig paddan."),
     taskHead, Para("Utöka programmet så att det blir en kvadrat.")
@@ -50,9 +50,9 @@ höger
   Chapter(id="stairs", head="Rita en trappa", template=TextWithImage("stairs.png"), 
     contents=Seq(
       Code("""
-sudda
-fram; vänster
-fram; höger
+clear
+forward; left
+forward; right
 
        """.trim, size=30), VSkip(1), 
     Para("Med semikolon {:;:} mellan satserna kan du ha flera satser på samma rad."),
@@ -63,8 +63,8 @@ fram; höger
   Chapter(id="square-repeat", head="Gör en loop", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
-sudda
-upprepa(4){ fram; höger }
+clear
+repeat(4){ forward; right }
        """.trim, size=30),
       taskHead, Itemize("Vad händer om du ändrar 4 till 100?","Rita en trappa med 100 trappsteg.") 
     )
@@ -75,14 +75,14 @@ upprepa(4){ fram; höger }
       taskHead, Para("Rita en gubbe som du själv vill."),
       hintHead, 
       Code("""
-hoppa
-vänster(180)
-fram(300)
-hoppa(100)
-hoppaTill(25,-28)
-skriv("FELIX är bäst")
-färg(lila)
-fyll(grön)
+hop
+left(180)
+forward(300)
+hop(100)
+jumpTo(25,-28)
+write("FELIX är bäst")
+setPenColor(purple)
+setFillColor(green)
        """.trim, size=20),
       Para("Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:"), Image("mousepos.png", 6),
       ColumnBreak,
@@ -123,16 +123,16 @@ Det tog 0.32 millisekunder.
     contents=Seq(
       Para("Med {:def:} kan du göra egna {/funktioner/} som du själv väljer namn på."), 
       Code("""
-def kvadrat =  upprepa(4){ fram; höger }  
+def kvadrat =  repeat(4){ forward; right }  
 
-sudda
+clear
 kvadrat    //använd din kvadrat-funktion
-hoppa
+hop
 kvadrat   
        """.trim, size=20),
     taskHead, Itemize("Byt färg på kvadraterna.", "Gör fler kvadrater."),
     hintHead, Code("""
-fyll(grön); färg(lila)
+setFillColor(green); setPenColor(purple)
        """.trim)
     )
   ), 
@@ -143,10 +143,10 @@ fyll(grön); färg(lila)
     taskHead, Para("Gör en stapel med 10 kvadrater."),
     hintHead, VSkip(1),
     Code("""
-def kvadrat =  upprepa(4){ fram; höger }  
+def kvadrat =  repeat(4){ forward; right }  
 
-sudda; sakta(100)
-upprepa(10){ ??? }""".trim)
+clear; setAnimationDelay(100)
+repeat(10){ ??? }""".trim)
     )
   ), 
 //------------------------------------------------------
@@ -156,10 +156,10 @@ upprepa(10){ ??? }""".trim)
       taskHead, Para("Gör en funktion som heter {:stapel:}, som ritar en stapel med 10 kvadrater."),
       hintHead,  
       Code("""
-def kvadrat = upprepa(4){ fram; höger }  
+def kvadrat = repeat(4){ forward; right }  
 def stapel = ???
 
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 stapel""".trim)
     )
   ), 
@@ -181,10 +181,10 @@ stapel""".trim)
       hintHead, 
       Para("Ge din kvadrat-funktion en {/parameter/},","med namnet {:sidlängd:} och typen {:Heltal:}:"), 
       Code("""
-def kvadrat(sidlängd : Heltal) = 
-  upprepa(4){ fram(sidlängd); höger }
+def kvadrat(sidlängd : Int) = 
+  repeat(4){ forward(sidlängd); right }
 
-sudda; sakta(100); osynlig
+clear; setAnimationDelay(100); invisible
 kvadrat(100) 
 kvadrat(70)
 kvadrat(40)
@@ -203,17 +203,17 @@ kvadrat(40)
       OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
-def kvadrat(x: Heltal, y: Heltal, sidlängd: Heltal) = {
-  hoppaTill(x, y)
-  upprepa(4) { fram(sidlängd); höger }
+def kvadrat(x: Int, y: Int, sidlängd: Int) = {
+  jumpTo(x, y)
+  repeat(4) { forward(sidlängd); right }
 }
-def huvud(x: Heltal, y: Heltal) = { fyll(rosa); färg(röd); kvadrat(x, y, 200) }
-def öga(x: Heltal, y: Heltal) = { fyll(vit); färg(svart); kvadrat(x, y, 40) }
-def pupill(x: Heltal, y: Heltal) = { fyll(svart); färg(svart); kvadrat(x, y, 10) }
-def näsa(x: Heltal, y: Heltal) = { fyll(blå); färg(genomskinlig); kvadrat(x, y, 30) }
-def mun(x: Heltal, y: Heltal) = { bredd(10); fyll(svart); färg(röd); kvadrat(x, y, 40) }
+def huvud(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); kvadrat(x, y, 200) }
+def öga(x: Int, y: Int) = { setFillColor(white); setPenColor(black); kvadrat(x, y, 40) }
+def pupill(x: Int, y: Int) = { setFillColor(black); setPenColor(black); kvadrat(x, y, 10) }
+def näsa(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); kvadrat(x, y, 30) }
+def mun(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); kvadrat(x, y, 40) }
 
-sudda; sakta(20); osynlig
+clear; setAnimationDelay(20); invisible
 huvud(0, 0)
 öga(40, 100); pupill(60, 100)
 ???
@@ -229,12 +229,12 @@ huvud(0, 0)
         "Hur stort behöver n vara för att det ska se ut som en cirkel?"),
       hintHead,
       Code("""
-def polygon(n:Heltal) = upprepa(n){
-  fram(100)
-  vänster(360.0/n)
+def polygon(n:Int) = repeat(n){
+  forward(100)
+  left(360.0/n)
 }
 
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 polygon(7)
        """.trim,size=18),
       OverlayImage("polygon.png",x=20,y=3.5,width=8)
@@ -249,14 +249,14 @@ polygon(7)
         "Fyll polygonerna med färg."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Heltal, sidlängd: Heltal) = upprepa(n){
-  fram(sidlängd)
-  vänster(360.0/n)
+def polygon(n: Int, sidlängd: Int) = repeat(n){
+  forward(sidlängd)
+  left(360.0/n)
 }
-def snurra(n: Heltal, vinkel: Heltal, sidlängd: Heltal) = 
-  upprepa(360/vinkel){ polygon(n, sidlängd); vänster(vinkel) }
+def snurra(n: Int, heading: Int, sidlängd: Int) = 
+  repeat(360/heading){ polygon(n, sidlängd); left(heading) }
 
-sudda; sakta(5)
+clear; setAnimationDelay(5)
 snurra(7, 10, 100)
        """.trim,size=16)
     )
@@ -293,11 +293,11 @@ val y = 5
 val gurka = x + y
 val banan = x * y
 
-sudda
-fram; skriv(banan)
-fram; skriv(gurka)
-fram; skriv(y)
-fram; skriv(x)
+clear
+forward; write(banan)
+forward; write(gurka)
+forward; write(y)
+forward; write(x)
       """.trim)
     )
   ), 
@@ -311,12 +311,12 @@ fram; skriv(x)
         "Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//värdet r blir ett slumptal mellan 10 och 89:
-val r = slumptal(90) + 10   
+//värdet r blir ett random mellan 10 och 89:
+val r = random(90) + 10   
 
-sudda; sakta(10); osynlig
-skriv("Radie = " + r)
-cirkel(r)
+clear; setAnimationDelay(10); invisible
+write("Radie = " + r)
+circle(r)
        """.trim,size=20)
     )
   ), 
@@ -334,13 +334,13 @@ cirkel(r)
       ),
       OverlayImage("color-circles.png",x=23,y= -2,width=7),
       Code("""
-sudda; sakta(100)      
+clear; setAnimationDelay(100)      
 
-val olivgrön = Color(0,70,0)
+val olivgreen = Color(0,70,0)
 val pistageglass = Color(0,255,0,100)
 
-fyll(olivgrön); cirkel(100)
-fyll(pistageglass); fram(100); cirkel(100)
+setFillColor(olivgreen); circle(100)
+setFillColor(pistageglass); forward(100); circle(100)
        """.trim,size=16)
     )
   ), 
@@ -360,18 +360,18 @@ fyll(pistageglass); fram(100); cirkel(100)
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-def slump = slumptal(256)
-def slumpfärg = Color(slump,10,slump,100) 
+def slump = random(256)
+def slumpsetPenColor = Color(slump,10,slump,100) 
 
-sudda; sakta(5)
-bakgrund2(svart,vit)
-bredd(6)
+clear; setAnimationDelay(5)
+setBackground2(black,white)
+setPenThickness (6)
 
-upprepa(100) {
-    färg(slumpfärg)
-    cirkel(100)
-    hoppa(20)
-    höger(35)
+repeat(100) {
+    setPenColor(slumpsetPenColor)
+    circle(100)
+    hop(20)
+    right(35)
 }
        """.trim,size=16), taskHead, Para("Prova olika slumpfärger och bakgrunder."),
        ColumnBreak, CenterImage("circle-of-circles.png",width=12)
@@ -385,13 +385,13 @@ upprepa(100) {
            "Prova att ändra de olika slumptalens gränser och försök förklara vad som händer."),
       OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
-sudda(); sakta(5)
-bredd(2)
-upprepa(100){
-  färg(Color(slumptal(256),0,slumptal(256)))
-  fyll(Color(slumptal(256),0,slumptal(256),slumptal(100)+50))
-  vänster(slumptal(360))
-  cirkel(slumptal(30)*4+10)
+clear(); setAnimationDelay(5)
+setPenThickness (2)
+repeat(100){
+  setPenColor(Color(random(256),0,random(256)))
+  setFillColor(Color(random(256),0,random(256),random(100)+50))
+  left(random(360))
+  circle(random(30)*4+10)
 }
        """.trim,size=16)
     )
@@ -410,10 +410,10 @@ gurka = 1 + 1   //först räknas 1 + 1 ut, sedan blir gurka 2
       Code("""
 var i = 0
 
-sudda
-upprepa(10){
+clear
+repeat(10){
   i = i + 1
-  fram; skriv(i)
+  forward; write(i)
 }
        """.trim,size=16),
       hintHead, Itemize("I satsen {:i = i + 1:} tilldelas {:i:} ett nytt värde som blir det {/gamla/} värdet av {:i:} plus {:1:}")
@@ -435,7 +435,7 @@ upprepa(10){
       ), 
       Code("""
 var i = 0          
-upprepa(5){
+repeat(5){
   blomma(600*i,0)
   i = i + 1        
 }
@@ -453,10 +453,10 @@ upprepa(5){
       "Prova att byta kostym på paddan till en krabba så här:"),
       OverlayImage("crab1-b.png",x=12, y= -2.5, width = 4),
       Code("""
-sudda
-kostym("crab1-b.png")  
-sakta(2000)
-fram(1000) 
+clear
+setCostume ("crab1-b.png")  
+setAnimationDelay(2000)
+forward(1000) 
       """.trim,size=20),
       hintHead,
       Itemize("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}",
@@ -468,11 +468,11 @@ fram(1000)
    contents=Seq(
      Para("Du kan skapa många nya paddor med {:new:} så här:"),
      Code("""
-sudda
+clear
 val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
 val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
-p1.fram(100)
-p2.fram(-100)  //paddan p2 backar
+p1.forward(100)
+p2.forward(-100)  //paddan p2 backar
 """.trim, size=18),
       OverlayImage("new.png", x = 22, y = -2, width = 5),
       taskHead, Itemize(
@@ -504,8 +504,8 @@ p2.fram(-100)  //paddan p2 backar
     contents=Seq(
       Para("Med en {:if:}-sats kan datorn välja mellan två olika alternativ."),
       Code("""
-sudda; osynlig
-if (true) skriv("sant") else skriv("falskt")
+clear; invisible
+if (true) write("sant") else write("falskt")
      """.trim, size = 20),
       taskHead, Itemize(
         "Ändra {:true:} till {:false:} och kolla vad paddan skriver.",
@@ -523,14 +523,14 @@ if (true) skriv("sant") else skriv("falskt")
   Chapter(id="if-input", head="Reagera på vad användaren gör", 
     contents=Seq(
       Code("""
-suddaUtdata; setOutputTextFontSize(35)
+clearOutput; setOutputTextFontSize(35)
 val lösenord = "gurka"
 val fråga     = "Vad är lösenordet?"
 val rätt      = "Kassaskåpet är öppet!"
 val fel       = "Du får inte komma in!"
-val svar = indata(fråga)  //vänta på svar från användaren
+val svar = readln(fråga)  //vänta på svar från användaren
 val meddelande = if (svar == lösenord) rätt else fel
-utdata(meddelande)
+println(meddelande)
      """.trim, size = 20),
       taskHead, Itemize(
         "Prova programmet och förklara vad som händer.",
@@ -544,14 +544,14 @@ utdata(meddelande)
     contents=Seq(
       Para("Med en {:while:}-loop kan datorn upprepa satser så länge ett villkor är sant."),
       Code("""
-sudda; osynlig; sakta(250); suddaUtdata
+clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
 while (x > 0) {  //kolla villkoret före varje runda 
-  fram(x); höger
-  skriv(x) 
+  forward(x); right
+  write(x) 
   x = x - 12
 }
-utdata("x är nu: " + x)
+println("x är nu: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
         "Vad skrivs ut i utdatafönstret? Varför?",
@@ -564,19 +564,19 @@ utdata("x är nu: " + x)
   Chapter(id="guess-the-number", head="Gissa talet", 
     contents=Seq(
       Code("""
-val hemlis = slumptal(100)+1
-var svar = indata("Gissa ett tal mellan 1 och 100! ")
+val homelis = random(100)+1
+var svar = readln("Gissa ett tal mellan 1 och 100! ")
 var fortsätt = true
 
 while (fortsätt) {
-    if (svar.toInt < hemlis)
-      svar = indata(svar + " är för LITET, gissa igen!")
-    else if (svar.toInt > hemlis)
-      svar = indata(svar + " är för STORT, gissa igen!")
-    else if (svar.toInt == hemlis)
+    if (svar.toInt < homelis)
+      svar = readln(svar + " är för LITET, gissa igen!")
+    else if (svar.toInt > homelis)
+      svar = readln(svar + " är för STORT, gissa igen!")
+    else if (svar.toInt == homelis)
       fortsätt = false
 }
-utdata(hemlis + " är RÄTT svar!")
+println(homelis + " är RÄTT svar!")
       """.trim,size=16),
       taskHead,
       Para("Inför en variabel {:var antalFörsök = 0:} och se till att utskriften på slutet blir:", 
@@ -589,19 +589,19 @@ utdata(hemlis + " är RÄTT svar!")
       Code("""
 var antalRätt = 0
 val startTid = System.currentTimeMillis / 1000
-upprepa(12) {
-  val tal1 = slumptal(12)+1
-  val tal2 = slumptal(12)+1
-  val svar = indata("Vad är " + tal1 + "*" + tal2 + "?")
+repeat(12) {
+  val tal1 = random(12)+1
+  val tal2 = random(12)+1
+  val svar = readln("Vad är " + tal1 + "*" + tal2 + "?")
   if (svar == (tal1 * tal2).toString) {
-    utdata("Rätt!")
+    println("Rätt!")
     antalRätt = antalRätt + 1
   }
-  else utdata("Fel. Rätt svar är " + (tal1 * tal2))
+  else println("Fel. Rätt svar är " + (tal1 * tal2))
 }
 val stoppTid = System.currentTimeMillis / 1000
 val sek = stoppTid - startTid
-utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
+println("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
       """.trim,size=16),  
       taskHead,
       Para("Ändra så att man bara tränar 8:ans och 9:ans tabell.")      
@@ -612,19 +612,19 @@ utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
     contents=Seq(
       Code("""
 var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-utdata("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
-utdata("Andra djuret i vektorn är:  " + djur(1))
-utdata("Det finns så här många djur: " + djur.size)
-utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
+println("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
+println("Andra djuret i vektorn är:  " + djur(1))
+println("Det finns så här många djur: " + djur.size)
+println("Sista djuret i vektorn är:  " + djur(djur.size-1))
 
-val s = slumptal(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
-utdata("Ett slumpmässigt djur: " + djur(s))
+val s = random(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
+println("Ett slumpmässigt djur: " + djur(s))
 
 djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
 djur = "dromedar" +: djur //lägg till ett djur först i vektorn
 djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
-utdata("Alla djur i vektorn baklänges:")
-djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x baklänges
+println("Alla djur i vektorn baklänges:")
+djur.foreach{ x => println(x.reverse) } //för alla x i vektorn: write ut x baklänges
       """.trim,size=14),   
       taskHead,
       Itemize("Vad skriver programmet i utdatafönstret? Förklara vad som händer.","Lägg till fler djur i vektorn.")
@@ -634,21 +634,21 @@ djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x bakl�
   Chapter(id="translate", head="Träna glosor", 
     contents=Seq(
       Code("""
-val svenska = Vector("dator", "sköldpadda", "cirkel")
+val svenska = Vector("dator", "sköldpadda", "circle")
 val engelska = Vector("computer", "turtle", "circle")
 var antalRätt = 0
-upprepa(5) {
-  val s = slumptal(3)
+repeat(5) {
+  val s = random(3)
   val glosa = svenska(s)
-  val svar = indata("Vad heter " + glosa + " på engelska?")
+  val svar = readln("Vad heter " + glosa + " på engelska?")
   if (svar == engelska(s)) {
-    utdata("Rätt svar!")
+    println("Rätt svar!")
     antalRätt = antalRätt + 1
   } else {
-    utdata("Fel svar. Rätt svar är: " + engelska(s))
+    println("Fel svar. Rätt svar är: " + engelska(s))
   }
 }
-utdata("Du fick" + antalRätt + " rätt.")
+println("Du fick" + antalRätt + " rätt.")
       """.trim,size=14),   
       taskHead,
       Itemize("Lägg till fler glosor.",
@@ -696,14 +696,14 @@ object timer {
   def nollställ = { tid = nu }
   def mät = nu - tid
   def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
-    Thread.sleep((slumptal(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
 }
 
-utdata("Klicka i utdatafönstret och vänta...")
+println("Klicka i printlnfönstret och vänta...")
 timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
 timer.nollställ
-indata("Tryck Enter så snabbt du kan.")
-utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+readln("Tryck Enter så snabbt du kan.")
+println("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
       """.trim,size=14),   
       Para("Med {:object:} kan du samla saker som hör ihop i ett objekt.",
         "Du kommer åt en sak inne i ett objekt med en punkt: {:timer.nollställ:}"),
@@ -724,7 +724,7 @@ def tändGult = draw(ljus(yellow, 65))
 def tändGrönt = draw(ljus(green, 30))
 def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
 
-sudda; osynlig  
+clear; invisible  
 while (true) { //en oändlig loop
   släckAlla
   tändRött;  vänta(3)
@@ -743,18 +743,18 @@ while (true) { //en oändlig loop
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-sudda; sakta(0)
+clear; setAnimationDelay(0)
 activateCanvas()
 
-animate { fram(1) }
+animate { forward(1) }
 
 onKeyPress { k =>
   k match {
-    case Kc.VK_LEFT =>   vänster(5)
-    case Kc.VK_RIGHT =>  höger(5)
-    case Kc.VK_SPACE =>  fram(5)
+    case Kc.VK_LEFT =>   left(5)
+    case Kc.VK_RIGHT =>  right(5)
+    case Kc.VK_SPACE =>  forward(5)
     case _ => 
-      utdata("Annan tangent: " + k)
+      println("Annan tangent: " + k)
   }
 }
       """.trim, size = 18),
@@ -775,7 +775,7 @@ onKeyPress { k =>
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 activateCanvas()
 
 var rita = true
@@ -789,7 +789,7 @@ onKeyPress { k =>
       penUp()
       rita = false
     case _ => 
-      utdata("Annan tangent: " + k)
+      println("Annan tangent: " + k)
   }
 }
 
@@ -803,12 +803,12 @@ onMouseClick { (x, y) =>
         "Gör {:fyll(svart):} om man trycker på F",
         "Inför en variabel {:var fyllNästa = true:} och i fallet att man trycker på {:Kc.VK_F:} gör:"
       ), Code("""
-      if (fyllNästa) {
-        fyll(svart)
-        fyllNästa=false
+      if (setFillColorNästa) {
+        setFillColor(black)
+        setFillColorNästa=false
       } else {
-        fyll(genomskinlig)
-        fyllNästa=true
+        setFillColor(noColor)
+        setFillColorNästa=true
       }
       """)   
     )
@@ -821,15 +821,15 @@ onMouseClick { (x, y) =>
 object mittKonto {
   val nummer = 123456
   var saldo = 0.0
-  def in(belopp: Decimaltal) = {
+  def in(belopp: Double) = {
     saldo = saldo + belopp 
   }
-  def ut(belopp: Decimaltal) = { 
+  def ut(belopp: Double) = { 
     saldo = saldo - belopp 
   }
   def visaSaldo() = {
-    utdata("Konto nummer: " + nummer) 
-    utdata("       saldo: " + saldo)
+    println("Konto nummer: " + nummer) 
+    println("       saldo: " + saldo)
   }
 }
 
@@ -889,7 +889,7 @@ konto2.visaSaldo
     contents=Seq(
       Code("""
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-utdata("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
+println("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
 def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
 var svar = "?"
@@ -901,10 +901,10 @@ while (svar != "hej då") {
     else if(svar == "ja") "Jaha." 
     else if (svar.length < 4) "Jasså..." 
     else slumpa(ledtexter) + " " + slumpa(ord) + "?"
-  svar = indata(t).toLowerCase
+  svar = readln(t).toLowerCase
   ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
 } 
-utdata("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+println("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
 
 //Uppdrag:
 // (1) Prova programmet och försök att förklara vad som händer.
@@ -933,3 +933,4 @@ utdata("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
 //********************
 println("********************* input:"+chapters)
 latexgen.make(chapters, "kojobook/tex/body-en.tex")
+
