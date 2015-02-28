@@ -12,9 +12,9 @@ The scaboo api consists of a simple document model based on Scala case classes. 
 
 * Dependencies: You need to have these things installed on your box
     * [Scala v2.11.x](http://scala-lang.org/download/) with the `scala` and `scalac` commands on your path.
-    * [texlive](https://www.tug.org/texlive/acquire-netinstall.html) with the `pdflatex` command on your path. You should do a full texlive install to make sure that all packages and fonts are available. The kojobook example uses the helvet and inconsolata fonts. You can install inconsolata from here: [incosolata at ctan]http://www.ctan.org/tex-archive/fonts/inconsolata/
+    * [texlive](https://www.tug.org/texlive/acquire-netinstall.html) with the `pdflatex` command on your path. You should do a full texlive install to make sure that all packages and fonts are available. The kojobook example uses the helvet and inconsolata fonts. You can install inconsolata from here: [incosolata at ctan](http://www.ctan.org/tex-archive/fonts/inconsolata/)
 
-0. Clone or fork this repo e.g. using Sourcetree (press the download icon next to the "Overview heading")
+0. [Clone](https://bitbucket.org/bjornregnell/scaboo/overview#clone) or [fork](https://bitbucket.org/bjornregnell/scaboo/fork) this repo e.g. using [Sourcetree](http://www.sourcetreeapp.com/)
 0. Build scaboo into `bin` using the scala compiler with these scripts
     * Windows open powershell and run `./build.cmd`
     * Unix-like: `build.sh`
