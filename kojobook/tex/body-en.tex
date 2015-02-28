@@ -28,8 +28,8 @@ Read more here:
 Skriv så här i Kojos skripteditor-fönster:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-sudda
-fram
+clear
+forward
 \end{lstlisting}
         
 Tryck på den gröna play-knappen 
@@ -53,9 +53,9 @@ för att köra igång ditt program.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-sudda
-fram
-höger
+clear
+forward
+right
 \end{lstlisting}
         
 Om du skriver \lstinline{vänster} eller \lstinline{höger} så vrider sig paddan.
@@ -74,9 +74,9 @@ Utöka programmet så att det blir en kvadrat.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-sudda
-fram; vänster
-fram; höger
+clear
+forward; left
+forward; right
 \end{lstlisting}
         
 \vskip 1.0em
@@ -96,8 +96,8 @@ Utöka programmet så att det blir en trappa.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-sudda
-upprepa(4){ fram; höger }
+clear
+repeat(4){ forward; right }
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -127,14 +127,14 @@ Rita en gubbe som du själv vill.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-hoppa
-vänster(180)
-fram(300)
-hoppa(100)
-hoppaTill(25,-28)
-skriv("FELIX är bäst")
-färg(lila)
-fyll(grön)
+hop
+left(180)
+forward(300)
+hop(100)
+jumpTo(25,-28)
+write("FELIX är bäst")
+setPenColor(purple)
+setFillColor(green)
 \end{lstlisting}
         
 Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:
@@ -207,11 +207,11 @@ Det tog 0.32 millisekunder.
 \chapter{Gör din egen funktion med \lstinline{def}}Med \lstinline{def} kan du göra egna {\it funktioner} som du själv väljer namn på.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-def kvadrat =  upprepa(4){ fram; höger }  
+def kvadrat =  repeat(4){ forward; right }  
 
-sudda
+clear
 kvadrat    //använd din kvadrat-funktion
-hoppa
+hop
 kvadrat
 \end{lstlisting}
         
@@ -229,7 +229,7 @@ kvadrat
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[numbers=none]
-fyll(grön); färg(lila)
+setFillColor(green); setPenColor(purple)
 \end{lstlisting}
         
 \chapter{Stapla kvadrater}
@@ -240,10 +240,10 @@ Gör en stapel med 10 kvadrater.
 \vskip 1.0em
 
 \begin{lstlisting}[numbers=none]
-def kvadrat =  upprepa(4){ fram; höger }  
+def kvadrat =  repeat(4){ forward; right }  
 
-sudda; sakta(100)
-upprepa(10){ ??? }
+clear; setAnimationDelay(100)
+repeat(10){ ??? }
 \end{lstlisting}
         
 
@@ -262,10 +262,10 @@ Gör en funktion som heter \lstinline{stapel}, som ritar en stapel med 10 kvadra
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[numbers=none]
-def kvadrat = upprepa(4){ fram; höger }  
+def kvadrat = repeat(4){ forward; right }  
 def stapel = ???
 
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 stapel
 \end{lstlisting}
         
@@ -312,10 +312,10 @@ Ge din kvadrat-funktion en {\it parameter},\\
 med namnet \lstinline{sidlängd} och typen \lstinline{Heltal}:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def kvadrat(sidlängd : Heltal) = 
-  upprepa(4){ fram(sidlängd); höger }
+def kvadrat(sidlängd : Int) = 
+  repeat(4){ forward(sidlängd); right }
 
-sudda; sakta(100); osynlig
+clear; setAnimationDelay(100); invisible
 kvadrat(100) 
 kvadrat(70)
 kvadrat(40)
@@ -350,17 +350,17 @@ Rita en gubbe med hjälp av olika stora kvadrater.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-def kvadrat(x: Heltal, y: Heltal, sidlängd: Heltal) = {
-  hoppaTill(x, y)
-  upprepa(4) { fram(sidlängd); höger }
+def kvadrat(x: Int, y: Int, sidlängd: Int) = {
+  jumpTo(x, y)
+  repeat(4) { forward(sidlängd); right }
 }
-def huvud(x: Heltal, y: Heltal) = { fyll(rosa); färg(röd); kvadrat(x, y, 200) }
-def öga(x: Heltal, y: Heltal) = { fyll(vit); färg(svart); kvadrat(x, y, 40) }
-def pupill(x: Heltal, y: Heltal) = { fyll(svart); färg(svart); kvadrat(x, y, 10) }
-def näsa(x: Heltal, y: Heltal) = { fyll(blå); färg(genomskinlig); kvadrat(x, y, 30) }
-def mun(x: Heltal, y: Heltal) = { bredd(10); fyll(svart); färg(röd); kvadrat(x, y, 40) }
+def huvud(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); kvadrat(x, y, 200) }
+def öga(x: Int, y: Int) = { setFillColor(white); setPenColor(black); kvadrat(x, y, 40) }
+def pupill(x: Int, y: Int) = { setFillColor(black); setPenColor(black); kvadrat(x, y, 10) }
+def näsa(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); kvadrat(x, y, 30) }
+def mun(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); kvadrat(x, y, 40) }
 
-sudda; sakta(20); osynlig
+clear; setAnimationDelay(20); invisible
 huvud(0, 0)
 öga(40, 100); pupill(60, 100)
 ???
@@ -381,12 +381,12 @@ huvud(0, 0)
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-def polygon(n:Heltal) = upprepa(n){
-  fram(100)
-  vänster(360.0/n)
+def polygon(n:Int) = repeat(n){
+  forward(100)
+  left(360.0/n)
 }
 
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 polygon(7)
 \end{lstlisting}
         
@@ -414,14 +414,14 @@ polygon(7)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def polygon(n: Heltal, sidlängd: Heltal) = upprepa(n){
-  fram(sidlängd)
-  vänster(360.0/n)
+def polygon(n: Int, sidlängd: Int) = repeat(n){
+  forward(sidlängd)
+  left(360.0/n)
 }
-def snurra(n: Heltal, vinkel: Heltal, sidlängd: Heltal) = 
-  upprepa(360/vinkel){ polygon(n, sidlängd); vänster(vinkel) }
+def snurra(n: Int, heading: Int, sidlängd: Int) = 
+  repeat(360/heading){ polygon(n, sidlängd); left(heading) }
 
-sudda; sakta(5)
+clear; setAnimationDelay(5)
 snurra(7, 10, 100)
 \end{lstlisting}
         
@@ -479,11 +479,11 @@ val y = 5
 val gurka = x + y
 val banan = x * y
 
-sudda
-fram; skriv(banan)
-fram; skriv(gurka)
-fram; skriv(y)
-fram; skriv(x)
+clear
+forward; write(banan)
+forward; write(gurka)
+forward; write(y)
+forward; write(x)
 \end{lstlisting}
         
 
@@ -515,12 +515,12 @@ fram; skriv(x)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-//värdet r blir ett slumptal mellan 10 och 89:
-val r = slumptal(90) + 10   
+//värdet r blir ett random mellan 10 och 89:
+val r = random(90) + 10   
 
-sudda; sakta(10); osynlig
-skriv("Radie = " + r)
-cirkel(r)
+clear; setAnimationDelay(10); invisible
+write("Radie = " + r)
+circle(r)
 \end{lstlisting}
         
 \chapter{Blanda dina egna färger}
@@ -544,13 +544,13 @@ Prova programmet nedan. Ändra genomskinligheten.
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-sudda; sakta(100)      
+clear; setAnimationDelay(100)      
 
-val olivgrön = Color(0,70,0)
+val olivgreen = Color(0,70,0)
 val pistageglass = Color(0,255,0,100)
 
-fyll(olivgrön); cirkel(100)
-fyll(pistageglass); fram(100); cirkel(100)
+setFillColor(olivgreen); circle(100)
+setFillColor(pistageglass); forward(100); circle(100)
 \end{lstlisting}
         
 \chapter{Prova färgväljaren}
@@ -581,18 +581,18 @@ fyll(pistageglass); fram(100); cirkel(100)
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def slump = slumptal(256)
-def slumpfärg = Color(slump,10,slump,100) 
+def slump = random(256)
+def slumpsetPenColor = Color(slump,10,slump,100) 
 
-sudda; sakta(5)
-bakgrund2(svart,vit)
-bredd(6)
+clear; setAnimationDelay(5)
+setBackground2(black,white)
+setPenThickness (6)
 
-upprepa(100) {
-    färg(slumpfärg)
-    cirkel(100)
-    hoppa(20)
-    höger(35)
+repeat(100) {
+    setPenColor(slumpsetPenColor)
+    circle(100)
+    hop(20)
+    right(35)
 }
 \end{lstlisting}
         
@@ -618,13 +618,13 @@ Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slum
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-sudda(); sakta(5)
-bredd(2)
-upprepa(100){
-  färg(Color(slumptal(256),0,slumptal(256)))
-  fyll(Color(slumptal(256),0,slumptal(256),slumptal(100)+50))
-  vänster(slumptal(360))
-  cirkel(slumptal(30)*4+10)
+clear(); setAnimationDelay(5)
+setPenThickness (2)
+repeat(100){
+  setPenColor(Color(random(256),0,random(256)))
+  setFillColor(Color(random(256),0,random(256),random(100)+50))
+  left(random(360))
+  circle(random(30)*4+10)
 }
 \end{lstlisting}
         
@@ -644,10 +644,10 @@ Prova programmet nedan. Vad skriver paddan?
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var i = 0
 
-sudda
-upprepa(10){
+clear
+repeat(10){
   i = i + 1
-  fram; skriv(i)
+  forward; write(i)
 }
 \end{lstlisting}
         
@@ -684,7 +684,7 @@ Du kan loopa 5 gånger och räkna ut platsen så här:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
 var i = 0          
-upprepa(5){
+repeat(5){
   blomma(600*i,0)
   i = i + 1        
 }
@@ -711,10 +711,10 @@ Ladda ner mediafiler från Kojos hemsida:
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-sudda
-kostym("crab1-b.png")  
-sakta(2000)
-fram(1000)
+clear
+setCostume ("crab1-b.png")  
+setAnimationDelay(2000)
+forward(1000)
 \end{lstlisting}
         
 \section*{\color{OliveGreen}Tip:}
@@ -731,11 +731,11 @@ fram(1000)
 \chapter{Gör många paddor med \lstinline{new}}Du kan skapa många nya paddor med \lstinline{new} så här:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-sudda
+clear
 val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
 val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
-p1.fram(100)
-p2.fram(-100)  //paddan p2 backar
+p1.forward(100)
+p2.forward(-100)  //paddan p2 backar
 \end{lstlisting}
         
 
@@ -802,8 +802,8 @@ Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra.
 \chapter{Alternativ med \lstinline{if}}Med en \lstinline{if}-sats kan datorn välja mellan två olika alternativ.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-sudda; osynlig
-if (true) skriv("sant") else skriv("falskt")
+clear; invisible
+if (true) write("sant") else write("falskt")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -832,14 +832,14 @@ if (true) skriv("sant") else skriv("falskt")
 
 \chapter{Reagera på vad användaren gör}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-suddaUtdata; setOutputTextFontSize(35)
+clearOutput; setOutputTextFontSize(35)
 val lösenord = "gurka"
 val fråga     = "Vad är lösenordet?"
 val rätt      = "Kassaskåpet är öppet!"
 val fel       = "Du får inte komma in!"
-val svar = indata(fråga)  //vänta på svar från användaren
+val svar = readln(fråga)  //vänta på svar från användaren
 val meddelande = if (svar == lösenord) rätt else fel
-utdata(meddelande)
+println(meddelande)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -857,14 +857,14 @@ utdata(meddelande)
 \chapter{Gör en \lstinline{while}-loop}Med en \lstinline{while}-loop kan datorn upprepa satser så länge ett villkor är sant.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
-sudda; osynlig; sakta(250); suddaUtdata
+clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
 while (x > 0) {  //kolla villkoret före varje runda 
-  fram(x); höger
-  skriv(x) 
+  forward(x); right
+  write(x) 
   x = x - 12
 }
-utdata("x är nu: " + x)
+println("x är nu: " + x)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -881,19 +881,19 @@ utdata("x är nu: " + x)
 
 \chapter{Gissa talet}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-val hemlis = slumptal(100)+1
-var svar = indata("Gissa ett tal mellan 1 och 100! ")
+val homelis = random(100)+1
+var svar = readln("Gissa ett tal mellan 1 och 100! ")
 var fortsätt = true
 
 while (fortsätt) {
-    if (svar.toInt < hemlis)
-      svar = indata(svar + " är för LITET, gissa igen!")
-    else if (svar.toInt > hemlis)
-      svar = indata(svar + " är för STORT, gissa igen!")
-    else if (svar.toInt == hemlis)
+    if (svar.toInt < homelis)
+      svar = readln(svar + " är för LITET, gissa igen!")
+    else if (svar.toInt > homelis)
+      svar = readln(svar + " är för STORT, gissa igen!")
+    else if (svar.toInt == homelis)
       fortsätt = false
 }
-utdata(hemlis + " är RÄTT svar!")
+println(homelis + " är RÄTT svar!")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -903,19 +903,19 @@ Inför en variabel \lstinline{var antalFörsök = 0} och se till att utskriften 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var antalRätt = 0
 val startTid = System.currentTimeMillis / 1000
-upprepa(12) {
-  val tal1 = slumptal(12)+1
-  val tal2 = slumptal(12)+1
-  val svar = indata("Vad är " + tal1 + "*" + tal2 + "?")
+repeat(12) {
+  val tal1 = random(12)+1
+  val tal2 = random(12)+1
+  val svar = readln("Vad är " + tal1 + "*" + tal2 + "?")
   if (svar == (tal1 * tal2).toString) {
-    utdata("Rätt!")
+    println("Rätt!")
     antalRätt = antalRätt + 1
   }
-  else utdata("Fel. Rätt svar är " + (tal1 * tal2))
+  else println("Fel. Rätt svar är " + (tal1 * tal2))
 }
 val stoppTid = System.currentTimeMillis / 1000
 val sek = stoppTid - startTid
-utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
+println("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -923,19 +923,19 @@ utdata("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
 \chapter{Spara djur i en vektor}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-utdata("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
-utdata("Andra djuret i vektorn är:  " + djur(1))
-utdata("Det finns så här många djur: " + djur.size)
-utdata("Sista djuret i vektorn är:  " + djur(djur.size-1))
+println("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
+println("Andra djuret i vektorn är:  " + djur(1))
+println("Det finns så här många djur: " + djur.size)
+println("Sista djuret i vektorn är:  " + djur(djur.size-1))
 
-val s = slumptal(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
-utdata("Ett slumpmässigt djur: " + djur(s))
+val s = random(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
+println("Ett slumpmässigt djur: " + djur(s))
 
 djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
 djur = "dromedar" +: djur //lägg till ett djur först i vektorn
 djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
-utdata("Alla djur i vektorn baklänges:")
-djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x baklänges
+println("Alla djur i vektorn baklänges:")
+djur.foreach{ x => println(x.reverse) } //för alla x i vektorn: write ut x baklänges
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -951,21 +951,21 @@ djur.foreach{ x => utdata(x.reverse) } //för alla x i vektorn: skriv ut x bakl�
 
 \chapter{Träna glosor}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-val svenska = Vector("dator", "sköldpadda", "cirkel")
+val svenska = Vector("dator", "sköldpadda", "circle")
 val engelska = Vector("computer", "turtle", "circle")
 var antalRätt = 0
-upprepa(5) {
-  val s = slumptal(3)
+repeat(5) {
+  val s = random(3)
   val glosa = svenska(s)
-  val svar = indata("Vad heter " + glosa + " på engelska?")
+  val svar = readln("Vad heter " + glosa + " på engelska?")
   if (svar == engelska(s)) {
-    utdata("Rätt svar!")
+    println("Rätt svar!")
     antalRätt = antalRätt + 1
   } else {
-    utdata("Fel svar. Rätt svar är: " + engelska(s))
+    println("Fel svar. Rätt svar är: " + engelska(s))
   }
 }
-utdata("Du fick" + antalRätt + " rätt.")
+println("Du fick" + antalRätt + " rätt.")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -1015,14 +1015,14 @@ object timer {
   def nollställ = { tid = nu }
   def mät = nu - tid
   def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
-    Thread.sleep((slumptal(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
 }
 
-utdata("Klicka i utdatafönstret och vänta...")
+println("Klicka i printlnfönstret och vänta...")
 timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
 timer.nollställ
-indata("Tryck Enter så snabbt du kan.")
-utdata("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+readln("Tryck Enter så snabbt du kan.")
+println("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
 \end{lstlisting}
         
 Med \lstinline{object} kan du samla saker som hör ihop i ett objekt.\\
@@ -1052,7 +1052,7 @@ def tändGult = draw(ljus(yellow, 65))
 def tändGrönt = draw(ljus(green, 30))
 def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
 
-sudda; osynlig  
+clear; invisible  
 while (true) { //en oändlig loop
   släckAlla
   tändRött;  vänta(3)
@@ -1078,18 +1078,18 @@ while (true) { //en oändlig loop
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-sudda; sakta(0)
+clear; setAnimationDelay(0)
 activateCanvas()
 
-animate { fram(1) }
+animate { forward(1) }
 
 onKeyPress { k =>
   k match {
-    case Kc.VK_LEFT =>   vänster(5)
-    case Kc.VK_RIGHT =>  höger(5)
-    case Kc.VK_SPACE =>  fram(5)
+    case Kc.VK_LEFT =>   left(5)
+    case Kc.VK_RIGHT =>  right(5)
+    case Kc.VK_SPACE =>  forward(5)
     case _ => 
-      utdata("Annan tangent: " + k)
+      println("Annan tangent: " + k)
   }
 }
 \end{lstlisting}
@@ -1120,7 +1120,7 @@ onKeyPress { k =>
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-sudda; sakta(100)
+clear; setAnimationDelay(100)
 activateCanvas()
 
 var rita = true
@@ -1134,7 +1134,7 @@ onKeyPress { k =>
       penUp()
       rita = false
     case _ => 
-      utdata("Annan tangent: " + k)
+      println("Annan tangent: " + k)
   }
 }
 
@@ -1162,12 +1162,12 @@ onMouseClick { (x, y) =>
 
 \begin{lstlisting}[numbers=none]
 
-      if (fyllNästa) {
-        fyll(svart)
-        fyllNästa=false
+      if (setFillColorNästa) {
+        setFillColor(black)
+        setFillColorNästa=false
       } else {
-        fyll(genomskinlig)
-        fyllNästa=true
+        setFillColor(noColor)
+        setFillColorNästa=true
       }
       
 \end{lstlisting}
@@ -1181,15 +1181,15 @@ onMouseClick { (x, y) =>
 object mittKonto {
   val nummer = 123456
   var saldo = 0.0
-  def in(belopp: Decimaltal) = {
+  def in(belopp: Double) = {
     saldo = saldo + belopp 
   }
-  def ut(belopp: Decimaltal) = { 
+  def ut(belopp: Double) = { 
     saldo = saldo - belopp 
   }
   def visaSaldo() = {
-    utdata("Konto nummer: " + nummer) 
-    utdata("       saldo: " + saldo)
+    println("Konto nummer: " + nummer) 
+    println("       saldo: " + saldo)
   }
 }
 
@@ -1270,7 +1270,7 @@ konto2.visaSaldo
 \chapter{Prata med datorn}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-utdata("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
+println("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
 def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
 var svar = "?"
@@ -1282,10 +1282,10 @@ while (svar != "hej då") {
     else if(svar == "ja") "Jaha." 
     else if (svar.length < 4) "Jasså..." 
     else slumpa(ledtexter) + " " + slumpa(ord) + "?"
-  svar = indata(t).toLowerCase
+  svar = readln(t).toLowerCase
   ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
 } 
-utdata("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+println("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
 
 //Uppdrag:
 // (1) Prova programmet och försök att förklara vad som händer.
