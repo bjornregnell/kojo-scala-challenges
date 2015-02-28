@@ -1,44 +1,57 @@
 \documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}	% hyphenation and content headings  %%LOCALIZE
 
-\usepackage[german]{babel}	% Make german hyphenation and contents headning etc
-\usepackage{fontspec}
-
-%\usepackage[scaled]{beramono}
-%\setmonofont{Bera Mono}
-\usepackage[T1]{fontenc}		% utf letters
+\usepackage[T1]{fontenc}		% Allow Swedish, German etc. letters
 \DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
 
 
 \usepackage{titling}
-\usepackage[left=2cm, right=2cm,bottom=2cm,top=1cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
+\usepackage[left=2cm, right=2cm,bottom=3cm,top=2cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
 
-\usepackage{bookman}
+\usepackage[scaled]{helvet}
+%\usepackage{tgheros} %alternative to helvet
 \renewcommand{\familydefault}{\sfdefault}
-%\usepackage{tgtermes} %times
-\usepackage[scaled]{uarial} %Arial
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
-\usepackage{inconsolata}
-\addto\captionsgerman{%
-\def\contentsname{Index}}
+\usepackage[scaled=1.02]{inconsolata}
+%\usepackage[scaled]{beramono} %alternative to inconsolata
+
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{wrapfig}
 \usepackage{titlepic, graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{array} %to center table cells
 \usepackage{parskip} %to have noindent and space between paras
+\usepackage{tikz}
 
 \usepackage{titlesec}
-%\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
 \titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
 \titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
-\titlespacing\chapter{0pt}{30pt plus 10pt minus 10pt}{30pt plus 10pt minus 10pt}
+\titlespacing\chapter{0pt}{20pt plus 10pt minus 10pt}{20pt plus 10pt minus 10pt}
 \titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 4pt minus 2pt}
 
 \usepackage{multicol}
 
 \usepackage{listings}
+\lstset{literate=%
+%swedish and german letters
+{Å}{{\AA}}1
+{Ä}{{\"A}}1
+{Ö}{{\"O}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}1
+{ü}{{\"u}}1
+{å}{{\aa}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+%danish letters
+{æ}{{\ae}}1
+{ø}{{\o}}1
+{Æ}{{\AE}}1
+{Ø}{{\O}}1
+}            
 % "define" Scala
 \lstdefinelanguage{scala}{
   morekeywords={abstract,case,catch,class,def,%
@@ -67,8 +80,9 @@
   language=scala,
   aboveskip=3mm,
   belowskip=3mm,
+  %framesep=2cm,xleftmargin=-10pt,xrightmargin=10pt,
   showstringspaces=false,
-  columns=flexible,
+  columns=flexible,%flexible ,%fixed
   basicstyle={\ttfamily\selectfont},
   keywordstyle=\bf\ttfamily\selectfont\color{blue},
   commentstyle=\color{dkgreen},
@@ -79,30 +93,28 @@
   numbers=none,stepnumber=1, numbersep=8pt, numberstyle=\small\color{gray}
 }
 
-\title{\fontsize{36}{36}\bf\sffamily\selectfont Aufgaben mit Kojo }
-
-\author{Editor: Björn Regnell \\ \bf www.lth.se/programmera}
-\titlepic{
-\includegraphics[height=8cm]{../img/cover}
-}
-\date{Zuletzt geändert: \today{ }}
-\renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
+\title{\fontsize{40}{40}\bf\sffamily\selectfont Aufgaben mit Kojo} %%%LOCALIZE
+\author{Editor: Björn Regnell \\ \bf www.lth.se/code} %%%LOCALIZE
+\titlepic{\includegraphics[height=8cm]{../img/cover}}
+\date{}
+\renewcommand{\thechapter}{} % removes chapter numbers also in table of contents
 
 \begin{document}
 \maketitle
 \newpage
 \thispagestyle{empty}
 
-\input{license.tex} \\
-Translation to German: Christoph Knabe
+\input{license-de.tex} %%%LOCALIZE
+
 \newpage
-\begin{multicols}{4}
-\tableofcontents
+\begin{multicols}{3}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents 
 \mainmatter
 \end{multicols}
 
-\fontsize{20}{22}\selectfont\raggedright
+\fontsize{16}{18}\selectfont\raggedright
 
-\input{body-de.tex}
+\input{body-de.tex}  %%%LOCALIZE
 
 \end{document}

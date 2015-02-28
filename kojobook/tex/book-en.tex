@@ -1,9 +1,7 @@
 \documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}	% hyphenation and content headings  %%LOCALIZE
 
-%\usepackage[swedish]{babel}	% Swedish hyphenation and content headings
-\usepackage{fontspec}
-
-%\setmonofont{Bitstream Vera Mono}
 \usepackage[T1]{fontenc}		% Allow Swedish, German etc. letters
 \DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
 
@@ -11,14 +9,14 @@
 \usepackage{titling}
 \usepackage[left=2cm, right=2cm,bottom=3cm,top=2cm, paperwidth=297mm, paperheight=210mm, twoside=false]{geometry}
 
-\usepackage{bookman}
+\usepackage[scaled]{helvet}
+%\usepackage{tgheros} %alternative to helvet
 \renewcommand{\familydefault}{\sfdefault}
-%\usepackage{tgtermes} %times
-\usepackage[scaled]{uarial} %Arial
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
 \usepackage[scaled=1.02]{inconsolata}
-%\usepackage[scaled]{beramono}
+%\usepackage[scaled]{beramono} %alternative to inconsolata
+
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 \usepackage{wrapfig}
@@ -29,7 +27,6 @@
 \usepackage{tikz}
 
 \usepackage{titlesec}
-%\titleformat{\chapter}[hang]{\Huge\sffamily}{\thechapter.~}{0pt}{\Huge\sffamily}
 \titleformat{\chapter}[hang]{\bf\fontsize{40}{40}\selectfont\centering\vskip-13mm}{}{0pt}{\bf\fontsize{40}{40}\selectfont}
 \titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
 \titlespacing\chapter{0pt}{20pt plus 10pt minus 10pt}{20pt plus 10pt minus 10pt}
@@ -38,6 +35,23 @@
 \usepackage{multicol}
 
 \usepackage{listings}
+\lstset{literate=%
+%swedish and german letters
+{Å}{{\AA}}1
+{Ä}{{\"A}}1
+{Ö}{{\"O}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}1
+{ü}{{\"u}}1
+{å}{{\aa}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+%danish letters
+{æ}{{\ae}}1
+{ø}{{\o}}1
+{Æ}{{\AE}}1
+{Ø}{{\O}}1
+}            
 % "define" Scala
 \lstdefinelanguage{scala}{
   morekeywords={abstract,case,catch,class,def,%
@@ -79,23 +93,18 @@
   numbers=none,stepnumber=1, numbersep=8pt, numberstyle=\small\color{gray}
 }
 
-
-\title{\fontsize{40}{40}\bf\sffamily\selectfont Challenges with Kojo}
-
-\author{Editor: Björn Regnell \\ \bf www.lth.se/code}
-\titlepic{
-\includegraphics[height=8.5cm]{../img/cover}
-}
+\title{\fontsize{40}{40}\bf\sffamily\selectfont Challenges with Kojo} %%%LOCALIZE
+\author{Editor: Björn Regnell \\ \bf www.lth.se/code} %%%LOCALIZE
+\titlepic{\includegraphics[height=8cm]{../img/cover}}
 \date{}
-
-\renewcommand{\thechapter}{} % REMOVE chapter numbers also in table of contents
+\renewcommand{\thechapter}{} % removes chapter numbers also in table of contents
 
 \begin{document}
 \maketitle
 \newpage
 \thispagestyle{empty}
 
-\input{license-en.tex}
+\input{license-en.tex}  %%%LOCALIZE
 
 \newpage
 \begin{multicols}{3}
@@ -106,6 +115,6 @@
 
 \fontsize{16}{18}\selectfont\raggedright
 
-\input{body-en.tex}
+\input{body-en.tex}  %%%LOCALIZE
 
 \end{document}

@@ -13,7 +13,7 @@ object ioutils {
   }
   
   def load(fileName:String): Vector[String] = 
-    scala.io.Source.fromFile(fileName).getLines.toVector
+    scala.io.Source.fromFile(fileName,"UTF-8").getLines.toVector
   
   def mkdir(d: String): Boolean = new java.io.File(d).mkdirs   
   
