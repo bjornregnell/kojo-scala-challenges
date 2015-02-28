@@ -4,11 +4,9 @@ A simple Scala book generator.
 
 ### What is this repository for? ###
 
-* Write books using Scala case classes and generate latex and TODO: html
+Write books using Scala case classes and generate latex and TODO: html
 
 The scaboo api consists of a simple document model based on Scala case classes. A minimalistic latex generator is provided that is invoked via a scala script. You write your document using Scala case classes and combined with a latex-wrapper document you create your book. The kojobook directory includes an example of how scaboo can be used. The aim is to, in the future, develop scaboo into a latex/pdf AND static-site-html-generator.
-
-Kojobook is 
 
 ### How do I get set up? ###
 
