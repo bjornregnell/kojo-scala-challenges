@@ -16,8 +16,8 @@ The scaboo api consists of a simple document model based on Scala case classes. 
 
 0. [Download](https://bitbucket.org/bjornregnell/scaboo/downloads), clone or [fork](https://bitbucket.org/bjornregnell/scaboo/fork) this repo e.g. using [Sourcetree](http://www.sourcetreeapp.com/)
 0. Build scaboo into `bin` using the scala compiler with these scripts
-    * Windows open powershell and run `./build.cmd`
-    * Unix-like: `build.sh`
+    * Windows: open powershell and run `./build.cmd`
+    * Unix-like: `source build.sh`
 0. Generate the kojobook example for Swedish by running `make-sv.cmd` or TODO `make-sv.sh`
 
 ### Contributions  ###
