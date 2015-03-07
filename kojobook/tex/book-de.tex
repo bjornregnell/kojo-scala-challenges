@@ -31,7 +31,10 @@
 \titleformat{\section}[hang]{\bf\fontsize{24}{24}\selectfont}{}{0pt}{\bf\fontsize{24}{24}\selectfont}
 \titlespacing\chapter{0pt}{20pt plus 10pt minus 10pt}{20pt plus 10pt minus 10pt}
 \titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 4pt minus 2pt}
-
+\addto\captionsgerman{%%%LOCALIZE
+  \renewcommand{\contentsname}%
+    {Inhalt}%
+}
 \usepackage{multicol}
 
 \usepackage{listings}
@@ -104,7 +107,7 @@
 \newpage
 \thispagestyle{empty}
 
-\input{license-de.tex} %%%LOCALIZE
+\input{license-de.tex}%%%LOCALIZE
 
 \newpage
 \begin{multicols}{3}
@@ -115,6 +118,6 @@
 
 \fontsize{16}{18}\selectfont\raggedright
 
-\input{body-de.tex}  %%%LOCALIZE
+\input{body-de.tex}%%%LOCALIZE
 
 \end{document}
