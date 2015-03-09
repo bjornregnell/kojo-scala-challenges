@@ -178,7 +178,7 @@ stapel""".trim)
     contents=Seq(
       taskHead, Para("Zeichne verschiedene Quadrate."),
       hintHead, 
-      Para("Gib Deiner Quadrat-Funktion einen {/parameter/},","mit dem Namen {:seitenlänge:} und Typ {:Ganzzahl:}:"), 
+      Para("Gib Deiner Quadrat-Funktion einen {/Parameter/}","mit dem Namen {:seitenlänge:} und Typ {:Ganzzahl:}:"), 
       Code("""
 def quadrat(seitenlänge : Ganzzahl) = 
   schleife(4){ vor(seitenlänge); rechts }
@@ -765,7 +765,7 @@ onKeyPress { k =>
       ColumnBreak,
       taskHead,
       Itemize(
-        "Schreibe {:Kc.:} und drücke {:Ctrl+Alt+Leertaste:} dann kannst Du sehen, wie die verschiedenen Tasten heißen.", 
+        "Schreibe {:Kc.:} und drücke {:Strg+Alt+Leertaste:} dann kannst Du sehen, wie die verschiedenen Tasten heißen.", 
         "Mache {:stiftRauf:} wenn man Pfeil nach oben drückt",
         "Mache {:stiftRunter:} wenn man Pfeil nach unten drückt",
         "Mache {:stiftfarbe(blau):} wenn man B drückt",
@@ -925,8 +925,9 @@ ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt:" + worte
       taskHead,
       Itemize(
       "Wähle im Menü Beispiele > Animationen und Spiele > Tischtennis. Probiere es aus!",
-      "Du kannst es steuern mit: Pfeil nach oben/unten und A und Z.",
+      "Du kannst es steuern mit: Pfeil nach oben/unten und A/Z.",
       "Drücke ESC um das Spiel zu beenden und untersuche das Programm.",
+      "Ändere das Programm so, dass man mit Y statt Z den linken Schläger nach unten bewegen kann. Dann ist das Spiel bei einer deutschen Tastatur bequemer für die linke Hand.",
       "Ändere das Programm so, dass der Ball größer wird.",
       "Ändere das Spielfeld zu einem Tennisplatz mit grünem Hintergrund, weißen Linien und einem gelben Ball.")   
     )
