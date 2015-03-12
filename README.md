@@ -25,3 +25,15 @@ The scaboo api consists of a simple document model based on Scala case classes. 
 Pull requests on the api, scripts or the kojobook challenges are welcome. Contact bjorn.regnell@cs.lth.se
 
 If you want to contribute to the kojobook translation, you need to create a file similar to book-en.scala for your language. Contact bjorn.regnell@cs.lth.se
+
+### Set-Up Experiences on Lubuntu for German Book ###
+
+Trying out what really is necessary.
+
+1. Installed `scala` and `scalac` commands manually, as the Debian package `scala` still has version 2.9.
+2. Installed Ubuntu package `texlive-latex-base` by Synaptic, as necessary for command `pdflatex`.
+3. Installed Ubuntu package `texlive-lang-german` in order to avoid error "language definition file german.ldf was not found".
+4. Installed Ubuntu package `texlive-fonts-recommended` in order to avoid error "mktexnam: Could not map source abbreviation  for ecrm1200.". The package contains among others "ec -- Computer modern fonts in T1 and TS1 encodings".
+5. Installed Ubuntu package `texlive-latex-extra` in order to avoid error "File `titling.sty' not found"
+6. Installed Debian package `texlive-fonts-extra` in order to avoid error "File `inconsolata.sty' not found"
+7. Needs to run `pdflatex` or the wrapping `make-de.sh` two times in order to prepare/include the Table of Contents.

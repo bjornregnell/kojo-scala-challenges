@@ -16,7 +16,7 @@ val chapters = Seq(
   Chapter(id="about-kojo", head="Über Kojo", template=TextWithImage("kojo.png",14), 
     contents=Seq(
       Section("Was ist Kojo?",color="black"),
-      Para("Kojo ist eine App, die Dir beibringt, wie man programmiert. Mit Kojo benutzt Du die moderne und leistungsfähige Programmiersprache {!Scala!}. Kojo gibt es kostenlos und auf Deutsch. Kojo läuft auf Linux, Windows und Mac OSX."),
+      Para("Kojo ist eine App, die Dir beibringt, wie man programmiert. Mit Kojo benutzt Du die moderne und leistungsfähige Programmiersprache {!Scala!}. Kojo gibt es kostenlos und auf Deutsch. Kojo läuft auf Linux, Windows und Mac OS X."),
       Section("Wo kannst Du Kojo finden?",color="black"),
       Para("Lade Kojo hier: "), LineBreak, kojoDownloadUrl, LineBreak,
       Para("Lies hier mehr darüber: "), LineBreak, lthProgrammeraUrl
@@ -25,12 +25,12 @@ val chapters = Seq(
 //------------------------------------------------------   
   Chapter(id="forward", head="Dein erstes Programm", template=TextWithImage("fram_de.png",14), 
     contents=Seq(
-      taskHead, Para("Schreibe diese Worte in Kojos Skript-Editor-Fenster:"),
+      taskHead, Para("Schreibe diese Worte in Kojos Programmbearbeiter:"),
       Code("""
 leeren
 vor
        """.trim, size=30),
-      Para("Drücke die grüne Play-Taste "), Image("play.png",1), LineBreak,
+      Para("Klicke auf das grüne Ausführen-Symbol "), Image("play.png",1), LineBreak,
       Para("um das Programm zu starten."), LineBreak, VSkip(5)
     )
   ), 
@@ -83,7 +83,7 @@ schreiben("FELIX ist der Beste")
 stiftfarbe(lila)
 füllfarbe(grün)
        """.trim, size=20),
-      Para("Die Position der Maus im Zeichenfenster, kannst Du links unter dem Programmbearbeiter ablesen:"), Image("mousepos.png", 6),
+      Para("Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:"), Image("mousepos.png", 6),
       ColumnBreak,
       CenterImage("man.png",4.5), VSkip(2), CenterImage("alien.png",9)
     )
@@ -94,14 +94,14 @@ füllfarbe(grün)
     contents=Seq(
       Para( "Der erste Computer hieß {*ENIAC*} und konnte in einer Sekunde bis 5000 zählen.",
         "In Kojo gibt es eine Funktion {:zählzeitStoppen:} die misst, wie schnell Dein Computer zählen kann.",
-        "Wenn ich {:zählzeitStoppen(5000):} eingebe, dann wird die Zeit ausgegeben, die mein Computer für das zählen braucht:"),
+        "Wenn ich {:zählzeitStoppen(5000):} ausführe, dann wird die Zeit ausgegeben, die mein Computer für das Zählen braucht:"),
       Code("""
 *** Zählt von 1 bis ... 5000 *** FERTIG!
 Es dauerte 0.32 Millisekunden.
       """),
       taskHead, 
       Itemize("Gib ein {:zählzeitStoppen(5000):} und prüfe, ob Dein Computer schneller ist als meiner.",
-              "Wie lange braucht Dein Computer um bis eine Million zu zählen?",
+              "Wie lange braucht Dein Computer, um bis eine Million zu zählen?",
               "Wie weit kann Dein Rechner in einer Sekunde zählen?")      
     )
   ), 
@@ -110,9 +110,9 @@ Es dauerte 0.32 Millisekunden.
     contents=Seq(
       taskHead, Itemize(
         "Schreibe ein Programm, das eine Stufe zeichnet.",
-        "Drücke die orange Play-Taste.",
-        "Drücke auf einen der Aufrufe: {:CALL vor ():}. Was passiert im Zeichenfenster?",
-        "In Deinem Programm wird der zugehörige Befehl blau markiert, wenn Du die Play-Taste drückst. Deaktiviere die Markierung, indem Du neben die Markierung klickst. ",
+        "Klicke auf das orange Verfolgen-Symbol.",
+        "Klicke auf einen der Aufrufe: {:CALL vor ():}. Was passiert im Zeichenbereich?",
+        "Im Programmbearbeiter wird der zugehörige Befehl blau markiert. Deaktiviere die Markierung, indem Du neben die Markierung klickst.",
         "Füge dem Programm weitere Befehle hinzu und probiere aus, was passiert, wenn Du sie verfolgst",
         "Schließe das Fenster {/Programmschritte verfolgen/} wenn Du fertig bist.")
     )
@@ -125,7 +125,7 @@ Es dauerte 0.32 Millisekunden.
 def quadrat =  schleife(4){ vor; rechts }  
 
 leeren
-quadrat    //nutzt die Quadrat-Funktion
+quadrat    //Ruft die Quadrat-Funktion auf.
 springen
 quadrat   
        """.trim, size=20),
@@ -221,42 +221,42 @@ auge(40, 100); pupille(60, 100)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygon", head="Zeichne ein Polygon", 
+  Chapter(id="polygon", head="Zeichne ein Vieleck", 
     contents=Seq(
       taskHead, Itemize(
-        "Probiere das Programm unten aus. Zeichne verschiedene Polygone.",
-        "Füge einen Parameter {:seitenlänge:} hinzu und zeichne verschieden große Polygone.",
+        "Probiere das Programm unten aus. Zeichne verschiedene Vielecke.",
+        "Füge einen Parameter {:seitenlänge:} hinzu und zeichne verschieden große Vielecke.",
         "Wie groß muss n sein, damit ein Kreis entsteht?"),
       hintHead,
       Code("""
-def polygon(n:Ganzzahl) = schleife(n){
+def vieleck(n: Ganzzahl) = schleife(n){
   vor(100)
   links(360.0/n)
 }
 
 leeren; langsam(100)
-polygon(7)
+vieleck(7)
        """.trim,size=18),
       OverlayImage("polygon.png",x=20,y=3.5,width=8)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygons", head="Zeichne viele Polygone", 
+  Chapter(id="polygons", head="Zeichne viele Vielecke", 
     contents=Seq(
       taskHead, Itemize(
         "Probiere das Programm unten aus.",
         "Verändere die Anzahl der Seiten und den Winkel.",
-        "Fülle die Polygone mit Farbe."),
+        "Fülle die Vielecke mit Farbe."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Ganzzahl, seitenlänge: Ganzzahl) = 
+def vieleck(n: Ganzzahl, seitenlänge: Ganzzahl) = 
   schleife(n){
     vor(seitenlänge)
     links(360.0/n)
   }
 def drehen(n: Ganzzahl, winkel: Ganzzahl, seitenlänge: Ganzzahl) = 
   schleife(360/winkel){ 
-    polygon(n, seitenlänge) 
+    vieleck(n, seitenlänge) 
     links(winkel) 
   }
 
@@ -270,9 +270,9 @@ drehen(7, 10, 100)
     template = MultiColumn(2),
     contents=Seq(
       taskHead, 
-      Itemize("Schreibe {:1 + 1:} und drücke die blaue Play-Taste. Dann erstellt Kojo einen grünen Kommentar.", 
-        "Der Kommentar sagt, dass der Wert des Ausdrucks {:1 + 1:} gleich {:2:} ist und dass der Typ {:Int:} ist, d.h. {:Ganzzahl:}.",
-        "Führe weitere Berechnungen durch. Welcher Wert und Typ wird angegeben?"),
+      Itemize("Schreibe {:1 + 1:} und klicke die blaue Ausführen-Taste. Dann erstellt Kojo einen grünen Kommentar.", 
+        "Der Kommentar sagt, dass der Wert des Ausdrucks {:1 + 1:} gleich {:2:} ist und dass der Typ {:Int:} ist. {:Int:} ist eine Abkürzung für Integer, auf Deutsch: {:Ganzzahl:}.",
+        "Führe weitere Berechnungen durch. Welcher Wert und Typ wird ausgegeben?"),
       Code("""
 5 * 5
 10 + 2 * 5
@@ -282,7 +282,7 @@ drehen(7, 10, 100)
 5 % 2
       """.trim),
       ColumnBreak, Image("show-value_de.png", width=12),
-      hintHead, Itemize("Steht {:/:} zwischen ganzen Zahlen, so wird eine ganzzahlige Division ausgeführt. D.h.die Dezimalstellen entfallen. Für eine Division mit Dezimalstellen muss mindestens eine Zahl eine Dezimalzahl sein.","Mit {:%:} erhältst Du den Rest einer ganzzahligen Division.")
+      hintHead, Itemize("Steht {:/:} zwischen ganzen Zahlen, so wird eine ganzzahlige Division ausgeführt. Das heißt, die Nachkommastellen entfallen. Für eine Division mit Nachkommastellen muss mindestens eine Zahl eine Bruchzahl sein.","Mit {:%:} erhältst Du den Rest einer ganzzahligen Division.")
     )
   ), 
 //------------------------------------------------------
@@ -312,10 +312,10 @@ vor; schreiben(x)
         "Führe das Programm unten mehrmals aus. Was passiert?",
         "Was ist der kleinste und der größte mögliche Wert des Radius {:r}?",
         "Ändere {:r:} zu einer Zufallszahl zwischen 3 und 200.",
-        "Zeichne 100 Kreise mit zufälligem Radius und zufälliger Position, wie im Bild rechts."),
+        "Zeichne 100 Kreise mit zufälligem Radius und zufälliger Position wie im Bild rechts."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//Wert r ist eine Zufallszahl zwischen 10 und 99:
+// zufall(90) liefert eine Zufallszahl zwischen 0 und 89:
 val r = zufall(90) + 10   
 
 leeren; langsam(10); unsichtbar
@@ -329,9 +329,9 @@ kreis(r)
     contents=Seq(
       Itemize(
         "Mit {:Color:} kannst Du Deine eigenen Farben erstellen, z.B. {:Color(0, 70, 0):}", 
-        "Die drei Parameter geben den Farbanteil von {/rot/}, {/grün/} und {/blau/} an",
-        "Du kannst auch einen vierten Parameter für die {/Deckkraft/} angeben",
-        "Alle Parameterwerte müssen zwischen 0 und 255 liegen" 
+        "Die drei Parameter geben den Farbanteil von {/rot/}, {/grün/} und {/blau/} an.",
+        "Du kannst auch einen vierten Parameter für die {/Deckkraft/} angeben.",
+        "Alle Parameterwerte müssen zwischen 0 und 255 liegen." 
       ),
       taskHead, Para(
         "Probiere das folgende Programm. Ändere die Deckkraft."
@@ -386,8 +386,8 @@ schleife(100) {
   Chapter(id="flower", head="Zeichne eine Blume", 
     contents=Seq(
       taskHead, 
-      Para("Das folgende Programm zeichnet 100 Kreise mit zufälliger Farbe, zufälliger Position und zufälligem Radius. " +
-           "Probiere verschiedene Zufallszahlen-Grenzen und versuche zu erklären was hierbei passiert."),
+      Para("Das folgende Programm zeichnet 100 Kreise mit zufälliger Farbe, zufälligem Radius und zufälliger Ausrichtung. " +
+           "Probiere verschiedene Zufallszahlen-Grenzen und versuche zu erklären, was hierbei passiert."),
       OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
 leeren(); langsam(5)
@@ -474,19 +474,19 @@ vor(1000)
      Para("Du kannst viele neue Kröten mit {:new:} hinzufügen:"),
      Code("""
 leeren
-val p1 = new Kröte(100,100)  //die neue Kröte p1 startet auf der Position (100, 100)
-val p2 = new Kröte(100, 50)  //die neue Kröte p2 startet auf der Position (100, 50)
-p1.vor(100)
-p2.vor(-100)  //Kröte p2 nach unten
-""".trim, size=18),
+val k1 = new Kröte(100,100)  //die neue Kröte k1 startet auf der Position (100, 100)
+val k2 = new Kröte(100, 50)  //die neue Kröte k2 startet auf der Position (100, 50)
+k1.vor(100)
+k2.rück(100)  //Kröte k2 nach unten
+      """.trim, size=18),
       OverlayImage("new.png", x = 22, y = -2, width = 5),
       taskHead, Itemize(
         "Erzeuge drei Kröten übereinander.","Alle drei sollen nach links schauen."
       ),
       hintHead, Itemize(
-        "{:p1:} und {:p2:} sind die {/Namen/} der neuen Kröten. Du kannst die Namen ändern, wenn Du willst.", 
-        "Mit {:p1:} gefolgt von einem Punkt kannst Du der Kröte p1 einen Befehl geben: {:p1.links:}",
-        "Mit dem Befehl {:unsichtbar:} kannst Du die Kröte verbergen."
+        "{:k1:} und {:k2:} sind die {/Namen/} der neuen Kröten. Du kannst die Namen ändern, wenn Du willst.", 
+        "Mit {:k1:} gefolgt von einem Punkt kannst Du der Kröte k1 einen Befehl geben: {:k1.links:}",
+        "Mit dem Befehl {:unsichtbar:} kannst Du eine Kröte verbergen."
       )
    )
  ), 
@@ -500,32 +500,33 @@ p2.vor(-100)  //Kröte p2 nach unten
         "Wenn alle Kröten 10 mal nach vorn laufen, welche Kröte ist dann die Erste?"
       ),
       hintHead, Itemize(
-        "Mit {:p1.vor(zufall(100) + 1):} bewegt sich p1 zwischen 1 und 100 Schritten weit."
+        "Mit {:k1.vor(zufall(100) + 1):} bewegt sich k1 zwischen 1 und 100 Schritten weit."
       )
    )
  ), 
 //------------------------------------------------------
   Chapter(id="if", head="Alternative mit {:if:}", 
     contents=Seq(
-      Para("Mit einer {:if:}-Anweisung kann man den Computer zwischen zwei Alternativen wählen lassen."),
+      Para("Mit einer {:if:}-Anweisung kann man den Computer aufgrund einer Bedingung zwischen zwei Alternativen wählen lassen."),
       Code("""
 leeren; unsichtbar
 if (true) schreiben("wahr") else schreiben("falsch")
      """.trim, size = 20),
       taskHead, Itemize(
-        "Ändere {:true:} in {:false:} und prüfe, was die Kröte schreibt.",
+        "Ändere die Bedingung {:true:} in {:false:} und prüfe, was die Kröte schreibt.",
         "Ändere die Bedingung in {:2 > 1:} und prüfe, was die Kröte schreibt.",
         "Ändere die Bedingung in {:2 < 1:} und prüfe, was die Kröte schreibt.",
         "Erkläre wie eine {:if:}-Anweisung funktioniert."
       ),
       hintHead, Itemize(
-        "Wenn die Bedingung nach dem {:if:} {:true:} ist, wird der Befehl hinter der Bedingung ausgeführt.",
-        "Wenn die Bedingung nach dem {:if:} {:false:} ist, wird der Befehl hinter {:else:} ausgeführt."
+        "Hinter {:if:} kommt immer eine Bedingung in Klammern.",
+        "Wenn die Bedingung nach dem {:if:} gleich {:true:} ist, wird der Befehl hinter der Bedingung ausgeführt.",
+        "Wenn die Bedingung nach dem {:if:} gleich {:false:} ist, wird der Befehl hinter {:else:} ausgeführt."
       )
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="if-input", head="Reagiere auf das was der Nutzer macht", 
+  Chapter(id="if-input", head="Reagiere auf das, was der Nutzer macht", 
     contents=Seq(
       Code("""
 ausgabeLeeren; setOutputTextFontSize(35)
@@ -538,8 +539,8 @@ val meldung = if (antwort == passwort) richtig else fehler
 ausgeben(meldung)
      """.trim, size = 20),
       taskHead, Itemize(
-        "Probiere das Programm aus und erkläre was passiert.",
-        "Ändere das Passwort. Was wird ausgegeben, wen man es richtig und wenn man es falsch eingibt.",
+        "Probiere das Programm aus. Du musst im Ausgabebereich unten etwas eingeben und mit der Eingabetaste bestätigen. Erkläre, was passiert.",
+        "Ändere das Passwort. Was wird ausgegeben, wenn man es richtig und wenn man es falsch eingibt?",
         "Frage auch nach einem Benutzernamen und gib den Namen aus."
       )
     )
@@ -547,11 +548,11 @@ ausgeben(meldung)
 //------------------------------------------------------
   Chapter(id="while", head="Nutze eine {:Solange:}-Schleife", 
     contents=Seq(
-      Para("Mit {:schleifeSolange:} wiederholt der Computer Anweisungen so lange eine Bedingung wahr ist."),
+      Para("Mit {:schleifeSolange:} wiederholt der Computer Anweisungen so lange, wie eine Bedingung wahr ist."),
       Code("""
 leeren; unsichtbar; langsam(250); ausgabeLeeren
 var x = 200
-schleifeSolange (x > 0) {  //prüfe den Zustand vor jeder Wiederholung 
+schleifeSolange (x > 0) {  //prüfe die Bedingung vor jeder Wiederholung 
   vor(x); rechts
   schreiben(x) 
   x = x - 12
@@ -560,13 +561,13 @@ ausgeben("x ist jetzt: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
         "Was wird im Ausgabebereich ausgegeben? Warum?",
-        "Verfolge das Programm mit der orangen Play-Taste und prüfe jeden Schritt.",
-        "Ziehe statt {:12:} den Wert {:20:} von der Variablen {:x:} ab. Erkläre was passiert."
+        "Starte das Programm mit dem orangen Verfolgen-Symbol und prüfe jeden Schritt.",
+        "Ziehe statt {:12:} den Wert {:20:} von der Variablen {:x:} ab. Erkläre, was passiert."
       )
     )
   ),
 //------------------------------------------------------
-  Chapter(id="guess-the-number", head="Zahlen Raten", 
+  Chapter(id="guess-the-number", head="Zahlenraten", 
     contents=Seq(
       Code("""
 val geheimnis = zufall(100)+1
@@ -609,7 +610,7 @@ val sekunde = stoppZeit - startZeit
 ausgeben("Du hast " + anzahlRichtig + " richtige Antworten in " + sekunde + " Sekunden.")
       """.trim,size=16),  
       taskHead,
-      Para("Ändere das Programm, so dass man nur noch die Multiplikation mit 8 und 9 üben muss.")      
+      Para("Ändere das Programm so, dass man nur noch die Multiplikation mit 8 und 9 üben muss.")      
     )
   ), 
 //------------------------------------------------------
@@ -643,22 +644,22 @@ val deutsch = Vector("Rechner", "Schildkröte", "Kreis")
 val englisch = Vector("computer", "turtle", "circle")
 var anzahlRichtig = 0
 schleife(5) {
-  val s = zufall(3)
-  val vokabel = deutsch(s)
+  val i = zufall(deutsch.size)
+  val vokabel = deutsch(i)
   val antwort = einlesen("Was heisst " + vokabel + " auf Englisch?")
-  if (antwort == englisch(s)) {
+  if (antwort == englisch(i)) {
     ausgeben("Richtige Antwort!")
     anzahlRichtig = anzahlRichtig + 1
   } else {
-    ausgeben("Falsche Antwort. Die richtige Antwort lautet: " + englisch(s))
+    ausgeben("Falsche Antwort. Die richtige Antwort lautet: " + englisch(i))
   }
 }
-ausgeben("Du hast" + anzahlRichtig + " richtige Antworten gegeben.")
+ausgeben("Du hast " + anzahlRichtig + " richtige Antworten gegeben.")
       """.trim,size=14),   
       taskHead,
       Itemize("Füge mehr Vokabeln ein.",
       "Übe die Übersetzung vom Englischen ins Deutsche.", 
-      """Lasse den Nutzer einstellen, wie viele Vokabeln er üben will. Tipp: {:val anzahl = einlesen("Gebe die Anzahl ein: ").toInt:}""")
+      """Lasse den Nutzer einstellen, wie viele Vokabeln er üben will. Tipp: {:val anzahl = einlesen("Gebe die Anzahl ein:").toInt:}""")
     )
   ), 
 //------------------------------------------------------
@@ -675,8 +676,8 @@ def hauptstadtSpiel = {
     val antwort = einlesen("Was ist die Hauptstadt von " + land + "?")
     ausgeben(s"Du sagst: $antwort")
     if (antwort == stadt(land)) {
-      ausgeben("Richtig! Du hast noch " + länder.size + " Länder!")
       länder = länder - land  //entfernt das Land aus der Menge der Länder
+      ausgeben("Richtig! Du hast noch " + länder.size + " Länder!")
     } else ausgeben(s"Falsch! Die Hauptstadt von $land beginnt mit ${stadt(land).take(2)}...")
   }
   ausgeben("DANKE FÜR DIE TEILNAHME! (Drücke ESC)")
@@ -684,7 +685,7 @@ def hauptstadtSpiel = {
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-schleife(100)(ausgeben("")) //fülle den Ausgabebereich mit 100 Leerzeilen
+schleife(100)(ausgeben()) //fülle den Ausgabebereich mit 100 Leerzeilen
 hauptstadtSpiel
 //AUFGABE: Lege mehr Paare Land -> Stadt an. Messe die Zeit und zähle die Punkte.
 """.trim,size=13)
@@ -695,7 +696,7 @@ hauptstadtSpiel
     contents=Seq(
       Code("""
 object timer {
-  def jetzt = System.currentTimeMillis  //gibt die aktuelle Zeit in Millisekunden
+  def jetzt = System.currentTimeMillis  //liefert die aktuelle Zeit in Millisekunden
   var zeit = jetzt
   def rücksetzen = { zeit = jetzt }
   def gemessen = jetzt - zeit
@@ -713,7 +714,7 @@ ausgeben("Reaktionszeit: " + (timer.gemessen/1000.0) + " Sekunden")
         "Du kannst mit einem Punkt auf etwas im Objekt zugreifen: {:timer.rücksetzen:}"),
       taskHead,
       Itemize("Probiere das Programm aus und messe Deine Reaktionszeit. Wie schnell bist Du?",
-             "Nutze {:timer:} in der Aufgabe {/Zahlen Raten/} und füge die folgende Ausgabe hinzu: {:Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft!:}")
+             "Nutze {:timer:} in der Aufgabe {/Zahlenraten/} und füge die folgende Ausgabe hinzu: {:Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft!:}")
     )
   ), 
 //------------------------------------------------------
@@ -738,7 +739,7 @@ schleifeSolange (true) { //eine unendliche Schleife
   leuchtetGelb; warte(1)
 }
       """.trim,size=14),       taskHead,
-      Itemize("Wie wechselt die Ampel? Versuche zu erklären was hierbei passiert.",
+      Itemize("Wie wechselt die Ampel? Versuche zu erklären, was hierbei passiert.",
       "Ändere das Programm so, dass die Ampel doppelt so lang auf grün bleibt.")   
     )
   ),
@@ -752,24 +753,22 @@ activateCanvas()
 
 animate { vor(1) }
 
-onKeyPress { k =>
-  k match {
-    case Kc.VK_LEFT =>   links(5)
-    case Kc.VK_RIGHT =>  rechts(5)
-    case Kc.VK_SPACE =>  vor(5)
-    case _ => 
-      ausgeben("Unbekannte Taste: " + k)
-  }
+onKeyPress {
+  case Kc.VK_LEFT  => left(5)
+  case Kc.VK_RIGHT => right(5)
+  case Kc.VK_SPACE => forward(5)
+  case k =>
+    println("Unbekannte Taste: " + k)
 }
       """.trim, size = 18),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Schreibe {:Kc.:} und drücke {:Strg+Alt+Leertaste:} dann kannst Du sehen, wie die verschiedenen Tasten heißen.", 
-        "Mache {:stiftRauf:} wenn man Pfeil nach oben drückt",
-        "Mache {:stiftRunter:} wenn man Pfeil nach unten drückt",
-        "Mache {:stiftfarbe(blau):} wenn man B drückt",
-        "Mache {:stiftfarbe(rot):} wenn man R drückt",
+        "Schreibe {:Kc.:} und drücke {:Strg+Alt+Leertaste:}. Dann kannst Du sehen, wie die verschiedenen Tasten heißen.", 
+        "Befehle {:stiftRauf:} wenn man Pfeil nach oben drückt",
+        "Befehle {:stiftRunter:} wenn man Pfeil nach unten drückt",
+        "Befehle {:stiftfarbe(blau):} wenn man B drückt",
+        "Befehle {:stiftfarbe(rot):} wenn man R drückt",
         "Erhöhe bzw. Verringere die Geschwindigkeit mit den Tasten + bzw. -"
       )   
     )
@@ -784,17 +783,15 @@ activateCanvas()
 
 var zeichnen = true
 
-onKeyPress { k =>
-  k match {
-    case Kc.VK_DOWN => 
-      stiftRunter()
-      zeichnen = true
-    case Kc.VK_UP => 
-      stiftRauf()
-      zeichnen = false
-    case _ => 
-      ausgeben("Unbekannte Taste: " + k)
-  }
+onKeyPress {
+  case Kc.VK_DOWN =>
+    stiftRunter()
+    zeichnen = true
+  case Kc.VK_UP =>
+    stiftRauf()
+    zeichnen = false
+  case k =>
+    ausgeben("Unbekannte Taste: " + k)
 }
 
 onMouseClick { (x, y) =>
@@ -804,7 +801,7 @@ onMouseClick { (x, y) =>
       ColumnBreak,
       taskHead,
       Itemize(
-        "Mache {:füllfarbe(schwarz):} wenn man F drückt",
+        "Befehle {:füllfarbe(schwarz):} wenn man F drückt",
         "Führe die Variable {:var füllen = true:} ein und mache bei Taste {:Kc.VK_F:}:"
       ), Code("""
       if (füllen) {
@@ -825,67 +822,67 @@ onMouseClick { (x, y) =>
 object meinKonto {
   val nummer = 123456
   var stand = 0.0
-  def überweisen(betrag: Bruchzahl) = {
-    stand = stand + betrag 
+  def einzahlen(betrag: Bruchzahl) = {
+    stand = stand + betrag
   }
-  def abbuchen(betrag: Bruchzahl) = { 
-    stand = stand - betrag 
+  def abheben(betrag: Bruchzahl) = {
+    stand = stand - betrag
   }
-  def zeigeStand() = {
-    ausgeben("Kontonummer: " + nummer) 
+  def anzeigen() = {
+    ausgeben("Kontonummer: " + nummer)
     ausgeben(" Kontostand: " + stand)
   }
 }
 
-meinKonto.zeigeStand()
-meinKonto.überweisen(100)
-meinKonto.zeigeStand()
-meinKonto.abbuchen(10)
-meinKonto.zeigeStand()
+meinKonto.anzeigen()
+meinKonto.einzahlen(100)
+meinKonto.anzeigen()
+meinKonto.abheben(10)
+meinKonto.anzeigen()
       """.trim, size = 16),
       ColumnBreak,
       taskHead,
       Itemize(
         "Was ist der Kontostand nach Ausführung des Programms? Erkläre was passiert.",
         "Sorge dafür, dass nicht mehr Geld abgehoben werden kann, als auf dem Konto ist.",
-        "Lege eine Variable {:val maxBetrag = 5000:} an und sorge dafür, dass man nicht mehr abheben darf als {:maxBetrag:}."
+        "Lege eine Konstante {:val maxBetrag = 5000:} an und sorge dafür, dass man nicht mehr abheben darf als {:maxBetrag:}."
       )
     )
   ),
 //------------------------------------------------------
   Chapter(id="class-bankaccount", head="Erstelle viele Objekte mit {:class:}", 
     template=MultiColumn(2),
-    contents=Seq(Para("Wenn Du viele verschiedene Konten erstellen willst, benötigst Du eine Klasse. Mit {:new:} kannst Du neue Objekte erstellen. Jedes Objekt erhält eine eigene Kontonummer und Kontostand."),
+    contents=Seq(Para("Wenn Du viele verschiedene Konten erstellen willst, benötigst Du eine Klasse. Mit {:new:} kannst Du davon neue Objekte erstellen. Jedes Objekt erhält eine eigene Kontonummer und Kontostand."),
       Code("""
 class Konto(nummer: Ganzzahl) {
   private var stand = 0.0 //private bedeutet "versteckt"  
-  def überweisen(betrag: Bruchzahl) = {
+  def einzahlen(betrag: Bruchzahl) = {
     stand = stand + betrag 
   }
-  def abbuchen(betrag: Bruchzahl) = { 
+  def abheben(betrag: Bruchzahl) = { 
     stand = stand - betrag 
   }
-  def zeigeStand() = 
+  def anzeigen() = 
     ausgeben(s"Konto $nummer: $stand")
 }
 
 val konto1 = new Konto(12345) //neues Objekt erstellen
 val konto2 = new Konto(67890) //Noch ein Objekt
 
-konto1.überweisen(99)
-konto2.überweisen(88)
-konto1.abbuchen(57)
-konto1.zeigeStand
-konto2.zeigeStand
+konto1.einzahlen(99)
+konto2.einzahlen(88)
+konto1.abheben(57)
+konto1.anzeigen
+konto2.anzeigen
       """.trim, size = 13),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Was ist der Stand der beiden Konten nachdem das Programm ausgeführt wurde? Erkläre was passiert.",
-        "Erstelle weitere Konto-Objekte und überweise und buche Beträge ab.",
-        "Füge einen Klassenparameter {:name: String:} hinzu, der den Namen des Kontoinhabers aufnehmen soll, wenn Objekte erstellt werden.",
-        "Sorge dafür, dass auch {:name:} ausgegeben wird, wenn {:zeigeStand:} ausgeführt wird.",
-        "Was passiert wenn Du das machst: {:konto1.stand = 10000000 } ?")
+        "Was ist der Stand der beiden Konten, nachdem das Programm ausgeführt wurde? Erkläre was passiert.",
+        "Erstelle weitere Konto-Objekte und zahle Beträge ein und hebe Beträge ab.",
+        "Füge einen Klassenparameter {:name: Text:} hinzu, der den Namen des Kontoinhabers aufnehmen soll, wenn Objekte erstellt werden.",
+        "Sorge dafür, dass auch {:name:} ausgegeben wird, wenn {:anzeigen:} ausgeführt wird.",
+        "Was passiert, wenn Du das befiehlst: {:konto1.stand = 10000000 } ?")
     )
   ),
 //------------------------------------------------------
@@ -898,38 +895,38 @@ def zufällig(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val aufforderung = Vector("Was bedeutet", "Gefällt Dir", "Wozu brauchen wir", "Erzähl mir mehr über")
 var antwort = "?"
 val eröffnung = "Worüber möchtest Du reden?"
-var worte = Vector("Nabelschnur", "Ketchupeis", "Weihnachtsmann", "Kissenbezüge") 
-schleifeSolange (antwort != "tschüss") {
-  val t = if (antwort == "?") eröffnung 
-    else if (antwort == "nein") "Nee." 
-    else if(antwort == "ja") "Nun ja." 
-    else if (antwort.length < 4) "Oh..." 
-    else zufällig(aufforderung) + " " + zufällig(worte) + "?"
+var worte = Vector("Nabelschnur", "Ketchupeis", "Weihnachtsmann", "Kissenbezüge")
+schleifeSolange(antwort != "tschüss") {
+  val t = if (antwort == "?") eröffnung
+  else if (antwort == "nein") "Nee."
+  else if (antwort == "ja") "Nun ja."
+  else if (antwort.length < 4) "Oh..."
+  else zufällig(aufforderung) + " " + zufällig(worte) + "?"
   antwort = einlesen(t).toLowerCase
-  worte = worte ++ antwort.split(" ").toList.filter(_.length > 3) 
-} 
-ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt:" + worte)
+  worte = worte ++ antwort.split("[ ,;:.!?]").toList.filter(_.length > 3)
+}
+ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt: " + worte)
 
 //Aufgabe:
 // (1) Probiere das Programm aus und versuche herauszufinden, wie es funktioniert.
 // (2) Wann wird die Solange-Schleife beendet?
-// (3) Fülle weitere Sätze und Worte in die Vektoren aufforderug und worte.
+// (3) Fülle weitere Sätze und Worte in die Vektoren aufforderung und worte.
 // (4) Erweitere die Reaktion auf kurze Antworten über "nein" und "ja" hinaus.
       """.trim, size = 13)
     )
   ),
 //------------------------------------------------------
-  Chapter(id="modify-pong", head="Verändere das Pong-Spiel", 
+  Chapter(id="modify-pong", head="Verändere das Tischtennis-Spiel", 
     template=TextWithImage("pong.png"),
     contents=Seq(
       taskHead,
       Itemize(
       "Wähle im Menü Beispiele > Animationen und Spiele > Tischtennis. Probiere es aus!",
       "Du kannst es steuern mit: Pfeil nach oben/unten und A/Z.",
-      "Drücke ESC um das Spiel zu beenden und untersuche das Programm.",
-      "Ändere das Programm so, dass man mit Y statt Z den linken Schläger nach unten bewegen kann. Dann ist das Spiel bei einer deutschen Tastatur bequemer für die linke Hand.",
+      "Drücke ESC um das Spiel zu beenden und untersuche das Programm. Es nutzt die englischen Kojo-Befehle.",
+      "Ändere das Programm so, dass man mit Y statt Z den linken Schläger nach unten bewegen kann. Dann ist das Spiel bei einer deutschen Tastatur bequemer für den linken Spieler.",
       "Ändere das Programm so, dass der Ball größer wird.",
-      "Ändere das Spielfeld zu einem Tennisplatz mit grünem Hintergrund, weißen Linien und einem gelben Ball.")   
+      "Ändere das Spielfeld zu einem Tennistisch mit grünem Hintergrund, weißen Linien und einem gelben Ball.")   
     )
   )  
     

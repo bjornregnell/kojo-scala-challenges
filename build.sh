@@ -1,3 +1,5 @@
+#Treat undefined variables and unhandled errors as error:
+set -ue
 set -x
 rm -rf bin
 mkdir bin
