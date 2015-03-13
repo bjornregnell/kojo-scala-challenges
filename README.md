@@ -26,9 +26,9 @@ Pull requests on the api, scripts or the kojobook challenges are welcome. Contac
 
 If you want to contribute to the kojobook translation, you need to create a file similar to book-en.scala for your language. Contact bjorn.regnell@cs.lth.se
 
-### Set-Up Experiences on Lubuntu for German Book ###
+### Set-Up Experiences on Lubuntu 14.04 for German Book ###
 
-Trying out what really is necessary.
+Trying out what is necessary for minimal TeX installation.
 
 1. Installed `scala` and `scalac` commands manually, as the Debian package `scala` still has version 2.9.
 2. Installed Ubuntu package `texlive-latex-base` by Synaptic, as necessary for command `pdflatex`.
