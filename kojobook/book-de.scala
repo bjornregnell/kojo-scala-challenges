@@ -754,11 +754,11 @@ activateCanvas()
 animate { vor(1) }
 
 onKeyPress {
-  case Kc.VK_LEFT  => left(5)
-  case Kc.VK_RIGHT => right(5)
-  case Kc.VK_SPACE => forward(5)
-  case k =>
-    println("Unbekannte Taste: " + k)
+  case Kc.VK_LEFT  => links(5)
+  case Kc.VK_RIGHT => rechts(5)
+  case Kc.VK_SPACE => vor(5)
+  case t => 
+    ausgeben("Unbekannte Taste: " + t)
 }
       """.trim, size = 18),
       ColumnBreak,
@@ -790,8 +790,8 @@ onKeyPress {
   case Kc.VK_UP =>
     stiftRauf()
     zeichnen = false
-  case k =>
-    ausgeben("Unbekannte Taste: " + k)
+  case t =>
+    ausgeben("Unbekannte Taste: " + t)
 }
 
 onMouseClick { (x, y) =>
