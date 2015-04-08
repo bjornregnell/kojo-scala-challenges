@@ -1,7 +1,7 @@
 \chapter{About Kojo}
 \begin{multicols}{2}
 \section*{\color{black}What is Kojo?}
-Kojo is an app that can help you learn how to program. With Kojo you can code using the modern and powerful programming language {\bf\color{blue}Scala}. Kojo is free and available for Linux, Windows and Mac OSX.
+Kojo is an app that can help you learn how to program. With Kojo you can code using the modern and powerful programming language {\bf\color{blue}Scala}. Kojo is free and available for Linux, Windows and Mac.
 \section*{\color{black}Where can I find Kojo?}
 Download Kojo here: 
 \\
@@ -25,18 +25,18 @@ Read more here:
 \chapter{Your first program}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Skriv så här i Kojos skripteditor-fönster:
+Write the following in the Kojo script editor window:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 clear
 forward
 \end{lstlisting}
         
-Tryck på den gröna play-knappen 
+Press the green play button 
 \includegraphics[width=1.0cm]{../img/play.png}
 \\
 
-för att köra igång ditt program.
+to run your program.
 \\
 
 \vskip 5.0em
@@ -49,7 +49,7 @@ för att köra igång ditt program.
 
 \end{multicols}
 
-\chapter{Rita en kvadrat}
+\chapter{Draw a square}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
@@ -58,9 +58,9 @@ forward
 right
 \end{lstlisting}
         
-Om du skriver \lstinline{vänster} eller \lstinline{höger} så vrider sig paddan.
+If you write \lstinline{left} or \lstinline{right} the turtle will change direction.
 \section*{\color{BrickRed}Challenge:}
-Utöka programmet så att det blir en kvadrat.
+Extend the program so that it makes a square.
 
 \columnbreak
 
@@ -70,7 +70,7 @@ Utöka programmet så att det blir en kvadrat.
 
 \end{multicols}
 
-\chapter{Rita en trappa}
+\chapter{Draw stairs}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
@@ -80,9 +80,9 @@ forward; right
 \end{lstlisting}
         
 \vskip 1.0em
-Med semikolon \lstinline{;} mellan satserna kan du ha flera satser på samma rad.
+With semicolon \lstinline{;} between the commands, you could have several commands on the same line.
 \section*{\color{BrickRed}Challenge:}
-Utöka programmet så att det blir en trappa.
+Extend the program so that it makes stairs.
 
 \columnbreak
 
@@ -92,7 +92,7 @@ Utöka programmet så att det blir en trappa.
 
 \end{multicols}
 
-\chapter{Gör en loop}
+\chapter{Make a loop}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
@@ -105,8 +105,8 @@ repeat(4){ forward; right }
 
 \begin{itemize}
 
-\item {Vad händer om du ändrar 4 till 100?}
-\item {Rita en trappa med 100 trappsteg.}
+\item {What will happen if you change 4 to 100?}
+\item {Draw stairs with 100 steps.}
 
 \end{itemize}
 
@@ -120,10 +120,10 @@ repeat(4){ forward; right }
 
 \end{multicols}
 
-\chapter{Rita en gubbe}
+\chapter{Draw a character}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Rita en gubbe som du själv vill.
+Draw a character of your choice.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
@@ -132,12 +132,12 @@ left(180)
 forward(300)
 hop(100)
 jumpTo(25,-28)
-write("FELIX är bäst")
+write("FELIX is awesome")
 setPenColor(purple)
 setFillColor(green)
 \end{lstlisting}
         
-Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:
+You can see the turtle's position down to the left while moving the mouse in the Canvas:
 \includegraphics[width=6.0cm]{../img/mousepos.png}
 
 
@@ -155,9 +155,9 @@ Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstr
 
 \end{multicols}
 
-\chapter{Hur snabb är din dator?}Den första elektroniska datorn hette {\bf ENIAC} och kunde räkna till 5000 på en sekund.\\
-I Kojo finns en funktion \lstinline{räknaTill} som mäter hur snabbt datorn kan räkna.\\
-När jag kör \lstinline{räknaTill(5000)} på min snabba dator skrivs detta i utdata-fönstret:
+\chapter{How fast is your computer?}The first electronic computer was called {\bf ENIAC} and could count up to 5000 in a second.\\
+In Kojo there is a function \lstinline{räknaTill} that measures how fast the computer counts.\\
+When I run \lstinline{räknaTill(5000)} on my fast computer, the following appears in the output window:
 
 \begin{lstlisting}[numbers=none]
 
@@ -171,26 +171,26 @@ Det tog 0.32 millisekunder.
 
 \begin{itemize}
 
-\item {Kör \lstinline{räknaTill(5000)} och kolla om din dator är snabbare än min.}
-\item {Hur lång tid tar det för din dator att räkna till en miljon?}
-\item {Hur långt hinner din dator räkna till på en sekund?}
+\item {Run \lstinline{räknaTill(5000)} and check if your computer is faster than mine.}
+\item {How long does it take for your computer to count up to a million?}
+\item {How much can your computer count to in a second?}
 
 \end{itemize}
 
 
-\chapter{Spåra programmet}
+\chapter{Track the program}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Skriv ett program som ritar ett trappsteg.}
-\item {Tryck på den orange-färgade play-knappen.}
-\item {Klicka på ett av anropen: \lstinline{CALL fram}. Vad händer i Ritfönstret?}
-\item {När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. }
-\item {Lägg till fler satser i ditt program och se vad som händer när du spårar.}
-\item {Stäng fönstret {\it Programspårning} när du är klar.}
+\item {Write a program that draws stairs.}
+\item {Press the orange play button.}
+\item {Press on one of the commands: \lstinline{CALL fram}. What happens in the Canvas?}
+\item {When a part of the program is marked in blue, only that part will run when you press the play button. You can unmark the code if you click next to the code that is marked. }
+\item {Add more commands to your program and observe what happens when you track it.}
+\item {Close the window {\it Program tracker} when you're done.}
 
 \end{itemize}
 
@@ -204,15 +204,15 @@ Det tog 0.32 millisekunder.
 
 \end{multicols}
 
-\chapter{Gör din egen funktion med \lstinline{def}}Med \lstinline{def} kan du göra egna {\it funktioner} som du själv väljer namn på.
+\chapter{Write your own function with \lstinline{def}}With \lstinline{def} you can write your own {\it functions} and choose their names.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear
-kvadrat    //använd din kvadrat-funktion
+square    //use your square-function
 hop
-kvadrat
+square
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -220,8 +220,8 @@ kvadrat
 
 \begin{itemize}
 
-\item {Byt färg på kvadraterna.}
-\item {Gör fler kvadrater.}
+\item {Change the color of the squares.}
+\item {Make several squares.}
 
 \end{itemize}
 
@@ -232,15 +232,15 @@ kvadrat
 setFillColor(green); setPenColor(purple)
 \end{lstlisting}
         
-\chapter{Stapla kvadrater}
+\chapter{Stack squares}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Gör en stapel med 10 kvadrater.
+Make a stack of 10 squares.
 \section*{\color{OliveGreen}Tip:}
 \vskip 1.0em
 
 \begin{lstlisting}[numbers=none]
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear; setAnimationDelay(100)
 repeat(10){ ??? }
@@ -255,18 +255,18 @@ repeat(10){ ??? }
 
 \end{multicols}
 
-\chapter{Gör en stapelfunktion}
+\chapter{Make a stack-function}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Gör en funktion som heter \lstinline{stapel}, som ritar en stapel med 10 kvadrater.
+Make a function called \lstinline{stack}, that draws a stack of 10 squares.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[numbers=none]
-def kvadrat = repeat(4){ forward; right }  
-def stapel = ???
+def square = repeat(4){ forward; right }  
+def stack = ???
 
 clear; setAnimationDelay(100)
-stapel
+stack
 \end{lstlisting}
         
 
@@ -278,18 +278,18 @@ stapel
 
 \end{multicols}
 
-\chapter{Gör ett rutnät}
+\chapter{Make a grid}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Gör ett rutnät med 10*10 kvadrater.
+Make a grid of 10*10 squares.
 \section*{\color{OliveGreen}Tip:}
 
 
 \begin{itemize}
 
-\item {Använd din stapelfunktion från tidigare.}
-\item {Du kan hoppa baklänges en hel stapelhöjd med \lstinline{hoppa(-10 * 25)}}
-\item {Du kan sedan hoppa till rätt plats med \lstinline{höger; hoppa; vänster}}
+\item {Use your stack-function that you created earlier.}
+\item {You can jump backwards a whole column with \lstinline{hop(-10 * 25)}}
+\item {You can then jump to the right position with \lstinline{right; hop; left}}
 
 \end{itemize}
 
@@ -303,26 +303,26 @@ Gör ett rutnät med 10*10 kvadrater.
 
 \end{multicols}
 
-\chapter{Kvadrat med parameter}
+\chapter{square med parameter}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Rita olika stora kvadrater.
+Draw squares in different sizes.
 \section*{\color{OliveGreen}Tip:}
-Ge din kvadrat-funktion en {\it parameter},\\
-med namnet \lstinline{sidlängd} och typen \lstinline{Heltal}:
+Give your function a {\it parameter},\\
+called \lstinline{sideLength} of the type \lstinline{Int}:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def kvadrat(sidlängd : Int) = 
-  repeat(4){ forward(sidlängd); right }
+def square(sideLenght : Int) = 
+  repeat(4){ forward(sideLength); right }
 
 clear; setAnimationDelay(100); invisible
-kvadrat(100) 
-kvadrat(70)
-kvadrat(40)
+square(100) 
+square(70)
+square(40)
 \end{lstlisting}
         
-Du kan byta färg med:\\
-\lstinline{fyll(blå); färg(rosa)}
+You can change the color with:\\
+\lstinline{setFillColor(blue); setPenColor(pink)}
 
 
 \columnbreak
@@ -338,8 +338,8 @@ Du kan byta färg med:\\
 
 \end{multicols}
 
-\chapter{Rita en kvadratgubbe}\section*{\color{BrickRed}Challenge:}
-Rita en gubbe med hjälp av olika stora kvadrater.
+\chapter{Draw a square character}\section*{\color{BrickRed}Challenge:}
+Draw a character with squares of different sizes.
 \\
 
 
@@ -350,30 +350,30 @@ Rita en gubbe med hjälp av olika stora kvadrater.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-def kvadrat(x: Int, y: Int, sidlängd: Int) = {
+def square(x: Int, y: Int, sideLength: Int) = {
   jumpTo(x, y)
-  repeat(4) { forward(sidlängd); right }
+  repeat(4) { forward(sideLength); right }
 }
-def huvud(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); kvadrat(x, y, 200) }
-def öga(x: Int, y: Int) = { setFillColor(white); setPenColor(black); kvadrat(x, y, 40) }
-def pupill(x: Int, y: Int) = { setFillColor(black); setPenColor(black); kvadrat(x, y, 10) }
-def näsa(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); kvadrat(x, y, 30) }
-def mun(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); kvadrat(x, y, 40) }
+def head(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
+def eye(x: Int, y: Int) = { setFillColor(white); setPenColor(black); square(x, y, 40) }
+def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
+def nose(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
+def mouth(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); square(x, y, 40) }
 
 clear; setAnimationDelay(20); invisible
-huvud(0, 0)
-öga(40, 100); pupill(60, 100)
+head(0, 0)
+eye(40, 100); pupil(60, 100)
 ???
 \end{lstlisting}
         
-\chapter{Rita en polygon}\section*{\color{BrickRed}Challenge:}
+\chapter{Draw a polygon}\section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Prova koden nedan. Rita olika slags polygoner.}
-\item {Lägg till en parameter \lstinline{sidlängd} och rita olika stora polygoner.}
-\item {Hur stort behöver n vara för att det ska se ut som en cirkel?}
+\item {Try out the code below. Draw different kinds of polygons.}
+\item {Add a parameter \lstinline{sideLength} and draw polygons of different sizes.}
+\item {How large does n have to be to make it look like a circle?}
 
 \end{itemize}
 
@@ -395,14 +395,14 @@ polygon(7)
 \node at (20.0cm,3.5cm) {\includegraphics[width=8.0cm]{../img/polygon.png}};
 \end{tikzpicture}
   
-\chapter{Rita många polygoner}\section*{\color{BrickRed}Challenge:}
+\chapter{Draw several polygons}\section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Prova programmet nedan.}
-\item {Prova ändra antalet sidor och vinkel.}
-\item {Fyll polygonerna med färg.}
+\item {Try out the program below.}
+\item {Try to change the amount of sides and the angle.}
+\item {Fill the polygons with different colors.}
 
 \end{itemize}
 
@@ -414,27 +414,27 @@ polygon(7)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def polygon(n: Int, sidlängd: Int) = repeat(n){
-  forward(sidlängd)
+def polygon(n: Int, sideLength: Int) = repeat(n){
+  forward(sideLength)
   left(360.0/n)
 }
-def snurra(n: Int, heading: Int, sidlängd: Int) = 
-  repeat(360/heading){ polygon(n, sidlängd); left(heading) }
+def rotate(n: Int, heading: Int, sideLength: Int) = 
+  repeat(360/heading){ polygon(n, sideLength); left(heading) }
 
 clear; setAnimationDelay(5)
-snurra(7, 10, 100)
+rotate(7, 10, 100)
 \end{lstlisting}
         
-\chapter{Värden och uttryck}
+\chapter{Values and expressions}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Skriv \lstinline{1 + 1} och tryck på den blå play-knappen. Då skapar kojo en grön kommentar.}
-\item {Kommentaren visar att värdet av uttrycket \lstinline{1 + 1} är \lstinline{2} och att typen är \lstinline{Int}, som betyder \lstinline{Heltal}.}
-\item {Gör fler uträkningar. Vad det blir för värde och typ?}
+\item {Write\lstinline{1 + 1} and press the blue play button. Kojo will then create a green comment.}
+\item {The comment shows the value of the expression \lstinline{1 + 1} that is \lstinline{2} and the type is \lstinline{Int}, which means \lstinline{Integer}.}
+\item {Create more expressions. What's the value and type?}
 
 \end{itemize}
 
@@ -443,7 +443,7 @@ snurra(7, 10, 100)
 \begin{lstlisting}[numbers=none]
 5 * 5
 10 + 2 * 5
-"hej" + "på" + "dej"
+"Hello" + "world"
 5 / 2
 5 / 2.0
 5 % 2
@@ -460,28 +460,28 @@ snurra(7, 10, 100)
 
 \begin{itemize}
 
-\item {Med \lstinline{/} mellan heltal blir det heltalsdivision och decimalerna kastas bort. För att det ska bli division med decimaler måste minst ett av talen vara ett decimaltal.}
-\item {Med \lstinline{%} får du resten vid en heltalsdivision.}
+\item {\lstinline{/} between integers creates a division of integers and the decimals will be ignored. To make a division with decimals, at least one of the numbers must contain decimals.}
+\item {With \lstinline{%} you get the rest of a division of integers.}
 
 \end{itemize}
 
 
 \end{multicols}
 
-\chapter{Sätt namn på värden med \lstinline{val}}
+\chapter{Name the values with \lstinline{val}}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-Med \lstinline{val} kan du koppla ett namn till ett värde. Namnet kan sedan användas istället för värdet. Prova programmet nedan. Vad skriver paddan?
+With \lstinline{val} you can connect a name to a value. The name could then be used instead of the value. Try out the program below. What does the turtle write?
 
 \begin{lstlisting}[numbers=none]
 val x = 10
 val y = 5
-val gurka = x + y
-val banan = x * y
+val cucumber = x + y
+val banana = x * y
 
 clear
-forward; write(banan)
-forward; write(gurka)
+forward; write(banana)
+forward; write(cucumber)
 forward; write(y)
 forward; write(x)
 \end{lstlisting}
@@ -495,15 +495,15 @@ forward; write(x)
 
 \end{multicols}
 
-\chapter{Slumptal}\section*{\color{BrickRed}Challenge:}
+\chapter{Random numbers}\section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Kör programmet nedan många gånger. Vad händer?}
-\item {Vilket är det minsta och största möjliga värdet på radien \lstinline{r}?}
-\item {Ändra så att \lstinline{r} blir ett slumptal mellan 3 och 200.}
-\item {Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar.}
+\item {Run the program below several times. What happens?}
+\item {What is the smallest and largest possible value of the radius \lstinline{r}?}
+\item {Change it so that \lstinline{r} becomes a random number between 3 and 200.}
+\item {Draw 100 circles with random radiuses on random positions, as shown in the picture.}
 
 \end{itemize}
 
@@ -515,28 +515,28 @@ forward; write(x)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-//värdet r blir ett random mellan 10 och 89:
+//r becomes a random number between 10 and 89:
 val r = random(90) + 10   
 
 clear; setAnimationDelay(10); invisible
-write("Radie = " + r)
+write("Radius = " + r)
 circle(r)
 \end{lstlisting}
         
-\chapter{Blanda dina egna färger}
+\chapter{Mix your own colors}
 
 \begin{itemize}
 
-\item {Med \lstinline{Color} kan du blanda egna färger, till exempel \lstinline{Color(0, 70, 0)}}
-\item {De tre parametrarna anger mängden {\it rött}, {\it grönt} och {\it blått}}
-\item {Du kan också lägga till en fjärde parameter som anger {\it genomskinligheten}}
-\item {Alla parametrar ska vara mellan 0 och 255}
+\item {You can mix your own colors with \lstinline{Color}, for example \lstinline{Color(0, 70, 0)}}
+\item {The three parameters are the values for {\it red}, {\it green} och {\it blue}}
+\item {You are also able to add a fourth parameter that gives the {\it transparency}}
+\item {All parameters are between 0 and 255}
 
 \end{itemize}
 
 
 \section*{\color{BrickRed}Challenge:}
-Prova programmet nedan. Ändra genomskinligheten.
+Try the program below. Change the transparency
 
 \begin{tikzpicture}[overlay]
 \node at (23.0cm,-2.0cm) {\includegraphics[width=7.0cm]{../img/color-circles.png}};
@@ -546,24 +546,24 @@ Prova programmet nedan. Ändra genomskinligheten.
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 clear; setAnimationDelay(100)      
 
-val olivgreen = Color(0,70,0)
-val pistageglass = Color(0,255,0,100)
+val olivegreen = Color(0,70,0)
+val pistageicecream = Color(0,255,0,100)
 
-setFillColor(olivgreen); circle(100)
-setFillColor(pistageglass); forward(100); circle(100)
+setFillColor(olivegreen); circle(100)
+setFillColor(pistageicecream); forward(100); circle(100)
 \end{lstlisting}
         
-\chapter{Prova färgväljaren}
+\chapter{Try the color chooser}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Högerklicka i editor-fönstret och klicka på \lstinline{Välj färg...}}
-\item {Om du väljer fliken {\bf RGB} i färgväljaren kan du blanda nya RGB-färger.}
-\item {Tryck OK och titta i Utdatafönstret. Där syns de tre RGB-värdena för rött, grönt och blått.}
-\item {Du kan använda dessa värden i ditt program för att rita med din nya färg med \lstinline{färg(Color(218, 153, 67))}.}
+\item {Rightclick in the editorwindow and click \lstinline{Choose color...}}
+\item {If you choose the tab {\bf RGB} in the colourpicker you can pick amongst new RGB-colors.}
+\item {Press OK and look in the outputwindow. There you can see the three RGB-values for red, green and blue.}
+\item {You can use these values in your program to draw your new color with \lstinline{color(Color(218,153,67))}.}
 
 \end{itemize}
 
@@ -577,19 +577,19 @@ setFillColor(pistageglass); forward(100); circle(100)
 
 \end{multicols}
 
-\chapter{Rita slumpcirklar}
+\chapter{Draw random circles}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def slump = random(256)
-def slumpsetPenColor = Color(slump,10,slump,100) 
+def random = random(256)
+def randomsetPenColor = Color(random,10,random,100) 
 
 clear; setAnimationDelay(5)
 setBackground2(black,white)
 setPenThickness (6)
 
 repeat(100) {
-    setPenColor(slumpsetPenColor)
+    setPenColor(randomsetPenColor)
     circle(100)
     hop(20)
     right(35)
@@ -597,7 +597,7 @@ repeat(100) {
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Prova olika slumpfärger och bakgrunder.
+Try different randomcolors and backgrounds.
 
 
 \columnbreak
@@ -609,8 +609,8 @@ Prova olika slumpfärger och bakgrunder.
 
 \end{multicols}
 
-\chapter{Rita en blomma}\section*{\color{BrickRed}Challenge:}
-Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slumpmässig radie. Prova att ändra de olika slumptalens gränser och försök förklara vad som händer.
+\chapter{Draw a flower}\section*{\color{BrickRed}Challenge:}
+The program below draws 100 randomcolored circles in a random place with a random radius. Try to change the parameters and try to explain what is happening.
 
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-4.0cm) {\includegraphics[width=8.5cm]{../img/random-color-circles.png}};
@@ -628,18 +628,18 @@ repeat(100){
 }
 \end{lstlisting}
         
-\chapter{Skapa en variabel med \lstinline{var}}Med \lstinline{var} kan koppla ett namn till ett värde.\\
-Du får då en variabel, som kan tilldelas ett nytt värde så här:
+\chapter{Create a variable with \lstinline{var}}With \lstinline{var} you connect a name to a value.\\
+You get a variable that you can assign a value like this:
 
 \begin{lstlisting}[numbers=none]
 
-var gurka = 1
-gurka = 1 + 1   //först räknas 1 + 1 ut, sedan blir gurka 2        
+var cucumber = 1
+cucumber = 1 + 1   //first it calculates 1 + 1 and then assigns that number to cucumber     
         
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Prova programmet nedan. Vad skriver paddan?
+Try the program below. What does the turtle write?
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var i = 0
@@ -656,18 +656,18 @@ repeat(10){
 
 \begin{itemize}
 
-\item {I satsen \lstinline{i = i + 1} tilldelas \lstinline{i} ett nytt värde som blir det {\it gamla} värdet av \lstinline{i} plus \lstinline{1}}
+\item {In the command \lstinline{i = i + 1} \lstinline{i} is given the new value which becomes the {\it old} value of \lstinline{i} plus \lstinline{1}}
 
 \end{itemize}
 
 
-\chapter{Rita många blommor}\section*{\color{BrickRed}Challenge:}
+\chapter{Draw many flowers}\section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Gör en funktion som heter \lstinline{blomma}, som ritar en krona och en stjälk från kronans mitt med ett grönt blad.}
-\item {Rita 5 blommor bredvid varandra.}
+\item {Make a function called \lstinline{flower}, that paints a crown and a stalk from the crowns middle with a green leaf.}
+\item {Draw 5 flowers next to each other.}
 
 \end{itemize}
 
@@ -678,28 +678,28 @@ repeat(10){
 \end{tikzpicture}
   
 \section*{\color{OliveGreen}Tip:}
-Du kan rita blad med \lstinline{båge(radie, vinkel)}. \\
-Låt funktionen \lstinline{blomma} ha två parametrar x och y och använd \lstinline{hoppaTill(x,y)}\\
-Du kan loopa 5 gånger och räkna ut platsen så här:
+You can draw leafs with \lstinline{bow(radie, vinkel)}. \\
+Let the function \lstinline{flower.} have two parameters, x and y, and use \lstinline{jumpTo(x,y)}\\
+You can loop 5 times and calculate the position like this:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
 var i = 0          
 repeat(5){
-  blomma(600*i,0)
+  flower(600*i,0)
   i = i + 1        
 }
 \end{lstlisting}
         
-\chapter{Byt kostym på paddan}\section*{\color{BrickRed}Challenge:}
-Ladda ner mediafiler från Kojos hemsida:
+\chapter{Change costume on the turtle}\section*{\color{BrickRed}Challenge:}
+Download the mediafiles from Kojos homepage:
 \href{http://www.kogics.net/kojo-download#media}{www.kogics.net/kojo-download\#media}
 
 
 \begin{itemize}
 
-\item {Packa upp filen \lstinline{scratch-media.zip} och leta rätt på krabbbilden \lstinline{crab1-b.png} i mappen \lstinline{Media/Costumes/Animals}}
-\item {Lägg filen \lstinline{crab1-b.png} i samma mapp som du har ditt program.}
-\item {Prova att byta kostym på paddan till en krabba så här:}
+\item {Unzip the file \lstinline{scratch-media.zip} and find the crabpicture \lstinline{crab1-b.png} in the folder \lstinline{Media/Costumes/Animals}}
+\item {Put the file \lstinline{crab1-b.png} in the same folder as your program.}
+\item {Try changing the costume of the turtle to a crab like this:}
 
 \end{itemize}
 
@@ -722,20 +722,20 @@ forward(1000)
 
 \begin{itemize}
 
-\item {Du kan också använda dina egna bilder av typen \lstinline{.png} eller \lstinline{.jpg}}
-\item {Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel \lstinline{kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png")} där \lstinline{~} betyder din hemkatalog.}
+\item {You can also use your own pictures of the types \lstinline{.png} or \lstinline{.jpg}}
+\item {If you want to put the picture in another folder you have to write the path to the file, for example \lstinline{kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png")} where \lstinline{~} means your homefolder.}
 
 \end{itemize}
 
 
-\chapter{Gör många paddor med \lstinline{new}}Du kan skapa många nya paddor med \lstinline{new} så här:
+\chapter{Make many turtles with \lstinline{new}}You can create many new turtles with \lstinline{new} like this:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
 clear
-val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
-val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
+val p1 = new Turtle(100,100) //the new turtle p1 starts on position (100, 100)
+val p2 = new Padda(100, 50)  //the new turtle p2 starts on position (100, 50)
 p1.forward(100)
-p2.forward(-100)  //paddan p2 backar
+p2.forward(-100)  //turtle p2 backs up
 \end{lstlisting}
         
 
@@ -748,8 +748,8 @@ p2.forward(-100)  //paddan p2 backar
 
 \begin{itemize}
 
-\item {Skapa tre paddor som står ovanför varandra.}
-\item {Gör så att alla huvud är vända åt vänster.}
+\item {Create three turtles that stand above each other.}
+\item {Make all their heads turn left.}
 
 \end{itemize}
 
@@ -759,23 +759,23 @@ p2.forward(-100)  //paddan p2 backar
 
 \begin{itemize}
 
-\item {\lstinline{p1} och \lstinline{p2} är paddornas {\it namn}. Du kan välja vilka namn du vill.}
-\item {Med namnet \lstinline{p1} och en punkt kan du ge instruktioner till paddan p1 så här: \lstinline{p1.vänster}}
-\item {Med \lstinline{osynlig} blir den vanliga paddan osynlig.}
+\item {\lstinline{p1} and \lstinline{p2} are the turtles {\it names}. You can pick any name you want.}
+\item {With the name \lstinline{p1} and a dot you can give a specific turtles instructions, like this: \lstinline{p1.left}}
+\item {\lstinline{invisible} turns the ordinary turtle invisible.}
 
 \end{itemize}
 
 
-\chapter{Gör en kapplöpning}
+\chapter{Make a race}
 \begin{multicols}{2}
-Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra.
+With the help of randomnumber you can make the turtles race each other
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Låt tre paddor springa ikapp.}
-\item {Om alla får springa fram 10 gånger, vilken padda kommer då först?}
+\item {Let three turtles race.}
+\item {If they all run forward 10 times, which turtle will win?}
 
 \end{itemize}
 
@@ -785,7 +785,7 @@ Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra.
 
 \begin{itemize}
 
-\item {Med \lstinline{p1.fram(slumptal(100) + 1)} går paddan p1 fram 1 till 100 steg.}
+\item {With \lstinline{p1.forward(randomtal(100) + 1)} the turtle p1 moves 1 to 100 steps forward}
 
 \end{itemize}
 
@@ -799,11 +799,11 @@ Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra.
 
 \end{multicols}
 
-\chapter{Alternativ med \lstinline{if}}Med en \lstinline{if}-sats kan datorn välja mellan två olika alternativ.
+\chapter{Alternative with \lstinline{if}}With an \lstinline{if}-command the computer picks between two different alternatives.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 clear; invisible
-if (true) write("sant") else write("falskt")
+if (true) write("true") else write("false")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -811,10 +811,10 @@ if (true) write("sant") else write("falskt")
 
 \begin{itemize}
 
-\item {Ändra \lstinline{true} till \lstinline{false} och kolla vad paddan skriver.}
-\item {Ändra villkoret till \lstinline{2 > 1} och kolla vad paddan skriver.}
-\item {Ändra villkoret till \lstinline{2 < 1} och kolla vad paddan skriver.}
-\item {Förklara hur en \lstinline{if}-sats fungerar.}
+\item {Change \lstinline{true} to \lstinline{false} and check what the turtle writes.}
+\item {Change the condition to \lstinline{2 > 1} and check what the turtle writes.}
+\item {Change the condition to \lstinline{2 < 1} and check what the turtle writes.}
+\item {Explain how an \lstinline{if}-command works.}
 
 \end{itemize}
 
@@ -824,22 +824,22 @@ if (true) write("sant") else write("falskt")
 
 \begin{itemize}
 
-\item {Om villkoret efter \lstinline{if} är \lstinline{true} väljs det som står efter villkoret.}
-\item {Om villkoret efter \lstinline{if} är \lstinline{false} väljs det som står efter \lstinline{else}.}
+\item {If the condition after  \lstinline{if} is \lstinline{true} whatever is after that condition is picked.}
+\item {If the condition after  \lstinline{if} is \lstinline{false} whatever is after \lstinline{else} is picked.}
 
 \end{itemize}
 
 
-\chapter{Reagera på vad användaren gör}
+\chapter{React to what the user is doing}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 clearOutput; setOutputTextFontSize(35)
-val lösenord = "gurka"
-val fråga     = "Vad är lösenordet?"
-val rätt      = "Kassaskåpet är öppet!"
-val fel       = "Du får inte komma in!"
-val svar = readln(fråga)  //vänta på svar från användaren
-val meddelande = if (svar == lösenord) rätt else fel
-println(meddelande)
+val password = "cucumber"
+val question     = "What is the password?"
+val right      = "The safe is open!"
+val wrong       = "You may not come in!"
+val answer = readln(answer)  //waits for an answer from the user
+val message = if (answer == password) right else wrong
+println(message)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -847,24 +847,24 @@ println(meddelande)
 
 \begin{itemize}
 
-\item {Prova programmet och förklara vad som händer.}
-\item {Ändra lösenord, fråga och vad som skrivs ut när det blev rätt ocv fel.}
-\item {Fråga även efter användarnamn och lägg till användarnamnet i utskriften.}
+\item {Try the program and explain what happens.}
+\item {Change the password, question and what is printed when the question is right and wrong.}
+\item {Also ask for a usernamn and add it to what is printed.}
 
 \end{itemize}
 
 
-\chapter{Gör en \lstinline{while}-loop}Med en \lstinline{while}-loop kan datorn upprepa satser så länge ett villkor är sant.
+\chapter{Make a \lstinline{while}-loop}With a \lstinline{while}-loop the computer will repeat a command as long as the condition is true.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
 clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
-while (x > 0) {  //kolla villkoret före varje runda 
+while (x > 0) {  //checks the condition before every run 
   forward(x); right
   write(x) 
   x = x - 12
 }
-println("x är nu: " + x)
+println("x is now: " + x)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -872,70 +872,70 @@ println("x är nu: " + x)
 
 \begin{itemize}
 
-\item {Vad skrivs ut i utdatafönstret? Varför?}
-\item {Spåra programmet med den orange-färgade play-knappen och undersök varje steg.}
-\item {Ändra minskningen av \lstinline{x} från \lstinline{12} till \lstinline{20}. Förklara vad som händer.}
+\item {What is printed in the outputwindow? Why?}
+\item {Trace the program with the orange-colored play-button and check every step.}
+\item {Change the reduction of \lstinline{x} from \lstinline{12} to \lstinline{20}. Explain what happens.}
 
 \end{itemize}
 
 
-\chapter{Gissa talet}
+\chapter{Guess the number}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-val homelis = random(100)+1
-var svar = readln("Gissa ett tal mellan 1 och 100! ")
-var fortsätt = true
+val secretNumber = random(100)+1
+var answer = readln("Guess a number between 1 and 100! ")
+var continue = true
 
-while (fortsätt) {
-    if (svar.toInt < homelis)
-      svar = readln(svar + " är för LITET, gissa igen!")
-    else if (svar.toInt > homelis)
-      svar = readln(svar + " är för STORT, gissa igen!")
-    else if (svar.toInt == homelis)
-      fortsätt = false
+while (continue) {
+    if (answer.toInt < secretNumber)
+      answer = readln(answer + " is too SMALL, guess again!")
+    else if (answer.toInt > secretNumber)
+      answer = readln(answer + " is too LARGE, guess again!")
+    else if (answer.toInt == secretNumber)
+      continue = false
 }
-println(homelis + " är RÄTT svar!")
+println(secretNumber + " is the CORRECT answer!")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Inför en variabel \lstinline{var antalFörsök = 0} och se till att utskriften på slutet blir:\\
-\lstinline{Rätt svar! Du klarade det på 5 gissningar}
-\chapter{Träna multiplikation}
+Introduce a variable \lstinline{var amountOfTries = 0} and make sure to print:\\
+\lstinline{Correct answer! You got it in 5 guesses}
+\chapter{Practice multiplication}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-var antalRätt = 0
-val startTid = System.currentTimeMillis / 1000
+var rightAnswers = 0
+val startTime = System.currentTimeMillis / 1000
 repeat(12) {
-  val tal1 = random(12)+1
-  val tal2 = random(12)+1
-  val svar = readln("Vad är " + tal1 + "*" + tal2 + "?")
-  if (svar == (tal1 * tal2).toString) {
-    println("Rätt!")
-    antalRätt = antalRätt + 1
+  val number1 = random(12)+1
+  val number2 = random(12)+1
+  val answer = readln("What is  " + number1 + "*" + number2 + "?")
+  if (answer == (number1 * number2).toString) {
+    println("Correct!")
+    rightAnswers = rightAnswers + 1
   }
-  else println("Fel. Rätt svar är " + (tal1 * tal2))
+  else println("Wrong. The right answer is " + (number1 * number2))
 }
-val stoppTid = System.currentTimeMillis / 1000
-val sek = stoppTid - startTid
-println("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
+val stopTime = System.currentTimeMillis / 1000
+val sec = stopTime - startTime
+println("You got " + rightAnswers + " right answer in " + sec + " seconds")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Ändra så att man bara tränar 8:ans och 9:ans tabell.
-\chapter{Spara djur i en vektor}
+Change so that you only practice on multiplications of 8 and 9.
+\chapter{Save the animals in a vector}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-println("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
-println("Andra djuret i vektorn är:  " + djur(1))
-println("Det finns så här många djur: " + djur.size)
-println("Sista djuret i vektorn är:  " + djur(djur.size-1))
+var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal becomes a vector with 4 animals
+println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
+println("The second animal in the vector is:  " + animal(1))
+println("There are these many animals in the vector: " + animal.size)
+println("The last animal in the vector is:  " + animal(animal.size-1))
 
-val s = random(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
-println("Ett slumpmässigt djur: " + djur(s))
+val s = random(animal.size)   //take a random number between 0 and the number of animals minus 1
+println("A random animal: " + animal(s))
+animal = animal :+ "camel"    //adds another animal last in the vector
+animal = "dromedary" +: animal // adds another animal first in the vector
 
-djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
-djur = "dromedar" +: djur //lägg till ett djur först i vektorn
-djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
-println("Alla djur i vektorn baklänges:")
-djur.foreach{ x => println(x.reverse) } //för alla x i vektorn: write ut x baklänges
+animal = animal.updated(2, "mudskipper")  // Change the third animal(index 2 in vector)
+println("All animals in the array backwards:")
+animal.foreach{ x => println(x.reverse) } // for all x in array: type out x backwards.
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -943,29 +943,29 @@ djur.foreach{ x => println(x.reverse) } //för alla x i vektorn: write ut x bakl
 
 \begin{itemize}
 
-\item {Vad skriver programmet i utdatafönstret? Förklara vad som händer.}
-\item {Lägg till fler djur i vektorn.}
+\item {What does the program print out in the output window? Explain what's happening.}
+\item {Add more animals to the array.}
 
 \end{itemize}
 
 
-\chapter{Träna glosor}
+\chapter{Practice words}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-val svenska = Vector("dator", "sköldpadda", "circle")
-val engelska = Vector("computer", "turtle", "circle")
-var antalRätt = 0
+val Swedish = Vector("dator", "sköldpadda", "cirkel")
+val English = Vector("computer", "turtle", "circle")
+var amountRight = 0
 repeat(5) {
   val s = random(3)
-  val glosa = svenska(s)
-  val svar = readln("Vad heter " + glosa + " på engelska?")
-  if (svar == engelska(s)) {
-    println("Rätt svar!")
-    antalRätt = antalRätt + 1
+  val word = Swedish(s)
+  val answer = readln("What is " + word + " in English?")
+  if (answer == English(s)) {
+    println("Correct answer!")
+    amountRight = amountRight + 1
   } else {
-    println("Fel svar. Rätt svar är: " + engelska(s))
+    println("Wrong answer. Correct answer is: " + English(s))
   }
 }
-println("Du fick" + antalRätt + " rätt.")
+println("You have" + amountRight + " correct answers.")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
@@ -973,93 +973,93 @@ println("Du fick" + antalRätt + " rätt.")
 
 \begin{itemize}
 
-\item {Lägg till fler glosor.}
-\item {Träna på glosor från engelska till svenska.}
-\item {Låt användaren välja hur många frågor innan avslut. Tips: \lstinline{val antal = indata("Ange antal: ").toInt}}
+\item {Add more words.}
+\item {Practice words from English to Swedish.}
+\item {Let the user choose how many questions before end. Tip: \lstinline{val amount = input("Amount: ").toInt} }
 
 \end{itemize}
 
 
-\chapter{Huvudstadsspelet}
+\chapter{Capital Game}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
-def huvudstadsspelet = {
-  println("Välkommen till Huvudstadsspelet!")
-  val stad = Map("Sverige" ->"Stockholm", "Danmark" -> "Köpenhamn", "Skåne" -> "Malmö")
-  var länderKvar = stad.keySet //keySet ger en mängd av alla nycklar i en Map 
-  def slumpLand = scala.util.Random.shuffle(länderKvar.toVector).head
-  while(!länderKvar.isEmpty) {
-    val land = slumpLand
-    val svar = indata("Vad heter huvudstaden i " + land + "?")
-    utdata(s"Du skrev: $svar")
-    if (svar == stad(land)) {
-      utdata("Rätt svar! Du har " + länderKvar.size + " länder kvar!")
-      länderKvar = länderKvar - land  //ta bort land ur mängden länderKvar
-    } else utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
+def capitalGame = {
+  println("Welcome to the Capital Game!")
+  val city = Map("Sweden" ->"Stockholm", "Denmark" -> "Copenhagen", "Skåne" -> "Malmö")
+  var countriesLeft = city.keySet //keySet gives an amount of all keys in a Map 
+  def randomCountry = scala.util.Random.shuffle(countriesLeft.toVector).head
+  while(!countriesLeft.isEmpty) {
+    val country = randomCountry
+    val answer = input("What is the capital in " + country + "?")
+    output(s"You wrote: $answer")
+    if (answer == city(country)) {
+      output("Correct answer! You have " + countriesLeft.size + " countries left!")
+      countriesLeft = countriesLeft - country  //remove country from the set of countries left
+    } else output(s"Wrong answer. The capital in $country begins with ${city(country).take(2)}...")
   }
-  utdata("TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
+  output("THANK YOU FOR PLAYING! (Press ESC)")
 }
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
-huvudstadsspelet
+repeat(100)(output("")) //scroll the output window with 100 blank rows.
+capitalGame
 
-// *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng.
+// *** TASK: (1) Add more pairs of countries and cities: country -> city (2) Measure time and count points.
 \end{lstlisting}
         
-\chapter{Gör en timer med \lstinline{object}}
+\chapter{Make a timer with \lstinline{object}}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 object timer {
-  def nu = System.currentTimeMillis  //ger nutid i millisekunder
-  var tid = nu
-  def nollställ = { tid = nu }
-  def mät = nu - tid
-  def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
-    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+  def now = System.currentTimeMillis  //gives time now in milliseconds.
+  var time = now
+  def reset = { time = now }
+  def measure = now - time
+  def randomWait(min: Int, max: Int) =  //wait between min and max seconds
+    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
 }
 
-println("Klicka i printlnfönstret och vänta...")
-timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
-timer.nollställ
-readln("Tryck Enter så snabbt du kan.")
-println("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+println("Click in the println window and wait...")
+timer.randomWait(3,6)   //wait between 3 and 6 seconds
+timer.reset
+readln("Press Enter as fast as you can.")
+println("Reaction time: " + (timer.measure/1000.0) + " seconds")
 \end{lstlisting}
         
-Med \lstinline{object} kan du samla saker som hör ihop i ett objekt.\\
-Du kommer åt en sak inne i ett objekt med en punkt: \lstinline{timer.nollställ}
+With \lstinline{object}  you can collect things that belong together into an object.\\
+ You can reach a thing inside an object with a dot: \lstinline{timer.reset}
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Prova programmet och mät din reaktionstid. Hur snabb är du?}
-\item {Använd \lstinline{timer} i uppdraget {\it Gissa talet} och lägg till utskriften: \lstinline{Rätt svar! Du klarade det på 5 gissningar och 32 sekunder}}
+\item {Try the program and measure your reaction time. How fast are you?}
+\item {Use \lstinline{timer} in the task {\it Guess the number} and add the print-out: \lstinline{Correct answer! You made it in 5 guesses and 32 seconds}}
 
 \end{itemize}
 
 
-\chapter{Simulera ett trafikljus}
+\chapter{Simulate a traffic light}
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-6.0cm) {\includegraphics[width=3.0cm]{../img/traffic-lights.png}};
 \end{tikzpicture}
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-def släckAlla = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
-def ljus(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
-def tändRött = draw(ljus(red, 100))
-def tändGult = draw(ljus(yellow, 65))
-def tändGrönt = draw(ljus(green, 30))
-def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
+def turnOffAll = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
+def light(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
+def lightRed = draw(light(red, 100))
+def lightYellow = draw(light(yellow, 65))
+def lightGreen = draw(light(green, 30))
+def wait(seconds: Int) = Thread.sleep(seconds*1000)
 
 clear; invisible  
-while (true) { //en oändlig loop
-  släckAlla
-  tändRött;  vänta(3)
-  tändGult;  vänta(1) 
-  släckAlla
-  tändGrönt; vänta(3)
-  tändGult;  vänta(1)
+while (true) { //an infinite loop
+  turnOffAll
+  lightRed;  wait(3)
+  lightYellow;  wait(1) 
+  turnOffAll
+  lightGreen; wait(3)
+  lightYellow;  wait(1)
 }
 \end{lstlisting}
         
@@ -1068,13 +1068,13 @@ while (true) { //en oändlig loop
 
 \begin{itemize}
 
-\item {Hur växlar trafikljuset? Försök förklara vad som händer.}
-\item {Ändra så att trafikljuset är grönt dubbelt så länge.}
+\item {How does the traffic light switch? Try explaning what's happening.}
+\item {Change so that the green light is on for the double amount of time.}
 
 \end{itemize}
 
 
-\chapter{Styr paddan med tangentbordet}
+\chapter{Control the turtle with the keyboard}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
@@ -1089,7 +1089,7 @@ onKeyPress { k =>
     case Kc.VK_RIGHT =>  right(5)
     case Kc.VK_SPACE =>  forward(5)
     case _ => 
-      println("Annan tangent: " + k)
+      println("Another key: " + k)
   }
 }
 \end{lstlisting}
@@ -1104,42 +1104,42 @@ onKeyPress { k =>
 
 \begin{itemize}
 
-\item {Skriv \lstinline{Kc.} och tryck \lstinline{Ctrl+Alt+Mellanslag} och kolla vad de olika tangenterna heter.}
-\item {Gör \lstinline{pennaUpp} om man trycker pil upp}
-\item {Gör \lstinline{pennaNer} om man trycker pil ner}
-\item {Gör \lstinline{färg(blå)} om man trycker B}
-\item {Gör \lstinline{färg(röd)} om man trycker R}
-\item {Öka eller minska hastigheten om man trycker + eller -}
+\item {Write \lstinline{Kc.} and press \lstinline{Ctrl+Alt+Space} and look up what the different keys are called.}
+\item {Do \lstinline{penUp} if you press the arrow up key}
+\item {Do \lstinline{penUp} if you press the arrow down key}
+\item {Do \lstinline{color(blue)} if you press B}
+\item {Do \lstinline{color(red)} if you press R}
+\item {Increase or decrease the speed if you press + or -}
 
 \end{itemize}
 
 
 \end{multicols}
 
-\chapter{Styr paddan med musen}
+\chapter{Control the turtle with the mouse}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 clear; setAnimationDelay(100)
 activateCanvas()
 
-var rita = true
+var draw = true
 
 onKeyPress { k =>
   k match {
     case Kc.VK_DOWN => 
       penDown()
-      rita = true
+      draw = true
     case Kc.VK_UP => 
       penUp()
-      rita = false
+      draw = false
     case _ => 
-      println("Annan tangent: " + k)
+      println("Another key: " + k)
   }
 }
 
 onMouseClick { (x, y) =>
-  if (rita) moveTo(x, y) else jumpTo(x, y)
+  if (draw) moveTo(x, y) else jumpTo(x, y)
 }
 \end{lstlisting}
         
@@ -1153,8 +1153,8 @@ onMouseClick { (x, y) =>
 
 \begin{itemize}
 
-\item {Gör \lstinline{fyll(svart)} om man trycker på F}
-\item {Inför en variabel \lstinline{var fyllNästa = true} och i fallet att man trycker på \lstinline{Kc.VK_F} gör:}
+\item {Do \lstinline{setFillColor(black)} if you press the key F}
+\item {Introduce a variable \lstinline{var fillNext = true} and in the case you press \lstinline{Kc.VK_F} do:}
 
 \end{itemize}
 
@@ -1162,42 +1162,42 @@ onMouseClick { (x, y) =>
 
 \begin{lstlisting}[numbers=none]
 
-      if (setFillColorNästa) {
+      if (fillNext) {
         setFillColor(black)
-        setFillColorNästa=false
+        fillNext=false
       } else {
         setFillColor(noColor)
-        setFillColorNästa=true
+        fillNext=true
       }
       
 \end{lstlisting}
         
 \end{multicols}
 
-\chapter{Gör ett ditt eget bankkonto}
+\chapter{Make your own bank account}
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-object mittKonto {
-  val nummer = 123456
-  var saldo = 0.0
-  def in(belopp: Double) = {
-    saldo = saldo + belopp 
+object myAccount {
+  val number = 123456
+  var balance = 0.0
+  def in(amount: Double) = {
+    balance = balance + amount 
   }
-  def ut(belopp: Double) = { 
-    saldo = saldo - belopp 
+  def out(amount: Double) = { 
+    balance = balance - amount 
   }
-  def visaSaldo() = {
-    println("Konto nummer: " + nummer) 
-    println("       saldo: " + saldo)
+  def showBalance() = {
+    println("Account number: " + number) 
+    println("       Balance: " + balance)
   }
 }
 
-mittKonto.visaSaldo()
-mittKonto.in(100)
-mittKonto.visaSaldo()
-mittKonto.ut(10)
-mittKonto.visaSaldo()
+myAccount.showBalance()
+myAccount.in(100)
+myAccount.showBalance()
+myAccount.out(10)
+myAccount.showBalance()
 \end{lstlisting}
         
 
@@ -1210,40 +1210,40 @@ mittKonto.visaSaldo()
 
 \begin{itemize}
 
-\item {Vad är saldot efter att programmet kört klart? Förklara vad som händer.}
-\item {Gör så att det inte går att ta ut mer pengar än som finns på kontot.}
-\item {Lägg till \lstinline{val maxBelopp = 5000} och kolla så att man inte kan ta ut mer än \lstinline{maxBelopp} åt gången.}
+\item {What is the balance after the program has finished? Explain what's happening.}
+\item {Make it impossible to withdraw more than there is in the account.}
+\item {Add \lstinline{val maxAmount = 5000} and make sure you can't withdraw more than \lstinline{maxBelopp} at a time.}
 
 \end{itemize}
 
 
 \end{multicols}
 
-\chapter{Gör många objekt från en \lstinline{class}}
+\chapter{Make many objects from a \lstinline{class}}
 \begin{multicols}{2}
-Om man vill skapa många konto behövs en klass. Med \lstinline{new} skapas nya objekt. Varje objekt får eget nummer och saldo.
+A class is needed to make many accounts. With \lstinline{new} new objects are made. Each object gets a number and balance.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
-class Konto(nummer: Heltal) {
-  private var saldo = 0.0 //private betyder "hemlig"  
-  def in(belopp: Decimaltal) = {
-    saldo = saldo + belopp
+class Account(number: Int) {
+  private var balance = 0.0 //private means "secret"  
+  def in(amount: Double) = {
+    balance = balance + amount
   }
-  def ut(belopp: Decimaltal) = {
-    saldo = saldo - belopp
+  def out(amount: Double) = {
+    balance = balance - amount
   }
-  def visaSaldo() = 
-    utdata(s"Konto $nummer: $saldo")
+  def showBalance() = 
+    output(s"Account $number: $balance")
 }
 
-val konto1 = new Konto(12345) //new skapar objekt 
-val konto2 = new Konto(67890) //ännu ett objekt
+val account1 = new Account(12345) //new makes an object
+val account2 = new Account(67890) //another object
 
-konto1.in(99)
-konto2.in(88)
-konto1.ut(57)
-konto1.visaSaldo
-konto2.visaSaldo
+account1.in(99)
+account2.in(88)
+account1.out(57)
+account1.showBalance
+account2.showBalance
 \end{lstlisting}
         
 
@@ -1256,56 +1256,56 @@ konto2.visaSaldo
 
 \begin{itemize}
 
-\item {Vad är saldot på de olika kontona när programmet kört klart? Förklara vad som händer.}
-\item {Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.}
-\item {Lägg till en klassparameter \lstinline{namn: String} som ska innehålla namnet på kontoägaren när objekt skapas.}
-\item {Gör så att även \lstinline{namn} skrivs ut när \lstinline{visaSaldo} anropas}
-\item {Vad händer om du gör: \lstinline{konto1.saldo = 10000000 }}
+\item {What is the balance on the different accounts when the program has finished? Explain what's happening.}
+\item {Make even more Account objects and deposit and withdraw money from these.}
+\item {Add a class parameter \lstinline{name: String} containing the name of the owner of the bankaccount.}
+\item {Do that even the \lstinline{name} is printed when \lstinline{showBalance} is called}
+\item {What happens if you do: \lstinline{account1.balance = 10000000 }}
 
 \end{itemize}
 
 
 \end{multicols}
 
-\chapter{Prata med datorn}
+\chapter{Talk to the computer}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-println("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
-def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
-val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
-var svar = "?"
-val öppning = "Vad vill du prata om?"
-var ord = Vector("navelludd", "ketchupglass", "jultomten", "örngott") 
-while (svar != "hej då") {
-  val t = if (svar == "?") öppning 
-    else if (svar == "nej") "Nähä." 
-    else if(svar == "ja") "Jaha." 
-    else if (svar.length < 4) "Jasså..." 
-    else slumpa(ledtexter) + " " + slumpa(ord) + "?"
-  svar = readln(t).toLowerCase
-  ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
+println("Write interesting answers even if the questions are weird. End with 'good bye'")
+def randomize(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
+val text = Vector("What does this mean: ", "Do you like", "Why is this needed: ", "Tell more about")
+var answer = "?"
+val opening = "What do you want to talk about?"
+var word = Vector("bellybutton fluff", "ketchup-icecream", "Santa Claus", "pillow") 
+while (answer != "good bye") {
+  val t = if (answer == "?") opening 
+    else if (answer == "No") "Well, no." 
+    else if(answer == "Yes") "Well, yes." 
+    else if (answer.length < 4) "Okay..." 
+    else randomize(text) + " " + randomize(word) + "?"
+  answer = readln(t).toLowerCase
+  word = word ++ answer.split(" ").toList.filter(_.length > 3) 
 } 
-println("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+println("Thanks for the talk! Now I know these words:" + word)
 
-//Uppdrag:
-// (1) Prova programmet och försök att förklara vad som händer.
-// (2) När avslutas while-loopen?
-// (3) Lägg till fler strängar i vektorerna ledtexter och ord
-// (4) Lägg till fler bra svar på några korta ord utöver "nej" och "ja"
+//Task:
+// (1) Try the program and explain what's happening.
+// (2) When does the while-loop finish?
+// (3) Add more strings in the vectors "text" and "word".
+// (4) Add more good answers to short words apart from "No" and "Yes".
 \end{lstlisting}
         
-\chapter{Modda pong-spelet}
+\chapter{Modify the pong game}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
-\item {Välj menyn Exempel > Animeringar och spel > Pong och prova spelet.}
-\item {Man styr med pil upp och pil ner, samt A och Z.}
-\item {Tryck ESC för att avbryta spelet och undersök koden.}
-\item {Ändra i koden så att bollen blir större.}
-\item {Gör spelplanen till en tennisplan, med grönt underlag, vita linjer och en gul boll.}
+\item {Choose the menu Samples > Animations and Games > Pong and try the game.}
+\item {You control with the up and down arrows,  A and Z.}
+\item {Press ESC to cancel the game and examine the code.}
+\item {Change the code so that the ball becomes bigger.}
+\item {Make the playing field to a tennis field, with green background, white lines and a yellow ball.}
 
 \end{itemize}
 

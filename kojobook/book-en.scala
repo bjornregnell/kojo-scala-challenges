@@ -17,7 +17,7 @@ val chapters = Seq(
   Chapter(id="about-kojo", head="About Kojo", template=TextWithImage("kojo.png",14), 
     contents=Seq(
       Section("What is Kojo?",color="black"),
-      Para("Kojo is an app that can help you learn how to program. With Kojo you can code using the modern and powerful programming language {!Scala!}. Kojo is free and available for Linux, Windows and Mac OSX."),
+      Para("Kojo is an app that can help you learn how to program. With Kojo you can code using the modern and powerful programming language {!Scala!}. Kojo is free and available for Linux, Windows and Mac."),
       Section("Where can I find Kojo?",color="black"),
       Para("Download Kojo here: "), LineBreak, kojoDownloadUrl, LineBreak,
       Para("Read more here: "), LineBreak, kojoUrl
@@ -26,28 +26,28 @@ val chapters = Seq(
 //------------------------------------------------------   
   Chapter(id="forward", head="Your first program", template=TextWithImage("fram.png",14), 
     contents=Seq(
-      taskHead, Para("Skriv så här i Kojos skripteditor-fönster:"),
+      taskHead, Para("Write the following in the Kojo script editor window:"),
       Code("""
 clear
 forward
        """.trim, size=30),
-      Para("Tryck på den gröna play-knappen "), Image("play.png",1), LineBreak,
-      Para("för att köra igång ditt program."), LineBreak, VSkip(5)
+      Para("Press the green play button "), Image("play.png",1), LineBreak,
+      Para("to run your program."), LineBreak, VSkip(5)
     )
   ), 
 //------------------------------------------------------   
-  Chapter(id="square", head="Rita en kvadrat", template=TextWithImage("square.png"), 
+  Chapter(id="square", head="Draw a square", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
 clear
 forward
 right
        """.trim, size=30),
-    Para("Om du skriver {:vänster:} eller {:höger:} så vrider sig paddan."),
-    taskHead, Para("Utöka programmet så att det blir en kvadrat.")
+    Para("If you write {:left:} or {:right:} the turtle will change direction."),
+    taskHead, Para("Extend the program so that it makes a square.")
     )
   ),
-  Chapter(id="stairs", head="Rita en trappa", template=TextWithImage("stairs.png"), 
+  Chapter(id="stairs", head="Draw stairs", template=TextWithImage("stairs.png"), 
     contents=Seq(
       Code("""
 clear
@@ -55,24 +55,24 @@ forward; left
 forward; right
 
        """.trim, size=30), VSkip(1), 
-    Para("Med semikolon {:;:} mellan satserna kan du ha flera satser på samma rad."),
-    taskHead, Para("Utöka programmet så att det blir en trappa.")
+    Para("With semicolon {:;:} between the commands, you could have several commands on the same line."),
+    taskHead, Para("Extend the program so that it makes stairs.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-repeat", head="Gör en loop", template=TextWithImage("square.png"), 
+  Chapter(id="square-repeat", head="Make a loop", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
 clear
 repeat(4){ forward; right }
        """.trim, size=30),
-      taskHead, Itemize("Vad händer om du ändrar 4 till 100?","Rita en trappa med 100 trappsteg.") 
+      taskHead, Itemize("What will happen if you change 4 to 100?","Draw stairs with 100 steps.") 
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="alien", head="Rita en gubbe", template=MultiColumn(2), 
+  Chapter(id="alien", head="Draw a character", template=MultiColumn(2), 
     contents=Seq(
-      taskHead, Para("Rita en gubbe som du själv vill."),
+      taskHead, Para("Draw a character of your choice."),
       hintHead, 
       Code("""
 hop
@@ -80,153 +80,153 @@ left(180)
 forward(300)
 hop(100)
 jumpTo(25,-28)
-write("FELIX är bäst")
+write("FELIX is awesome")
 setPenColor(purple)
 setFillColor(green)
        """.trim, size=20),
-      Para("Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:"), Image("mousepos.png", 6),
+      Para("You can see the turtle's position down to the left while moving the mouse in the Canvas:"), Image("mousepos.png", 6),
       ColumnBreak,
       CenterImage("man.png",4.5), VSkip(2), CenterImage("alien.png",9)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="check-speed", head="Hur snabb är din dator?", 
+  Chapter(id="check-speed", head="How fast is your computer?", 
     //template=MultiColumn(2),
     contents=Seq(
-      Para( "Den första elektroniska datorn hette {*ENIAC*} och kunde räkna till 5000 på en sekund.",
-        "I Kojo finns en funktion {:räknaTill:} som mäter hur snabbt datorn kan räkna.",
-        "När jag kör {:räknaTill(5000):} på min snabba dator skrivs detta i utdata-fönstret:"),
+      Para( "The first electronic computer was called {*ENIAC*} and could count up to 5000 in a second.",
+        "In Kojo there is a function {:räknaTill:} that measures how fast the computer counts.",
+        "When I run {:räknaTill(5000):} on my fast computer, the following appears in the output window:"),
       Code("""
 *** Räknar från 1 till ... 5000 *** KLAR!
 Det tog 0.32 millisekunder.
       """),
       taskHead, 
-      Itemize("Kör {:räknaTill(5000):} och kolla om din dator är snabbare än min.",
-              "Hur lång tid tar det för din dator att räkna till en miljon?",
-              "Hur långt hinner din dator räkna till på en sekund?")      
+      Itemize("Run {:räknaTill(5000):} and check if your computer is faster than mine.",
+              "How long does it take for your computer to count up to a million?",
+              "How much can your computer count to in a second?")      
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="trace", head="Spåra programmet", template=TextWithImage("trace.png"), 
+  Chapter(id="trace", head="Track the program", template=TextWithImage("trace.png"), 
     contents=Seq(
       taskHead, Itemize(
-        "Skriv ett program som ritar ett trappsteg.",
-        "Tryck på den orange-färgade play-knappen.",
-        "Klicka på ett av anropen: {:CALL fram:}. Vad händer i Ritfönstret?",
-        "När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. ",
-        "Lägg till fler satser i ditt program och se vad som händer när du spårar.",
-        "Stäng fönstret {/Programspårning/} när du är klar.")
+        "Write a program that draws stairs.",
+        "Press the orange play button.",
+        "Press on one of the commands: {:CALL fram:}. What happens in the Canvas?",
+        "When a part of the program is marked in blue, only that part will run when you press the play button. You can unmark the code if you click next to the code that is marked. ",
+        "Add more commands to your program and observe what happens when you track it.",
+        "Close the window {/Program tracker/} when you're done.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square", head="Gör din egen funktion med {:def:}", 
+  Chapter(id="def-square", head="Write your own function with {:def:}", 
     contents=Seq(
-      Para("Med {:def:} kan du göra egna {/funktioner/} som du själv väljer namn på."), 
+      Para("With {:def:} you can write your own {/functions/} and choose their names."), 
       Code("""
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear
-kvadrat    //använd din kvadrat-funktion
+square    //use your square-function
 hop
-kvadrat   
+square   
        """.trim, size=20),
-    taskHead, Itemize("Byt färg på kvadraterna.", "Gör fler kvadrater."),
+    taskHead, Itemize("Change the color of the squares.", "Make several squares."),
     hintHead, Code("""
 setFillColor(green); setPenColor(purple)
        """.trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-column", head="Stapla kvadrater", 
+  Chapter(id="square-column", head="Stack squares", 
     template=TextWithImage("square-column.png"),
     contents=Seq(
-    taskHead, Para("Gör en stapel med 10 kvadrater."),
+    taskHead, Para("Make a stack of 10 squares."),
     hintHead, VSkip(1),
     Code("""
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear; setAnimationDelay(100)
 repeat(10){ ??? }""".trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-column", head="Gör en stapelfunktion", 
+  Chapter(id="def-square-column", head="Make a stack-function", 
     template=TextWithImage("square-column.png"),
     contents=Seq(
-      taskHead, Para("Gör en funktion som heter {:stapel:}, som ritar en stapel med 10 kvadrater."),
+      taskHead, Para("Make a function called {:stack:}, that draws a stack of 10 squares."),
       hintHead,  
       Code("""
-def kvadrat = repeat(4){ forward; right }  
-def stapel = ???
+def square = repeat(4){ forward; right }  
+def stack = ???
 
 clear; setAnimationDelay(100)
-stapel""".trim)
+stack""".trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-grid", head="Gör ett rutnät", 
+  Chapter(id="square-grid", head="Make a grid", 
     template=TextWithImage("square-grid.png"),
     contents=Seq(
-      taskHead, Para("Gör ett rutnät med 10*10 kvadrater."),
-      hintHead, Itemize("Använd din stapelfunktion från tidigare.",
-      "Du kan hoppa baklänges en hel stapelhöjd med {:hoppa(-10 * 25):}",
-      "Du kan sedan hoppa till rätt plats med {:höger; hoppa; vänster:}") 
+      taskHead, Para("Make a grid of 10*10 squares."),
+      hintHead, Itemize("Use your stack-function that you created earlier.",
+      "You can jump backwards a whole column with {:hop(-10 * 25):}",
+      "You can then jump to the right position with {:right; hop; left:}") 
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-param", head="Kvadrat med parameter", 
+  Chapter(id="def-square-param", head="square med parameter", 
     template=MultiColumn(2),
     contents=Seq(
-      taskHead, Para("Rita olika stora kvadrater."),
+      taskHead, Para("Draw squares in different sizes."),
       hintHead, 
-      Para("Ge din kvadrat-funktion en {/parameter/},","med namnet {:sidlängd:} och typen {:Heltal:}:"), 
+      Para("Give your function a {/parameter/},","called {:sideLength:} of the type {:Int:}:"), 
       Code("""
-def kvadrat(sidlängd : Int) = 
-  repeat(4){ forward(sidlängd); right }
+def square(sideLenght : Int) = 
+  repeat(4){ forward(sideLength); right }
 
 clear; setAnimationDelay(100); invisible
-kvadrat(100) 
-kvadrat(70)
-kvadrat(40)
+square(100) 
+square(70)
+square(40)
        """.trim,size=16), 
-      Para("Du kan byta färg med:","{:fyll(blå); färg(rosa):}"),
+      Para("You can change the color with:","{:setFillColor(blue); setPenColor(pink):}"),
       ColumnBreak,
       CenterImage("square-param.png",5),
       CenterImage("square-param-color.png",5)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-man", head="Rita en kvadratgubbe", 
+  Chapter(id="def-square-man", head="Draw a square character", 
     contents=Seq(
-      taskHead, Para("Rita en gubbe med hjälp av olika stora kvadrater."),
+      taskHead, Para("Draw a character with squares of different sizes."),
       LineBreak,
       OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
-def kvadrat(x: Int, y: Int, sidlängd: Int) = {
+def square(x: Int, y: Int, sideLength: Int) = {
   jumpTo(x, y)
-  repeat(4) { forward(sidlängd); right }
+  repeat(4) { forward(sideLength); right }
 }
-def huvud(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); kvadrat(x, y, 200) }
-def öga(x: Int, y: Int) = { setFillColor(white); setPenColor(black); kvadrat(x, y, 40) }
-def pupill(x: Int, y: Int) = { setFillColor(black); setPenColor(black); kvadrat(x, y, 10) }
-def näsa(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); kvadrat(x, y, 30) }
-def mun(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); kvadrat(x, y, 40) }
+def head(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
+def eye(x: Int, y: Int) = { setFillColor(white); setPenColor(black); square(x, y, 40) }
+def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
+def nose(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
+def mouth(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); square(x, y, 40) }
 
 clear; setAnimationDelay(20); invisible
-huvud(0, 0)
-öga(40, 100); pupill(60, 100)
+head(0, 0)
+eye(40, 100); pupil(60, 100)
 ???
        """.trim,size=14)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygon", head="Rita en polygon", 
+  Chapter(id="plygon", head="Draw a polygon", 
     contents=Seq(
       taskHead, Itemize(
-        "Prova koden nedan. Rita olika slags polygoner.",
-        "Lägg till en parameter {:sidlängd:} och rita olika stora polygoner.",
-        "Hur stort behöver n vara för att det ska se ut som en cirkel?"),
+        "Try out the code below. Draw different kinds of polygons.",
+        "Add a parameter {:sideLength:} and draw polygons of different sizes.",
+        "How large does n have to be to make it look like a circle?"),
       hintHead,
       Code("""
 def polygon(n:Int) = repeat(n){
@@ -241,148 +241,148 @@ polygon(7)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygons", head="Rita många polygoner", 
+  Chapter(id="plygons", head="Draw several polygons", 
     contents=Seq(
       taskHead, Itemize(
-        "Prova programmet nedan.",
-        "Prova ändra antalet sidor och vinkel.",
-        "Fyll polygonerna med färg."),
+        "Try out the program below.",
+        "Try to change the amount of sides and the angle.",
+        "Fill the polygons with different colors."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Int, sidlängd: Int) = repeat(n){
-  forward(sidlängd)
+def polygon(n: Int, sideLength: Int) = repeat(n){
+  forward(sideLength)
   left(360.0/n)
 }
-def snurra(n: Int, heading: Int, sidlängd: Int) = 
-  repeat(360/heading){ polygon(n, sidlängd); left(heading) }
+def rotate(n: Int, heading: Int, sideLength: Int) = 
+  repeat(360/heading){ polygon(n, sideLength); left(heading) }
 
 clear; setAnimationDelay(5)
-snurra(7, 10, 100)
+rotate(7, 10, 100)
        """.trim,size=16)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="show-value", head="Värden och uttryck", 
+  Chapter(id="show-value", head="Values and expressions", 
     template = MultiColumn(2),
     contents=Seq(
       taskHead, 
-      Itemize("Skriv {:1 + 1:} och tryck på den blå play-knappen. Då skapar kojo en grön kommentar.", 
-        "Kommentaren visar att värdet av uttrycket {:1 + 1:} är {:2:} och att typen är {:Int:}, som betyder {:Heltal:}.",
-        "Gör fler uträkningar. Vad det blir för värde och typ?"),
+      Itemize("Write{:1 + 1:} and press the blue play button. Kojo will then create a green comment.", 
+        "The comment shows the value of the expression {:1 + 1:} that is {:2:} and the type is {:Int:}, which means {:Integer:}.",
+        "Create more expressions. What's the value and type?"),
       Code("""
 5 * 5
 10 + 2 * 5
-"hej" + "på" + "dej"
+"Hello" + "world"
 5 / 2
 5 / 2.0
 5 % 2
       """.trim),
       ColumnBreak, Image("show-value.png", width=12),
-      hintHead, Itemize("Med {:/:} mellan heltal blir det heltalsdivision och decimalerna kastas bort. För att det ska bli division med decimaler måste minst ett av talen vara ett decimaltal.","Med {:%:} får du resten vid en heltalsdivision.")
+      hintHead, Itemize("{:/:} between integers creates a division of integers and the decimals will be ignored. To make a division with decimals, at least one of the numbers must contain decimals.","With {:%:} you get the rest of a division of integers.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="val", head="Sätt namn på värden med {:val:}", 
+  Chapter(id="val", head="Name the values with {:val:}", 
     template=TextWithImage("val.png",width=12),
     contents=Seq(
       taskHead,
-      Para("Med {:val:} kan du koppla ett namn till ett värde. Namnet kan sedan användas istället för värdet. Prova programmet nedan. Vad skriver paddan?"),
+      Para("With {:val:} you can connect a name to a value. The name could then be used instead of the value. Try out the program below. What does the turtle write?"),
       Code("""
 val x = 10
 val y = 5
-val gurka = x + y
-val banan = x * y
+val cucumber = x + y
+val banana = x * y
 
 clear
-forward; write(banan)
-forward; write(gurka)
+forward; write(banana)
+forward; write(cucumber)
 forward; write(y)
 forward; write(x)
       """.trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="random-circles", head="Slumptal", 
+  Chapter(id="random-circles", head="Random numbers", 
     contents=Seq(
       taskHead, Itemize(
-        "Kör programmet nedan många gånger. Vad händer?",
-        "Vilket är det minsta och största möjliga värdet på radien {:r}?",
-        "Ändra så att {:r:} blir ett slumptal mellan 3 och 200.",
-        "Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar."),
+        "Run the program below several times. What happens?",
+        "What is the smallest and largest possible value of the radius {:r}?",
+        "Change it so that {:r:} becomes a random number between 3 and 200.",
+        "Draw 100 circles with random radiuses on random positions, as shown in the picture."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//värdet r blir ett random mellan 10 och 89:
+//r becomes a random number between 10 and 89:
 val r = random(90) + 10   
 
 clear; setAnimationDelay(10); invisible
-write("Radie = " + r)
+write("Radius = " + r)
 circle(r)
        """.trim,size=20)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="mix-colors", head="Blanda dina egna färger", 
+  Chapter(id="mix-colors", head="Mix your own colors", 
     contents=Seq(
       Itemize(
-        "Med {:Color:} kan du blanda egna färger, till exempel {:Color(0, 70, 0):}", 
-        "De tre parametrarna anger mängden {/rött/}, {/grönt/} och {/blått/}",
-        "Du kan också lägga till en fjärde parameter som anger {/genomskinligheten/}",
-        "Alla parametrar ska vara mellan 0 och 255" 
+        "You can mix your own colors with {:Color}, for example {:Color(0, 70, 0):}",
+        "The three parameters are the values for {/red/}, {/green/} och {/blue/}",
+        "You are also able to add a fourth parameter that gives the {/transparency/}",
+        "All parameters are between 0 and 255"
       ),
       taskHead, Para(
-        "Prova programmet nedan. Ändra genomskinligheten."
+        "Try the program below. Change the transparency"
       ),
       OverlayImage("color-circles.png",x=23,y= -2,width=7),
       Code("""
 clear; setAnimationDelay(100)      
 
-val olivgreen = Color(0,70,0)
-val pistageglass = Color(0,255,0,100)
+val olivegreen = Color(0,70,0)
+val pistageicecream = Color(0,255,0,100)
 
-setFillColor(olivgreen); circle(100)
-setFillColor(pistageglass); forward(100); circle(100)
+setFillColor(olivegreen); circle(100)
+setFillColor(pistageicecream); forward(100); circle(100)
        """.trim,size=16)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="color-picker", head="Prova färgväljaren", template=TextWithImage("color-chooser-rgb-sv.png",width=14),
+  Chapter(id="color-picker", head="Try the color chooser", template=TextWithImage("color-chooser-rgb-sv.png",width=14),
     contents=Seq(
       taskHead, Itemize(
-        """Högerklicka i editor-fönstret och klicka på {:Välj färg...:}""", 
-        "Om du väljer fliken {*RGB*} i färgväljaren kan du blanda nya RGB-färger.", 
-        "Tryck OK och titta i Utdatafönstret. Där syns de tre RGB-värdena för rött, grönt och blått.",
-        "Du kan använda dessa värden i ditt program för att rita med din nya färg med {:färg(Color(218, 153, 67)):}."
+        """Rightclick in the editorwindow and click {:Choose color...:}""",
+        "If you choose the tab {*RGB*} in the colourpicker you can pick amongst new RGB-colors.",
+        "Press OK and look in the outputwindow. There you can see the three RGB-values for red, green and blue.",
+        "You can use these values in your program to draw your new color with {:color(Color(218,153,67)):}."
       )
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="circle-of-circles", head="Rita slumpcirklar", 
+  Chapter(id="circle-of-circles", head="Draw random circles", 
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-def slump = random(256)
-def slumpsetPenColor = Color(slump,10,slump,100) 
+def random = random(256)
+def randomsetPenColor = Color(random,10,random,100) 
 
 clear; setAnimationDelay(5)
 setBackground2(black,white)
 setPenThickness (6)
 
 repeat(100) {
-    setPenColor(slumpsetPenColor)
+    setPenColor(randomsetPenColor)
     circle(100)
     hop(20)
     right(35)
 }
-       """.trim,size=16), taskHead, Para("Prova olika slumpfärger och bakgrunder."),
+       """.trim,size=16), taskHead, Para("Try different randomcolors and backgrounds."),
        ColumnBreak, CenterImage("circle-of-circles.png",width=12)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="flower", head="Rita en blomma", 
+  Chapter(id="flower", head="Draw a flower", 
     contents=Seq(
       taskHead, 
-      Para("Programmet nedan ritar 100 slumpfärgade cirklar på slumpmässig plats med slumpmässig radie. " +
-           "Prova att ändra de olika slumptalens gränser och försök förklara vad som händer."),
+      Para("The program below draws 100 randomcolored circles in a random place with a random radius. " + 
+      		"Try to change the parameters and try to explain what is happening."),
       OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
 clear(); setAnimationDelay(5)
@@ -397,16 +397,16 @@ repeat(100){
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="var", head="Skapa en variabel med {:var:}", 
+  Chapter(id="var", head="Create a variable with {:var:}", 
     contents=Seq(
-      Para("Med {:var:} kan koppla ett namn till ett värde.", 
-        "Du får då en variabel, som kan tilldelas ett nytt värde så här:"),
+      Para("With {:var:} you connect a name to a value.", 
+      		"You get a variable that you can assign a value like this:"),
       Code("""
-var gurka = 1
-gurka = 1 + 1   //först räknas 1 + 1 ut, sedan blir gurka 2        
+var cucumber = 1
+cucumber = 1 + 1   //first it calculates 1 + 1 and then assigns that number to cucumber     
         """),
      taskHead, 
-       Para("Prova programmet nedan. Vad skriver paddan?"),
+       Para("Try the program below. What does the turtle write?"),
       Code("""
 var i = 0
 
@@ -416,41 +416,41 @@ repeat(10){
   forward; write(i)
 }
        """.trim,size=16),
-      hintHead, Itemize("I satsen {:i = i + 1:} tilldelas {:i:} ett nytt värde som blir det {/gamla/} värdet av {:i:} plus {:1:}")
+      hintHead, Itemize("In the command {:i = i + 1:} {:i:} is given the new value which becomes the {/old/} value of {:i:} plus {:1:}")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="flowers", head="Rita många blommor", 
+  Chapter(id="flowers", head="Draw many flowers", 
     contents=Seq(
       taskHead,       
       Itemize(
-        "Gör en funktion som heter {:blomma:}, som ritar en krona och en stjälk från kronans mitt med ett grönt blad.",
-        "Rita 5 blommor bredvid varandra."),
+        "Make a function called {:flower:}, that paints a crown and a stalk from the crowns middle with a green leaf.",
+        "Draw 5 flowers next to each other."),
       OverlayImage("flowers.png",x=15, y= -7, width=16),    
       hintHead, 
       Para(
-        "Du kan rita blad med {:båge(radie, vinkel):}. ",
-        "Låt funktionen {:blomma:} ha två parametrar x och y och använd {:hoppaTill(x,y):}",
-        "Du kan loopa 5 gånger och räkna ut platsen så här:"
+      	"You can draw leafs with {:bow(radie, vinkel):}. ",
+        "Let the function {:flower.} have two parameters, x and y, and use {:jumpTo(x,y):}",
+        "You can loop 5 times and calculate the position like this:"
       ), 
       Code("""
 var i = 0          
 repeat(5){
-  blomma(600*i,0)
+  flower(600*i,0)
   i = i + 1        
 }
 """.trim,size=18) 
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="costume", head="Byt kostym på paddan", 
+  Chapter(id="costume", head="Change costume on the turtle", 
     contents=Seq(
       taskHead,       
-      Para("Ladda ner mediafiler från Kojos hemsida:"),
+      Para("Download the mediafiles from Kojos homepage:"),
       HRef("http://www.kogics.net/kojo-download#media", "www.kogics.net/kojo-download\\#media"), 
-      Itemize("Packa upp filen {:scratch-media.zip:} och leta rätt på krabbbilden {:crab1-b.png:} i mappen {:Media/Costumes/Animals:}", 
-      "Lägg filen {:crab1-b.png:} i samma mapp som du har ditt program.",
-      "Prova att byta kostym på paddan till en krabba så här:"),
+      Itemize("Unzip the file {:scratch-media.zip:} and find the crabpicture {:crab1-b.png:} in the folder {:Media/Costumes/Animals:}", 
+      "Put the file {:crab1-b.png:} in the same folder as your program.",
+      "Try changing the costume of the turtle to a crab like this:"),
       OverlayImage("crab1-b.png",x=12, y= -2.5, width = 4),
       Code("""
 clear
@@ -459,287 +459,290 @@ setAnimationDelay(2000)
 forward(1000) 
       """.trim,size=20),
       hintHead,
-      Itemize("Du kan också använda dina egna bilder av typen {:.png:} eller {:.jpg:}",
-      """Om du vill lägga bilden i en annan mapp så kan du skriva filens sökväg, till exempel {:kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} där {:~:} betyder din hemkatalog.""")      
+      Itemize("You can also use your own pictures of the types {:.png:} or {:.jpg:}",
+      """If you want to put the picture in another folder you have to write the path to the file, for example {:kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} where {:~:} means your homefolder.""")      
     )
   ), 
 //------------------------------------------------------
- Chapter(id="new", head="Gör många paddor med {:new:}", 
+ Chapter(id="new", head="Make many turtles with {:new:}", 
    contents=Seq(
-     Para("Du kan skapa många nya paddor med {:new:} så här:"),
+     Para("You can create many new turtles with {:new:} like this:"),
      Code("""
 clear
-val p1 = new Padda(100,100)  //nya paddan p1 börjar på plats (100, 100)
-val p2 = new Padda(100, 50)  //nya paddan p2 börjar på plats (100, 50)
+val p1 = new Turtle(100,100) //the new turtle p1 starts on position (100, 100)
+val p2 = new Padda(100, 50)  //the new turtle p2 starts on position (100, 50)
 p1.forward(100)
-p2.forward(-100)  //paddan p2 backar
+p2.forward(-100)  //turtle p2 backs up
 """.trim, size=18),
       OverlayImage("new.png", x = 22, y = -2, width = 5),
       taskHead, Itemize(
-        "Skapa tre paddor som står ovanför varandra.","Gör så att alla huvud är vända åt vänster."
+        "Create three turtles that stand above each other.","Make all their heads turn left."
       ),
       hintHead, Itemize(
-        "{:p1:} och {:p2:} är paddornas {/namn/}. Du kan välja vilka namn du vill.", 
-        "Med namnet {:p1:} och en punkt kan du ge instruktioner till paddan p1 så här: {:p1.vänster:}",
-        "Med {:osynlig:} blir den vanliga paddan osynlig."
+        "{:p1:} and {:p2:} are the turtles {/names/}. You can pick any name you want.", 
+        "With the name {:p1:} and a dot you can give a specific turtles instructions, like this: {:p1.left:}",
+        "{:invisible:} turns the ordinary turtle invisible."
       )
    )
  ), 
 //------------------------------------------------------
- Chapter(id="race", head="Gör en kapplöpning", 
+ Chapter(id="race", head="Make a race", 
    template = TextWithImage("race.png", width = 12),
    contents=Seq(
-     Para("Med hjälp av slumptal kan paddorna genomföra en kapplöpning mot varandra."),
+     Para("With the help of randomnumber you can make the turtles race each other"),
       taskHead, Itemize(
-        "Låt tre paddor springa ikapp.",
-        "Om alla får springa fram 10 gånger, vilken padda kommer då först?"
+        "Let three turtles race.",
+        "If they all run forward 10 times, which turtle will win?"
       ),
       hintHead, Itemize(
-        "Med {:p1.fram(slumptal(100) + 1):} går paddan p1 fram 1 till 100 steg."
+        "With {:p1.forward(randomtal(100) + 1):} the turtle p1 moves 1 to 100 steps forward"
       )
    )
  ), 
 //------------------------------------------------------
-  Chapter(id="if", head="Alternativ med {:if:}", 
+  Chapter(id="if", head="Alternative with {:if:}", 
     contents=Seq(
-      Para("Med en {:if:}-sats kan datorn välja mellan två olika alternativ."),
+      Para("With an {:if:}-command the computer picks between two different alternatives."),
       Code("""
 clear; invisible
-if (true) write("sant") else write("falskt")
+if (true) write("true") else write("false")
      """.trim, size = 20),
       taskHead, Itemize(
-        "Ändra {:true:} till {:false:} och kolla vad paddan skriver.",
-        "Ändra villkoret till {:2 > 1:} och kolla vad paddan skriver.",
-        "Ändra villkoret till {:2 < 1:} och kolla vad paddan skriver.",
-        "Förklara hur en {:if:}-sats fungerar."
+        "Change {:true:} to {:false:} and check what the turtle writes.",        
+        "Change the condition to {:2 > 1:} and check what the turtle writes.",
+        "Change the condition to {:2 < 1:} and check what the turtle writes.",
+        "Explain how an {:if:}-command works."
       ),
       hintHead, Itemize(
-        "Om villkoret efter {:if:} är {:true:} väljs det som står efter villkoret.",
-        "Om villkoret efter {:if:} är {:false:} väljs det som står efter {:else:}."
+        "If the condition after  {:if:} is {:true:} whatever is after that condition is picked.",
+        "If the condition after  {:if:} is {:false:} whatever is after {:else:} is picked."
       )
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="if-input", head="Reagera på vad användaren gör", 
+  Chapter(id="if-input", head="React to what the user is doing", 
     contents=Seq(
       Code("""
 clearOutput; setOutputTextFontSize(35)
-val lösenord = "gurka"
-val fråga     = "Vad är lösenordet?"
-val rätt      = "Kassaskåpet är öppet!"
-val fel       = "Du får inte komma in!"
-val svar = readln(fråga)  //vänta på svar från användaren
-val meddelande = if (svar == lösenord) rätt else fel
-println(meddelande)
+val password = "cucumber"
+val question     = "What is the password?"
+val right      = "The safe is open!"
+val wrong       = "You may not come in!"
+val answer = readln(answer)  //waits for an answer from the user
+val message = if (answer == password) right else wrong
+println(message)
      """.trim, size = 20),
       taskHead, Itemize(
-        "Prova programmet och förklara vad som händer.",
-        "Ändra lösenord, fråga och vad som skrivs ut när det blev rätt ocv fel.",
-        "Fråga även efter användarnamn och lägg till användarnamnet i utskriften."
+        "Try the program and explain what happens.",
+        "Change the password, question and what is printed when the question is right and wrong.",
+        "Also ask for a usernamn and add it to what is printed."
       )
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="while", head="Gör en {:while:}-loop", 
+  Chapter(id="while", head="Make a {:while:}-loop", 
     contents=Seq(
-      Para("Med en {:while:}-loop kan datorn upprepa satser så länge ett villkor är sant."),
+      Para("With a {:while:}-loop the computer will repeat a command as long as the condition is true."),
       Code("""
 clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
-while (x > 0) {  //kolla villkoret före varje runda 
+while (x > 0) {  //checks the condition before every run 
   forward(x); right
   write(x) 
   x = x - 12
 }
-println("x är nu: " + x)
+println("x is now: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
-        "Vad skrivs ut i utdatafönstret? Varför?",
-        "Spåra programmet med den orange-färgade play-knappen och undersök varje steg.",
-        "Ändra minskningen av {:x:} från {:12:} till {:20:}. Förklara vad som händer."
+        "What is printed in the outputwindow? Why?",
+        "Trace the program with the orange-colored play-button and check every step.",
+        "Change the reduction of {:x:} from {:12:} to {:20:}. Explain what happens."
+
       )
     )
   ),
 //------------------------------------------------------
-  Chapter(id="guess-the-number", head="Gissa talet", 
+  Chapter(id="guess-the-number", head="Guess the number", 
     contents=Seq(
       Code("""
-val homelis = random(100)+1
-var svar = readln("Gissa ett tal mellan 1 och 100! ")
-var fortsätt = true
+val secretNumber = random(100)+1
+var answer = readln("Guess a number between 1 and 100! ")
+var continue = true
 
-while (fortsätt) {
-    if (svar.toInt < homelis)
-      svar = readln(svar + " är för LITET, gissa igen!")
-    else if (svar.toInt > homelis)
-      svar = readln(svar + " är för STORT, gissa igen!")
-    else if (svar.toInt == homelis)
-      fortsätt = false
+while (continue) {
+    if (answer.toInt < secretNumber)
+      answer = readln(answer + " is too SMALL, guess again!")
+    else if (answer.toInt > secretNumber)
+      answer = readln(answer + " is too LARGE, guess again!")
+    else if (answer.toInt == secretNumber)
+      continue = false
 }
-println(homelis + " är RÄTT svar!")
+println(secretNumber + " is the CORRECT answer!")
       """.trim,size=16),
       taskHead,
-      Para("Inför en variabel {:var antalFörsök = 0:} och se till att utskriften på slutet blir:", 
-      "{:Rätt svar! Du klarade det på 5 gissningar!:}")
+      Para("Introduce a variable {:var amountOfTries = 0:} and make sure to print:", 
+
+      "{:Correct answer! You got it in 5 guesses!:}")
     )      
   ), 
 //------------------------------------------------------
-  Chapter(id="multiply", head="Träna multiplikation", 
+  Chapter(id="multiply", head="Practice multiplication", 
     contents=Seq(
       Code("""
-var antalRätt = 0
-val startTid = System.currentTimeMillis / 1000
+var rightAnswers = 0
+val startTime = System.currentTimeMillis / 1000
 repeat(12) {
-  val tal1 = random(12)+1
-  val tal2 = random(12)+1
-  val svar = readln("Vad är " + tal1 + "*" + tal2 + "?")
-  if (svar == (tal1 * tal2).toString) {
-    println("Rätt!")
-    antalRätt = antalRätt + 1
+  val number1 = random(12)+1
+  val number2 = random(12)+1
+  val answer = readln("What is  " + number1 + "*" + number2 + "?")
+  if (answer == (number1 * number2).toString) {
+    println("Correct!")
+    rightAnswers = rightAnswers + 1
   }
-  else println("Fel. Rätt svar är " + (tal1 * tal2))
+  else println("Wrong. The right answer is " + (number1 * number2))
 }
-val stoppTid = System.currentTimeMillis / 1000
-val sek = stoppTid - startTid
-println("Du fick " + antalRätt + " rätt på " + sek + " sekunder.")
+val stopTime = System.currentTimeMillis / 1000
+val sec = stopTime - startTime
+println("You got " + rightAnswers + " right answer in " + sec + " seconds")
       """.trim,size=16),  
       taskHead,
-      Para("Ändra så att man bara tränar 8:ans och 9:ans tabell.")      
+      Para("Change so that you only practice on multiplications of 8 and 9.")      
+   
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="vector", head="Spara djur i en vektor", 
+  Chapter(id="vector", head="Save the animals in a vector", 
     contents=Seq(
       Code("""
-var djur = Vector("älg", "ko", "kanin", "kvalster")  //variablen djur blir en vektor med 4 djur
-println("Första djuret i vektorn är: " + djur(0))     //platserna i vektorer räknas från 0
-println("Andra djuret i vektorn är:  " + djur(1))
-println("Det finns så här många djur: " + djur.size)
-println("Sista djuret i vektorn är:  " + djur(djur.size-1))
+var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal becomes a vector with 4 animals
+println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
+println("The second animal in the vector is:  " + animal(1))
+println("There are these many animals in the vector: " + animal.size)
+println("The last animal in the vector is:  " + animal(animal.size-1))
 
-val s = random(djur.size)   //dra ett slumpal mellan 0 och antalet djur minus 1
-println("Ett slumpmässigt djur: " + djur(s))
+val s = random(animal.size)   //take a random number between 0 and the number of animals minus 1
+println("A random animal: " + animal(s))
+animal = animal :+ "camel"    //adds another animal last in the vector
+animal = "dromedary" +: animal // adds another animal first in the vector
 
-djur = djur :+ "kamel"    //lägg till ett djur sist i vektorn
-djur = "dromedar" +: djur //lägg till ett djur först i vektorn
-djur = djur.updated(2, "slamkrypare")  //Ändra tredje djuret (plats 2 i vektorn)
-println("Alla djur i vektorn baklänges:")
-djur.foreach{ x => println(x.reverse) } //för alla x i vektorn: write ut x baklänges
-      """.trim,size=14),   
+animal = animal.updated(2, "mudskipper")  // Change the third animal(index 2 in vector)
+println("All animals in the array backwards:")
+animal.foreach{ x => println(x.reverse) } // for all x in array: type out x backwards.      """.trim,size=14),   
       taskHead,
-      Itemize("Vad skriver programmet i utdatafönstret? Förklara vad som händer.","Lägg till fler djur i vektorn.")
+Itemize("What does the program print out in the output window? Explain what's happening.", "Add more animals to the array.")
+
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="translate", head="Träna glosor", 
+  Chapter(id="translate", head="Practice words", 
     contents=Seq(
       Code("""
-val svenska = Vector("dator", "sköldpadda", "circle")
-val engelska = Vector("computer", "turtle", "circle")
-var antalRätt = 0
+val Swedish = Vector("dator", "sköldpadda", "cirkel")
+val English = Vector("computer", "turtle", "circle")
+var amountRight = 0
 repeat(5) {
   val s = random(3)
-  val glosa = svenska(s)
-  val svar = readln("Vad heter " + glosa + " på engelska?")
-  if (svar == engelska(s)) {
-    println("Rätt svar!")
-    antalRätt = antalRätt + 1
+  val word = Swedish(s)
+  val answer = readln("What is " + word + " in English?")
+  if (answer == English(s)) {
+    println("Correct answer!")
+    amountRight = amountRight + 1
   } else {
-    println("Fel svar. Rätt svar är: " + engelska(s))
+    println("Wrong answer. Correct answer is: " + English(s))
   }
 }
-println("Du fick" + antalRätt + " rätt.")
+println("You have" + amountRight + " correct answers.")
       """.trim,size=14),   
       taskHead,
-      Itemize("Lägg till fler glosor.",
-      "Träna på glosor från engelska till svenska.", 
-      """Låt användaren välja hur många frågor innan avslut. Tips: {:val antal = indata("Ange antal: ").toInt:}""")
+      Itemize("Add more words.",
+      "Practice words from English to Swedish.", 
+      """Let the user choose how many questions before end. Tip: {:val amount = input("Amount: ").toInt:} """)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="capitols", head="Huvudstadsspelet", 
+  Chapter(id="capitals", head="Capital Game", 
     contents=Seq(
       Code("""
-def huvudstadsspelet = {
-  println("Välkommen till Huvudstadsspelet!")
-  val stad = Map("Sverige" ->"Stockholm", "Danmark" -> "Köpenhamn", "Skåne" -> "Malmö")
-  var länderKvar = stad.keySet //keySet ger en mängd av alla nycklar i en Map 
-  def slumpLand = scala.util.Random.shuffle(länderKvar.toVector).head
-  while(!länderKvar.isEmpty) {
-    val land = slumpLand
-    val svar = indata("Vad heter huvudstaden i " + land + "?")
-    utdata(s"Du skrev: $svar")
-    if (svar == stad(land)) {
-      utdata("Rätt svar! Du har " + länderKvar.size + " länder kvar!")
-      länderKvar = länderKvar - land  //ta bort land ur mängden länderKvar
-    } else utdata(s"Fel svar. Huvudstaden i $land börjar på ${stad(land).take(2)}...")
+def capitalGame = {
+  println("Welcome to the Capital Game!")
+  val city = Map("Sweden" ->"Stockholm", "Denmark" -> "Copenhagen", "Skåne" -> "Malmö")
+  var countriesLeft = city.keySet //keySet gives an amount of all keys in a Map 
+  def randomCountry = scala.util.Random.shuffle(countriesLeft.toVector).head
+  while(!countriesLeft.isEmpty) {
+    val country = randomCountry
+    val answer = input("What is the capital in " + country + "?")
+    output(s"You wrote: $answer")
+    if (answer == city(country)) {
+      output("Correct answer! You have " + countriesLeft.size + " countries left!")
+      countriesLeft = countriesLeft - country  //remove country from the set of countries left
+    } else output(s"Wrong answer. The capital in $country begins with ${city(country).take(2)}...")
   }
-  utdata("TACK FÖR ATT DU KÄMPADE! (Tryck ESC)")
+  output("THANK YOU FOR PLAYING! (Press ESC)")
 }
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-upprepa(100)(utdata("")) //scrolla utdafönstret med 100 blanka rader
-huvudstadsspelet
+repeat(100)(output("")) //scroll the output window with 100 blank rows.
+capitalGame
 
-// *** UPPDRAG: (1) Lägg till fler par: land -> stad  (2) Mät tid och räkna poäng. 
+// *** TASK: (1) Add more pairs of countries and cities: country -> city (2) Measure time and count points.
       """.trim,size=13)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="timer", head="Gör en timer med {:object:}", 
+  Chapter(id="timer", head="Make a timer with {:object:}", 
     contents=Seq(
       Code("""
 object timer {
-  def nu = System.currentTimeMillis  //ger nutid i millisekunder
-  var tid = nu
-  def nollställ = { tid = nu }
-  def mät = nu - tid
-  def slumpvänta(min: Int, max: Int) =  //vänta mellan min och max sekunder
-    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) väntar 1 sekund
+  def now = System.currentTimeMillis  //gives time now in milliseconds.
+  var time = now
+  def reset = { time = now }
+  def measure = now - time
+  def randomWait(min: Int, max: Int) =  //wait between min and max seconds
+    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
 }
 
-println("Klicka i printlnfönstret och vänta...")
-timer.slumpvänta(3,6)   //vänta mellan 3 och 6 sekunder
-timer.nollställ
-readln("Tryck Enter så snabbt du kan.")
-println("Reaktionstid: " + (timer.mät/1000.0) + " sekunder")
+println("Click in the println window and wait...")
+timer.randomWait(3,6)   //wait between 3 and 6 seconds
+timer.reset
+readln("Press Enter as fast as you can.")
+println("Reaction time: " + (timer.measure/1000.0) + " seconds")
       """.trim,size=14),   
-      Para("Med {:object:} kan du samla saker som hör ihop i ett objekt.",
-        "Du kommer åt en sak inne i ett objekt med en punkt: {:timer.nollställ:}"),
+      Para("With {:object:}  you can collect things that belong together into an object.",
+        " You can reach a thing inside an object with a dot: {:timer.reset:}"),
       taskHead,
-      Itemize("Prova programmet och mät din reaktionstid. Hur snabb är du?",
-             "Använd {:timer:} i uppdraget {/Gissa talet/} och lägg till utskriften: {:Rätt svar! Du klarade det på 5 gissningar och 32 sekunder!:}")
+      Itemize("Try the program and measure your reaction time. How fast are you?",
+             "Use {:timer:} in the task {/Guess the number/} and add the print-out: {:Correct answer! You made it in 5 guesses and 32 seconds!:}")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="traffic-lights", head="Simulera ett trafikljus", 
+  Chapter(id="traffic-lights", head="Simulate a traffic light", 
     contents=Seq(
       OverlayImage("traffic-lights.png",x=22, y= -6, width=3),
       Code("""
-def släckAlla = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
-def ljus(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
-def tändRött = draw(ljus(red, 100))
-def tändGult = draw(ljus(yellow, 65))
-def tändGrönt = draw(ljus(green, 30))
-def vänta(sekunder: Int) = Thread.sleep(sekunder*1000)
+def turnOffAll = draw(penColor(gray) * fillColor(black) -> PicShape.rect(130,40))
+def light(c: Color, h: Int) = penColor(noColor) * fillColor(c) * trans(20,h) -> PicShape.circle(15)
+def lightRed = draw(light(red, 100))
+def lightYellow = draw(light(yellow, 65))
+def lightGreen = draw(light(green, 30))
+def wait(seconds: Int) = Thread.sleep(seconds*1000)
 
 clear; invisible  
-while (true) { //en oändlig loop
-  släckAlla
-  tändRött;  vänta(3)
-  tändGult;  vänta(1) 
-  släckAlla
-  tändGrönt; vänta(3)
-  tändGult;  vänta(1)
+while (true) { //an infinite loop
+  turnOffAll
+  lightRed;  wait(3)
+  lightYellow;  wait(1) 
+  turnOffAll
+  lightGreen; wait(3)
+  lightYellow;  wait(1)
 }
       """.trim,size=14),       taskHead,
-      Itemize("Hur växlar trafikljuset? Försök förklara vad som händer.",
-      "Ändra så att trafikljuset är grönt dubbelt så länge.")   
+      Itemize("How does the traffic light switch? Try explaning what's happening.",
+      "Change so that the green light is on for the double amount of time.")   
     )
   ),
 //------------------------------------------------------
-  Chapter(id="key-control", head="Styr paddan med tangentbordet", 
+  Chapter(id="key-control", head="Control the turtle with the keyboard", 
     template=MultiColumn(2),
     contents=Seq(
       Code("""
@@ -754,177 +757,177 @@ onKeyPress { k =>
     case Kc.VK_RIGHT =>  right(5)
     case Kc.VK_SPACE =>  forward(5)
     case _ => 
-      println("Annan tangent: " + k)
+      println("Another key: " + k)
   }
 }
       """.trim, size = 18),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Skriv {:Kc.:} och tryck {:Ctrl+Alt+Mellanslag:} och kolla vad de olika tangenterna heter.", 
-        "Gör {:pennaUpp:} om man trycker pil upp",
-        "Gör {:pennaNer:} om man trycker pil ner",
-        "Gör {:färg(blå):} om man trycker B",
-        "Gör {:färg(röd):} om man trycker R",
-        "Öka eller minska hastigheten om man trycker + eller -"
+        "Write {:Kc.:} and press {:Ctrl+Alt+Space:} and look up what the different keys are called.", 
+        "Do {:penUp:} if you press the arrow up key",
+        "Do {:penUp:} if you press the arrow down key",
+        "Do {:color(blue):} if you press B",
+        "Do {:color(red):} if you press R",
+        "Increase or decrease the speed if you press + or -"
       )   
     )
   ),
 //------------------------------------------------------
-  Chapter(id="mouse-control", head="Styr paddan med musen", 
+  Chapter(id="mouse-control", head="Control the turtle with the mouse", 
     template=MultiColumn(2),
     contents=Seq(
       Code("""
 clear; setAnimationDelay(100)
 activateCanvas()
 
-var rita = true
+var draw = true
 
 onKeyPress { k =>
   k match {
     case Kc.VK_DOWN => 
       penDown()
-      rita = true
+      draw = true
     case Kc.VK_UP => 
       penUp()
-      rita = false
+      draw = false
     case _ => 
-      println("Annan tangent: " + k)
+      println("Another key: " + k)
   }
 }
 
 onMouseClick { (x, y) =>
-  if (rita) moveTo(x, y) else jumpTo(x, y)
+  if (draw) moveTo(x, y) else jumpTo(x, y)
 }
       """.trim, size = 16),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Gör {:fyll(svart):} om man trycker på F",
-        "Inför en variabel {:var fyllNästa = true:} och i fallet att man trycker på {:Kc.VK_F:} gör:"
+        "Do {:setFillColor(black):} if you press the key F",
+        "Introduce a variable {:var fillNext = true:} and in the case you press {:Kc.VK_F:} do:"
       ), Code("""
-      if (setFillColorNästa) {
+      if (fillNext) {
         setFillColor(black)
-        setFillColorNästa=false
+        fillNext=false
       } else {
         setFillColor(noColor)
-        setFillColorNästa=true
+        fillNext=true
       }
       """)   
     )
   ),
 //------------------------------------------------------
-  Chapter(id="object-bankaccount", head="Gör ett ditt eget bankkonto", 
+  Chapter(id="object-bankaccount", head="Make your own bank account", 
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-object mittKonto {
-  val nummer = 123456
-  var saldo = 0.0
-  def in(belopp: Double) = {
-    saldo = saldo + belopp 
+object myAccount {
+  val number = 123456
+  var balance = 0.0
+  def in(amount: Double) = {
+    balance = balance + amount 
   }
-  def ut(belopp: Double) = { 
-    saldo = saldo - belopp 
+  def out(amount: Double) = { 
+    balance = balance - amount 
   }
-  def visaSaldo() = {
-    println("Konto nummer: " + nummer) 
-    println("       saldo: " + saldo)
+  def showBalance() = {
+    println("Account number: " + number) 
+    println("       Balance: " + balance)
   }
 }
 
-mittKonto.visaSaldo()
-mittKonto.in(100)
-mittKonto.visaSaldo()
-mittKonto.ut(10)
-mittKonto.visaSaldo()
+myAccount.showBalance()
+myAccount.in(100)
+myAccount.showBalance()
+myAccount.out(10)
+myAccount.showBalance()
       """.trim, size = 16),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Vad är saldot efter att programmet kört klart? Förklara vad som händer.",
-        "Gör så att det inte går att ta ut mer pengar än som finns på kontot.",
-        "Lägg till {:val maxBelopp = 5000:} och kolla så att man inte kan ta ut mer än {:maxBelopp:} åt gången."
+        "What is the balance after the program has finished? Explain what's happening.",
+        "Make it impossible to withdraw more than there is in the account.",
+        "Add {:val maxAmount = 5000:} and make sure you can't withdraw more than {:maxBelopp:} at a time."
       )
     )
   ),
 //------------------------------------------------------
-  Chapter(id="class-bankaccount", head="Gör många objekt från en {:class:}", 
+  Chapter(id="class-bankaccount", head="Make many objects from a {:class:}", 
     template=MultiColumn(2),
-    contents=Seq(Para("Om man vill skapa många konto behövs en klass. Med {:new:} skapas nya objekt. Varje objekt får eget nummer och saldo."),
+    contents=Seq(Para("A class is needed to make many accounts. With {:new:} new objects are made. Each object gets a number and balance."),
       Code("""
-class Konto(nummer: Heltal) {
-  private var saldo = 0.0 //private betyder "hemlig"  
-  def in(belopp: Decimaltal) = {
-    saldo = saldo + belopp
+class Account(number: Int) {
+  private var balance = 0.0 //private means "secret"  
+  def in(amount: Double) = {
+    balance = balance + amount
   }
-  def ut(belopp: Decimaltal) = {
-    saldo = saldo - belopp
+  def out(amount: Double) = {
+    balance = balance - amount
   }
-  def visaSaldo() = 
-    utdata(s"Konto $nummer: $saldo")
+  def showBalance() = 
+    output(s"Account $number: $balance")
 }
 
-val konto1 = new Konto(12345) //new skapar objekt 
-val konto2 = new Konto(67890) //ännu ett objekt
+val account1 = new Account(12345) //new makes an object
+val account2 = new Account(67890) //another object
 
-konto1.in(99)
-konto2.in(88)
-konto1.ut(57)
-konto1.visaSaldo
-konto2.visaSaldo
+account1.in(99)
+account2.in(88)
+account1.out(57)
+account1.showBalance
+account2.showBalance
       """.trim, size = 13),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Vad är saldot på de olika kontona när programmet kört klart? Förklara vad som händer.",
-        "Skapa ännu fler bankkonto-objekt och sätt in och ta ut lite pengar på dessa.",
-        "Lägg till en klassparameter {:namn: String:} som ska innehålla namnet på kontoägaren när objekt skapas.",
-        "Gör så att även {:namn:} skrivs ut när {:visaSaldo:} anropas",
-        "Vad händer om du gör: {:konto1.saldo = 10000000 }")
+        "What is the balance on the different accounts when the program has finished? Explain what's happening.",
+        "Make even more Account objects and deposit and withdraw money from these.",
+        "Add a class parameter {:name: String:} containing the name of the owner of the bankaccount.",
+        "Do that even the {:name:} is printed when {:showBalance:} is called",
+        "What happens if you do: {:account1.balance = 10000000 }")
     )
   ),
 //------------------------------------------------------
-  Chapter(id="eliza", head="Prata med datorn", 
+  Chapter(id="eliza", head="Talk to the computer", 
     contents=Seq(
       Code("""
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-println("Skriv intressanta svar även om frågorna är konstiga. Avsluta med 'hej då'")
-def slumpa(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
-val ledtexter = Vector("Vad betyder", "Gillar du", "Varför behövs", "Berätta mer om")
-var svar = "?"
-val öppning = "Vad vill du prata om?"
-var ord = Vector("navelludd", "ketchupglass", "jultomten", "örngott") 
-while (svar != "hej då") {
-  val t = if (svar == "?") öppning 
-    else if (svar == "nej") "Nähä." 
-    else if(svar == "ja") "Jaha." 
-    else if (svar.length < 4) "Jasså..." 
-    else slumpa(ledtexter) + " " + slumpa(ord) + "?"
-  svar = readln(t).toLowerCase
-  ord = ord ++ svar.split(" ").toList.filter(_.length > 3) 
+println("Write interesting answers even if the questions are weird. End with 'good bye'")
+def randomize(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
+val text = Vector("What does this mean: ", "Do you like", "Why is this needed: ", "Tell more about")
+var answer = "?"
+val opening = "What do you want to talk about?"
+var word = Vector("bellybutton fluff", "ketchup-icecream", "Santa Claus", "pillow") 
+while (answer != "good bye") {
+  val t = if (answer == "?") opening 
+    else if (answer == "No") "Well, no." 
+    else if(answer == "Yes") "Well, yes." 
+    else if (answer.length < 4) "Okay..." 
+    else randomize(text) + " " + randomize(word) + "?"
+  answer = readln(t).toLowerCase
+  word = word ++ answer.split(" ").toList.filter(_.length > 3) 
 } 
-println("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
+println("Thanks for the talk! Now I know these words:" + word)
 
-//Uppdrag:
-// (1) Prova programmet och försök att förklara vad som händer.
-// (2) När avslutas while-loopen?
-// (3) Lägg till fler strängar i vektorerna ledtexter och ord
-// (4) Lägg till fler bra svar på några korta ord utöver "nej" och "ja"
+//Task:
+// (1) Try the program and explain what's happening.
+// (2) When does the while-loop finish?
+// (3) Add more strings in the vectors "text" and "word".
+// (4) Add more good answers to short words apart from "No" and "Yes". 
       """.trim, size = 13)
     )
   ),
 //------------------------------------------------------
-  Chapter(id="modify-pong", head="Modda pong-spelet", 
+  Chapter(id="modify-pong", head="Modify the pong game", 
     template=TextWithImage("pong.png"),
     contents=Seq(
       taskHead,
       Itemize(
-      "Välj menyn Exempel > Animeringar och spel > Pong och prova spelet.",
-      "Man styr med pil upp och pil ner, samt A och Z.",
-      "Tryck ESC för att avbryta spelet och undersök koden.",
-      "Ändra i koden så att bollen blir större.",
-      "Gör spelplanen till en tennisplan, med grönt underlag, vita linjer och en gul boll.")   
+      "Choose the menu Samples > Animations and Games > Pong and try the game.",
+      "You control with the up and down arrows,  A and Z.",
+      "Press ESC to cancel the game and examine the code.",
+      "Change the code so that the ball becomes bigger.",
+      "Make the playing field to a tennis field, with green background, white lines and a yellow ball.")   
     )
   )  
     
@@ -933,4 +936,3 @@ println("Tack för pratstunden! Jag kan nu dessa ord:" + ord)
 //********************
 println("********************* input:"+chapters)
 latexgen.make(chapters, "kojobook/tex/body-en.tex")
-
