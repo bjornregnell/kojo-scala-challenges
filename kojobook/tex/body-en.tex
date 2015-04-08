@@ -178,7 +178,7 @@ Det tog 0.32 millisekunder.
 \end{itemize}
 
 
-\chapter{Track the program}
+\chapter{Trace the program}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 
@@ -190,7 +190,7 @@ Det tog 0.32 millisekunder.
 \item {Press on one of the commands: \lstinline{CALL fram}. What happens in the Canvas?}
 \item {When a part of the program is marked in blue, only that part will run when you press the play button. You can unmark the code if you click next to the code that is marked. }
 \item {Add more commands to your program and observe what happens when you track it.}
-\item {Close the window {\it Program tracker} when you're done.}
+\item {Close the {\it Program trace} window when you are done.}
 
 \end{itemize}
 
@@ -303,17 +303,17 @@ Make a grid of 10*10 squares.
 
 \end{multicols}
 
-\chapter{square med parameter}
+\chapter{A square with parameter}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
 Draw squares in different sizes.
 \section*{\color{OliveGreen}Tip:}
 Give your function a {\it parameter},\\
-called \lstinline{sideLength} of the type \lstinline{Int}:
+called \lstinline{side} of the type \lstinline{Int}:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def square(sideLenght : Int) = 
-  repeat(4){ forward(sideLength); right }
+def square(side : Int) = 
+  repeat(4){ forward(side); right }
 
 clear; setAnimationDelay(100); invisible
 square(100) 
@@ -350,15 +350,15 @@ Draw a character with squares of different sizes.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-def square(x: Int, y: Int, sideLength: Int) = {
+def square(x: Int, y: Int, side: Int) = {
   jumpTo(x, y)
-  repeat(4) { forward(sideLength); right }
+  repeat(4) { forward(side); right }
 }
-def head(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
-def eye(x: Int, y: Int) = { setFillColor(white); setPenColor(black); square(x, y, 40) }
+def head(x: Int, y: Int)  = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
+def eye(x: Int, y: Int)   = { setFillColor(white); setPenColor(black); square(x, y, 40) }
 def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
-def nose(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
-def mouth(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); square(x, y, 40) }
+def nose(x: Int, y: Int)  = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
+def mouth(x: Int, y: Int) = { setPenThickness(10); setFillColor(black); setPenColor(red); square(x, y, 40) }
 
 clear; setAnimationDelay(20); invisible
 head(0, 0)
@@ -372,7 +372,7 @@ eye(40, 100); pupil(60, 100)
 \begin{itemize}
 
 \item {Try out the code below. Draw different kinds of polygons.}
-\item {Add a parameter \lstinline{sideLength} and draw polygons of different sizes.}
+\item {Add a parameter \lstinline{side} and draw polygons of different sizes.}
 \item {How large does n have to be to make it look like a circle?}
 
 \end{itemize}
@@ -414,12 +414,12 @@ polygon(7)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def polygon(n: Int, sideLength: Int) = repeat(n){
-  forward(sideLength)
+def polygon(n: Int, side: Int) = repeat(n){
+  forward(side)
   left(360.0/n)
 }
-def rotate(n: Int, heading: Int, sideLength: Int) = 
-  repeat(360/heading){ polygon(n, sideLength); left(heading) }
+def rotate(n: Int, heading: Int, side: Int) = 
+  repeat(360/heading){ polygon(n, side); left(heading) }
 
 clear; setAnimationDelay(5)
 rotate(7, 10, 100)
@@ -432,9 +432,9 @@ rotate(7, 10, 100)
 
 \begin{itemize}
 
-\item {Write\lstinline{1 + 1} and press the blue play button. Kojo will then create a green comment.}
-\item {The comment shows the value of the expression \lstinline{1 + 1} that is \lstinline{2} and the type is \lstinline{Int}, which means \lstinline{Integer}.}
-\item {Create more expressions. What's the value and type?}
+\item {Write \lstinline{1 + 1} and press the blue play button. Kojo will then create a green comment.}
+\item {The comment shows the value of the expression \lstinline{1 + 1} that is \lstinline{2} and the type is \lstinline{Int}, which means integer.}
+\item {Create more expressions. What are the values and types of the expressions below?}
 
 \end{itemize}
 
@@ -460,18 +460,18 @@ rotate(7, 10, 100)
 
 \begin{itemize}
 
-\item {\lstinline{/} between integers creates a division of integers and the decimals will be ignored. To make a division with decimals, at least one of the numbers must contain decimals.}
-\item {With \lstinline{%} you get the rest of a division of integers.}
+\item {\lstinline{/} between integers values results in integer division ignoring the decimals. To make a division with decimals, make sure at least one of the numbers have decimals. The type of a decimal value is called \lstinline{Double}.}
+\item {With \lstinline{%} you get the remainder of a division of integers.}
 
 \end{itemize}
 
 
 \end{multicols}
 
-\chapter{Name the values with \lstinline{val}}
+\chapter{Name values with \lstinline{val}}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Challenge:}
-With \lstinline{val} you can connect a name to a value. The name could then be used instead of the value. Try out the program below. What does the turtle write?
+With \lstinline{val} you can connect a name to a value. The name can then be used instead of the value. Try out the program below. What does the turtle write?
 
 \begin{lstlisting}[numbers=none]
 val x = 10
@@ -503,7 +503,7 @@ forward; write(x)
 \item {Run the program below several times. What happens?}
 \item {What is the smallest and largest possible value of the radius \lstinline{r}?}
 \item {Change it so that \lstinline{r} becomes a random number between 3 and 200.}
-\item {Draw 100 circles with random radiuses on random positions, as shown in the picture.}
+\item {Draw 100 circles, each with a random radius at a random position, as shown in the picture.}
 
 \end{itemize}
 
@@ -529,7 +529,7 @@ circle(r)
 
 \item {You can mix your own colors with \lstinline{Color}, for example \lstinline{Color(0, 70, 0)}}
 \item {The three parameters are the values for {\it red}, {\it green} och {\it blue}}
-\item {You are also able to add a fourth parameter that gives the {\it transparency}}
+\item {You are also able to add a fourth parameter that sets the {\it transparency}}
 \item {All parameters are between 0 and 255}
 
 \end{itemize}
@@ -560,9 +560,9 @@ setFillColor(pistageicecream); forward(100); circle(100)
 
 \begin{itemize}
 
-\item {Rightclick in the editorwindow and click \lstinline{Choose color...}}
-\item {If you choose the tab {\bf RGB} in the colourpicker you can pick amongst new RGB-colors.}
-\item {Press OK and look in the outputwindow. There you can see the three RGB-values for red, green and blue.}
+\item {Right-click in the editorwindow and click \lstinline{Choose color...}}
+\item {If you choose the tab {\bf RGB} in the color picker you can pick amongst new RGB-colors.}
+\item {Press OK and look in the outpu twindow. There you can see the three RGB-values for red, green and blue.}
 \item {You can use these values in your program to draw your new color with \lstinline{color(Color(218,153,67))}.}
 
 \end{itemize}
@@ -582,14 +582,14 @@ setFillColor(pistageicecream); forward(100); circle(100)
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 def random = random(256)
-def randomsetPenColor = Color(random,10,random,100) 
+def randomColor = Color(random,10,random,100) 
 
 clear; setAnimationDelay(5)
 setBackground2(black,white)
 setPenThickness (6)
 
 repeat(100) {
-    setPenColor(randomsetPenColor)
+    setPenColor(randomColor)
     circle(100)
     hop(20)
     right(35)
@@ -597,7 +597,7 @@ repeat(100) {
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Try different randomcolors and backgrounds.
+Try different random colors and backgrounds.
 
 
 \columnbreak
@@ -610,7 +610,7 @@ Try different randomcolors and backgrounds.
 \end{multicols}
 
 \chapter{Draw a flower}\section*{\color{BrickRed}Challenge:}
-The program below draws 100 randomcolored circles in a random place with a random radius. Try to change the parameters and try to explain what is happening.
+The program below draws 100 random-colored circles, each at a random place with a random radius. Try to change the parameters and try to explain what happens.
 
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-4.0cm) {\includegraphics[width=8.5cm]{../img/random-color-circles.png}};
@@ -634,7 +634,7 @@ You get a variable that you can assign a value like this:
 \begin{lstlisting}[numbers=none]
 
 var cucumber = 1
-cucumber = 1 + 1   //first it calculates 1 + 1 and then assigns that number to cucumber     
+cucumber = 1 + 1   //first calculate 1 + 1 and then assign that number to cucumber     
         
 \end{lstlisting}
         
@@ -678,7 +678,7 @@ repeat(10){
 \end{tikzpicture}
   
 \section*{\color{OliveGreen}Tip:}
-You can draw leafs with \lstinline{bow(radie, vinkel)}. \\
+You can draw leafs with \lstinline{arc(radius, angle)}. \\
 Let the function \lstinline{flower.} have two parameters, x and y, and use \lstinline{jumpTo(x,y)}\\
 You can loop 5 times and calculate the position like this:
 
@@ -690,7 +690,7 @@ repeat(5){
 }
 \end{lstlisting}
         
-\chapter{Change costume on the turtle}\section*{\color{BrickRed}Challenge:}
+\chapter{Change the turtle's costume}\section*{\color{BrickRed}Challenge:}
 Download the mediafiles from Kojos homepage:
 \href{http://www.kogics.net/kojo-download#media}{www.kogics.net/kojo-download\#media}
 
@@ -723,7 +723,7 @@ forward(1000)
 \begin{itemize}
 
 \item {You can also use your own pictures of the types \lstinline{.png} or \lstinline{.jpg}}
-\item {If you want to put the picture in another folder you have to write the path to the file, for example \lstinline{kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png")} where \lstinline{~} means your homefolder.}
+\item {If you want to put the picture in another folder you have to write the path to the file, for example \lstinline{setCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png")} where \lstinline{~} means your homefolder.}
 
 \end{itemize}
 
@@ -766,16 +766,16 @@ p2.forward(-100)  //turtle p2 backs up
 \end{itemize}
 
 
-\chapter{Make a race}
+\chapter{Make a turtle race}
 \begin{multicols}{2}
-With the help of randomnumber you can make the turtles race each other
+With the help of random number you can make the turtles race against each other.
 \section*{\color{BrickRed}Challenge:}
 
 
 \begin{itemize}
 
 \item {Let three turtles race.}
-\item {If they all run forward 10 times, which turtle will win?}
+\item {Let all turtles run forward 10 times. Which turtle wins?}
 
 \end{itemize}
 
@@ -785,7 +785,7 @@ With the help of randomnumber you can make the turtles race each other
 
 \begin{itemize}
 
-\item {With \lstinline{p1.forward(randomtal(100) + 1)} the turtle p1 moves 1 to 100 steps forward}
+\item {With \lstinline{p1.forward(random(100) + 1)} the turtle p1 moves 1 to 100 steps forward}
 
 \end{itemize}
 
@@ -799,7 +799,7 @@ With the help of randomnumber you can make the turtles race each other
 
 \end{multicols}
 
-\chapter{Alternative with \lstinline{if}}With an \lstinline{if}-command the computer picks between two different alternatives.
+\chapter{Alternative with \lstinline{if}}With an \lstinline{if}-command the computer chooses one of two different alternatives depending on a condition that can be true or false.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 clear; invisible
@@ -814,7 +814,7 @@ if (true) write("true") else write("false")
 \item {Change \lstinline{true} to \lstinline{false} and check what the turtle writes.}
 \item {Change the condition to \lstinline{2 > 1} and check what the turtle writes.}
 \item {Change the condition to \lstinline{2 < 1} and check what the turtle writes.}
-\item {Explain how an \lstinline{if}-command works.}
+\item {Explain how an \lstinline{if}-statement works.}
 
 \end{itemize}
 
@@ -837,7 +837,7 @@ val password = "cucumber"
 val question     = "What is the password?"
 val right      = "The safe is open!"
 val wrong       = "You may not come in!"
-val answer = readln(answer)  //waits for an answer from the user
+val answer = readln(answer)  //wait for an answer from the user
 val message = if (answer == password) right else wrong
 println(message)
 \end{lstlisting}
@@ -849,7 +849,7 @@ println(message)
 
 \item {Try the program and explain what happens.}
 \item {Change the password, question and what is printed when the question is right and wrong.}
-\item {Also ask for a usernamn and add it to what is printed.}
+\item {Also ask for a user name and add it to what is printed.}
 
 \end{itemize}
 
@@ -859,7 +859,7 @@ println(message)
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
 clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
-while (x > 0) {  //checks the condition before every run 
+while (x > 0) {  //check the condition before each round 
   forward(x); right
   write(x) 
   x = x - 12
@@ -872,7 +872,7 @@ println("x is now: " + x)
 
 \begin{itemize}
 
-\item {What is printed in the outputwindow? Why?}
+\item {What is printed in the output window? Why?}
 \item {Trace the program with the orange-colored play-button and check every step.}
 \item {Change the reduction of \lstinline{x} from \lstinline{12} to \lstinline{20}. Explain what happens.}
 
@@ -897,7 +897,8 @@ println(secretNumber + " is the CORRECT answer!")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Challenge:}
-Introduce a variable \lstinline{var amountOfTries = 0} and make sure to print:\\
+Introduce a variable \lstinline{var numberOfTries = 0} and count each try.\\
+When ready print the number of tries like this:\\
 \lstinline{Correct answer! You got it in 5 guesses}
 \chapter{Practice multiplication}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
@@ -922,7 +923,7 @@ println("You got " + rightAnswers + " right answer in " + sec + " seconds")
 Change so that you only practice on multiplications of 8 and 9.
 \chapter{Save the animals in a vector}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal becomes a vector with 4 animals
+var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal refers to a vector with 4 animals
 println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
 println("The second animal in the vector is:  " + animal(1))
 println("There are these many animals in the vector: " + animal.size)
@@ -1068,7 +1069,7 @@ while (true) { //an infinite loop
 
 \begin{itemize}
 
-\item {How does the traffic light switch? Try explaning what's happening.}
+\item {How does the traffic light switch? Try to explain what happens.}
 \item {Change so that the green light is on for the double amount of time.}
 
 \end{itemize}
@@ -1256,9 +1257,9 @@ account2.showBalance
 
 \begin{itemize}
 
-\item {What is the balance on the different accounts when the program has finished? Explain what's happening.}
+\item {What is the balance on the different accounts when the program has finished? Explain what happens.}
 \item {Make even more Account objects and deposit and withdraw money from these.}
-\item {Add a class parameter \lstinline{name: String} containing the name of the owner of the bankaccount.}
+\item {Add a class parameter \lstinline{name: String} containing the name of the owner of the bank account.}
 \item {Do that even the \lstinline{name} is printed when \lstinline{showBalance} is called}
 \item {What happens if you do: \lstinline{account1.balance = 10000000 }}
 
@@ -1305,7 +1306,7 @@ println("Thanks for the talk! Now I know these words:" + word)
 \item {You control with the up and down arrows,  A and Z.}
 \item {Press ESC to cancel the game and examine the code.}
 \item {Change the code so that the ball becomes bigger.}
-\item {Make the playing field to a tennis field, with green background, white lines and a yellow ball.}
+\item {Turn the playing field into a tennis field, with green background, white lines and a yellow ball.}
 
 \end{itemize}
 

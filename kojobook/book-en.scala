@@ -107,7 +107,7 @@ Det tog 0.32 millisekunder.
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="trace", head="Track the program", template=TextWithImage("trace.png"), 
+  Chapter(id="trace", head="Trace the program", template=TextWithImage("trace.png"), 
     contents=Seq(
       taskHead, Itemize(
         "Write a program that draws stairs.",
@@ -115,7 +115,7 @@ Det tog 0.32 millisekunder.
         "Press on one of the commands: {:CALL fram:}. What happens in the Canvas?",
         "When a part of the program is marked in blue, only that part will run when you press the play button. You can unmark the code if you click next to the code that is marked. ",
         "Add more commands to your program and observe what happens when you track it.",
-        "Close the window {/Program tracker/} when you're done.")
+        "Close the {/Program trace/} window when you are done.")
     )
   ), 
 //------------------------------------------------------
@@ -174,15 +174,15 @@ stack""".trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-param", head="square med parameter", 
+  Chapter(id="def-square-param", head="A square with parameter", 
     template=MultiColumn(2),
     contents=Seq(
       taskHead, Para("Draw squares in different sizes."),
       hintHead, 
-      Para("Give your function a {/parameter/},","called {:sideLength:} of the type {:Int:}:"), 
+      Para("Give your function a {/parameter/},","called {:side:} of the type {:Int:}:"), 
       Code("""
-def square(sideLenght : Int) = 
-  repeat(4){ forward(sideLength); right }
+def square(side : Int) = 
+  repeat(4){ forward(side); right }
 
 clear; setAnimationDelay(100); invisible
 square(100) 
@@ -203,15 +203,15 @@ square(40)
       OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
-def square(x: Int, y: Int, sideLength: Int) = {
+def square(x: Int, y: Int, side: Int) = {
   jumpTo(x, y)
-  repeat(4) { forward(sideLength); right }
+  repeat(4) { forward(side); right }
 }
-def head(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
-def eye(x: Int, y: Int) = { setFillColor(white); setPenColor(black); square(x, y, 40) }
+def head(x: Int, y: Int)  = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
+def eye(x: Int, y: Int)   = { setFillColor(white); setPenColor(black); square(x, y, 40) }
 def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
-def nose(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
-def mouth(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); square(x, y, 40) }
+def nose(x: Int, y: Int)  = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
+def mouth(x: Int, y: Int) = { setPenThickness(10); setFillColor(black); setPenColor(red); square(x, y, 40) }
 
 clear; setAnimationDelay(20); invisible
 head(0, 0)
@@ -225,7 +225,7 @@ eye(40, 100); pupil(60, 100)
     contents=Seq(
       taskHead, Itemize(
         "Try out the code below. Draw different kinds of polygons.",
-        "Add a parameter {:sideLength:} and draw polygons of different sizes.",
+        "Add a parameter {:side:} and draw polygons of different sizes.",
         "How large does n have to be to make it look like a circle?"),
       hintHead,
       Code("""
@@ -249,12 +249,12 @@ polygon(7)
         "Fill the polygons with different colors."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Int, sideLength: Int) = repeat(n){
-  forward(sideLength)
+def polygon(n: Int, side: Int) = repeat(n){
+  forward(side)
   left(360.0/n)
 }
-def rotate(n: Int, heading: Int, sideLength: Int) = 
-  repeat(360/heading){ polygon(n, sideLength); left(heading) }
+def rotate(n: Int, heading: Int, side: Int) = 
+  repeat(360/heading){ polygon(n, side); left(heading) }
 
 clear; setAnimationDelay(5)
 rotate(7, 10, 100)
@@ -266,9 +266,9 @@ rotate(7, 10, 100)
     template = MultiColumn(2),
     contents=Seq(
       taskHead, 
-      Itemize("Write{:1 + 1:} and press the blue play button. Kojo will then create a green comment.", 
-        "The comment shows the value of the expression {:1 + 1:} that is {:2:} and the type is {:Int:}, which means {:Integer:}.",
-        "Create more expressions. What's the value and type?"),
+      Itemize("Write {:1 + 1:} and press the blue play button. Kojo will then create a green comment.", 
+        "The comment shows the value of the expression {:1 + 1:} that is {:2:} and the type is {:Int:}, which means integer.",
+        "Create more expressions. What are the values and types of the expressions below?"),
       Code("""
 5 * 5
 10 + 2 * 5
@@ -278,15 +278,15 @@ rotate(7, 10, 100)
 5 % 2
       """.trim),
       ColumnBreak, Image("show-value.png", width=12),
-      hintHead, Itemize("{:/:} between integers creates a division of integers and the decimals will be ignored. To make a division with decimals, at least one of the numbers must contain decimals.","With {:%:} you get the rest of a division of integers.")
+      hintHead, Itemize("{:/:} between integers values results in integer division ignoring the decimals. To make a division with decimals, make sure at least one of the numbers have decimals. The type of a decimal value is called {:Double:}.","With {:%:} you get the remainder of a division of integers.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="val", head="Name the values with {:val:}", 
+  Chapter(id="val", head="Name values with {:val:}", 
     template=TextWithImage("val.png",width=12),
     contents=Seq(
       taskHead,
-      Para("With {:val:} you can connect a name to a value. The name could then be used instead of the value. Try out the program below. What does the turtle write?"),
+      Para("With {:val:} you can connect a name to a value. The name can then be used instead of the value. Try out the program below. What does the turtle write?"),
       Code("""
 val x = 10
 val y = 5
@@ -308,7 +308,7 @@ forward; write(x)
         "Run the program below several times. What happens?",
         "What is the smallest and largest possible value of the radius {:r}?",
         "Change it so that {:r:} becomes a random number between 3 and 200.",
-        "Draw 100 circles with random radiuses on random positions, as shown in the picture."),
+        "Draw 100 circles, each with a random radius at a random position, as shown in the picture."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
 //r becomes a random number between 10 and 89:
@@ -326,7 +326,7 @@ circle(r)
       Itemize(
         "You can mix your own colors with {:Color}, for example {:Color(0, 70, 0):}",
         "The three parameters are the values for {/red/}, {/green/} och {/blue/}",
-        "You are also able to add a fourth parameter that gives the {/transparency/}",
+        "You are also able to add a fourth parameter that sets the {/transparency/}",
         "All parameters are between 0 and 255"
       ),
       taskHead, Para(
@@ -348,9 +348,9 @@ setFillColor(pistageicecream); forward(100); circle(100)
   Chapter(id="color-picker", head="Try the color chooser", template=TextWithImage("color-chooser-rgb-sv.png",width=14),
     contents=Seq(
       taskHead, Itemize(
-        """Rightclick in the editorwindow and click {:Choose color...:}""",
-        "If you choose the tab {*RGB*} in the colourpicker you can pick amongst new RGB-colors.",
-        "Press OK and look in the outputwindow. There you can see the three RGB-values for red, green and blue.",
+        """Right-click in the editorwindow and click {:Choose color...:}""",
+        "If you choose the tab {*RGB*} in the color picker you can pick amongst new RGB-colors.",
+        "Press OK and look in the outpu twindow. There you can see the three RGB-values for red, green and blue.",
         "You can use these values in your program to draw your new color with {:color(Color(218,153,67)):}."
       )
     )
@@ -361,19 +361,19 @@ setFillColor(pistageicecream); forward(100); circle(100)
     contents=Seq(
       Code("""
 def random = random(256)
-def randomsetPenColor = Color(random,10,random,100) 
+def randomColor = Color(random,10,random,100) 
 
 clear; setAnimationDelay(5)
 setBackground2(black,white)
 setPenThickness (6)
 
 repeat(100) {
-    setPenColor(randomsetPenColor)
+    setPenColor(randomColor)
     circle(100)
     hop(20)
     right(35)
 }
-       """.trim,size=16), taskHead, Para("Try different randomcolors and backgrounds."),
+       """.trim,size=16), taskHead, Para("Try different random colors and backgrounds."),
        ColumnBreak, CenterImage("circle-of-circles.png",width=12)
     )
   ), 
@@ -381,8 +381,8 @@ repeat(100) {
   Chapter(id="flower", head="Draw a flower", 
     contents=Seq(
       taskHead, 
-      Para("The program below draws 100 randomcolored circles in a random place with a random radius. " + 
-      		"Try to change the parameters and try to explain what is happening."),
+      Para("The program below draws 100 random-colored circles, each at a random place with a random radius. " + 
+      		"Try to change the parameters and try to explain what happens."),
       OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
 clear(); setAnimationDelay(5)
@@ -403,7 +403,7 @@ repeat(100){
       		"You get a variable that you can assign a value like this:"),
       Code("""
 var cucumber = 1
-cucumber = 1 + 1   //first it calculates 1 + 1 and then assigns that number to cucumber     
+cucumber = 1 + 1   //first calculate 1 + 1 and then assign that number to cucumber     
         """),
      taskHead, 
        Para("Try the program below. What does the turtle write?"),
@@ -429,7 +429,7 @@ repeat(10){
       OverlayImage("flowers.png",x=15, y= -7, width=16),    
       hintHead, 
       Para(
-      	"You can draw leafs with {:bow(radie, vinkel):}. ",
+      	"You can draw leafs with {:arc(radius, angle):}. ",
         "Let the function {:flower.} have two parameters, x and y, and use {:jumpTo(x,y):}",
         "You can loop 5 times and calculate the position like this:"
       ), 
@@ -443,7 +443,7 @@ repeat(5){
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="costume", head="Change costume on the turtle", 
+  Chapter(id="costume", head="Change the turtle's costume", 
     contents=Seq(
       taskHead,       
       Para("Download the mediafiles from Kojos homepage:"),
@@ -460,7 +460,7 @@ forward(1000)
       """.trim,size=20),
       hintHead,
       Itemize("You can also use your own pictures of the types {:.png:} or {:.jpg:}",
-      """If you want to put the picture in another folder you have to write the path to the file, for example {:kostym("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} where {:~:} means your homefolder.""")      
+      """If you want to put the picture in another folder you have to write the path to the file, for example {:setCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} where {:~:} means your homefolder.""")      
     )
   ), 
 //------------------------------------------------------
@@ -486,23 +486,23 @@ p2.forward(-100)  //turtle p2 backs up
    )
  ), 
 //------------------------------------------------------
- Chapter(id="race", head="Make a race", 
+ Chapter(id="race", head="Make a turtle race", 
    template = TextWithImage("race.png", width = 12),
    contents=Seq(
-     Para("With the help of randomnumber you can make the turtles race each other"),
+     Para("With the help of random number you can make the turtles race against each other."),
       taskHead, Itemize(
         "Let three turtles race.",
-        "If they all run forward 10 times, which turtle will win?"
+        "Let all turtles run forward 10 times. Which turtle wins?"
       ),
       hintHead, Itemize(
-        "With {:p1.forward(randomtal(100) + 1):} the turtle p1 moves 1 to 100 steps forward"
+        "With {:p1.forward(random(100) + 1):} the turtle p1 moves 1 to 100 steps forward"
       )
    )
  ), 
 //------------------------------------------------------
   Chapter(id="if", head="Alternative with {:if:}", 
     contents=Seq(
-      Para("With an {:if:}-command the computer picks between two different alternatives."),
+      Para("With an {:if:}-command the computer chooses one of two different alternatives depending on a condition that can be true or false."),
       Code("""
 clear; invisible
 if (true) write("true") else write("false")
@@ -511,7 +511,7 @@ if (true) write("true") else write("false")
         "Change {:true:} to {:false:} and check what the turtle writes.",        
         "Change the condition to {:2 > 1:} and check what the turtle writes.",
         "Change the condition to {:2 < 1:} and check what the turtle writes.",
-        "Explain how an {:if:}-command works."
+        "Explain how an {:if:}-statement works."
       ),
       hintHead, Itemize(
         "If the condition after  {:if:} is {:true:} whatever is after that condition is picked.",
@@ -528,14 +528,14 @@ val password = "cucumber"
 val question     = "What is the password?"
 val right      = "The safe is open!"
 val wrong       = "You may not come in!"
-val answer = readln(answer)  //waits for an answer from the user
+val answer = readln(answer)  //wait for an answer from the user
 val message = if (answer == password) right else wrong
 println(message)
      """.trim, size = 20),
       taskHead, Itemize(
         "Try the program and explain what happens.",
         "Change the password, question and what is printed when the question is right and wrong.",
-        "Also ask for a usernamn and add it to what is printed."
+        "Also ask for a user name and add it to what is printed."
       )
     )
   ), 
@@ -546,7 +546,7 @@ println(message)
       Code("""
 clear; invisible; setAnimationDelay(250); clearOutput
 var x = 200
-while (x > 0) {  //checks the condition before every run 
+while (x > 0) {  //check the condition before each round 
   forward(x); right
   write(x) 
   x = x - 12
@@ -554,7 +554,7 @@ while (x > 0) {  //checks the condition before every run
 println("x is now: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
-        "What is printed in the outputwindow? Why?",
+        "What is printed in the output window? Why?",
         "Trace the program with the orange-colored play-button and check every step.",
         "Change the reduction of {:x:} from {:12:} to {:20:}. Explain what happens."
 
@@ -580,7 +580,7 @@ while (continue) {
 println(secretNumber + " is the CORRECT answer!")
       """.trim,size=16),
       taskHead,
-      Para("Introduce a variable {:var amountOfTries = 0:} and make sure to print:", 
+      Para("Introduce a variable {:var numberOfTries = 0:} and count each try.","When ready print the number of tries like this:", 
 
       "{:Correct answer! You got it in 5 guesses!:}")
     )      
@@ -614,7 +614,7 @@ println("You got " + rightAnswers + " right answer in " + sec + " seconds")
   Chapter(id="vector", head="Save the animals in a vector", 
     contents=Seq(
       Code("""
-var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal becomes a vector with 4 animals
+var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal refers to a vector with 4 animals
 println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
 println("The second animal in the vector is:  " + animal(1))
 println("There are these many animals in the vector: " + animal.size)
@@ -737,7 +737,7 @@ while (true) { //an infinite loop
   lightYellow;  wait(1)
 }
       """.trim,size=14),       taskHead,
-      Itemize("How does the traffic light switch? Try explaning what's happening.",
+      Itemize("How does the traffic light switch? Try to explain what happens.",
       "Change so that the green light is on for the double amount of time.")   
     )
   ),
@@ -880,9 +880,9 @@ account2.showBalance
       ColumnBreak,
       taskHead,
       Itemize(
-        "What is the balance on the different accounts when the program has finished? Explain what's happening.",
+        "What is the balance on the different accounts when the program has finished? Explain what happens.",
         "Make even more Account objects and deposit and withdraw money from these.",
-        "Add a class parameter {:name: String:} containing the name of the owner of the bankaccount.",
+        "Add a class parameter {:name: String:} containing the name of the owner of the bank account.",
         "Do that even the {:name:} is printed when {:showBalance:} is called",
         "What happens if you do: {:account1.balance = 10000000 }")
     )
@@ -927,7 +927,7 @@ println("Thanks for the talk! Now I know these words:" + word)
       "You control with the up and down arrows,  A and Z.",
       "Press ESC to cancel the game and examine the code.",
       "Change the code so that the ball becomes bigger.",
-      "Make the playing field to a tennis field, with green background, white lines and a yellow ball.")   
+      "Turn the playing field into a tennis field, with green background, white lines and a yellow ball.")   
     )
   )  
     
