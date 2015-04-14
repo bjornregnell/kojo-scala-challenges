@@ -668,6 +668,7 @@ ausgeben("Du hast " + anzahlRichtig + " richtige Antworten gegeben.")
       Code("""
 def hauptstadtSpiel = {
   ausgeben("Willkommen zum Hauptstadt-Spiel!")
+  //Eine Map ist eine Abbildung, hier von Landesnamen zu Hauptstadtnamen:
   val stadt = Map("Schweden" ->"Stockholm", "Frankreich" -> "Paris", "Spanien" -> "Madrid")
   var länder = stadt.keySet //keySet liefert die Menge aller Schlüssel in einer Map 
   def zufallsLand = scala.util.Random.shuffle(länder.toVector).head
@@ -692,10 +693,10 @@ hauptstadtSpiel
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="timer", head="Erstelle einen Timer mit {:object:}", 
+  Chapter(id="timer", head="Erstelle eine Stoppuhr mit {:object:}", 
     contents=Seq(
       Code("""
-object timer {
+object Stoppuhr {
   def jetzt = System.currentTimeMillis  //liefert die aktuelle Zeit in Millisekunden
   var zeit = jetzt
   def rücksetzen = { zeit = jetzt }
@@ -705,16 +706,16 @@ object timer {
 }
 
 ausgeben("Klicke in den Ausgabebereich und warte...")
-timer.zufallsWarten(3,6)   //wartet zwischen 3 und 6 Sekunden
-timer.rücksetzen
+Stoppuhr.zufallsWarten(3, 6)   //wartet zwischen 3 und 6 Sekunden
+Stoppuhr.rücksetzen
 einlesen("Drücke die Eingabetaste, so schnell wie Du kannst.")
-ausgeben("Reaktionszeit: " + (timer.gemessen/1000.0) + " Sekunden")
+ausgeben("Reaktionszeit: " + (Stoppuhr.gemessen/1000.0) + " Sekunden")
       """.trim,size=14),   
       Para("Mit {:object:} kannst Du alles sammeln, was zu einem Objekt gehört.",
-        "Du kannst mit einem Punkt auf etwas im Objekt zugreifen: {:timer.rücksetzen:}"),
+        "Du kannst mit einem Punkt auf etwas im Objekt zugreifen: {:Stoppuhr.rücksetzen:}"),
       taskHead,
       Itemize("Probiere das Programm aus und messe Deine Reaktionszeit. Wie schnell bist Du?",
-             "Nutze {:timer:} in der Aufgabe {/Zahlenraten/} und füge die folgende Ausgabe hinzu: {:Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft!:}")
+             "Nutze {:Stoppuhr:} in der Aufgabe {/Zahlenraten/} und füge die folgende Ausgabe hinzu: {:Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft!:}")
     )
   ), 
 //------------------------------------------------------
@@ -844,8 +845,8 @@ meinKonto.anzeigen()
       taskHead,
       Itemize(
         "Was ist der Kontostand nach Ausführung des Programms? Erkläre was passiert.",
-        "Sorge dafür, dass nicht mehr Geld abgehoben werden kann, als auf dem Konto ist.",
-        "Lege eine Konstante {:val maxBetrag = 5000:} an und sorge dafür, dass man nicht mehr abheben darf als {:maxBetrag:}."
+        "Sorge mit {:if:} dafür, dass nicht mehr Geld abgehoben werden kann, als auf dem Konto ist.",
+        "Lege eine Konstante {:val maxBetrag = 5000:} an und sorge mit {:if:} dafür, dass man nicht mehr abheben darf als {:maxBetrag:}."
       )
     )
   ),
