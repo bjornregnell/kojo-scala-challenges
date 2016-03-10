@@ -1,9 +1,9 @@
 \chapter{Su Kojo}
 \begin{multicols}{2}
 \section*{\color{black}Che cosa è Kojo?}
-%Kojo è una applicazione che può aiutare ad imparare a programmare un computer. Con Kojo si può scrivere del codice in un moderno ed estremamente potente linguaggio di programmazione {\bf\color{blue}Scala}. Kojo è Open Source ed è libero e disponibile per Linux, Windows e Mac.
+Kojo è una applicazione che può aiutare ad imparare a programmare un computer. Con Kojo si può scrivere del codice in un moderno ed estremamente potente linguaggio di programmazione {\bf\color{blue}Scala}. Kojo è Open Source ed è libero e disponibile per Linux, Windows e Mac.
 \section*{\color{black}Dove posso trovare Kojo?}
-Kojo %  può essere scaricato qui: 
+Kojo può essere scaricato qui: 
 \\
 
 \href{http://www.kogics.net/kojo-download}{www.kogics.net/kojo-download}
@@ -28,8 +28,8 @@ Per più informazioni:
 Scrivete quello che segue nell'area del codice:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-clear
-forward
+pulisci
+avanti
 \end{lstlisting}
         
 Premete il bottone verde 
@@ -53,12 +53,12 @@ per eseguire il codice.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-clear
-forward
-right
+pulisci
+avanti
+destra
 \end{lstlisting}
         
- Scrivendo \lstinline{left} o \lstinline{right} la tartaruga cambierà direzione.
+ Scrivendo \lstinline{sinistra} o \lstinline{destra} la tartaruga cambierà direzione.
 \section*{\color{BrickRed}Sfida:}
 Estendete il programma in moda da fare disegnare un quadrato.
 
@@ -74,9 +74,9 @@ Estendete il programma in moda da fare disegnare un quadrato.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-clear
-forward; left
-forward; right
+pulisci
+avanti; sinistra
+avanti; destra
 \end{lstlisting}
         
 \vskip 1.0em
@@ -96,8 +96,8 @@ Estendete il programma in maniera che disegni delle scale.
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
-clear
-repeat(4){ forward; right }
+pulisci
+ripeti(4){ avanti; destra }
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -127,14 +127,14 @@ Disegnate un personaggio di vostra scelta.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-hop
-left(180)
-forward(300)
-hop(100)
-jumpTo(25,-28)
-write("FELIX is awesome")
-setPenColor(purple)
-setFillColor(green)
+salta
+sinistra(180)
+avanti(300)
+salta(100)
+saltaVerso(25,-28)
+scrivi("FELIX is awesome")
+colorePenna(purple)
+coloreRiempimento(green)
 \end{lstlisting}
         
 Si può vedere la posizione della tartaruga in basso sulla sinistra mentre si muove il mouse sull'area di disegno:
@@ -204,15 +204,15 @@ Ci sono voluti 0.32 millisecondi.
 
 \end{multicols}
 
-\chapter{Scriviamo le nostre funzioni con \lstinline{def}}Con \lstinline{def} si possono scrive le proprie {\it functions} scegliendone il nome.
+\chapter{Scriviamo le nostre funzioni con \lstinline{def}}Con \lstinline{def} si possono scrivere le proprie {\it funzioni} scegliendone il nome.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-def square =  repeat(4){ forward; right }  
+def quadrato =  ripeti(4){ avanti; destra }  
 
-clear
-square    //use your square-function
-hop
-square
+pulisci
+quadrato    //use your square-function
+salta
+quadrato
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -240,10 +240,10 @@ Facciamo una pila di 10 quadrati
 \vskip 1.0em
 
 \begin{lstlisting}[numbers=none]
-def square =  repeat(4){ forward; right }  
+def quadrato =  ripeti(4){ avanti; destra }  
 
-clear; setAnimationDelay(100)
-repeat(10){ ??? }
+pulisci; ritardo(100)
+ripeti(10){ ??? }
 \end{lstlisting}
         
 
@@ -258,15 +258,15 @@ repeat(10){ ??? }
 \chapter{Una funzione per fare le pile}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Sfida:}
-Scrivete una funzione chiamata \lstinline{stack}, che disegna una pila di 10 quadrati.
+Scrivete una funzione chiamata \lstinline{pila}, che disegna una pila di 10 quadrati.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[numbers=none]
-def square = repeat(4){ forward; right }  
-def stack = ???
+def quadrato = ripeti(4){ avanti; destra }  
+def pila = ???
 
-clear; setAnimationDelay(100)
-stack
+pulisci; ritardo(100)
+pila
 \end{lstlisting}
         
 
@@ -312,13 +312,13 @@ Date alla vostra funzione un {\it parameter},\\
 chiamato \lstinline{side} di tipo \lstinline{Int}:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def square(side : Int) = 
-  repeat(4){ forward(side); right }
+def quadrato(side : Int) = 
+  ripeti(4){ avanti(side); destra }
 
-clear; setAnimationDelay(100); invisible
-square(100) 
-square(70)
-square(40)
+pulisci; ritardo(100); invisibile
+quadrato(100) 
+quadrato(70)
+quadrato(40)
 \end{lstlisting}
         
 Potete cambiare il colore con:\\
@@ -350,19 +350,19 @@ Disegnate un personaggio con quadrati di dimensione differente.
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-def square(x: Int, y: Int, side: Int) = {
-  jumpTo(x, y)
-  repeat(4) { forward(side); right }
+def quadrato(x: Int, y: Int, side: Int) = {
+  saltaVerso(x, y)
+  ripeti(4) { avanti(side); destra }
 }
-def head(x: Int, y: Int)  = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
-def eye(x: Int, y: Int)   = { setFillColor(white); setPenColor(black); square(x, y, 40) }
-def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
-def nose(x: Int, y: Int)  = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
-def mouth(x: Int, y: Int) = { setPenThickness(10); setFillColor(black); setPenColor(red); square(x, y, 40) }
+def testa(x: Int, y: Int)  = { coloreRiempimento(pink); colorePenna(red); quadrato(x, y, 200) }
+def occhio(x: Int, y: Int)   = { coloreRiempimento(white); colorePenna(black); quadrato(x, y, 40) }
+def pupilla(x: Int, y: Int) = { coloreRiempimento(black); colorePenna(black); quadrato(x, y, 10) }
+def naso(x: Int, y: Int)  = { coloreRiempimento(blue); colorePenna(noColor); quadrato(x, y, 30) }
+def bocca(x: Int, y: Int) = { impostaSpessorePenna(10); coloreRiempimento(black); colorePenna(red); quadrato(x, y, 40) }
 
-clear; setAnimationDelay(20); invisible
-head(0, 0)
-eye(40, 100); pupil(60, 100)
+pulisci; ritardo(20); invisibile
+testa(0, 0)
+occhio(40, 100); pupilla(60, 100)
 ???
 \end{lstlisting}
         
@@ -381,13 +381,13 @@ eye(40, 100); pupil(60, 100)
 \section*{\color{OliveGreen}Tip:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-def polygon(n:Int) = repeat(n){
-  forward(100)
-  left(360.0/n)
+def poligono(n:Int) = ripeti(n){
+  avanti(100)
+  sinistra(360.0/n)
 }
 
-clear; setAnimationDelay(100)
-polygon(7)
+pulisci; ritardo(100)
+poligono(7)
 \end{lstlisting}
         
 
@@ -395,7 +395,7 @@ polygon(7)
 \node at (20.0cm,3.5cm) {\includegraphics[width=8.0cm]{../img/polygon.png}};
 \end{tikzpicture}
   
-\chapter{DIsegnamo alcuni poligoni}\section*{\color{BrickRed}Sfida:}
+\chapter{Disegnamo alcuni poligoni}\section*{\color{BrickRed}Sfida:}
 
 
 \begin{itemize}
@@ -414,15 +414,15 @@ polygon(7)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def polygon(n: Int, side: Int) = repeat(n){
-  forward(side)
-  left(360.0/n)
+def poligono(n: Int, side: Int) = ripeti(n){
+  avanti(side)
+  sinistra(360.0/n)
 }
-def rotate(n: Int, heading: Int, side: Int) = 
-  repeat(360/heading){ polygon(n, side); left(heading) }
+def ruota(n: Int, heading: Int, side: Int) = 
+  ripeti(360/heading){ poligono(n, side); sinistra(heading) }
 
-clear; setAnimationDelay(5)
-rotate(7, 10, 100)
+pulisci; ritardo(5)
+ruota(7, 10, 100)
 \end{lstlisting}
         
 \chapter{Valori ed espressioni}
@@ -476,14 +476,14 @@ Con \lstinline{val} si può riferire un nome ad un valore. Si può usare il nome
 \begin{lstlisting}[numbers=none]
 val x = 10
 val y = 5
-val cucumber = x + y
+val cocomero = x + y
 val banana = x * y
 
-clear
-forward; write(banana)
-forward; write(cucumber)
-forward; write(y)
-forward; write(x)
+pulisci
+avanti; scrivi(banana)
+avanti; scrivi(cocomero)
+avanti; scrivi(y)
+avanti; scrivi(x)
 \end{lstlisting}
         
 
@@ -516,11 +516,11 @@ forward; write(x)
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 //r becomes a random number between 10 and 89:
-val r = random(90) + 10   
+val r = numeroCasuale(90) + 10   
 
-clear; setAnimationDelay(10); invisible
-write("Radius = " + r)
-circle(r)
+pulisci; ritardo(10); invisibile
+scrivi("Radius = " + r)
+cerchio(r)
 \end{lstlisting}
         
 \chapter{Misceliamo i nostri colori}
@@ -544,13 +544,13 @@ Provate il programma sotto e cambiate la trasparenza del colore
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-clear; setAnimationDelay(100)      
+pulisci; ritardo(100)      
 
-val olivegreen = Color(0,70,0)
-val pistageicecream = Color(0,255,0,100)
+val verdeOliva = Color(0,70,0)
+val pistacchio = Color(0,255,0,100)
 
-setFillColor(olivegreen); circle(100)
-setFillColor(pistageicecream); forward(100); circle(100)
+coloreRiempimento(verdeOliva); cerchio(100)
+coloreRiempimento(pistacchio); avanti(100); cerchio(100)
 \end{lstlisting}
         
 \chapter{Proviamo il selettore dei colori}
@@ -563,7 +563,7 @@ setFillColor(pistageicecream); forward(100); circle(100)
 \item {Fate click con il tasto destro del mouse nell'area del codice e selezionate \lstinline{Choose color...}}
 \item {Se scegliete la linguetta {\bf RGB} potrete scegliere un nuovo colore in valori RGB.}
 \item {Premete Ok e guardate nell'area di output. Potrete notare i valori RGB pe il rosso, il verde ed il blu.}
-\item {Potete usare questi valori nei vostri programmi per disegnare con il vostro nuovo colore, per esempio in questo modo: \lstinline{color(Color(218,153,67))}.}
+\item {Potete usare questi valori nei vostri programmi per disegnare con il vostro nuovo colore, per esempio in questo modo: \lstinline{colore(Color(218,153,67))}.}
 
 \end{itemize}
 
@@ -581,18 +581,18 @@ setFillColor(pistageicecream); forward(100); circle(100)
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def random = random(256)
+def random = numeroCasuale(256)
 def randomColor = Color(random,10,random,100) 
 
-clear; setAnimationDelay(5)
-setBackground2(black,white)
-setPenThickness (6)
+pulisci; numeroCasuale(5)
+gradiente(black,white)
+impostaSpessorePenna (6)
 
-repeat(100) {
-    setPenColor(randomColor)
-    circle(100)
-    hop(20)
-    right(35)
+ripeti(100) {
+    colorePenna(randomColor)
+    cerchio(100)
+    salta(20)
+    destra(35)
 }
 \end{lstlisting}
         
@@ -618,13 +618,13 @@ Il programma qui sotto disegna 100 cerchi colorati casualmente, ognuno con posiz
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-clear(); setAnimationDelay(5)
-setPenThickness (2)
-repeat(100){
-  setPenColor(Color(random(256),0,random(256)))
-  setFillColor(Color(random(256),0,random(256),random(100)+50))
-  left(random(360))
-  circle(random(30)*4+10)
+pulisci(); ritardo(5)
+impostaSpessorePenna (2)
+ripeti(100){
+  colorePenna(Color(random(256),0,random(256)))
+  coloreRiempimento(Color(random(256),0,random(256),random(100)+50))
+  sinistra(random(360))
+  cerchio(random(30)*4+10)
 }
 \end{lstlisting}
         
@@ -644,10 +644,10 @@ Provate questo programma. Cosa scriverà la tartaruga?
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var i = 0
 
-clear
-repeat(10){
+pulisci
+ripeti(10){
   i = i + 1
-  forward; write(i)
+  avanti; scrivi(i)
 }
 \end{lstlisting}
         
@@ -678,14 +678,14 @@ repeat(10){
 \end{tikzpicture}
   
 \section*{\color{OliveGreen}Tip:}
-Potete disegnare le foglie con \lstinline{arc(radius, angle)}. \\
-Fate che la funzione \lstinline{flower.} abbia due parametri, x e y, e usate \lstinline{jumpTo(x,y)}\\
+Potete disegnare le foglie con \lstinline{arco(radius, angle)}. \\
+Fate che la funzione \lstinline{fiore.} abbia due parametri, x e y, e usate \lstinline{saltaVerso(x,y)}\\
 Potete ripetere il ciclo 5 volte e calcolare la posizione in questo modo:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
 var i = 0          
-repeat(5){
-  flower(600*i,0)
+ripeti(5){
+  fiore(600*i,0)
   i = i + 1        
 }
 \end{lstlisting}
@@ -711,10 +711,10 @@ Scaricate i file aggiuntivi dalla pagin web di Kojos:
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-clear
-setCostume ("crab1-b.png")  
-setAnimationDelay(2000)
-forward(1000)
+pulisci
+indossaCostume ("crab1-b.png")  
+ritardo(2000)
+avanti(1000)
 \end{lstlisting}
         
 \section*{\color{OliveGreen}Tip:}
@@ -723,7 +723,7 @@ forward(1000)
 \begin{itemize}
 
 \item {Potete usare anche delle vostre immagini, basta che siano del tipo \lstinline{.png} o \lstinline{.jpg}}
-\item {Se volte mettere le immagini in una cartella diversa da quella del programma, dovrete fornire il percorso sul disco rigido dove poter rintracciare il file, per esempio \lstinline{setCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png")} dove \lstinline{~} significa la vostra cartella personale (la cartella home per i sistemi operativi di tipo Unix).}
+\item {Se volte mettere le immagini in una cartella diversa da quella del programma, dovrete fornire il percorso sul disco rigido dove poter rintracciare il file, per esempio \lstinline{indossaCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png")} dove \lstinline{~} significa la vostra cartella personale (la cartella home per i sistemi operativi di tipo Unix).}
 
 \end{itemize}
 
@@ -731,11 +731,11 @@ forward(1000)
 \chapter{Facciamo una nuova tartaruga con \lstinline{new}}Potere creare altre tartarughe con il comando \lstinline{new} in questo modo:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-clear
-val p1 = new Turtle(100,100) //the new turtle p1 starts on position (100, 100)
-val p2 = new Padda(100, 50)  //the new turtle p2 starts on position (100, 50)
-p1.forward(100)
-p2.forward(-100)  //turtle p2 backs up
+pulisci
+val p1 = new Tartaruga(100,100) //the new turtle p1 starts on position (100, 100)
+val p2 = new Tartaruga(100, 50)  //the new turtle p2 starts on position (100, 50)
+p1.avanti(100)
+p2.avanti(-100)  //turtle p2 backs up
 \end{lstlisting}
         
 
@@ -760,8 +760,8 @@ p2.forward(-100)  //turtle p2 backs up
 \begin{itemize}
 
 \item {\lstinline{p1} e \lstinline{p2} sono i {\it names} delle tartarughe. Potete farne quante volete.}
-\item {Con il nome \lstinline{p1} ed un punto, potete dare alle specifiche tartarughe dei comandi, per esempio così: \lstinline{p1.left}}
-\item {\lstinline{invisible} nasconde le tartarughe.}
+\item {Con il nome \lstinline{p1} ed un punto, potete dare alle specifiche tartarughe dei comandi, per esempio così: \lstinline{p1.sinistra}}
+\item {\lstinline{invisibile} nasconde le tartarughe.}
 
 \end{itemize}
 
@@ -785,7 +785,7 @@ Con l'aiuto dei numeri casuale potrete programmare una corsa di tartarughe.
 
 \begin{itemize}
 
-\item {Con \lstinline{p1.forward(random(100) + 1)} la tartaruga p1 muoverà da 1 a 100 passi in avanti}
+\item {Con \lstinline{p1.avanti(random(100) + 1)} la tartaruga p1 muoverà da 1 a 100 passi in avanti}
 
 \end{itemize}
 
@@ -802,8 +802,8 @@ Con l'aiuto dei numeri casuale potrete programmare una corsa di tartarughe.
 \chapter{Le scelte alternative con \lstinline{if}}Con una istruzione \lstinline{if} il computer sceglierà una delle due differenti alternative in dipendenza da una condizione che può risultare vera o falsa.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-clear; invisible
-if (true) write("true") else write("false")
+pulisci; invisibile
+if (true) scrivi("true") else scrivi("false")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -814,7 +814,7 @@ if (true) write("true") else write("false")
 \item {Cambiate \lstinline{true} in \lstinline{false} e controllate cosa scrive la tartaruga.}
 \item {Cambiate la condizione in \lstinline{2 > 1} e controllate cosa scrive la tartaruga.}
 \item {Cambiate la condizione in \lstinline{2 < 1} e controllate cosa scrive la tartaruga.}
-\item {Siegate com l'espressione \lstinline{if} funziona.}
+\item {Spiegate come l'espressione \lstinline{if} funziona.}
 
 \end{itemize}
 
@@ -832,14 +832,14 @@ if (true) write("true") else write("false")
 
 \chapter{Reagire a quello che l'utente sta facendo}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-clearOutput; setOutputTextFontSize(35)
-val password = "cucumber"
+pulisciOutput; setOutputTextFontSize(35)
+val password = "cocomero"
 val question     = "What is the password?"
 val right      = "The safe is open!"
 val wrong       = "You may not come in!"
-val answer = readln(answer)  //wait for an answer from the user
+val answer = leggi(answer)  //wait for an answer from the user
 val message = if (answer == password) right else wrong
-println(message)
+scriviLinea(message)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -857,14 +857,14 @@ println(message)
 \chapter{Facciamo un ciclo \lstinline{while}}Con il ciclo while \lstinline{while} il computer ripeterà un comando tante volte finché la condizione sarà vera.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
-clear; invisible; setAnimationDelay(250); clearOutput
+pulisci; invisibile; ritardo(250); pulisciOutput
 var x = 200
 while (x > 0) {  //check the condition before each round 
-  forward(x); right
-  write(x) 
+  avanti(x); destra
+  scrivi(x) 
   x = x - 12
 }
-println("x is now: " + x)
+scriviLinea("x is now: " + x)
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -881,19 +881,19 @@ println("x is now: " + x)
 
 \chapter{Indovina il numero}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-val secretNumber = random(100)+1
-var answer = readln("Guess a number between 1 and 100! ")
+val secretNumber = numeroCasuale(100)+1
+var answer = leggiLinea("Guess a number between 1 and 100! ")
 var continue = true
 
 while (continue) {
     if (answer.toInt < secretNumber)
-      answer = readln(answer + " is too SMALL, guess again!")
+      answer = leggiLinea(answer + " is too SMALL, guess again!")
     else if (answer.toInt > secretNumber)
-      answer = readln(answer + " is too LARGE, guess again!")
+      answer = leggiLinea(answer + " is too LARGE, guess again!")
     else if (answer.toInt == secretNumber)
       continue = false
 }
-println(secretNumber + " is the CORRECT answer!")
+scriviLinea(secretNumber + " is the CORRECT answer!")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -904,19 +904,19 @@ Quando pronti scrivete il numero dei tentativi in questo modo:\\
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 var rightAnswers = 0
 val startTime = System.currentTimeMillis / 1000
-repeat(12) {
-  val number1 = random(12)+1
-  val number2 = random(12)+1
-  val answer = readln("What is  " + number1 + "*" + number2 + "?")
+ripeti(12) {
+  val number1 = numeroCasuale(12)+1
+  val number2 = numeroCasuale(12)+1
+  val answer = leggiLinea("What is  " + number1 + "*" + number2 + "?")
   if (answer == (number1 * number2).toString) {
-    println("Correct!")
+    scriviLinea("Correct!")
     rightAnswers = rightAnswers + 1
   }
-  else println("Wrong. The right answer is " + (number1 * number2))
+  else scriviLinea("Wrong. The right answer is " + (number1 * number2))
 }
 val stopTime = System.currentTimeMillis / 1000
 val sec = stopTime - startTime
-println("You got " + rightAnswers + " right answer in " + sec + " seconds")
+scriviLinea("You got " + rightAnswers + " right answer in " + sec + " seconds")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -924,19 +924,19 @@ Cambiate per poter fare pratica solo nella moltiplicazione con 8 e 9.
 \chapter{Immagazzinare gli animali in una lista}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal refers to a vector with 4 animals
-println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
-println("The second animal in the vector is:  " + animal(1))
-println("There are these many animals in the vector: " + animal.size)
-println("The last animal in the vector is:  " + animal(animal.size-1))
+scriviLinea("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
+scriviLinea("The second animal in the vector is:  " + animal(1))
+scriviLinea("There are these many animals in the vector: " + animal.size)
+scriviLinea("The last animal in the vector is:  " + animal(animal.size-1))
 
-val s = random(animal.size)   //take a random number between 0 and the number of animals minus 1
-println("A random animal: " + animal(s))
+val s = numeroCasuale(animal.size)   //take a random number between 0 and the number of animals minus 1
+scriviLinea("A random animal: " + animal(s))
 animal = animal :+ "camel"    //adds another animal last in the vector
 animal = "dromedary" +: animal // adds another animal first in the vector
 
 animal = animal.updated(2, "mudskipper")  // Change the third animal(index 2 in vector)
-println("All animals in the array backwards:")
-animal.foreach{ x => println(x.reverse) } // for all x in array: type out x backwards.
+scriviLinea("All animals in the array backwards:")
+animal.foreach{ x => scriviLinea(x.reverse) } // for all x in array: type out x backwards.
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -955,18 +955,18 @@ animal.foreach{ x => println(x.reverse) } // for all x in array: type out x back
 val Swedish = Vector("dator", "sköldpadda", "cirkel")
 val English = Vector("computer", "turtle", "circle")
 var amountRight = 0
-repeat(5) {
-  val s = random(3)
+ripeti(5) {
+  val s = numeroCasuale(3)
   val word = Swedish(s)
-  val answer = readln("What is " + word + " in English?")
+  val answer = leggiLinea("What is " + word + " in English?")
   if (answer == English(s)) {
-    println("Correct answer!")
+    scriviLinea("Correct answer!")
     amountRight = amountRight + 1
   } else {
-    println("Wrong answer. Correct answer is: " + English(s))
+    scriviLinea("Wrong answer. Correct answer is: " + English(s))
   }
 }
-println("You have" + amountRight + " correct answers.")
+scriviLinea("You have" + amountRight + " correct answers.")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Sfida:}
@@ -984,7 +984,7 @@ println("You have" + amountRight + " correct answers.")
 \chapter{Il gioco delle Capitali}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 def capitalGame = {
-  println("Welcome to the Capital Game!")
+  scriviLinea("Welcome to the Capital Game!")
   val city = Map("Sweden" ->"Stockholm", "Denmark" -> "Copenhagen", "Skåne" -> "Malmö")
   var countriesLeft = city.keySet //keySet gives an amount of all keys in a Map 
   def randomCountry = scala.util.Random.shuffle(countriesLeft.toVector).head
@@ -1002,7 +1002,7 @@ def capitalGame = {
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-repeat(100)(output("")) //scroll the output window with 100 blank rows.
+ripeti(100)(output("")) //scroll the output window with 100 blank rows.
 capitalGame
 
 // *** TASK: (1) Add more pairs of countries and cities: country -> city (2) Measure time and count points.
@@ -1016,7 +1016,7 @@ object timer {
   def reset = { time = now }
   def measure = now - time
   def randomWait(min: Int, max: Int) =  //wait between min and max seconds
-    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
+    Thread.sleep((numeroCasuale(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
 }
 
 println("Click in the println window and wait...")
@@ -1053,7 +1053,7 @@ def lightYellow = draw(light(yellow, 65))
 def lightGreen = draw(light(green, 30))
 def wait(seconds: Int) = Thread.sleep(seconds*1000)
 
-clear; invisible  
+pulisci; invisibile  
 while (true) { //an infinite loop
   turnOffAll
   lightRed;  wait(3)
@@ -1079,18 +1079,18 @@ while (true) { //an infinite loop
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-clear; setAnimationDelay(0)
+pulisci; ritardo(0)
 activateCanvas()
 
-animate { forward(1) }
+animate { avanti(1) }
 
 onKeyPress { k =>
   k match {
-    case Kc.VK_LEFT =>   left(5)
-    case Kc.VK_RIGHT =>  right(5)
-    case Kc.VK_SPACE =>  forward(5)
+    case Kc.VK_LEFT =>   sinistra(5)
+    case Kc.VK_RIGHT =>  destra(5)
+    case Kc.VK_SPACE =>  avanti(5)
     case _ => 
-      println("Another key: " + k)
+      scriviLinea("Another key: " + k)
   }
 }
 \end{lstlisting}
@@ -1106,8 +1106,8 @@ onKeyPress { k =>
 \begin{itemize}
 
 \item {Scrivete \lstinline{Kc.} e premete \lstinline{Ctrl+Alt+Space} e guardate i diversi tasti premuti.}
-\item {Chiamare \lstinline{penUp} premento freccia su}
-\item {Chiamare \lstinline{penDown} premento freccia giù}
+\item {Chiamare \lstinline{alzaPenna} premento freccia su}
+\item {Chiamare \lstinline{abbassaPenna} premento freccia giù}
 \item {FaChiamarete \lstinline{color(blue)} premendo il tasto B}
 \item {Chiamare \lstinline{color(red)} premendo il tasto R}
 \item {Aumentare o diminuire la velocità premendo + o -}
@@ -1121,7 +1121,7 @@ onKeyPress { k =>
 \begin{multicols}{2}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-clear; setAnimationDelay(100)
+pulisci; ritardo(100)
 activateCanvas()
 
 var draw = true
@@ -1129,18 +1129,18 @@ var draw = true
 onKeyPress { k =>
   k match {
     case Kc.VK_DOWN => 
-      penDown()
+      abbassaPenna()
       draw = true
     case Kc.VK_UP => 
-      penUp()
+      alzaPenna()
       draw = false
     case _ => 
-      println("Another key: " + k)
+      scriviLinea("Another key: " + k)
   }
 }
 
 onMouseClick { (x, y) =>
-  if (draw) moveTo(x, y) else jumpTo(x, y)
+  if (draw) moveTo(x, y) else saltaVerso(x, y)
 }
 \end{lstlisting}
         
@@ -1154,7 +1154,7 @@ onMouseClick { (x, y) =>
 
 \begin{itemize}
 
-\item {Chiamare \lstinline{setFillColor(black)} premenso il tasto F}
+\item {Chiamare \lstinline{coloreRiempimento(black)} premenso il tasto F}
 \item {Introdurre la variabile \lstinline{var fillNext = true} e nel caso sia premuto \lstinline{Kc.VK_F} eseguire:}
 
 \end{itemize}
@@ -1164,10 +1164,10 @@ onMouseClick { (x, y) =>
 \begin{lstlisting}[numbers=none]
 
       if (fillNext) {
-        setFillColor(black)
+        coloreRiempimento(black)
         fillNext=false
       } else {
-        setFillColor(noColor)
+        coloreRiempimento(noColor)
         fillNext=true
       }
       
@@ -1189,8 +1189,8 @@ object myAccount {
     balance = balance - amount 
   }
   def showBalance() = {
-    println("Account number: " + number) 
-    println("       Balance: " + balance)
+    scriviLinea("Account number: " + number) 
+    scriviLinea("       Balance: " + balance)
   }
 }
 
@@ -1271,7 +1271,7 @@ account2.showBalance
 \chapter{Parliamo col computer}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-println("Write interesting answers even if the questions are weird. End with 'good bye'")
+scriviLinea("Write interesting answers even if the questions are weird. End with 'good bye'")
 def randomize(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val text = Vector("What does this mean: ", "Do you like", "Why is this needed: ", "Tell more about")
 var answer = "?"
@@ -1283,10 +1283,10 @@ while (answer != "good bye") {
     else if(answer == "Yes") "Well, yes." 
     else if (answer.length < 4) "Okay..." 
     else randomize(text) + " " + randomize(word) + "?"
-  answer = readln(t).toLowerCase
+  answer = leggiLinea(t).toLowerCase
   word = word ++ answer.split(" ").toList.filter(_.length > 3) 
 } 
-println("Thanks for the talk! Now I know these words:" + word)
+scriviLinea("Thanks for the talk! Now I know these words:" + word)
 
 //Task:
 // (1) Far eseguire il programma e spiegare che è successo.

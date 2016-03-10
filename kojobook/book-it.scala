@@ -28,8 +28,8 @@ val chapters = Seq(
     contents=Seq(
       taskHead, Para("Scrivete quello che segue nell'area del codice:"),
       Code("""
-clear
-forward
+pulisci
+avanti
        """.trim, size=30),
       Para("Premete il bottone verde "), Image("play.png",1), LineBreak,
       Para("per eseguire il codice."), LineBreak, VSkip(5)
@@ -39,20 +39,20 @@ forward
   Chapter(id="square", head="Disegnamo un quadrato", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
-clear
-forward
-right
+pulisci
+avanti
+destra
        """.trim, size=30),
-    Para(" Scrivendo {:left:} o {:right:} la tartaruga cambierà direzione."),
+    Para(" Scrivendo {:sinistra:} o {:destra:} la tartaruga cambierà direzione."),
     taskHead, Para("Estendete il programma in moda da fare disegnare un quadrato.")
     )
   ),
   Chapter(id="stairs", head="Disegnamo delle scale", template=TextWithImage("stairs.png"), 
     contents=Seq(
       Code("""
-clear
-forward; left
-forward; right
+pulisci
+avanti; sinistra
+avanti; destra
 
        """.trim, size=30), VSkip(1), 
     Para("Con il punto e virgola {:;:} tra le istruzioni, si possono avere più comandi sulla stessa linea."),
@@ -63,8 +63,8 @@ forward; right
   Chapter(id="square-repeat", head="Facciamo un ciclo", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
-clear
-repeat(4){ forward; right }
+pulisci
+ripeti(4){ avanti; destra }
        """.trim, size=30),
       taskHead, Itemize("Cosa capiterà se cambiamo 4 in 100?","Disegnerà delle scale con 100 gradini.") 
     )
@@ -75,14 +75,14 @@ repeat(4){ forward; right }
       taskHead, Para("Disegnate un personaggio di vostra scelta."),
       hintHead, 
       Code("""
-hop
-left(180)
-forward(300)
-hop(100)
-jumpTo(25,-28)
-write("FELIX is awesome")
-setPenColor(purple)
-setFillColor(green)
+salta
+sinistra(180)
+avanti(300)
+salta(100)
+saltaVerso(25,-28)
+scrivi("FELIX is awesome")
+colorePenna(purple)
+coloreRiempimento(green)
        """.trim, size=20),
       Para("Si può vedere la posizione della tartaruga in basso sulla sinistra mentre si muove il mouse sull'area di disegno:"), Image("mousepos.png", 6),
       ColumnBreak,
@@ -121,14 +121,14 @@ Ci sono voluti 0.32 millisecondi.
 //------------------------------------------------------
   Chapter(id="def-square", head="Scriviamo le nostre funzioni con {:def:}", 
     contents=Seq(
-      Para("Con {:def:} si possono scrive le proprie {/functions/} scegliendone il nome."), 
+      Para("Con {:def:} si possono scrivere le proprie {/funzioni/} scegliendone il nome."), 
       Code("""
-def square =  repeat(4){ forward; right }  
+def quadrato =  ripeti(4){ avanti; destra }  
 
-clear
-square    //use your square-function
-hop
-square     
+pulisci
+quadrato    //use your square-function
+salta
+quadrato     
        """.trim, size=20),
     taskHead, Itemize("Cambiate il colore del quadrato.", "Fatelo varie volte."),
     hintHead, Code("""
@@ -143,24 +143,24 @@ coloreRiempimento(green); colorePenna(purple)
     taskHead, Para("Facciamo una pila di 10 quadrati"),
     hintHead, VSkip(1),
     Code("""
-def square =  repeat(4){ forward; right }  
+def quadrato =  ripeti(4){ avanti; destra }  
 
-clear; setAnimationDelay(100)
-repeat(10){ ??? }""".trim)
+pulisci; ritardo(100)
+ripeti(10){ ??? }""".trim)
     )
   ), 
 //------------------------------------------------------
   Chapter(id="def-square-column", head="Una funzione per fare le pile", 
     template=TextWithImage("square-column.png"),
     contents=Seq(
-      taskHead, Para("Scrivete una funzione chiamata {:stack:}, che disegna una pila di 10 quadrati."),
+      taskHead, Para("Scrivete una funzione chiamata {:pila:}, che disegna una pila di 10 quadrati."),
       hintHead,  
       Code("""
-def square = repeat(4){ forward; right }  
-def stack = ???
+def quadrato = ripeti(4){ avanti; destra }  
+def pila = ???
 
-clear; setAnimationDelay(100)
-stack""".trim)
+pulisci; ritardo(100)
+pila""".trim)
     )
   ), 
 //------------------------------------------------------
@@ -181,13 +181,13 @@ stack""".trim)
       hintHead, 
       Para("Date alla vostra funzione un {/parameter/},","chiamato {:side:} di tipo {:Int:}:"), 
       Code("""
-def square(side : Int) = 
-  repeat(4){ forward(side); right }
+def quadrato(side : Int) = 
+  ripeti(4){ avanti(side); destra }
 
-clear; setAnimationDelay(100); invisible
-square(100) 
-square(70)
-square(40)
+pulisci; ritardo(100); invisibile
+quadrato(100) 
+quadrato(70)
+quadrato(40)
        """.trim,size=16), 
       Para("Potete cambiare il colore con:","{:coloreRiempimento(blue); colorePenna(pink):}"),
       ColumnBreak,
@@ -203,19 +203,19 @@ square(40)
       OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
-def square(x: Int, y: Int, side: Int) = {
-  jumpTo(x, y)
-  repeat(4) { forward(side); right }
+def quadrato(x: Int, y: Int, side: Int) = {
+  saltaVerso(x, y)
+  ripeti(4) { avanti(side); destra }
 }
-def head(x: Int, y: Int)  = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
-def eye(x: Int, y: Int)   = { setFillColor(white); setPenColor(black); square(x, y, 40) }
-def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
-def nose(x: Int, y: Int)  = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
-def mouth(x: Int, y: Int) = { setPenThickness(10); setFillColor(black); setPenColor(red); square(x, y, 40) }
+def testa(x: Int, y: Int)  = { coloreRiempimento(pink); colorePenna(red); quadrato(x, y, 200) }
+def occhio(x: Int, y: Int)   = { coloreRiempimento(white); colorePenna(black); quadrato(x, y, 40) }
+def pupilla(x: Int, y: Int) = { coloreRiempimento(black); colorePenna(black); quadrato(x, y, 10) }
+def naso(x: Int, y: Int)  = { coloreRiempimento(blue); colorePenna(noColor); quadrato(x, y, 30) }
+def bocca(x: Int, y: Int) = { impostaSpessorePenna(10); coloreRiempimento(black); colorePenna(red); quadrato(x, y, 40) }
 
-clear; setAnimationDelay(20); invisible
-head(0, 0)
-eye(40, 100); pupil(60, 100)
+pulisci; ritardo(20); invisibile
+testa(0, 0)
+occhio(40, 100); pupilla(60, 100)
 ???
        """.trim,size=14)
     )
@@ -229,19 +229,19 @@ eye(40, 100); pupil(60, 100)
         "Quanto dovrebbe essere largo n per farlo sempreare un cerchio?"),
       hintHead,
       Code("""
-def polygon(n:Int) = repeat(n){
-  forward(100)
-  left(360.0/n)
+def poligono(n:Int) = ripeti(n){
+  avanti(100)
+  sinistra(360.0/n)
 }
 
-clear; setAnimationDelay(100)
-polygon(7)
+pulisci; ritardo(100)
+poligono(7)
        """.trim,size=18),
       OverlayImage("polygon.png",x=20,y=3.5,width=8)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygons", head="DIsegnamo alcuni poligoni", 
+  Chapter(id="plygons", head="Disegnamo alcuni poligoni", 
     contents=Seq(
       taskHead, Itemize(
         "Provate il codice qui sotto.",
@@ -249,15 +249,15 @@ polygon(7)
         "Colorate i poligoni in colori differenti."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Int, side: Int) = repeat(n){
-  forward(side)
-  left(360.0/n)
+def poligono(n: Int, side: Int) = ripeti(n){
+  avanti(side)
+  sinistra(360.0/n)
 }
-def rotate(n: Int, heading: Int, side: Int) = 
-  repeat(360/heading){ polygon(n, side); left(heading) }
+def ruota(n: Int, heading: Int, side: Int) = 
+  ripeti(360/heading){ poligono(n, side); sinistra(heading) }
 
-clear; setAnimationDelay(5)
-rotate(7, 10, 100)
+pulisci; ritardo(5)
+ruota(7, 10, 100)
        """.trim,size=16)
     )
   ), 
@@ -290,14 +290,14 @@ rotate(7, 10, 100)
       Code("""
 val x = 10
 val y = 5
-val cucumber = x + y
+val cocomero = x + y
 val banana = x * y
 
-clear
-forward; write(banana)
-forward; write(cucumber)
-forward; write(y)
-forward; write(x)
+pulisci
+avanti; scrivi(banana)
+avanti; scrivi(cocomero)
+avanti; scrivi(y)
+avanti; scrivi(x)
       """.trim)
     )
   ), 
@@ -312,11 +312,11 @@ forward; write(x)
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
 //r becomes a random number between 10 and 89:
-val r = random(90) + 10   
+val r = numeroCasuale(90) + 10   
 
-clear; setAnimationDelay(10); invisible
-write("Radius = " + r)
-circle(r)
+pulisci; ritardo(10); invisibile
+scrivi("Radius = " + r)
+cerchio(r)
        """.trim,size=20)
     )
   ), 
@@ -334,13 +334,13 @@ circle(r)
       ),
       OverlayImage("color-circles.png",x=23,y= -2,width=7),
       Code("""
-clear; setAnimationDelay(100)      
+pulisci; ritardo(100)      
 
-val olivegreen = Color(0,70,0)
-val pistageicecream = Color(0,255,0,100)
+val verdeOliva = Color(0,70,0)
+val pistacchio = Color(0,255,0,100)
 
-setFillColor(olivegreen); circle(100)
-setFillColor(pistageicecream); forward(100); circle(100)
+coloreRiempimento(verdeOliva); cerchio(100)
+coloreRiempimento(pistacchio); avanti(100); cerchio(100)
        """.trim,size=16)
     )
   ), 
@@ -351,7 +351,7 @@ setFillColor(pistageicecream); forward(100); circle(100)
         """Fate click con il tasto destro del mouse nell'area del codice e selezionate {:Choose color...:}""",
         "Se scegliete la linguetta {*RGB*} potrete scegliere un nuovo colore in valori RGB.",
         "Premete Ok e guardate nell'area di output. Potrete notare i valori RGB pe il rosso, il verde ed il blu.",
-        "Potete usare questi valori nei vostri programmi per disegnare con il vostro nuovo colore, per esempio in questo modo: {:color(Color(218,153,67)):}."
+        "Potete usare questi valori nei vostri programmi per disegnare con il vostro nuovo colore, per esempio in questo modo: {:colore(Color(218,153,67)):}."
       )
     )
   ), 
@@ -360,18 +360,18 @@ setFillColor(pistageicecream); forward(100); circle(100)
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-def random = random(256)
+def random = numeroCasuale(256)
 def randomColor = Color(random,10,random,100) 
 
-clear; setAnimationDelay(5)
-setBackground2(black,white)
-setPenThickness (6)
+pulisci; numeroCasuale(5)
+gradiente(black,white)
+impostaSpessorePenna (6)
 
-repeat(100) {
-    setPenColor(randomColor)
-    circle(100)
-    hop(20)
-    right(35)
+ripeti(100) {
+    colorePenna(randomColor)
+    cerchio(100)
+    salta(20)
+    destra(35)
 }
        """.trim,size=16), taskHead, Para("Provate differenti colori e sfondi casuali."),
        ColumnBreak, CenterImage("circle-of-circles.png",width=12)
@@ -385,13 +385,13 @@ repeat(100) {
       		"Cambiate i parametri e cercate di spiegare che succede."),
       OverlayImage("random-color-circles.png",x=22,y= -4,width=8.5),
       Code("""
-clear(); setAnimationDelay(5)
-setPenThickness (2)
-repeat(100){
-  setPenColor(Color(random(256),0,random(256)))
-  setFillColor(Color(random(256),0,random(256),random(100)+50))
-  left(random(360))
-  circle(random(30)*4+10)
+pulisci(); ritardo(5)
+impostaSpessorePenna (2)
+ripeti(100){
+  colorePenna(Color(random(256),0,random(256)))
+  coloreRiempimento(Color(random(256),0,random(256),random(100)+50))
+  sinistra(random(360))
+  cerchio(random(30)*4+10)
 }
        """.trim,size=16)
     )
@@ -410,10 +410,10 @@ cucumber = 1 + 1   //first calculate 1 + 1 and then assign that number to cucumb
       Code("""
 var i = 0
 
-clear
-repeat(10){
+pulisci
+ripeti(10){
   i = i + 1
-  forward; write(i)
+  avanti; scrivi(i)
 }
        """.trim,size=16),
       hintHead, Itemize("Nella espressione {:i = i + 1:} ad {:i:} è stato assegnato il {/old/} valore di {:i:} più {:1:}")
@@ -429,14 +429,14 @@ repeat(10){
       OverlayImage("flowers.png",x=15, y= -7, width=16),    
       hintHead, 
       Para(
-      	"Potete disegnare le foglie con {:arc(radius, angle):}. ",
-        "Fate che la funzione {:flower.} abbia due parametri, x e y, e usate {:jumpTo(x,y):}",
+      	"Potete disegnare le foglie con {:arco(radius, angle):}. ",
+        "Fate che la funzione {:fiore.} abbia due parametri, x e y, e usate {:saltaVerso(x,y):}",
         "Potete ripetere il ciclo 5 volte e calcolare la posizione in questo modo:"
       ), 
       Code("""
 var i = 0          
-repeat(5){
-  flower(600*i,0)
+ripeti(5){
+  fiore(600*i,0)
   i = i + 1        
 }
 """.trim,size=18) 
@@ -453,14 +453,14 @@ repeat(5){
       "Cercate di cambiare l'immagine della tartaruga in un granchio in questo modo:"),
       OverlayImage("crab1-b.png",x=12, y= -2.5, width = 4),
       Code("""
-clear
-setCostume ("crab1-b.png")  
-setAnimationDelay(2000)
-forward(1000) 
+pulisci
+indossaCostume ("crab1-b.png")  
+ritardo(2000)
+avanti(1000) 
       """.trim,size=20),
       hintHead,
       Itemize("Potete usare anche delle vostre immagini, basta che siano del tipo {:.png:} o {:.jpg:}",
-      """Se volte mettere le immagini in una cartella diversa da quella del programma, dovrete fornire il percorso sul disco rigido dove poter rintracciare il file, per esempio {:setCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} dove {:~:} significa la vostra cartella personale (la cartella home per i sistemi operativi di tipo Unix).""")      
+      """Se volte mettere le immagini in una cartella diversa da quella del programma, dovrete fornire il percorso sul disco rigido dove poter rintracciare il file, per esempio {:indossaCostume("~/Kojo/Media/Costumes/Animals/crab1-b.png"):} dove {:~:} significa la vostra cartella personale (la cartella home per i sistemi operativi di tipo Unix).""")      
     )
   ), 
 //------------------------------------------------------
@@ -468,11 +468,11 @@ forward(1000)
    contents=Seq(
      Para("Potere creare altre tartarughe con il comando {:new:} in questo modo:"),
      Code("""
-clear
-val p1 = new Turtle(100,100) //the new turtle p1 starts on position (100, 100)
-val p2 = new Padda(100, 50)  //the new turtle p2 starts on position (100, 50)
-p1.forward(100)
-p2.forward(-100)  //turtle p2 backs up
+pulisci
+val p1 = new Tartaruga(100,100) //the new turtle p1 starts on position (100, 100)
+val p2 = new Tartaruga(100, 50)  //the new turtle p2 starts on position (100, 50)
+p1.avanti(100)
+p2.avanti(-100)  //turtle p2 backs up
 """.trim, size=18),
       OverlayImage("new.png", x = 22, y = -2, width = 5),
       taskHead, Itemize(
@@ -480,8 +480,8 @@ p2.forward(-100)  //turtle p2 backs up
       ),
       hintHead, Itemize(
         "{:p1:} e {:p2:} sono i {/names/} delle tartarughe. Potete farne quante volete.", 
-        "Con il nome {:p1:} ed un punto, potete dare alle specifiche tartarughe dei comandi, per esempio così: {:p1.left:}",
-        "{:invisible:} nasconde le tartarughe."
+        "Con il nome {:p1:} ed un punto, potete dare alle specifiche tartarughe dei comandi, per esempio così: {:p1.sinistra:}",
+        "{:invisibile:} nasconde le tartarughe."
       )
    )
  ), 
@@ -495,7 +495,7 @@ p2.forward(-100)  //turtle p2 backs up
         "Fate che corrano in avanti per 10 volte. Quale vincerà?"
       ),
       hintHead, Itemize(
-        "Con {:p1.forward(random(100) + 1):} la tartaruga p1 muoverà da 1 a 100 passi in avanti"
+        "Con {:p1.avanti(random(100) + 1):} la tartaruga p1 muoverà da 1 a 100 passi in avanti"
       )
    )
  ), 
@@ -504,14 +504,14 @@ p2.forward(-100)  //turtle p2 backs up
     contents=Seq(
       Para("Con una istruzione {:if:} il computer sceglierà una delle due differenti alternative in dipendenza da una condizione che può risultare vera o falsa."),
       Code("""
-clear; invisible
-if (true) write("true") else write("false")
+pulisci; invisibile
+if (true) scrivi("true") else scrivi("false")
      """.trim, size = 20),
       taskHead, Itemize(
         "Cambiate {:true:} in {:false:} e controllate cosa scrive la tartaruga.",        
         "Cambiate la condizione in {:2 > 1:} e controllate cosa scrive la tartaruga.",
         "Cambiate la condizione in {:2 < 1:} e controllate cosa scrive la tartaruga.",
-        "Siegate com l'espressione {:if:} funziona."
+        "Spiegate come l'espressione {:if:} funziona."
       ),
       hintHead, Itemize(
         "Se la condizione dopo {:if:} è {:true:} viene preso quello subito dopo.",
@@ -523,14 +523,14 @@ if (true) write("true") else write("false")
   Chapter(id="if-input", head="Reagire a quello che l'utente sta facendo", 
     contents=Seq(
       Code("""
-clearOutput; setOutputTextFontSize(35)
-val password = "cucumber"
+pulisciOutput; setOutputTextFontSize(35)
+val password = "cocomero"
 val question     = "What is the password?"
 val right      = "The safe is open!"
 val wrong       = "You may not come in!"
-val answer = readln(answer)  //wait for an answer from the user
+val answer = leggi(answer)  //wait for an answer from the user
 val message = if (answer == password) right else wrong
-println(message)
+scriviLinea(message)
      """.trim, size = 20),
       taskHead, Itemize(
         "Eseguire il programma e spiegare cosa stia facendo.",
@@ -544,14 +544,14 @@ println(message)
     contents=Seq(
       Para("Con il ciclo while {:while:} il computer ripeterà un comando tante volte finché la condizione sarà vera."),
       Code("""
-clear; invisible; setAnimationDelay(250); clearOutput
+pulisci; invisibile; ritardo(250); pulisciOutput
 var x = 200
 while (x > 0) {  //check the condition before each round 
-  forward(x); right
-  write(x) 
+  avanti(x); destra
+  scrivi(x) 
   x = x - 12
 }
-println("x is now: " + x)
+scriviLinea("x is now: " + x)
      """.trim, size = 22),
       taskHead, Itemize(
         "Cosa viene scritto nell'area di output? Perché?",
@@ -565,19 +565,19 @@ println("x is now: " + x)
   Chapter(id="guess-the-number", head="Indovina il numero", 
     contents=Seq(
       Code("""
-val secretNumber = random(100)+1
-var answer = readln("Guess a number between 1 and 100! ")
+val secretNumber = numeroCasuale(100)+1
+var answer = leggiLinea("Guess a number between 1 and 100! ")
 var continue = true
 
 while (continue) {
     if (answer.toInt < secretNumber)
-      answer = readln(answer + " is too SMALL, guess again!")
+      answer = leggiLinea(answer + " is too SMALL, guess again!")
     else if (answer.toInt > secretNumber)
-      answer = readln(answer + " is too LARGE, guess again!")
+      answer = leggiLinea(answer + " is too LARGE, guess again!")
     else if (answer.toInt == secretNumber)
       continue = false
 }
-println(secretNumber + " is the CORRECT answer!")
+scriviLinea(secretNumber + " is the CORRECT answer!")
       """.trim,size=16),
       taskHead,
       Para("Introducete una variabile {:var numberOfTries = 0:} e contate ad ogni tentativo.","Quando pronti scrivete il numero dei tentativi in questo modo:", 
@@ -591,19 +591,19 @@ println(secretNumber + " is the CORRECT answer!")
       Code("""
 var rightAnswers = 0
 val startTime = System.currentTimeMillis / 1000
-repeat(12) {
-  val number1 = random(12)+1
-  val number2 = random(12)+1
-  val answer = readln("What is  " + number1 + "*" + number2 + "?")
+ripeti(12) {
+  val number1 = numeroCasuale(12)+1
+  val number2 = numeroCasuale(12)+1
+  val answer = leggiLinea("What is  " + number1 + "*" + number2 + "?")
   if (answer == (number1 * number2).toString) {
-    println("Correct!")
+    scriviLinea("Correct!")
     rightAnswers = rightAnswers + 1
   }
-  else println("Wrong. The right answer is " + (number1 * number2))
+  else scriviLinea("Wrong. The right answer is " + (number1 * number2))
 }
 val stopTime = System.currentTimeMillis / 1000
 val sec = stopTime - startTime
-println("You got " + rightAnswers + " right answer in " + sec + " seconds")
+scriviLinea("You got " + rightAnswers + " right answer in " + sec + " seconds")
       """.trim,size=16),  
       taskHead,
       Para("Cambiate per poter fare pratica solo nella moltiplicazione con 8 e 9.")      
@@ -615,19 +615,19 @@ println("You got " + rightAnswers + " right answer in " + sec + " seconds")
     contents=Seq(
       Code("""
 var animal = Vector("elk", "cow", "rabbit", "mite")  // the variable animal refers to a vector with 4 animals
-println("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
-println("The second animal in the vector is:  " + animal(1))
-println("There are these many animals in the vector: " + animal.size)
-println("The last animal in the vector is:  " + animal(animal.size-1))
+scriviLinea("The first animal in the vector is: " + animal(0))     //the positions in a vector are counted from 0
+scriviLinea("The second animal in the vector is:  " + animal(1))
+scriviLinea("There are these many animals in the vector: " + animal.size)
+scriviLinea("The last animal in the vector is:  " + animal(animal.size-1))
 
-val s = random(animal.size)   //take a random number between 0 and the number of animals minus 1
-println("A random animal: " + animal(s))
+val s = numeroCasuale(animal.size)   //take a random number between 0 and the number of animals minus 1
+scriviLinea("A random animal: " + animal(s))
 animal = animal :+ "camel"    //adds another animal last in the vector
 animal = "dromedary" +: animal // adds another animal first in the vector
 
 animal = animal.updated(2, "mudskipper")  // Change the third animal(index 2 in vector)
-println("All animals in the array backwards:")
-animal.foreach{ x => println(x.reverse) } // for all x in array: type out x backwards.      """.trim,size=14),   
+scriviLinea("All animals in the array backwards:")
+animal.foreach{ x => scriviLinea(x.reverse) } // for all x in array: type out x backwards.      """.trim,size=14),   
       taskHead,
 Itemize("Cosa stampera il programma nell'area di output? Spiegate cosa succede.", "Aggiungete altri animali alla lista.")
 
@@ -640,18 +640,18 @@ Itemize("Cosa stampera il programma nell'area di output? Spiegate cosa succede."
 val Swedish = Vector("dator", "sköldpadda", "cirkel")
 val English = Vector("computer", "turtle", "circle")
 var amountRight = 0
-repeat(5) {
-  val s = random(3)
+ripeti(5) {
+  val s = numeroCasuale(3)
   val word = Swedish(s)
-  val answer = readln("What is " + word + " in English?")
+  val answer = leggiLinea("What is " + word + " in English?")
   if (answer == English(s)) {
-    println("Correct answer!")
+    scriviLinea("Correct answer!")
     amountRight = amountRight + 1
   } else {
-    println("Wrong answer. Correct answer is: " + English(s))
+    scriviLinea("Wrong answer. Correct answer is: " + English(s))
   }
 }
-println("You have" + amountRight + " correct answers.")
+scriviLinea("You have" + amountRight + " correct answers.")
       """.trim,size=14),   
       taskHead,
       Itemize("Aggiungete altre parole.",
@@ -664,7 +664,7 @@ println("You have" + amountRight + " correct answers.")
     contents=Seq(
       Code("""
 def capitalGame = {
-  println("Welcome to the Capital Game!")
+  scriviLinea("Welcome to the Capital Game!")
   val city = Map("Sweden" ->"Stockholm", "Denmark" -> "Copenhagen", "Skåne" -> "Malmö")
   var countriesLeft = city.keySet //keySet gives an amount of all keys in a Map 
   def randomCountry = scala.util.Random.shuffle(countriesLeft.toVector).head
@@ -682,7 +682,7 @@ def capitalGame = {
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-repeat(100)(output("")) //scroll the output window with 100 blank rows.
+ripeti(100)(output("")) //scroll the output window with 100 blank rows.
 capitalGame
 
 // *** TASK: (1) Add more pairs of countries and cities: country -> city (2) Measure time and count points.
@@ -699,7 +699,7 @@ object timer {
   def reset = { time = now }
   def measure = now - time
   def randomWait(min: Int, max: Int) =  //wait between min and max seconds
-    Thread.sleep((random(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
+    Thread.sleep((numeroCasuale(max-min)+min)*1000)  //Thread.sleep(1000) waits 1 second
 }
 
 println("Click in the println window and wait...")
@@ -727,7 +727,7 @@ def lightYellow = draw(light(yellow, 65))
 def lightGreen = draw(light(green, 30))
 def wait(seconds: Int) = Thread.sleep(seconds*1000)
 
-clear; invisible  
+pulisci; invisibile  
 while (true) { //an infinite loop
   turnOffAll
   lightRed;  wait(3)
@@ -746,18 +746,18 @@ while (true) { //an infinite loop
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-clear; setAnimationDelay(0)
+pulisci; ritardo(0)
 activateCanvas()
 
-animate { forward(1) }
+animate { avanti(1) }
 
 onKeyPress { k =>
   k match {
-    case Kc.VK_LEFT =>   left(5)
-    case Kc.VK_RIGHT =>  right(5)
-    case Kc.VK_SPACE =>  forward(5)
+    case Kc.VK_LEFT =>   sinistra(5)
+    case Kc.VK_RIGHT =>  destra(5)
+    case Kc.VK_SPACE =>  avanti(5)
     case _ => 
-      println("Another key: " + k)
+      scriviLinea("Another key: " + k)
   }
 }
       """.trim, size = 18),
@@ -765,8 +765,8 @@ onKeyPress { k =>
       taskHead,
       Itemize(
         "Scrivete {:Kc.:} e premete {:Ctrl+Alt+Space:} e guardate i diversi tasti premuti.", 
-        "Chiamare {:penUp:} premento freccia su",
-        "Chiamare {:penDown:} premento freccia giù",
+        "Chiamare {:alzaPenna:} premento freccia su",
+        "Chiamare {:abbassaPenna:} premento freccia giù",
         "FaChiamarete {:color(blue):} premendo il tasto B",
         "Chiamare {:color(red):} premendo il tasto R",
         "Aumentare o diminuire la velocità premendo + o -"
@@ -778,7 +778,7 @@ onKeyPress { k =>
     template=MultiColumn(2),
     contents=Seq(
       Code("""
-clear; setAnimationDelay(100)
+pulisci; ritardo(100)
 activateCanvas()
 
 var draw = true
@@ -786,31 +786,31 @@ var draw = true
 onKeyPress { k =>
   k match {
     case Kc.VK_DOWN => 
-      penDown()
+      abbassaPenna()
       draw = true
     case Kc.VK_UP => 
-      penUp()
+      alzaPenna()
       draw = false
     case _ => 
-      println("Another key: " + k)
+      scriviLinea("Another key: " + k)
   }
 }
 
 onMouseClick { (x, y) =>
-  if (draw) moveTo(x, y) else jumpTo(x, y)
+  if (draw) moveTo(x, y) else saltaVerso(x, y)
 }
       """.trim, size = 16),
       ColumnBreak,
       taskHead,
       Itemize(
-        "Chiamare {:setFillColor(black):} premenso il tasto F",
+        "Chiamare {:coloreRiempimento(black):} premenso il tasto F",
         "Introdurre la variabile {:var fillNext = true:} e nel caso sia premuto {:Kc.VK_F:} eseguire:"
       ), Code("""
       if (fillNext) {
-        setFillColor(black)
+        coloreRiempimento(black)
         fillNext=false
       } else {
-        setFillColor(noColor)
+        coloreRiempimento(noColor)
         fillNext=true
       }
       """)   
@@ -831,8 +831,8 @@ object myAccount {
     balance = balance - amount 
   }
   def showBalance() = {
-    println("Account number: " + number) 
-    println("       Balance: " + balance)
+    scriviLinea("Account number: " + number) 
+    scriviLinea("       Balance: " + balance)
   }
 }
 
@@ -892,7 +892,7 @@ account2.showBalance
     contents=Seq(
       Code("""
 setOutputBackground(black); setOutputTextFontSize(30); setOutputTextColor(green)
-println("Write interesting answers even if the questions are weird. End with 'good bye'")
+scriviLinea("Write interesting answers even if the questions are weird. End with 'good bye'")
 def randomize(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val text = Vector("What does this mean: ", "Do you like", "Why is this needed: ", "Tell more about")
 var answer = "?"
@@ -904,10 +904,10 @@ while (answer != "good bye") {
     else if(answer == "Yes") "Well, yes." 
     else if (answer.length < 4) "Okay..." 
     else randomize(text) + " " + randomize(word) + "?"
-  answer = readln(t).toLowerCase
+  answer = leggiLinea(t).toLowerCase
   word = word ++ answer.split(" ").toList.filter(_.length > 3) 
 } 
-println("Thanks for the talk! Now I know these words:" + word)
+scriviLinea("Thanks for the talk! Now I know these words:" + word)
 
 //Task:
 // (1) Far eseguire il programma e spiegare che è successo.
