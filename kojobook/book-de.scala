@@ -315,7 +315,7 @@ vor; schreiben(x)
         "Zeichne 100 Kreise mit zufälligem Radius und zufälliger Position wie im Bild rechts."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-// zufall(90) liefert eine Zufallszahl zwischen 0 und 89:
+// zufall(90) liefert eine Zufallszahl zwischen 0 und 99:
 val r = zufall(90) + 10   
 
 leeren; langsam(10); unsichtbar

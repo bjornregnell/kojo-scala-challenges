@@ -311,7 +311,7 @@ forward; write(x)
         "Draw 100 circles, each with a random radius at a random position, as shown in the picture."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//r becomes a random number between 10 and 89:
+//r becomes a random number between 10 and 99:
 val r = random(90) + 10   
 
 clear; setAnimationDelay(10); invisible

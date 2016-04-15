@@ -311,7 +311,7 @@ avanti; scrivi(x)
         "Disegnate 100 cerchi, ognuno con un raggio casuale ad una posizione casuale come mostrato nella figura."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//r becomes a random number between 10 and 89:
+//r becomes a random number between 10 and 99:
 val r = numeroCasuale(90) + 10   
 
 pulisci; ritardo(10); invisibile

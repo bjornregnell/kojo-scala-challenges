@@ -1,7 +1,7 @@
 \chapter{Über Kojo}
 \begin{multicols}{2}
 \section*{\color{black}Was ist Kojo?}
-Kojo ist eine App, die Dir beibringt, wie man programmiert. Mit Kojo benutzt Du die moderne und leistungsfähige Programmiersprache {\bf\color{blue}Scala}. Kojo gibt es kostenlos und auf Deutsch. Kojo läuft auf Linux, Windows und Mac OSX.
+Kojo ist eine App, die Dir beibringt, wie man programmiert. Mit Kojo benutzt Du die moderne und leistungsfähige Programmiersprache {\bf\color{blue}Scala}. Kojo gibt es kostenlos und auf Deutsch. Kojo läuft auf Linux, Windows und Mac OS X.
 \section*{\color{black}Wo kannst Du Kojo finden?}
 Lade Kojo hier: 
 \\
@@ -25,14 +25,14 @@ Lies hier mehr darüber:
 \chapter{Dein erstes Programm}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Aufgabe:}
-Schreibe diese Worte in Kojos Skript-Editor-Fenster:
+Schreibe diese Worte in Kojos Programmbearbeiter:
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 leeren
 vor
 \end{lstlisting}
         
-Drücke die grüne Play-Taste 
+Klicke auf das grüne Ausführen-Symbol 
 \includegraphics[width=1.0cm]{../img/play.png}
 \\
 
@@ -137,7 +137,7 @@ stiftfarbe(lila)
 füllfarbe(grün)
 \end{lstlisting}
         
-Die Position der Maus im Zeichenfenster, kannst Du links unter dem Programmbearbeiter ablesen:
+Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:
 \includegraphics[width=6.0cm]{../img/mousepos.png}
 
 
@@ -157,7 +157,7 @@ Die Position der Maus im Zeichenfenster, kannst Du links unter dem Programmbearb
 
 \chapter{Wie schnell ist Dein Computer?}Der erste Computer hieß {\bf ENIAC} und konnte in einer Sekunde bis 5000 zählen.\\
 In Kojo gibt es eine Funktion \lstinline{zählzeitStoppen} die misst, wie schnell Dein Computer zählen kann.\\
-Wenn ich \lstinline{zählzeitStoppen(5000)} eingebe, dann wird die Zeit ausgegeben, die mein Computer für das zählen braucht:
+Wenn ich \lstinline{zählzeitStoppen(5000)} ausführe, dann wird die Zeit ausgegeben, die mein Computer für das Zählen braucht:
 
 \begin{lstlisting}[numbers=none]
 
@@ -172,7 +172,7 @@ Es dauerte 0.32 Millisekunden.
 \begin{itemize}
 
 \item {Gib ein \lstinline{zählzeitStoppen(5000)} und prüfe, ob Dein Computer schneller ist als meiner.}
-\item {Wie lange braucht Dein Computer um bis eine Million zu zählen?}
+\item {Wie lange braucht Dein Computer, um bis eine Million zu zählen?}
 \item {Wie weit kann Dein Rechner in einer Sekunde zählen?}
 
 \end{itemize}
@@ -186,9 +186,9 @@ Es dauerte 0.32 Millisekunden.
 \begin{itemize}
 
 \item {Schreibe ein Programm, das eine Stufe zeichnet.}
-\item {Drücke die orange Play-Taste.}
-\item {Drücke auf einen der Aufrufe: \lstinline{CALL vor ()}. Was passiert im Zeichenfenster?}
-\item {In Deinem Programm wird der zugehörige Befehl blau markiert, wenn Du die Play-Taste drückst. Deaktiviere die Markierung, indem Du neben die Markierung klickst. }
+\item {Klicke auf das orange Verfolgen-Symbol.}
+\item {Klicke auf einen der Aufrufe: \lstinline{CALL vor ()}. Was passiert im Zeichenbereich?}
+\item {Im Programmbearbeiter wird der zugehörige Befehl blau markiert. Deaktiviere die Markierung, indem Du neben die Markierung klickst.}
 \item {Füge dem Programm weitere Befehle hinzu und probiere aus, was passiert, wenn Du sie verfolgst}
 \item {Schließe das Fenster {\it Programmschritte verfolgen} wenn Du fertig bist.}
 
@@ -210,7 +210,7 @@ Es dauerte 0.32 Millisekunden.
 def quadrat =  schleife(4){ vor; rechts }  
 
 leeren
-quadrat    //nutzt die Quadrat-Funktion
+quadrat    //Ruft die Quadrat-Funktion auf.
 springen
 quadrat
 \end{lstlisting}
@@ -367,13 +367,13 @@ auge(40, 100); pupille(60, 100)
 ???
 \end{lstlisting}
         
-\chapter{Zeichne ein Polygon}\section*{\color{BrickRed}Aufgabe:}
+\chapter{Zeichne ein Vieleck}\section*{\color{BrickRed}Aufgabe:}
 
 
 \begin{itemize}
 
-\item {Probiere das Programm unten aus. Zeichne verschiedene Polygone.}
-\item {Füge einen Parameter \lstinline{seitenlänge} hinzu und zeichne verschieden große Polygone.}
+\item {Probiere das Programm unten aus. Zeichne verschiedene Vielecke.}
+\item {Füge einen Parameter \lstinline{seitenlänge} hinzu und zeichne verschieden große Vielecke.}
 \item {Wie groß muss n sein, damit ein Kreis entsteht?}
 
 \end{itemize}
@@ -382,13 +382,13 @@ auge(40, 100); pupille(60, 100)
 \section*{\color{OliveGreen}Tipps:}
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
-def polygon(n:Ganzzahl) = schleife(n){
+def vieleck(n: Ganzzahl) = schleife(n){
   vor(100)
   links(360.0/n)
 }
 
 leeren; langsam(100)
-polygon(7)
+vieleck(7)
 \end{lstlisting}
         
 
@@ -396,14 +396,14 @@ polygon(7)
 \node at (20.0cm,3.5cm) {\includegraphics[width=8.0cm]{../img/polygon.png}};
 \end{tikzpicture}
   
-\chapter{Zeichne viele Polygone}\section*{\color{BrickRed}Aufgabe:}
+\chapter{Zeichne viele Vielecke}\section*{\color{BrickRed}Aufgabe:}
 
 
 \begin{itemize}
 
 \item {Probiere das Programm unten aus.}
 \item {Verändere die Anzahl der Seiten und den Winkel.}
-\item {Fülle die Polygone mit Farbe.}
+\item {Fülle die Vielecke mit Farbe.}
 
 \end{itemize}
 
@@ -415,14 +415,14 @@ polygon(7)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
-def polygon(n: Ganzzahl, seitenlänge: Ganzzahl) = 
+def vieleck(n: Ganzzahl, seitenlänge: Ganzzahl) = 
   schleife(n){
     vor(seitenlänge)
     links(360.0/n)
   }
 def drehen(n: Ganzzahl, winkel: Ganzzahl, seitenlänge: Ganzzahl) = 
   schleife(360/winkel){ 
-    polygon(n, seitenlänge) 
+    vieleck(n, seitenlänge) 
     links(winkel) 
   }
 
@@ -437,9 +437,9 @@ drehen(7, 10, 100)
 
 \begin{itemize}
 
-\item {Schreibe \lstinline{1 + 1} und drücke die blaue Play-Taste. Dann erstellt Kojo einen grünen Kommentar.}
-\item {Der Kommentar sagt, dass der Wert des Ausdrucks \lstinline{1 + 1} gleich \lstinline{2} ist und dass der Typ \lstinline{Int} ist, d.h. \lstinline{Ganzzahl}.}
-\item {Führe weitere Berechnungen durch. Welcher Wert und Typ wird angegeben?}
+\item {Schreibe \lstinline{1 + 1} und klicke die blaue Ausführen-Taste. Dann erstellt Kojo einen grünen Kommentar.}
+\item {Der Kommentar sagt, dass der Wert des Ausdrucks \lstinline{1 + 1} gleich \lstinline{2} ist und dass der Typ \lstinline{Int} ist. \lstinline{Int} ist eine Abkürzung für Integer, auf Deutsch: \lstinline{Ganzzahl}.}
+\item {Führe weitere Berechnungen durch. Welcher Wert und Typ wird ausgegeben?}
 
 \end{itemize}
 
@@ -465,7 +465,7 @@ drehen(7, 10, 100)
 
 \begin{itemize}
 
-\item {Steht \lstinline{/} zwischen ganzen Zahlen, so wird eine ganzzahlige Division ausgeführt. D.h.die Dezimalstellen entfallen. Für eine Division mit Dezimalstellen muss mindestens eine Zahl eine Dezimalzahl sein.}
+\item {Steht \lstinline{/} zwischen ganzen Zahlen, so wird eine ganzzahlige Division ausgeführt. Das heißt, die Nachkommastellen entfallen. Für eine Division mit Nachkommastellen muss mindestens eine Zahl eine Bruchzahl sein.}
 \item {Mit \lstinline{%} erhältst Du den Rest einer ganzzahligen Division.}
 
 \end{itemize}
@@ -508,7 +508,7 @@ vor; schreiben(x)
 \item {Führe das Programm unten mehrmals aus. Was passiert?}
 \item {Was ist der kleinste und der größte mögliche Wert des Radius \lstinline{r}?}
 \item {Ändere \lstinline{r} zu einer Zufallszahl zwischen 3 und 200.}
-\item {Zeichne 100 Kreise mit zufälligem Radius und zufälliger Position, wie im Bild rechts.}
+\item {Zeichne 100 Kreise mit zufälligem Radius und zufälliger Position wie im Bild rechts.}
 
 \end{itemize}
 
@@ -520,7 +520,7 @@ vor; schreiben(x)
   
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
-//Wert r ist eine Zufallszahl zwischen 10 und 99:
+// zufall(90) liefert eine Zufallszahl zwischen 0 und 99:
 val r = zufall(90) + 10   
 
 leeren; langsam(10); unsichtbar
@@ -533,9 +533,9 @@ kreis(r)
 \begin{itemize}
 
 \item {Mit \lstinline{Color} kannst Du Deine eigenen Farben erstellen, z.B. \lstinline{Color(0, 70, 0)}}
-\item {Die drei Parameter geben den Farbanteil von {\it rot}, {\it grün} und {\it blau} an}
-\item {Du kannst auch einen vierten Parameter für die {\it Deckkraft} angeben}
-\item {Alle Parameterwerte müssen zwischen 0 und 255 liegen}
+\item {Die drei Parameter geben den Farbanteil von {\it rot}, {\it grün} und {\it blau} an.}
+\item {Du kannst auch einen vierten Parameter für die {\it Deckkraft} angeben.}
+\item {Alle Parameterwerte müssen zwischen 0 und 255 liegen.}
 
 \end{itemize}
 
@@ -616,7 +616,7 @@ Probiere verschiedene zufällige Stift- und Hintergrund-Farben aus.
 \end{multicols}
 
 \chapter{Zeichne eine Blume}\section*{\color{BrickRed}Aufgabe:}
-Das folgende Programm zeichnet 100 Kreise mit zufälliger Farbe, zufälliger Position und zufälligem Radius. Probiere verschiedene Zufallszahlen-Grenzen und versuche zu erklären was hierbei passiert.
+Das folgende Programm zeichnet 100 Kreise mit zufälliger Farbe, zufälligem Radius und zufälliger Ausrichtung. Probiere verschiedene Zufallszahlen-Grenzen und versuche zu erklären, was hierbei passiert.
 
 \begin{tikzpicture}[overlay]
 \node at (22.0cm,-4.0cm) {\includegraphics[width=8.5cm]{../img/random-color-circles.png}};
@@ -738,10 +738,10 @@ vor(1000)
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{18}{22}\selectfont},numbers=none]
 leeren
-val p1 = new Kröte(100,100)  //die neue Kröte p1 startet auf der Position (100, 100)
-val p2 = new Kröte(100, 50)  //die neue Kröte p2 startet auf der Position (100, 50)
-p1.vor(100)
-p2.vor(-100)  //Kröte p2 nach unten
+val k1 = new Kröte(100,100)  //die neue Kröte k1 startet auf der Position (100, 100)
+val k2 = new Kröte(100, 50)  //die neue Kröte k2 startet auf der Position (100, 50)
+k1.vor(100)
+k2.rück(100)  //Kröte k2 nach unten
 \end{lstlisting}
         
 
@@ -765,9 +765,9 @@ p2.vor(-100)  //Kröte p2 nach unten
 
 \begin{itemize}
 
-\item {\lstinline{p1} und \lstinline{p2} sind die {\it Namen} der neuen Kröten. Du kannst die Namen ändern, wenn Du willst.}
-\item {Mit \lstinline{p1} gefolgt von einem Punkt kannst Du der Kröte p1 einen Befehl geben: \lstinline{p1.links}}
-\item {Mit dem Befehl \lstinline{unsichtbar} kannst Du die Kröte verbergen.}
+\item {\lstinline{k1} und \lstinline{k2} sind die {\it Namen} der neuen Kröten. Du kannst die Namen ändern, wenn Du willst.}
+\item {Mit \lstinline{k1} gefolgt von einem Punkt kannst Du der Kröte k1 einen Befehl geben: \lstinline{k1.links}}
+\item {Mit dem Befehl \lstinline{unsichtbar} kannst Du eine Kröte verbergen.}
 
 \end{itemize}
 
@@ -791,7 +791,7 @@ Mit Hilfe von Zufallszahlen kannst Du die Kröten um die Wette rennen lassen.
 
 \begin{itemize}
 
-\item {Mit \lstinline{p1.vor(zufall(100) + 1)} bewegt sich p1 zwischen 1 und 100 Schritten weit.}
+\item {Mit \lstinline{k1.vor(zufall(100) + 1)} bewegt sich k1 zwischen 1 und 100 Schritten weit.}
 
 \end{itemize}
 
@@ -805,7 +805,7 @@ Mit Hilfe von Zufallszahlen kannst Du die Kröten um die Wette rennen lassen.
 
 \end{multicols}
 
-\chapter{Alternative mit \lstinline{if}}Mit einer \lstinline{if}-Anweisung kann man den Computer zwischen zwei Alternativen wählen lassen.
+\chapter{Alternative mit \lstinline{if}}Mit einer \lstinline{if}-Anweisung kann man den Computer aufgrund einer Bedingung zwischen zwei Alternativen wählen lassen.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 leeren; unsichtbar
@@ -817,7 +817,7 @@ if (true) schreiben("wahr") else schreiben("falsch")
 
 \begin{itemize}
 
-\item {Ändere \lstinline{true} in \lstinline{false} und prüfe, was die Kröte schreibt.}
+\item {Ändere die Bedingung \lstinline{true} in \lstinline{false} und prüfe, was die Kröte schreibt.}
 \item {Ändere die Bedingung in \lstinline{2 > 1} und prüfe, was die Kröte schreibt.}
 \item {Ändere die Bedingung in \lstinline{2 < 1} und prüfe, was die Kröte schreibt.}
 \item {Erkläre wie eine \lstinline{if}-Anweisung funktioniert.}
@@ -830,13 +830,14 @@ if (true) schreiben("wahr") else schreiben("falsch")
 
 \begin{itemize}
 
-\item {Wenn die Bedingung nach dem \lstinline{if} \lstinline{true} ist, wird der Befehl hinter der Bedingung ausgeführt.}
-\item {Wenn die Bedingung nach dem \lstinline{if} \lstinline{false} ist, wird der Befehl hinter \lstinline{else} ausgeführt.}
+\item {Hinter \lstinline{if} kommt immer eine Bedingung in Klammern.}
+\item {Wenn die Bedingung nach dem \lstinline{if} gleich \lstinline{true} ist, wird der Befehl hinter der Bedingung ausgeführt.}
+\item {Wenn die Bedingung nach dem \lstinline{if} gleich \lstinline{false} ist, wird der Befehl hinter \lstinline{else} ausgeführt.}
 
 \end{itemize}
 
 
-\chapter{Reagiere auf das was der Nutzer macht}
+\chapter{Reagiere auf das, was der Nutzer macht}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
 ausgabeLeeren; setOutputTextFontSize(35)
 val passwort = "gurke"
@@ -853,19 +854,19 @@ ausgeben(meldung)
 
 \begin{itemize}
 
-\item {Probiere das Programm aus und erkläre was passiert.}
-\item {Ändere das Passwort. Was wird ausgegeben, wen man es richtig und wenn man es falsch eingibt.}
+\item {Probiere das Programm aus. Du musst im Ausgabebereich unten etwas eingeben und mit der Eingabetaste bestätigen. Erkläre, was passiert.}
+\item {Ändere das Passwort. Was wird ausgegeben, wenn man es richtig und wenn man es falsch eingibt?}
 \item {Frage auch nach einem Benutzernamen und gib den Namen aus.}
 
 \end{itemize}
 
 
-\chapter{Nutze eine \lstinline{Solange}-Schleife}Mit \lstinline{schleifeSolange} wiederholt der Computer Anweisungen so lange eine Bedingung wahr ist.
+\chapter{Nutze eine \lstinline{Solange}-Schleife}Mit \lstinline{schleifeSolange} wiederholt der Computer Anweisungen so lange, wie eine Bedingung wahr ist.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{22}{27}\selectfont},numbers=none]
 leeren; unsichtbar; langsam(250); ausgabeLeeren
 var x = 200
-schleifeSolange (x > 0) {  //prüfe den Zustand vor jeder Wiederholung 
+schleifeSolange (x > 0) {  //prüfe die Bedingung vor jeder Wiederholung 
   vor(x); rechts
   schreiben(x) 
   x = x - 12
@@ -879,13 +880,13 @@ ausgeben("x ist jetzt: " + x)
 \begin{itemize}
 
 \item {Was wird im Ausgabebereich ausgegeben? Warum?}
-\item {Verfolge das Programm mit der orangen Play-Taste und prüfe jeden Schritt.}
-\item {Ziehe statt \lstinline{12} den Wert \lstinline{20} von der Variablen \lstinline{x} ab. Erkläre was passiert.}
+\item {Starte das Programm mit dem orangen Verfolgen-Symbol und prüfe jeden Schritt.}
+\item {Ziehe statt \lstinline{12} den Wert \lstinline{20} von der Variablen \lstinline{x} ab. Erkläre, was passiert.}
 
 \end{itemize}
 
 
-\chapter{Zahlen Raten}
+\chapter{Zahlenraten}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{16}{19}\selectfont},numbers=none]
 val geheimnis = zufall(100)+1
 var antwort = einlesen("Rate eine Zahl zwischen 1 und 100! ")
@@ -925,7 +926,7 @@ ausgeben("Du hast " + anzahlRichtig + " richtige Antworten in " + sekunde + " Se
 \end{lstlisting}
         
 \section*{\color{BrickRed}Aufgabe:}
-Ändere das Programm, so dass man nur noch die Multiplikation mit 8 und 9 üben muss.
+Ändere das Programm so, dass man nur noch die Multiplikation mit 8 und 9 üben muss.
 \chapter{Speichere Tiere in einem Vektor}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
 var tiere = Vector("Elch", "Kuh", "Kaninchen", "Möve")  //Variable tiere enthält einen Vektor mit 4 Tieren
@@ -961,17 +962,17 @@ val deutsch = Vector("Rechner", "Schildkröte", "Kreis")
 val englisch = Vector("computer", "turtle", "circle")
 var anzahlRichtig = 0
 schleife(5) {
-  val s = zufall(3)
-  val vokabel = deutsch(s)
+  val i = zufall(deutsch.size)
+  val vokabel = deutsch(i)
   val antwort = einlesen("Was heisst " + vokabel + " auf Englisch?")
-  if (antwort == englisch(s)) {
+  if (antwort == englisch(i)) {
     ausgeben("Richtige Antwort!")
     anzahlRichtig = anzahlRichtig + 1
   } else {
-    ausgeben("Falsche Antwort. Die richtige Antwort lautet: " + englisch(s))
+    ausgeben("Falsche Antwort. Die richtige Antwort lautet: " + englisch(i))
   }
 }
-ausgeben("Du hast" + anzahlRichtig + " richtige Antworten gegeben.")
+ausgeben("Du hast " + anzahlRichtig + " richtige Antworten gegeben.")
 \end{lstlisting}
         
 \section*{\color{BrickRed}Aufgabe:}
@@ -981,7 +982,7 @@ ausgeben("Du hast" + anzahlRichtig + " richtige Antworten gegeben.")
 
 \item {Füge mehr Vokabeln ein.}
 \item {Übe die Übersetzung vom Englischen ins Deutsche.}
-\item {Lasse den Nutzer einstellen, wie viele Vokabeln er üben will. Tipp: \lstinline{val anzahl = einlesen("Gebe die Anzahl ein: ").toInt}}
+\item {Lasse den Nutzer einstellen, wie viele Vokabeln er üben will. Tipp: \lstinline{val anzahl = einlesen("Gebe die Anzahl ein:").toInt}}
 
 \end{itemize}
 
@@ -990,6 +991,7 @@ ausgeben("Du hast" + anzahlRichtig + " richtige Antworten gegeben.")
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 def hauptstadtSpiel = {
   ausgeben("Willkommen zum Hauptstadt-Spiel!")
+  //Eine Map ist eine Abbildung, hier von Landesnamen zu Hauptstadtnamen:
   val stadt = Map("Schweden" ->"Stockholm", "Frankreich" -> "Paris", "Spanien" -> "Madrid")
   var länder = stadt.keySet //keySet liefert die Menge aller Schlüssel in einer Map 
   def zufallsLand = scala.util.Random.shuffle(länder.toVector).head
@@ -998,8 +1000,8 @@ def hauptstadtSpiel = {
     val antwort = einlesen("Was ist die Hauptstadt von " + land + "?")
     ausgeben(s"Du sagst: $antwort")
     if (antwort == stadt(land)) {
-      ausgeben("Richtig! Du hast noch " + länder.size + " Länder!")
       länder = länder - land  //entfernt das Land aus der Menge der Länder
+      ausgeben("Richtig! Du hast noch " + länder.size + " Länder!")
     } else ausgeben(s"Falsch! Die Hauptstadt von $land beginnt mit ${stadt(land).take(2)}...")
   }
   ausgeben("DANKE FÜR DIE TEILNAHME! (Drücke ESC)")
@@ -1007,15 +1009,15 @@ def hauptstadtSpiel = {
 
 toggleFullScreenOutput;  
 setOutputBackground(black); setOutputTextColor(green); setOutputTextFontSize(30)
-schleife(100)(ausgeben("")) //fülle den Ausgabebereich mit 100 Leerzeilen
+schleife(100)(ausgeben()) //fülle den Ausgabebereich mit 100 Leerzeilen
 hauptstadtSpiel
 //AUFGABE: Lege mehr Paare Land -> Stadt an. Messe die Zeit und zähle die Punkte.
 \end{lstlisting}
         
-\chapter{Erstelle einen Timer mit \lstinline{object}}
+\chapter{Erstelle eine Stoppuhr mit \lstinline{object}}
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{14}{17}\selectfont},numbers=none]
-object timer {
-  def jetzt = System.currentTimeMillis  //gibt die aktuelle Zeit in Millisekunden
+object Stoppuhr {
+  def jetzt = System.currentTimeMillis  //liefert die aktuelle Zeit in Millisekunden
   var zeit = jetzt
   def rücksetzen = { zeit = jetzt }
   def gemessen = jetzt - zeit
@@ -1024,21 +1026,21 @@ object timer {
 }
 
 ausgeben("Klicke in den Ausgabebereich und warte...")
-timer.zufallsWarten(3,6)   //wartet zwischen 3 und 6 Sekunden
-timer.rücksetzen
+Stoppuhr.zufallsWarten(3, 6)   //wartet zwischen 3 und 6 Sekunden
+Stoppuhr.rücksetzen
 einlesen("Drücke die Eingabetaste, so schnell wie Du kannst.")
-ausgeben("Reaktionszeit: " + (timer.gemessen/1000.0) + " Sekunden")
+ausgeben("Reaktionszeit: " + (Stoppuhr.gemessen/1000.0) + " Sekunden")
 \end{lstlisting}
         
 Mit \lstinline{object} kannst Du alles sammeln, was zu einem Objekt gehört.\\
-Du kannst mit einem Punkt auf etwas im Objekt zugreifen: \lstinline{timer.rücksetzen}
+Du kannst mit einem Punkt auf etwas im Objekt zugreifen: \lstinline{Stoppuhr.rücksetzen}
 \section*{\color{BrickRed}Aufgabe:}
 
 
 \begin{itemize}
 
 \item {Probiere das Programm aus und messe Deine Reaktionszeit. Wie schnell bist Du?}
-\item {Nutze \lstinline{timer} in der Aufgabe {\it Zahlen Raten} und füge die folgende Ausgabe hinzu: \lstinline{Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft}}
+\item {Nutze \lstinline{Stoppuhr} in der Aufgabe {\it Zahlenraten} und füge die folgende Ausgabe hinzu: \lstinline{Richtig geraten! Du hast es mit 5 Versuchen in 32 Sekunden geschafft}}
 
 \end{itemize}
 
@@ -1073,7 +1075,7 @@ schleifeSolange (true) { //eine unendliche Schleife
 
 \begin{itemize}
 
-\item {Wie wechselt die Ampel? Versuche zu erklären was hierbei passiert.}
+\item {Wie wechselt die Ampel? Versuche zu erklären, was hierbei passiert.}
 \item {Ändere das Programm so, dass die Ampel doppelt so lang auf grün bleibt.}
 
 \end{itemize}
@@ -1088,14 +1090,12 @@ activateCanvas()
 
 animate { vor(1) }
 
-onKeyPress { k =>
-  k match {
-    case Kc.VK_LEFT =>   links(5)
-    case Kc.VK_RIGHT =>  rechts(5)
-    case Kc.VK_SPACE =>  vor(5)
-    case _ => 
-      ausgeben("Unbekannte Taste: " + k)
-  }
+onKeyPress {
+  case Kc.VK_LEFT  => links(5)
+  case Kc.VK_RIGHT => rechts(5)
+  case Kc.VK_SPACE => vor(5)
+  case t => 
+    ausgeben("Unbekannte Taste: " + t)
 }
 \end{lstlisting}
         
@@ -1109,11 +1109,11 @@ onKeyPress { k =>
 
 \begin{itemize}
 
-\item {Schreibe \lstinline{Kc.} und drücke \lstinline{Strg+Alt+Leertaste} dann kannst Du sehen, wie die verschiedenen Tasten heißen.}
-\item {Mache \lstinline{stiftRauf} wenn man Pfeil nach oben drückt}
-\item {Mache \lstinline{stiftRunter} wenn man Pfeil nach unten drückt}
-\item {Mache \lstinline{stiftfarbe(blau)} wenn man B drückt}
-\item {Mache \lstinline{stiftfarbe(rot)} wenn man R drückt}
+\item {Schreibe \lstinline{Kc.} und drücke \lstinline{Strg+Alt+Leertaste}. Dann kannst Du sehen, wie die verschiedenen Tasten heißen.}
+\item {Befehle \lstinline{stiftRauf} wenn man Pfeil nach oben drückt}
+\item {Befehle \lstinline{stiftRunter} wenn man Pfeil nach unten drückt}
+\item {Befehle \lstinline{stiftfarbe(blau)} wenn man B drückt}
+\item {Befehle \lstinline{stiftfarbe(rot)} wenn man R drückt}
 \item {Erhöhe bzw. Verringere die Geschwindigkeit mit den Tasten + bzw. -}
 
 \end{itemize}
@@ -1130,17 +1130,15 @@ activateCanvas()
 
 var zeichnen = true
 
-onKeyPress { k =>
-  k match {
-    case Kc.VK_DOWN => 
-      stiftRunter()
-      zeichnen = true
-    case Kc.VK_UP => 
-      stiftRauf()
-      zeichnen = false
-    case _ => 
-      ausgeben("Unbekannte Taste: " + k)
-  }
+onKeyPress {
+  case Kc.VK_DOWN =>
+    stiftRunter()
+    zeichnen = true
+  case Kc.VK_UP =>
+    stiftRauf()
+    zeichnen = false
+  case t =>
+    ausgeben("Unbekannte Taste: " + t)
 }
 
 onMouseClick { (x, y) =>
@@ -1158,7 +1156,7 @@ onMouseClick { (x, y) =>
 
 \begin{itemize}
 
-\item {Mache \lstinline{füllfarbe(schwarz)} wenn man F drückt}
+\item {Befehle \lstinline{füllfarbe(schwarz)} wenn man F drückt}
 \item {Führe die Variable \lstinline{var füllen = true} ein und mache bei Taste \lstinline{Kc.VK_F}:}
 
 \end{itemize}
@@ -1186,23 +1184,23 @@ onMouseClick { (x, y) =>
 object meinKonto {
   val nummer = 123456
   var stand = 0.0
-  def überweisen(betrag: Bruchzahl) = {
-    stand = stand + betrag 
+  def einzahlen(betrag: Bruchzahl) = {
+    stand = stand + betrag
   }
-  def abbuchen(betrag: Bruchzahl) = { 
-    stand = stand - betrag 
+  def abheben(betrag: Bruchzahl) = {
+    stand = stand - betrag
   }
-  def zeigeStand() = {
-    ausgeben("Kontonummer: " + nummer) 
+  def anzeigen() = {
+    ausgeben("Kontonummer: " + nummer)
     ausgeben(" Kontostand: " + stand)
   }
 }
 
-meinKonto.zeigeStand()
-meinKonto.überweisen(100)
-meinKonto.zeigeStand()
-meinKonto.abbuchen(10)
-meinKonto.zeigeStand()
+meinKonto.anzeigen()
+meinKonto.einzahlen(100)
+meinKonto.anzeigen()
+meinKonto.abheben(10)
+meinKonto.anzeigen()
 \end{lstlisting}
         
 
@@ -1216,8 +1214,8 @@ meinKonto.zeigeStand()
 \begin{itemize}
 
 \item {Was ist der Kontostand nach Ausführung des Programms? Erkläre was passiert.}
-\item {Sorge dafür, dass nicht mehr Geld abgehoben werden kann, als auf dem Konto ist.}
-\item {Lege eine Variable \lstinline{val maxBetrag = 5000} an und sorge dafür, dass man nicht mehr abheben darf als \lstinline{maxBetrag}.}
+\item {Sorge mit \lstinline{if} dafür, dass nicht mehr Geld abgehoben werden kann, als auf dem Konto ist.}
+\item {Lege eine Konstante \lstinline{val maxBetrag = 5000} an und sorge mit \lstinline{if} dafür, dass man nicht mehr abheben darf als \lstinline{maxBetrag}.}
 
 \end{itemize}
 
@@ -1226,29 +1224,29 @@ meinKonto.zeigeStand()
 
 \chapter{Erstelle viele Objekte mit \lstinline{class}}
 \begin{multicols}{2}
-Wenn Du viele verschiedene Konten erstellen willst, benötigst Du eine Klasse. Mit \lstinline{new} kannst Du neue Objekte erstellen. Jedes Objekt erhält eine eigene Kontonummer und Kontostand.
+Wenn Du viele verschiedene Konten erstellen willst, benötigst Du eine Klasse. Mit \lstinline{new} kannst Du davon neue Objekte erstellen. Jedes Objekt erhält eine eigene Kontonummer und Kontostand.
 
 \begin{lstlisting}[basicstyle={\ttfamily\fontsize{13}{16}\selectfont},numbers=none]
 class Konto(nummer: Ganzzahl) {
   private var stand = 0.0 //private bedeutet "versteckt"  
-  def überweisen(betrag: Bruchzahl) = {
+  def einzahlen(betrag: Bruchzahl) = {
     stand = stand + betrag 
   }
-  def abbuchen(betrag: Bruchzahl) = { 
+  def abheben(betrag: Bruchzahl) = { 
     stand = stand - betrag 
   }
-  def zeigeStand() = 
+  def anzeigen() = 
     ausgeben(s"Konto $nummer: $stand")
 }
 
 val konto1 = new Konto(12345) //neues Objekt erstellen
 val konto2 = new Konto(67890) //Noch ein Objekt
 
-konto1.überweisen(99)
-konto2.überweisen(88)
-konto1.abbuchen(57)
-konto1.zeigeStand
-konto2.zeigeStand
+konto1.einzahlen(99)
+konto2.einzahlen(88)
+konto1.abheben(57)
+konto1.anzeigen
+konto2.anzeigen
 \end{lstlisting}
         
 
@@ -1261,11 +1259,11 @@ konto2.zeigeStand
 
 \begin{itemize}
 
-\item {Was ist der Stand der beiden Konten nachdem das Programm ausgeführt wurde? Erkläre was passiert.}
-\item {Erstelle weitere Konto-Objekte und überweise und buche Beträge ab.}
-\item {Füge einen Klassenparameter \lstinline{name: String} hinzu, der den Namen des Kontoinhabers aufnehmen soll, wenn Objekte erstellt werden.}
-\item {Sorge dafür, dass auch \lstinline{name} ausgegeben wird, wenn \lstinline{zeigeStand} ausgeführt wird.}
-\item {Was passiert wenn Du das machst: \lstinline{konto1.stand = 10000000 } ?}
+\item {Was ist der Stand der beiden Konten, nachdem das Programm ausgeführt wurde? Erkläre was passiert.}
+\item {Erstelle weitere Konto-Objekte und zahle Beträge ein und hebe Beträge ab.}
+\item {Füge einen Klassenparameter \lstinline{name: Text} hinzu, der den Namen des Kontoinhabers aufnehmen soll, wenn Objekte erstellt werden.}
+\item {Sorge dafür, dass auch \lstinline{name} ausgegeben wird, wenn \lstinline{anzeigen} ausgeführt wird.}
+\item {Was passiert, wenn Du das befiehlst: \lstinline{konto1.stand = 10000000 } ?}
 
 \end{itemize}
 
@@ -1280,26 +1278,26 @@ def zufällig(xs: Vector[String]) = scala.util.Random.shuffle(xs).head
 val aufforderung = Vector("Was bedeutet", "Gefällt Dir", "Wozu brauchen wir", "Erzähl mir mehr über")
 var antwort = "?"
 val eröffnung = "Worüber möchtest Du reden?"
-var worte = Vector("Nabelschnur", "Ketchupeis", "Weihnachtsmann", "Kissenbezüge") 
-schleifeSolange (antwort != "tschüss") {
-  val t = if (antwort == "?") eröffnung 
-    else if (antwort == "nein") "Nee." 
-    else if(antwort == "ja") "Nun ja." 
-    else if (antwort.length < 4) "Oh..." 
-    else zufällig(aufforderung) + " " + zufällig(worte) + "?"
+var worte = Vector("Nabelschnur", "Ketchupeis", "Weihnachtsmann", "Kissenbezüge")
+schleifeSolange(antwort != "tschüss") {
+  val t = if (antwort == "?") eröffnung
+  else if (antwort == "nein") "Nee."
+  else if (antwort == "ja") "Nun ja."
+  else if (antwort.length < 4) "Oh..."
+  else zufällig(aufforderung) + " " + zufällig(worte) + "?"
   antwort = einlesen(t).toLowerCase
-  worte = worte ++ antwort.split(" ").toList.filter(_.length > 3) 
-} 
-ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt:" + worte)
+  worte = worte ++ antwort.split("[ ,;:.!?]").toList.filter(_.length > 3)
+}
+ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt: " + worte)
 
 //Aufgabe:
 // (1) Probiere das Programm aus und versuche herauszufinden, wie es funktioniert.
 // (2) Wann wird die Solange-Schleife beendet?
-// (3) Fülle weitere Sätze und Worte in die Vektoren aufforderug und worte.
+// (3) Fülle weitere Sätze und Worte in die Vektoren aufforderung und worte.
 // (4) Erweitere die Reaktion auf kurze Antworten über "nein" und "ja" hinaus.
 \end{lstlisting}
         
-\chapter{Verändere das Pong-Spiel}
+\chapter{Verändere das Tischtennis-Spiel}
 \begin{multicols}{2}
 \section*{\color{BrickRed}Aufgabe:}
 
@@ -1308,10 +1306,10 @@ ausgeben("Danke für das Gespräch! Jetzt habe ich diese Worte gelernt:" + worte
 
 \item {Wähle im Menü Beispiele > Animationen und Spiele > Tischtennis. Probiere es aus!}
 \item {Du kannst es steuern mit: Pfeil nach oben/unten und A/Z.}
-\item {Drücke ESC um das Spiel zu beenden und untersuche das Programm.}
-\item {Ändere das Programm so, dass man mit Y statt Z den linken Schläger nach unten bewegen kann. Dann ist das Spiel bei einer deutschen Tastatur bequemer für die linke Hand.}
+\item {Drücke ESC um das Spiel zu beenden und untersuche das Programm. Es nutzt die englischen Kojo-Befehle.}
+\item {Ändere das Programm so, dass man mit Y statt Z den linken Schläger nach unten bewegen kann. Dann ist das Spiel bei einer deutschen Tastatur bequemer für den linken Spieler.}
 \item {Ändere das Programm so, dass der Ball größer wird.}
-\item {Ändere das Spielfeld zu einem Tennisplatz mit grünem Hintergrund, weißen Linien und einem gelben Ball.}
+\item {Ändere das Spielfeld zu einem Tennistisch mit grünem Hintergrund, weißen Linien und einem gelben Ball.}
 
 \end{itemize}
 

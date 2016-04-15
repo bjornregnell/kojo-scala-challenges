@@ -310,7 +310,7 @@ fram; skriv(x)
         "Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
-//värdet r blir ett slumptal mellan 10 och 89:
+//värdet r blir ett slumptal mellan 10 och 99:
 val r = slumptal(90) + 10   
 
 sudda; sakta(10); osynlig
