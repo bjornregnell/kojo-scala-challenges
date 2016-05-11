@@ -1,6 +1,6 @@
 # scaboo and kojobook #
  
-This repo contains the the booklet "Challenges with Kojo" (called kojobook) that is used to teach programming in primary school using [Scala](http://scala-lang.org/) and [Kojo](http://www.kogics.net/kojo). The booklet is translated to several languages and more translation contributions are welcome! Please contact [bjorn.regnell@cs.lth.se](mailto:bjorn.regnell@cs.lth.se) if you want to contribute.
+This repo contains the the booklet "Challenges with Kojo" (called kojobook) that is used to teach programming in primary school using [Scala](http://scala-lang.org/) and [Kojo](http://www.kogics.net/kojo). The booklet is available in several languages (currently: Swedish, English, German, Italian) and more translation contributions are welcome! Please contact [bjorn.regnell@cs.lth.se](mailto:bjorn.regnell@cs.lth.se) if you want to contribute.
 
 The repo also contains the code of the simple scala booklet generator that generates tex booklets from scala case classes that is used to generate kojobook.
 
