@@ -4,7 +4,7 @@ This repo contains the the booklet "Challenges with Kojo" (called kojobook) that
 
 The repo also contains the code of the simple scala booklet generator that generates tex booklets from scala case classes that is used to generate kojobook.
 
-You can download the compiled kojobook in pdf by clicking on Source to the right and navigate to kojobook/tex and download the .pdf file for you language of choice.
+You can **download the compiled kojobook in pdf** by clicking on Source to the right and navigate to kojobook/tex and download the .pdf file for you language of choice.
 
 The licence is: [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
