@@ -1,0 +1,13 @@
+leeren
+schleife(4){
+  vor(100)
+  rechts;
+}
+springen(25,25)
+schleife(4){
+  vor(50)
+  rechts
+}
+gehen(75,75)
+springen(75,25)
+gehen(25,75)

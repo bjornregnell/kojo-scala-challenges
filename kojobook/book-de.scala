@@ -46,6 +46,7 @@ rechts
     taskHead, Para("Erweitere das Programm so, dass ein Quadrat gezeichnet wird.")
     )
   ),
+  //------------------------------------------------------
   Chapter(id="stairs", head="Zeichne eine Treppe", template=TextWithImage("stairs.png"), 
     contents=Seq(
       Code("""
@@ -67,25 +68,44 @@ schleife(4){ vor; rechts }
        """.trim, size=30),
       taskHead, Itemize("Was passiert, wenn Du statt 4 die Zahl 100 eingibst?","Zeichne eine Treppe mit 100 Stufen.") 
     )
-  ), 
-//------------------------------------------------------
-  Chapter(id="alien", head="Zeichne eine Figur", template=MultiColumn(2), 
+  ),
+  //------------------------------------------------------
+  Chapter(id="argument", head="Übergebe Parameter", template=TextWithImage("de/hexagon.png"),
     contents=Seq(
-      taskHead, Para("Zeichne eine einfache Figur."),
-      hintHead, 
+      Code("""
+vor(40)
+rechts(60)
+links(40)
+       """.trim, size=30),VSkip(1),
+      Para("Du kannst Befehlen Parameter übergeben, damit sie nicht die Standardwerte verwenden."),
+      taskHead, Itemize("Zeichne ein Vieleck")
+    )
+  ),
+  //------------------------------------------------------
+  Chapter(id="jump", head="Bewege dich zum Ziel", template=TextWithImage("de/quadrate.png"),
+    contents=Seq(
       Code("""
 springen
-links(180)
-vor(300)
-springen(100)
-springen(25,-28)
-schreiben("FELIX ist der Beste")
+springen(90)
+springen(100,200)
+gehen(65,180)
+       """.trim, size=30),VSkip(1),
+      Para("Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:"),
+      VSkip(1),Image("de/mousepos.png", 5),
+      taskHead, Itemize("Zeichne ein Quadrat im Quadrat")
+    )
+  ),
+  //------------------------------------------------------
+  Chapter(id="alien", head="Zeichne eine farbige Figur", template=MultiColumn(2),
+    contents=Seq(
+      Code("""
+schreiben("Mein Name ist...")
 stiftfarbe(lila)
 füllfarbe(grün)
-       """.trim, size=20),
-      Para("Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:"), Image("mousepos.png", 6),
+       """.trim, size=25),VSkip(1),
+      taskHead, Para("Zeichne eine einfache farbige Figur."),
       ColumnBreak,
-      CenterImage("man.png",4.5), VSkip(2), CenterImage("alien.png",9)
+      Image("de/head.png",5),Image("de/house.png",6)
     )
   ), 
 //------------------------------------------------------
