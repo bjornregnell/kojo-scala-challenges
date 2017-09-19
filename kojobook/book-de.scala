@@ -66,7 +66,9 @@ vor; rechts
 leeren
 schleife(4){ vor; rechts }
        """.trim, size=30),
-      taskHead, Itemize("Was passiert, wenn Du statt 4 die Zahl 100 eingibst?","Zeichne eine Treppe mit 100 Stufen.") 
+       Para("Mit einer {/Schleife/} kannst Du Befehle wiederholt ausführen."),
+      taskHead, 
+      Itemize("Was passiert, wenn Du statt 4 die Zahl 100 eingibst?","Zeichne eine Treppe mit 100 Stufen.") 
     )
   ),
   //------------------------------------------------------
@@ -77,12 +79,12 @@ vor(40)
 rechts(60)
 links(40)
        """.trim, size=30),VSkip(1),
-      Para("Du kannst Befehlen Parameter übergeben, damit sie nicht die Standardwerte verwenden."),
+      Para("Du kannst Befehlen {/Parameter/} übergeben, damit sie nicht die Standardwerte verwenden."),
       taskHead, Itemize("Zeichne ein Vieleck")
     )
   ),
   //------------------------------------------------------
-  Chapter(id="jump", head="Bewege dich zum Ziel", template=TextWithImage("de/quadrate.png"),
+  Chapter(id="jump", head="Bewege Dich zum Ziel", template=TextWithImage("de/quadrate.png"),
     contents=Seq(
       Code("""
 springen
@@ -92,7 +94,9 @@ gehen(65,180)
        """.trim, size=30),VSkip(1),
       Para("Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:"),
       VSkip(1),Image("de/mousepos.png", 5),
-      taskHead, Itemize("Zeichne ein Quadrat im Quadrat")
+      taskHead, 
+      Itemize("Zeichne ein Quadrat im Quadrat."),
+      Itemize("Zeichne Diagonalen in das Quadrat.")
     )
   ),
   //------------------------------------------------------
