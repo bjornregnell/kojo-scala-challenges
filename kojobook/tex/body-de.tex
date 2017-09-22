@@ -100,6 +100,7 @@ leeren
 schleife(4){ vor; rechts }
 \end{lstlisting}
         
+Mit einer {\it Schleife} kannst Du Befehle wiederholt ausführen.
 \section*{\color{BrickRed}Aufgabe:}
 
 
@@ -120,39 +121,97 @@ schleife(4){ vor; rechts }
 
 \end{multicols}
 
-\chapter{Zeichne eine Figur}
+\chapter{Übergebe Parameter}
 \begin{multicols}{2}
-\section*{\color{BrickRed}Aufgabe:}
-Zeichne eine einfache Figur.
-\section*{\color{OliveGreen}Tipps:}
 
-\begin{lstlisting}[basicstyle={\ttfamily\fontsize{20}{24}\selectfont},numbers=none]
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
+vor(40)
+rechts(60)
+links(40)
+\end{lstlisting}
+        
+\vskip 1.0em
+Du kannst Befehlen {\it Parameter} übergeben, damit sie nicht die Standardwerte verwenden.
+\section*{\color{BrickRed}Aufgabe:}
+
+
+\begin{itemize}
+
+\item {Zeichne ein Vieleck}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics{../img/de/hexagon.png}
+\end{center}
+
+\end{multicols}
+
+\chapter{Bewege Dich zum Ziel}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{30}{36}\selectfont},numbers=none]
 springen
-links(180)
-vor(300)
-springen(100)
-springen(25,-28)
-schreiben("FELIX ist der Beste")
+springen(90)
+springen(100,200)
+gehen(65,180)
+\end{lstlisting}
+        
+\vskip 1.0em
+Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:
+\vskip 1.0em
+\includegraphics[width=5.0cm]{../img/de/mousepos.png}
+\section*{\color{BrickRed}Aufgabe:}
+
+
+\begin{itemize}
+
+\item {Zeichne ein Quadrat im Quadrat.}
+
+\end{itemize}
+
+
+
+
+\begin{itemize}
+
+\item {Zeichne Diagonalen in das Quadrat.}
+
+\end{itemize}
+
+
+
+\columnbreak
+
+\begin{center}
+\includegraphics{../img/de/quadrate.png}
+\end{center}
+
+\end{multicols}
+
+\chapter{Zeichne eine farbige Figur}
+\begin{multicols}{2}
+
+\begin{lstlisting}[basicstyle={\ttfamily\fontsize{25}{30}\selectfont},numbers=none]
+schreiben("Mein Name ist...")
 stiftfarbe(lila)
 füllfarbe(grün)
 \end{lstlisting}
         
-Die Position der Maus im Zeichenbereich kannst Du links unter dem Programmbearbeiter ablesen:
-\includegraphics[width=6.0cm]{../img/mousepos.png}
+\vskip 1.0em
+\section*{\color{BrickRed}Aufgabe:}
+Zeichne eine einfache farbige Figur.
 
 
 \columnbreak
 
 
-\begin{center}
-\includegraphics[width=4.5cm]{../img/man.png}
-\end{center}
-
-\vskip 2.0em
-\begin{center}
-\includegraphics[width=9.0cm]{../img/alien.png}
-\end{center}
-
+\includegraphics[width=5.0cm]{../img/de/head.png}
+\includegraphics[width=6.0cm]{../img/de/house.png}
 \end{multicols}
 
 \chapter{Wie schnell ist Dein Computer?}Der erste Computer hieß {\bf ENIAC} und konnte in einer Sekunde bis 5000 zählen.\\

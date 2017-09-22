@@ -1,0 +1,22 @@
+leeren
+gehen(200,200)
+gehen(400,0)
+gehen(0,0)
+springen(150,110)
+schleife(4){
+  rechts;
+  vor;
+}
+rechts(180)
+springen(100)
+schleife(4){
+  links;
+  vor;
+}
+springen(100,50)
+schleife(2){
+vor(200)
+rechts
+vor
+rechts
+}
