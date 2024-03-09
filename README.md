@@ -1,11 +1,11 @@
 # kojo-scala-challenges  #
 
 This repo contains the the booklet "Challenges with Kojo" (called kojobook) that is used to teach programming in primary school using [Scala](http://scala-lang.org/) and [Kojo](http://www.kogics.net/kojo). The booklet is available in several languages, currently: 
-* [Swedish](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-sv.pdf)
 * [English](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-en.pdf)
   * **NEWS!** Updated challenges in English are now available as a [slide show, download from here](https://docs.google.com/presentation/d/1K94dJjU9vCORqtKtEt91xpWtneXIsAOINBqlERpRNH8/edit?usp=sharing). Many thanks to contributor Lalit Pant!
+* [Swedish](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-sv.pdf)
 * [German](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-de.pdf)
-* [Italian](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-it.pdf))
+* [Italian](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-it.pdf)
 
 Contributions are welcome! Please contact [bjorn.regnell@cs.lth.se](mailto:bjorn.regnell@cs.lth.se) if you want to contribute.
 
