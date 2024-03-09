@@ -2,7 +2,7 @@
 
 This repo contains the the booklet "Challenges with Kojo" (called kojobook) that is used to teach programming in primary school using [Scala](http://scala-lang.org/) and [Kojo](http://www.kogics.net/kojo). The booklet is available in several languages (currently: [Swedish](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-sv.pdf), [English](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-en.pdf), [German](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-de.pdf), [Italian](https://github.com/bjornregnell/kojo-scala-challenges/blob/master/kojobook/tex/book-it.pdf)) and more translation contributions are welcome! Please contact [bjorn.regnell@cs.lth.se](mailto:bjorn.regnell@cs.lth.se) if you want to contribute.
 
-**NEW!** Update challenges in English are available as a [slide show here](https://docs.google.com/presentation/d/1K94dJjU9vCORqtKtEt91xpWtneXIsAOINBqlERpRNH8/edit?usp=sharing) Many thanks to contributor Lalit Pant!
+**NEW!** Update challenges in English are available as a [slide show here](https://docs.google.com/presentation/d/1K94dJjU9vCORqtKtEt91xpWtneXIsAOINBqlERpRNH8/edit?usp=sharing). Many thanks to contributor Lalit Pant!
 
 The repo also contains the code of the simple scala booklet generator that generates tex booklets from scala case classes that is used to generate kojobook.
 
